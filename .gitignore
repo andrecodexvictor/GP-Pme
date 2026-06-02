@@ -1,0 +1,16 @@
+# GP-PME Framework - Git Ignore Configuration
+# Garante que apenas as pastas oficiais de entregáveis sejam commitadas no GitHub
+
+# 1. Ignorar todos os arquivos e diretórios na raiz e subdiretórios por padrão
+*
+
+# 2. Exceções: Permitir apenas as pastas oficiais de entregáveis do framework e seus conteúdos
+!/GP-PME/
+!/GP-PME/**
+
+!/GP-PME antigravity/
+!/GP-PME antigravity/**
+
+# 3. Permitir explicitamente o próprio arquivo .gitignore e README.md
+!.gitignore
+!README.md
