@@ -1,35 +1,51 @@
-# GP-PME Framework
+# Framework GP-PME
 
-Welcome to the **GP-PME (Gestão de Projetos para Pequenas e Médias Empresas)** Framework repository. 
+Bem-vindo ao repositório do **Framework GP-PME (Governança Prática para Pequenas e Médias Empresas)**.
 
-This repository contains the complete documentation, guidelines, and interactive assets for the GP-PME framework. The framework is designed specifically to help small and medium enterprises manage projects efficiently, leveraging Lean IT principles, AI-driven agents, and quick-win strategies.
-
-## Repository Structure
-
-- **`GP-PME antigravity/`**: The core directory containing all the updated, detailed guides, dummy-friendly versions, templates, and the master framework document.
-- **`GP-PME Article/`**: Contains an interactive, beautifully designed HTML frontend (`index.html`) that allows users to seamlessly navigate through all the framework's documentation, guides, and visual assets without needing to read raw Markdown files.
-
-## Getting Started
-
-1. **Explore the Framework:**
-   Open `GP-PME Article/index.html` in your web browser to access the fully interactive and stylized version of the framework. Here you can read the comprehensive guides, view the interactive graphs, and understand the core tenets of GP-PME.
-
-2. **Read the Documentation:**
-   If you prefer reading the raw documents or want to implement them in RAG systems, navigate to `GP-PME antigravity/Guides/` for the detailed technical guides, and `GP-PME antigravity/guide-for-dummies/` for simplified, easy-to-digest versions.
-
-3. **Use the Templates:**
-   Inside `GP-PME antigravity/Templates/`, you will find ready-to-use templates for PRDs, Tasklists, Prompts, and AI-oriented skills.
-
-## Core Philosophies
-
-- **Lean IT (TI Enxuta):** Minimizing waste while maximizing value delivery. The framework prioritizes continuous flow, eliminating bottlenecks, and focusing strictly on what generates measurable business value.
-- **Quick Wins:** Emphasizing fast, high-impact deliverables that guarantee ROI in short periods (e.g., 30-day schedules).
-- **AI Integration:** Detailed guides on how to utilize AI agents to augment project management capabilities, streamline documentation, and execute specialized tasks.
-
-## Contributing
-
-Please adhere to the strict guidelines defined in `GEMINI.MD` when proposing changes to the framework or its guides. Ensure that the `.gitignore` rules are respected and only official documentation folders (`GP-PME/` and `GP-PME antigravity/`) are committed.
+Este repositório contém a documentação completa, guias práticos e ativos interativos do framework GP-PME. O framework foi desenhado especificamente para ajudar pequenas e médias empresas a gerenciarem sua tecnologia de forma eficiente, segura e orientada a valor, utilizando os princípios da **TI Enxuta (Lean IT)**, agentes de Inteligência Artificial especialistas e estratégias de vitórias rápidas (*Quick Wins*).
 
 ---
 
-*This repository is managed by the GP-PME framework standards.*
+## 🗺️ Estrutura do Repositório
+
+*   **`GP-PME antigravity/`**: O diretório central que contém todos os guias detalhados, guias simplificados para leigos (*dummies*), templates operacionais de 1 página e o documento mestre consolidado.
+*   **`GP-PME Article/`**: Contém um portal web interativo em HTML (`index.html`) com o design "Google Stitch" para navegação visual amigável por todos os pilares e documentos do framework.
+*   **`Docs/`**: Diretório contendo diretrizes do projeto (PRD, Roadmap, Lista de Tarefas, Agentes Especialistas e o guia editorial `GEMINI.MD.md`).
+*   **`References/`**: Repositório de materiais bibliográficos e histórico de versões acadêmicas e técnicas do framework (`GP-PME Versions`).
+
+---
+
+## 🚀 Como Começar
+
+1.  **Explore o Framework Visualmente**:
+    Abra o arquivo `GP-PME Article/index.html` em qualquer navegador web para acessar a versão interativa do framework. Lá você poderá visualizar os mapas de processos, cards de pilares e ler os guias com estilo tipográfico moderno.
+2.  **Leia os Guias Técnicos**:
+    Se você prefere os documentos em formato Markdown bruto para leitura ou para sistemas de busca e recuperação por IA (RAG), navegue até [Guides/](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/) para ler os guias avançados, ou até [guide-for-dummies/](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/guide-for-dummies/) para versões explicadas com jargão zero.
+3.  **Adote os Templates Operacionais**:
+    Acesse [Templates/](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates/) para encontrar planilhas prontas de RACI-Lite, Matrizes 4 Quadrantes, templates de PRD de 1 página, planos de contingência de incidentes (PRI) e receitas de prompts.
+
+---
+
+## 🎯 Filosofias Centrais
+
+*   **TI Enxuta (Lean IT)**: Foco estrito em maximizar a entrega de valor de negócio ao mesmo tempo em que se elimina o desperdício de tempo e recursos operacionais. A TI se adapta ao tamanho da equipe, não o contrário.
+*   **Vitórias Rápidas (Quick Wins)**: Cronogramas pragmáticos como a Fase Zero (playbook de 30 dias) garantem que a empresa veja retorno financeiro e estabilidade operacional desde as primeiras 24 horas.
+*   **Aceleração Opcional por IA**: A IA generativa atua como um copiloto transversal opcional (Pilar IV) para automatizar a burocracia técnica sob supervisão humana estrita (Human-in-the-loop).
+
+---
+
+## 🔄 Destaque: O Ciclo de Serviço Micro-Adaptativo
+
+O **Ciclo de Serviço Micro-Adaptativo** (Pilar II: Execução Ágil) é o motor operacional do GP-PME. Em vez de forçar a PME a adotar frameworks ágeis pesados de mercado, ele funde práticas enxutas do Scrum e do ITIL 4 de forma a acomodar a realidade diária de equipes reduzidas ou de um único técnico (*One-Man-Band*).
+
+### Como funciona na Prática:
+1.  **Sprints de 1 Semana**: O planejamento é realizado em ciclos curtíssimos de 1 semana. O técnico foca apenas em 2 ou 3 cartões de projetos de valor autorizados no CD-TI Lite.
+2.  **Limite Rígido de WIP (WIP Limit = 3)**: É expressamente proibido ter mais de 3 tarefas simultâneas na coluna *Em Andamento* do Kanban. Isso impede a dispersão mental e garante que tarefas iniciadas sejam rapidamente concluídas.
+3.  **Filtro do Canal Único**: Todas as demandas externas (WhatsApp, e-mails pessoais, telefonemas) são bloqueadas na origem. As demandas devem obrigatoriamente entrar pelo Canal Único, o que impede interrupções que quebram o fluxo de trabalho planejado.
+4.  **Amortecedor de Emergências (A "Raia Rápida")**: Quando uma emergência cibernética ou parada de faturamento crítica ocorre, o técnico aplica a regra de suspensão: ele arrasta sua tarefa menos prioritária do Kanban de volta para a coluna *A Fazer* e ativa a **Raia de Expedite (Rápida)** para focar 100% no incidente, retornando ao fluxo original imediatamente após a mitigação.
+
+Isso garante que a TI possa ser **micro-adaptativa** — respondendo a incidentes operacionais diários sem quebrar os prazos de projetos estratégicos de negócios.
+
+---
+
+*Repositório gerido sob os padrões de qualidade técnica do framework GP-PME.*

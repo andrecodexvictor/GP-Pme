@@ -42,6 +42,7 @@ O framework GP-PME é concebido sob o modelo do **Iceberg Invertido**. Na superf
 ```
                    A PONTA DO ICEBERG (Acessibilidade Imediata)
                   - Fase Zero: Playbook Salva-Vidas de 30 Dias
+                  - Diagnóstico e Matriz de Maturidade (Template 8)
                   - Mapeamento Manual de Canais de Suporte
                   - Kanban de TI de 4 Colunas
      -----------------------------------------------------------------
@@ -56,6 +57,14 @@ O framework GP-PME é concebido sob o modelo do **Iceberg Invertido**. Na superf
 ```
 
 Essa modularidade garante que a PME possa evoluir no seu próprio ritmo, sem sobrecarga ou necessidade de aportes financeiros iniciais elevados.
+
+### 2.2. O Modelo e a Matriz de Maturidade GP-PME
+Para orientar essa jornada de crescimento técnico e financeiro de forma segura, o GP-PME utiliza o **Índice de Maturidade da TI (IM-TI)**, pontuado de 0 a 10 com base em evidências práticas (ver [Guia_Modelo_de_Maturidade.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_Modelo_de_Maturidade.md)):
+*   **Nível 0: Caótico** (0 a 2 pts): Reatividade absoluta, caos operacional e alto risco de parada geral de faturamento.
+*   **Nível 1: Reativo Organizado** (3 a 5 pts): Canal Único de Suporte e Kanban operacionais com WIP Limit de 3.
+*   **Nível 2: Governança Básica** (6 a 8 pts): Comitê CD-TI Lite ativo, Matriz 4 Quadrantes, Backups testados e PRI.
+*   **Nível 3: Inovação Incremental** (9 pts): Ciclos ágeis de MVP de 2 semanas, PRDs e acompanhamento financeiro de DAN/COT.
+*   **Nível 4: Governança Adaptativa** (10 pts): IA integrada transversalmente como copiloto corporativo com protocolo HITL.
 
 ---
 
@@ -86,19 +95,39 @@ Reunião executiva quinzenal ou mensal de **30 minutos**, com pauta e tempo ríg
 
 ## 4. Capítulo 3: Pilar II: Execução Ágil (Ciclo de Serviço Micro-Adaptativo)
 
-Operacionaliza a gestão das solicitações diárias de suporte e projetos na PME. É a materialização da **Fase 1 (Orquestração do Valor)** e **Fase 2 (Laboratório de Inovação)**:
+Operacionaliza a gestão das solicitações diárias de suporte e projetos na PME. É a materialização da **Fase 1 (Orquestração do Valor)** e **Fase 2 (Laboratório de Inovação)**, combinando Scrum e ITIL 4 de forma simplificada:
 
-### 4.1. Fluxo de Trabalho Kanban
-*   **Quadro Kanban Manual**: Quadro físico de cartões (post-its) ou digital simples, dividido nas colunas: *A Fazer*, *Em Andamento*, *Em Teste / Validação*, e *Concluído*.
-*   **Limite de Trabalho em Progresso (WIP)**: Estipulado em no máximo **3 tarefas simultâneas** por técnico, evitando sobrecarga e garantindo foco.
+### 4.1. O Ciclo de Serviço Micro-Adaptativo
+O Ciclo Micro-Adaptativo equilibra a execução de novos recursos com o atendimento a incidentes de suporte sem estresse operacional:
+*   **O que é**: Um processo adaptável que funde o planejamento de projetos com a reatividade do suporte técnico em ciclos curtos de trabalho.
+*   **Por que existe**: Para permitir que equipes pequenas (ou *One-Man-Band*) operem de forma previsível e organizada, mitigando a sobrecarga de interrupções diárias.
+*   **Dono**: Gestor de TI (Orquestrador de Valor).
+*   **Inputs / Outputs**: Solicitações do Canal Único e priorizações da Matriz 4 Quadrantes / Cartões concluídos e novos MVPs funcionais.
+*   **Métrica de Sucesso**: Cumprimento da Sprint (>80% dos cartões entregues) e Tempo Médio de Resolução (TMpR).
 
-### 4.2. Atendimento e Suporte
-*   **Canal Único de Suporte**: Um ponto de entrada unificado para recebimento de solicitações (ex: um formulário simples ou e-mail de suporte dedicado), eliminando chamados informais dispersos.
-*   **Matriz de Priorização Urgência vs. Impacto**: Matriz lógica para classificar chamados baseados na parada de faturamento ou de setores.
+### 4.2. A Mecânica Prática de Funcionamento
+
+#### 1. Cadência Semanal (Sprints de 1 Semana)
+O trabalho é planejado na segunda-feira de manhã em um **Planejamento de 15 minutos**. O técnico seleciona de **3 a 5 cartões** prioritários da coluna *A Fazer* (que foram validados no CD-TI Lite) para concluir na semana.
+
+#### 2. Auto-Checkpoint Diário (5 minutos)
+Substituindo reuniões formais, o técnico avalia visualmente seu Kanban no início do dia:
+*   *O que movi para "Concluído" ontem?*
+*   *Qual o meu foco de trabalho hoje?*
+*   *Existe algum impedimento técnico ou feedback pendente?*
+
+#### 3. Regra de Amortecimento e a "Raia Rápida (Expedite)"
+Para proteger o planejamento da semana contra o caos diário, o Kanban adota regras estritas de interrupção:
+*   **Urgências Baixas/Médias**: Chamados cotidianos de suporte (ex: impressora, lentidão) entram no fim do backlog da coluna *A Fazer* pelo Canal Único e aguardam o planejamento da próxima semana.
+*   **Urgências Críticas (Parada Geral/Ransomware)**: Incidentes que afetam o faturamento ativam a **Raia Rápida**:
+    1.  **Suspender**: Mova a tarefa "Em Andamento" de menor criticidade de volta para a coluna *A Fazer*. Isso libera espaço no **WIP Limit de no máximo 3 tarefas simultâneas**.
+    2.  **Expedite**: Posicione o cartão da emergência na raia de destaque no topo do Kanban.
+    3.  **Mitigar**: Dedique 100% de esforço para mitigar o incidente.
+    4.  **Retornar**: Assim que resolvido (movido para *Concluído*), resgate a tarefa suspensa de volta para a coluna *Em Andamento* e retome o trabalho.
 
 ### 4.3. Desenvolvimento de Soluções e Laboratório de Inovação
-*   **PRD Simplificado**: Documento padrão de 1 página para especificação de requisitos funcionais de software ou aquisições.
-*   **MVP (Produto Mínimo Viável)**: Desenvolvimento da versão mais simples de uma funcionalidade em no máximo **2 semanas**, implantando imediatamente em um grupo controlado de usuários (*piloto de inovação*) para coletar feedbacks rápidos sem desperdício de tempo e recursos.
+*   **PRD Simplificado**: Documento padrão de **1 página** para especificação de requisitos funcionais, eliminando escopos inflados e mal compreendidos.
+*   **MVP (Produto Mínimo Viável)**: Desenvolvimento da versão mais simples de uma funcionalidade em no máximo **2 semanas**, implantando-a como um piloto controlado para colher feedback real imediato dos usuários e planejar melhorias incrementais.
 
 ---
 

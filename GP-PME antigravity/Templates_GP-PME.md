@@ -16,6 +16,7 @@ Este documento consolida a biblioteca oficial de templates do framework **GP-PME
 5.  **Template 5**: Matriz de Priorização (Urgência vs. Impacto)
 6.  **Template 6**: Inventário 80/20 de Ativos Críticos
 7.  **Template 7**: Plano de Resposta a Incidentes (PRI) de 1 Página
+8.  **Template 8**: Avaliação e Matriz de Maturidade GP-PME
 
 ---
 
@@ -214,3 +215,53 @@ Este documento consolida a biblioteca oficial de templates do framework **GP-PME
     ```text
     Atuar como 'Guardião de Segurança'. Personalize o Plano de Resposta a Incidentes (PRI) de 1 Página gerando o checklist específico contendo etapas de isolamento para a infraestrutura de rede da minha PME [inserir infraestrutura].
     ```
+
+---
+
+## Template 8: Avaliação e Matriz de Maturidade GP-PME
+
+*   **Objetivo**: Mensurar de forma prática e rápida o estágio atual da TI da PME, definindo o Índice de Maturidade da TI (IM-TI) e gerando o plano de ação de transição de fase.
+
+*(Consulte o arquivo completo de diretrizes em [Guia_Modelo_de_Maturidade.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_Modelo_de_Maturidade.md)).*
+
+```
+=============================================================================
+          DIAGNÓSTICO E MATRIZ DE MATURIDADE GP-PME - AVALIAÇÃO
+=============================================================================
+
+[ QUESTIONÁRIO RÁPIDO - SIM / NÃO ]
+1.  [ ] Canal Único de Suporte formalizado e ativo?
+2.  [ ] Quadro Kanban ativo com limite WIP = 3?
+3.  [ ] FAQs Nível 1 ativas com desvio de chamados > 40%?
+4.  [ ]CD-TI Lite (reunião 30 min) quinzenal/mensal ativo?
+5.  [ ] Matriz 4 Quadrantes priorizando projetos de TI?
+6.  [ ] Inventário 80/20 de ativos críticos preenchido?
+7.  [ ] Backups automáticos em nuvem testados (restauração < 30min)?
+8.  [ ] PRI de 1 página assinado e colado na parede da TI?
+9.  [ ] Indicador DAN e propostas de COT calculados?
+10. [ ] Protocolo de Auditoria HITL ativo para saídas de IA?
+
+IM-TI (Índice de Maturidade) = [ ____ / 10 ] pontos
+
+NÍVEL DE MATURIDADE:
+[  ] Nível 0: Caótico (0 a 2 pts)          [  ] Nível 3: Inovação (9 pts)
+[  ] Nível 1: Reativo (3 a 5 pts)          [  ] Nível 4: Adaptativo (10 pts)
+[  ] Nível 2: Gov. Básica (6 a 8 pts)
+
+[ PLANO DE AÇÃO PARA TRANSIÇÃO DE NÍVEL ]
+- Ação Prioritária 1 (Saneamento do ID __): __________________________
+  Responsável: _____________ | Prazo: __/__/____
+- Ação Prioritária 2 (Saneamento do ID __): __________________________
+  Responsável: _____________ | Prazo: __/__/____
+
+=============================================================================
+Homologado por: _________________ (TI) | Aprovado por: _________________ (CEO)
+=============================================================================
+```
+
+*   **Como preencher manualmente**: Reúna-se com o CEO por 15 minutos e preencha as 10 perguntas binárias com base em evidências operacionais objetivas. Compute a nota final, mapeie o nível de maturidade correspondente e assine a folha junto ao CEO, registrando as ações prioritárias de transição.
+*   **Prompt de Aceleração (IA)**:
+    ```text
+    Atuar como 'Engenheiro de Prompts e Métricas'. Com base no histórico operacional da minha TI [inserir dados operacionais, status de backup e atas do CD-TI], preencha o Template de Diagnóstico de Maturidade do GP-PME. Calcule a pontuação final (IM-TI) e proponha um plano de ação detalhado para sanar os pontos identificados como falhos.
+    ```
+

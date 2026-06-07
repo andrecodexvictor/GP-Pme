@@ -28,6 +28,8 @@ Abaixo estão os links diretos para cada guia especializado e documento de refer
    |       +---> [Guia_de_Implementacao_Fase_Zero.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_de_Implementacao_Fase_Zero.md) (Os Primeiros 30 Dias)
    |       |
    |       +---> [Guia_KPIs_e_Quick_Wins.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_KPIs_e_Quick_Wins.md) (Os 3 KPIs, DAN, COT e implantação)
+   |       |
+   |       +---> [Guia_Modelo_de_Maturidade.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_Modelo_de_Maturidade.md) (Modelo, Matriz, Questionário e Checklists)
             +---> [guide-for-dummies/] (Pasta Interna de Guias Simplificados para Leigos)
             |       |
             |       +---> [Guia_GP-PME_para_Leigos.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/guide-for-dummies/Guia_GP-PME_para_Leigos.md) (Dummies Mestre - Jargão Zero)
@@ -61,6 +63,10 @@ Abaixo estão os links diretos para cada guia especializado e documento de refer
                             +---> [Template_System_Prompt_Agentes.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates/AI-Skills-and-Agents/Template_System_Prompt_Agentes.md) (Prompts de Sistema dos 4 Agentes)
                             |
                             +---> [Template_Checklist_Auditoria_HITL.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates/AI-Skills-and-Agents/Template_Checklist_Auditoria_HITL.md) (Controle de Alucinação)
+                    |
+                    +---> [Mapeamento_Maturidade/] (Diagnósticos de Maturidade)
+                            |
+                            +---> [Template_Mapeamento_Maturidade.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates/Mapeamento_Maturidade/Template_Mapeamento_Maturidade.md) (Autoavaliação e Plano de Transição)
 ```
 
 ---
@@ -115,6 +121,10 @@ Esta seção contém blocos de metadados semânticos estruturados para indexador
             <topic-coverage>Guia unificado contendo os 3 KPIs Visíveis de TI, as métricas avançadas de DAN e COT, e o cronograma semanal de Quick Wins da Fase Zero (os primeiros 30 dias) e Quick Start.</topic-coverage>
             <keywords>KPIs, KPIs Visíveis, IDSC, TMpR, ISU, DAN, COT, Quick Wins, Quick Start, Fase Zero</keywords>
         </document>
+        <document file="Guides/Guia_Modelo_de_Maturidade.md">
+            <topic-coverage>Modelo de Maturidade GP-PME, Matriz de Maturidade (5 níveis x 4 pilares), questionário rápido de autoavaliação (10 perguntas) e checklists de transição.</topic-coverage>
+            <keywords>Modelo de Maturidade, Matriz de Maturidade, Nível de Maturidade, IM-TI, Autoavaliação, Checklists de Transição</keywords>
+        </document>
         <document file="guide-for-dummies/Guia_GP-PME_para_Leigos.md">
             <topic-coverage>Guia sem termos técnicos e jargões para empresários ou leigos coordenarem e monitorarem a TI manualmente, explicando a jornada evolutiva da TI Enxuta.</topic-coverage>
             <keywords>Leigos, Dummies, Jargão Zero, Simplificado, Jornada Enxuta</keywords>
@@ -158,6 +168,10 @@ Esta seção contém blocos de metadados semânticos estruturados para indexador
         <document file="Templates/AI-Skills-and-Agents/Template_Checklist_Auditoria_HITL.md">
             <topic-coverage>Checklist obrigatório de revisão humana (Human-in-the-Loop) para auditar códigos, PRDs e análises geradas por IAs contra alucinações antes de homologar.</topic-coverage>
             <keywords>Checklist HITL, Controle de Alucinação, Auditoria Humana, Validação</keywords>
+        </document>
+        <document file="Templates/Mapeamento_Maturidade/Template_Mapeamento_Maturidade.md">
+            <topic-coverage>Template oficial contendo folha de pontuação, questionário rápido de autoavaliação e plano de ação de transição.</topic-coverage>
+            <keywords>Template de Maturidade, IM-TI, Questionário de Autoavaliação, Plano de Transição</keywords>
         </document>
     </document-mapping>
 </rag-metadata>

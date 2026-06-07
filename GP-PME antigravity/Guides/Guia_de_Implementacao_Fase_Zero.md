@@ -12,10 +12,11 @@ Este guia foi elaborado para Pequenas e Médias Empresas (PMEs) que estão inici
 
 ### A Fase Zero na TI Enxuta
 Na TI Enxuta, a implantação é dividida de forma a respeitar a capacidade da equipe. A Fase Zero visa libertar o profissional técnico do status de "faz-tudo" reativo e estressado, promovendo a transição rápida para **Orquestrador de Valor**:
-1.  **Foco em Eliminar Ruídos**: Centralização obrigatória dos chamados em Canal Único e visualização imediata no Kanban (Semana 1).
-2.  **Segurança Mínima**: Levantamento do Inventário 80/20 de ativos críticos e automação de backups na nuvem (Semana 2).
-3.  **Comunicação com Negócios**: O primeiro ritual CD-TI Lite de 30 minutos e Matriz 4 Quadrantes (Semana 3).
-4.  **Métricas Visíveis**: Coleta dos 3 KPIs básicos de performance e satisfação (Semana 4).
+1.  **Diagnóstico de Partida**: Aplicação do questionário de diagnóstico de maturidade (Template 8) no Dia 1 para fixar o baseline do Índice de Maturidade da TI (IM-TI).
+2.  **Foco em Eliminar Ruídos**: Centralização obrigatória dos chamados em Canal Único e visualização imediata no Kanban (Semana 1).
+3.  **Segurança Mínima**: Levantamento do Inventário 80/20 de ativos críticos e automação de backups na nuvem (Semana 2).
+4.  **Comunicação com Negócios**: O primeiro ritual CD-TI Lite de 30 minutos e Matriz 4 Quadrantes (Semana 3).
+5.  **Métricas Visíveis e Transição**: Coleta dos 3 KPIs básicos de performance e reavaliação de maturidade final para certificar a transição ao Nível 1: Reativo Organizado (Semana 4).
 
 **Princípio de Funcionamento Desacoplado**:
 Este cronograma foi desenhado para ser executado de forma **100% manual e analógica**. Caso a sua empresa opte por não utilizar Inteligência Artificial, siga as instruções de **Ação Manual**. Para empresas que buscam aceleração, utilize as diretrizes de **Atalhos Opcionais com IA**.
@@ -32,10 +33,10 @@ Este cronograma foi desenhado para ser executado de forma **100% manual e analó
 
 ## 1. Semana 1: Organizando o Caos Imediato (Dias 1 a 7)
 
-### Dia 1-2: Diagnóstico Rápido e Priorização
-*   **Ação Manual**: Avalie os principais gargalos da TI listando em uma folha as reclamações recorrentes dos colaboradores. Utilize a planilha de priorização (Matriz de Eisenhower) para definir as 3 prioridades operacionais da semana.
-*   **Atalho Opcional com IA**: Submeta a lista de reclamações ao seu **Analista de Execução Ágil (IA)** e peça para ele gerar a matriz priorizada em menos de 2 minutos.
-*   **Entregável**: Rascunho de 1 página contendo as 3 prioridades iniciais da TI.
+### Dia 1-2: Diagnóstico Rápido e Priorização de Maturidade
+*   **Ação Manual**: Aplique o **Questionário de Diagnóstico de Maturidade** ([Template_Mapeamento_Maturidade.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates/Mapeamento_Maturidade/Template_Mapeamento_Maturidade.md)) para classificar o estágio inicial de TI da empresa (IM-TI de partida, geralmente Nível 0: Caótico). Com base nas respostas negativas, liste os principais gargalos da TI e use a planilha de priorização (Matriz de Eisenhower) para definir as 3 prioridades operacionais da semana.
+*   **Atalho Opcional com IA**: Submeta as informações operacionais da PME ao seu **Analista de Execução Ágil (IA)** e peça para ele preencher o questionário de maturidade do Template 8 e gerar a matriz priorizada em menos de 2 minutos.
+*   **Entregável**: Planilha de Avaliação de Maturidade preenchida (IM-TI de baseline) e rascunho de 1 página contendo as 3 prioridades iniciais da TI.
 
 ### Dia 3-5: Implantação do Quadro Kanban de TI
 *   **Ação Manual**: Crie um quadro físico na parede (usando post-its) ou digital simples (Trello/Planner) com 4 colunas estritas: *A Fazer, Em Andamento, Em Teste, Concluído*. Transfira todas as solicitações anotadas em cadernos ou chats para o quadro.
@@ -80,9 +81,10 @@ Este cronograma foi desenhado para ser executado de forma **100% manual e analó
 *   **Ação Manual**: Configure a planilha de monitoramento contendo o IDSC (uptime de sistemas), TMpR (velocidade de suporte) e ISU (satisfação de usuários). Inicie a coleta das pesquisas de satisfação de 1 a 5 estrelas pós-atendimento aos usuários.
 *   **Entregável**: Painel de Monitoramento de KPIs ativo.
 
-### Dia 26-30: Retrospectiva e Transição de Fase
-*   **Ação Manual**: Execute reunião com o CEO analisando a eficiência dos processos: o tempo do técnico foi liberado? O Canal Único eliminou o caos? Os backups estão seguros? Identifique a Dívida de Arquitetura Normalizada (DAN) e planeje a transição de fase.
-*   **Entregável**: Relatório de transição de fase aprovado contendo os novos projetos estratégicos de TI.
+### Dia 26-30: Retrospectiva, Reavaliação e Transição de Fase
+*   **Ação Manual**: Execute uma reunião com o CEO analisando a eficiência dos novos processos. Reaplique o **Questionário de Maturidade GP-PME** ([Template_Mapeamento_Maturidade.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates/Mapeamento_Maturidade/Template_Mapeamento_Maturidade.md)) para computar o IM-TI final e certificar se a PME atingiu os critérios de transição para o **Nível 1: Reativo Organizado** (IM-TI entre 3 e 5, com Canal Único, Kanban e FAQs ativas). Identifique a Dívida de Arquitetura Normalizada (DAN) inicial para planejar a transição para a Fase Um (Módulo 2 e Módulo 3).
+*   **Atalho Opcional com IA**: Envie as métricas consolidadas dos KPIs e status do Kanban ao **Engenheiro de Prompts e Métricas (IA)** para calcular a evolução do IM-TI da Fase Zero e redigir o relatório de transição.
+*   **Entregável**: Relatório de transição de fase aprovado contendo o novo IM-TI de Nível 1 certificado e a assinatura do CEO, juntamente com a lista de novos projetos estratégicos de TI.
 
 ---
 
@@ -92,6 +94,7 @@ Para quantificar a eficácia dos primeiros 30 dias de implantação do GP-PME, o
 
 | Indicador Operacional | Baseline (Antes) | Meta (Após 30 dias) |
 |:---|:---|:---|
+| **Maturidade da TI (IM-TI)** | Nível 0 (IM-TI <= 2) | **Nível 1 (IM-TI >= 3)** |
 | **Centralização de Solicitações** | < 30% (caos via WhatsApp) | **> 90%** capturadas no Canal Único |
 | **Tempo de Resposta (TMpR)** | Indefinido (geralmente > 24h) | Redução de **30% a 40%** na resolução |
 | **Resoluções por Autoatendimento** | 0% (técnico faz tudo) | **> 40%** via FAQs (Manual ou Bot) |
