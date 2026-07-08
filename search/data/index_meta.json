@@ -1,0 +1,6 @@
+{
+  "model": "paraphrase-multilingual-MiniLM-L12-v2",
+  "dim": 384,
+  "n_chunks": 675,
+  "created": "2026-07-08T14:46:37.118428+00:00"
+}

@@ -1,0 +1,11 @@
+# GP-PME — dependências do motor de busca (search/)
+#
+# Núcleo (ingest, BM25, CLI em modo --modo bm25): NENHUMA dependência externa.
+# Usa apenas a biblioteca padrão do Python 3.10+ (json, math, pathlib, unicodedata, re).
+
+# semântica (opcional) — necessária para os modos "hibrido" e "semantico" de query.py
+sentence-transformers>=2.2
+
+# api (opcional) — necessária para rodar search/api.py (uvicorn search.api:app)
+fastapi>=0.110
+uvicorn>=0.27
