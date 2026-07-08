@@ -1,0 +1,228 @@
+{
+  "communities": {
+    "0": [
+      "bloco_1_pilar_estrategico_doc",
+      "capitulo_1_arquitetura_e_principios_atd_index_verdecchia",
+      "capitulo_2_governanca_essencial_adm_lite_cd_ti_lite",
+      "capitulo_2_governanca_essencial_adm_lite_doc",
+      "capitulo_2_governanca_essencial_adm_lite_kpis_visiveis",
+      "capitulo_5_metricas_avancadas_dan_e_cot_cot",
+      "capitulo_5_metricas_avancadas_dan_e_cot_dan",
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_agente_auditor",
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_agente_guardiao",
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_agente_orquestrador",
+      "guia_kpis_e_quick_wins_doc",
+      "guia_kpis_e_quick_wins_hacks_2019"
+    ],
+    "1": [
+      "bloco_1_pilar_estrategico_metodo_daa",
+      "bloco_5_roadmap_e_frame_sim_frame_sim",
+      "capitulo_1_arquitetura_e_principios_iceberg_invertido",
+      "capitulo_1_arquitetura_e_principios_ti_enxuta",
+      "gp_pme_documento_mestre_completo_leigos_doc",
+      "gp_pme_documento_mestre_completo_tecnico_doc",
+      "gp_pme_documento_mestre_completo_tecnico_gpt_best_practices",
+      "gp_pme_documento_mestre_consolidado_doc",
+      "gp_pme_documento_mestre_consolidado_gp_pme_framework",
+      "guia_gp_pme_para_leigos_doc",
+      "guia_modelo_de_maturidade_doc",
+      "guia_modelo_de_maturidade_im_ti"
+    ],
+    "2": [
+      "bloco_5_roadmap_e_frame_sim_doc",
+      "capitulo_1_arquitetura_e_principios_itil_4",
+      "capitulo_1_arquitetura_e_principios_scrum_guide",
+      "capitulo_3_execucao_agil_ciclo_micro_adaptativo_canal_unico",
+      "capitulo_3_execucao_agil_ciclo_micro_adaptativo_ciclo_micro_adaptativo",
+      "capitulo_3_execucao_agil_ciclo_micro_adaptativo_kanban",
+      "capitulo_3_execucao_agil_ciclo_micro_adaptativo_wip_limit",
+      "guia_kpis_e_quick_wins_fase_zero",
+      "guia_pilar_2_execucao_agil_raia_rapida",
+      "readme_doc"
+    ],
+    "3": [
+      "capitulo_1_arquitetura_e_principios_cis_controls_v8",
+      "capitulo_1_arquitetura_e_principios_nist_csf_2_0",
+      "capitulo_4_seguranca_critica_nist_lite_backups_testados",
+      "capitulo_4_seguranca_critica_nist_lite_inventario_80_20",
+      "capitulo_4_seguranca_critica_nist_lite_lua",
+      "capitulo_4_seguranca_critica_nist_lite_mfa",
+      "capitulo_4_seguranca_critica_nist_lite_nist_lite",
+      "capitulo_4_seguranca_critica_nist_lite_pri",
+      "templates_gp_pme_doc"
+    ],
+    "4": [
+      "capitulo_3_execucao_agil_ciclo_micro_adaptativo_mvp",
+      "guia_leigo_pilar_1_doc",
+      "guia_leigo_pilar_2_doc",
+      "guia_leigo_pilar_3_doc",
+      "guia_pilar_1_governanca_essencial_doc",
+      "guia_pilar_2_execucao_agil_doc",
+      "guia_pilar_3_seguranca_critica_doc",
+      "index_doc"
+    ],
+    "5": [
+      "capitulo_1_arquitetura_e_principios_cobit_2019",
+      "capitulo_1_arquitetura_e_principios_iso_38500",
+      "capitulo_2_governanca_essencial_adm_lite_adm_lite",
+      "capitulo_2_governanca_essencial_adm_lite_matriz_4_quadrantes",
+      "capitulo_2_governanca_essencial_adm_lite_raci_lite"
+    ],
+    "6": [
+      "capitulo_3_execucao_agil_ciclo_micro_adaptativo_prd_simplificado",
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_agente_analista",
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_prompt_chaining"
+    ],
+    "7": [
+      "bloco_2_pilar_execucao_agil_doc",
+      "capitulo_3_execucao_agil_ciclo_micro_adaptativo_doc"
+    ],
+    "8": [
+      "bloco_3_pilar_seguranca_essencial_doc",
+      "capitulo_4_seguranca_critica_nist_lite_doc"
+    ],
+    "9": [
+      "bloco_4_motor_de_ia_doc",
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_doc"
+    ],
+    "10": [
+      "capitulo_1_arquitetura_e_principios_doc",
+      "sumario_leigo_doc"
+    ],
+    "11": [
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_grounding",
+      "capitulo_6_motor_de_ia_e_engenharia_de_prompts_hitl"
+    ],
+    "12": [
+      "capitulo_5_metricas_avancadas_dan_e_cot_doc"
+    ]
+  },
+  "cohesion": {
+    "0": 0.21212121212121213,
+    "1": 0.22727272727272727,
+    "2": 0.28888888888888886,
+    "3": 0.3055555555555556,
+    "4": 0.35714285714285715,
+    "5": 0.4,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0
+  },
+  "gods": [
+    {
+      "id": "index_doc",
+      "label": "INDEX - Hub de Conhecimento RAG",
+      "degree": 11
+    },
+    {
+      "id": "templates_gp_pme_doc",
+      "label": "Biblioteca de Templates GP-PME",
+      "degree": 11
+    },
+    {
+      "id": "capitulo_4_seguranca_critica_nist_lite_nist_lite",
+      "label": "Modelo NIST-Lite",
+      "degree": 10
+    },
+    {
+      "id": "gp_pme_documento_mestre_consolidado_doc",
+      "label": "Documento Mestre Consolidado (v5.2)",
+      "degree": 8
+    },
+    {
+      "id": "capitulo_2_governanca_essencial_adm_lite_adm_lite",
+      "label": "Ciclo ADM-Lite (Avaliar, Dirigir, Monitorar)",
+      "degree": 7
+    },
+    {
+      "id": "readme_doc",
+      "label": "README - Framework GP-PME",
+      "degree": 6
+    },
+    {
+      "id": "capitulo_2_governanca_essencial_adm_lite_cd_ti_lite",
+      "label": "Comit\u00ea CD-TI Lite (Reuni\u00e3o de 30 minutos)",
+      "degree": 6
+    },
+    {
+      "id": "capitulo_5_metricas_avancadas_dan_e_cot_dan",
+      "label": "DAN (D\u00edvida de Arquitetura Normalizada)",
+      "degree": 6
+    },
+    {
+      "id": "gp_pme_documento_mestre_consolidado_gp_pme_framework",
+      "label": "GP-PME Framework",
+      "degree": 5
+    },
+    {
+      "id": "capitulo_3_execucao_agil_ciclo_micro_adaptativo_ciclo_micro_adaptativo",
+      "label": "Ciclo de Servi\u00e7o Micro-Adaptativo",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Documento Mestre Completo T\u00e9cnico (v6.0)",
+      "target": "Documento Mestre Consolidado (v5.2)",
+      "source_files": [
+        "GP-PME/GP-PME_Documento_Mestre_Completo_Tecnico.md",
+        "GP-PME antigravity/GP-PME_Documento_Mestre_Consolidado.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "README - Framework GP-PME",
+      "target": "Filosofia da TI Enxuta (Lean IT)",
+      "source_files": [
+        "README.md",
+        "GP-PME antigravity/GP-Pme complete/Capitulo_1_Arquitetura_e_Principios.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "README - Framework GP-PME",
+      "target": "Canal \u00danico de Suporte",
+      "source_files": [
+        "README.md",
+        "GP-PME antigravity/GP-Pme complete/Capitulo_3_Execucao_Agil_Ciclo_Micro_Adaptativo.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `Canal \u00danico de Suporte` unexpectedly reaches hub `README - Framework GP-PME`"
+    },
+    {
+      "source": "README - Framework GP-PME",
+      "target": "Ciclo de Servi\u00e7o Micro-Adaptativo",
+      "source_files": [
+        "README.md",
+        "GP-PME antigravity/GP-Pme complete/Capitulo_3_Execucao_Agil_Ciclo_Micro_Adaptativo.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "README - Framework GP-PME",
+      "target": "WIP Limit de 3 Tarefas",
+      "source_files": [
+        "README.md",
+        "GP-PME antigravity/GP-Pme complete/Capitulo_3_Execucao_Agil_Ciclo_Micro_Adaptativo.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 147592,
+    "output": 37344
+  }
+}
