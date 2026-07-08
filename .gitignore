@@ -14,3 +14,40 @@
 # 3. Permitir explicitamente o próprio arquivo .gitignore e README.md
 !.gitignore
 !README.md
+
+# 4. Entregáveis da Edição Comercial (v2.0)
+!/search/
+!/search/**
+!/agents/
+!/agents/**
+!/server/
+!/server/**
+!/Simulacao/
+!/Simulacao/**
+!/Comercial/
+!/Comercial/**
+!/.claude/
+!/.claude/skills/
+!/.claude/skills/**
+!/.mcp.json
+!/GP-Pme Article/
+!/GP-Pme Article/**
+!/graphify-out/
+!/graphify-out/**
+
+# 4.1 Artefatos de execução (não são produto)
+__pycache__/
+*.pyc
+.pytest_cache/
+graphify-out/cache/
+agents/gp-pme-adk/.env
+
+# Documentos locais ignorados
+GP-PME_Hypothesis_Validation.md
+
+# dotcontext runtime state
+.context/plans/
+.context/cache/semantic/
+.context/runtime/
+.context/**/archive/
+
