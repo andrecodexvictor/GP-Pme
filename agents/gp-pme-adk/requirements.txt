@@ -1,0 +1,14 @@
+# Dependências do pacote de agentes GP-PME (Google ADK).
+# Instale com:  pip install -r requirements.txt
+
+# Framework de agentes: define Agent/LlmAgent, sub_agents e function tools,
+# além dos comandos `adk run` e `adk web`.
+google-adk>=1.0.0
+
+# Cliente HTTP síncrono usado pelos adapters de plataforma (ClickUp, Notion,
+# Trello, Jira, Linear). Timeout de 30s e mensagens de erro em PT-BR.
+httpx>=0.27.0
+
+# Carrega as credenciais e configurações do arquivo .env (ver .env.example):
+# GPPME_PLATAFORMA, GPPME_MODEL, tokens das plataformas etc.
+python-dotenv>=1.0.0
