@@ -1,6 +1,182 @@
-# GP-PME Framework: Índice Geral e Hub de Conhecimento (RAG-Optimized)
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║  GP-PME · Governança Prática para Pequenas e Médias Empresas          ║ -->
+<!-- ║  Edição Comercial · v2.0 · 2026-07-07                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
 
-Este documento atua como o **Índice Geral (INDEX)** e portal central do framework **GP-PME (Governança Prática para Pequenas e Médias Empresas)**. Ele foi desenvolvido de forma híbrida: com clareza visual impecável para leitura humana e com **metadados semânticos estruturados** para máxima performance em sistemas de busca e recuperação por IA (**RAG - Geração Aumentada por Recuperação**).
+# GP-PME — Framework de Gestão de TI para PMEs
+
+### O sistema completo para transformar a TI de uma PME de centro de custo reativo em motor de valor — operável 100% no papel, turbinado por IA quando você quiser.
+
+> **Versão 2.0 · Edição Comercial** — Portal Central e Hub de Conhecimento (RAG-Optimized)
+
+Este documento é o **Índice Geral (INDEX)** e ponto de entrada único do framework **GP-PME (Governança Prática para Pequenas e Médias Empresas)**. Foi construído de forma híbrida: **clareza visual impecável** para leitura humana e **metadados semânticos estruturados** para máxima performance em busca por IA (**RAG — Geração Aumentada por Recuperação**).
+
+**Por que o GP-PME:**
+- 📉 **Menos desperdício, mais valor.** Metodologia de TI Enxuta que dimensiona a governança ao tamanho real da equipe — de um técnico solo a times de 100 pessoas — sem frameworks pesados de mercado.
+- ⚡ **Resultado desde as primeiras 24 horas.** A Fase Zero é um playbook de 30 dias com _Quick Wins_ medidos por 3 KPIs visíveis; retorno financeiro e estabilidade operacional antes do primeiro mês.
+- 🤖 **IA como acelerador, nunca como dependência.** Quatro camadas de IA (Skills, Agentes Markdown, Agentes ADK, MCP/API) que instalam e operam o método por você — mas o framework roda igual no papel se você desligar tudo.
+
+---
+
+## ⚡ Comece em 30 Minutos
+
+Um caminho guiado com checkpoints verificáveis. Marque cada item ao concluir — se todos estiverem ✅ ao fim, sua TI já está sob o método GP-PME.
+
+| ⏱️ | Passo | Ação | ✅ Checkpoint |
+|----|-------|------|---------------|
+| **0–5 min** | Entenda o mapa | Leia a seção _Arquitetura em 1 Imagem_ abaixo | Você sabe nomear os 4 pilares |
+| **5–15 min** | Escolha sua trilha | Vá para _Trilhas por Persona_ e siga a sua | Você tem 2–3 documentos abertos |
+| **15–25 min** | Rode o diagnóstico | Preencha o [Template de Mapeamento de Maturidade](Templates/Mapeamento_Maturidade/Template_Mapeamento_Maturidade.md) (questionário de 10 perguntas) | Você tem seu nível de maturidade (IM-TI) |
+| **25–30 min** | Ative o primeiro Quick Win | Abra o [Guia da Fase Zero](Guides/Guia_de_Implementacao_Fase_Zero.md) e execute o item da Semana 1 | Você tem o Canal Único e o Kanban definidos |
+
+> 💡 **Prefere ver antes de ler?** Abra o portal visual em [`../GP-Pme Article/index.html`](../GP-Pme%20Article/index.html) ou pesquise qualquer conceito na busca semântica em [`../GP-Pme Article/busca.html`](../GP-Pme%20Article/busca.html).
+
+---
+
+## 🧭 Arquitetura em 1 Imagem
+
+Três pilares obrigatórios sustentam o método; o quarto (IA) é um acelerador **opcional e transversal**. Camadas transversais de diagnóstico e cadência conectam tudo.
+
+```mermaid
+flowchart TB
+    subgraph CORE["🏛️ GP-PME · Núcleo Obrigatório"]
+        P1["**Pilar I**<br/>Governança Essencial<br/><i>ADM-Lite · CD-TI Lite · 4 Quadrantes</i>"]
+        P2["**Pilar II**<br/>Execução Ágil<br/><i>Kanban · WIP 3 · MVP 2 semanas</i>"]
+        P3["**Pilar III**<br/>Segurança Crítica<br/><i>NIST-Lite · Backup 3-2-1 · PRI</i>"]
+    end
+    P4["**Pilar IV** (opcional)<br/>Assistência por IA e Agentes<br/><i>Prompts · Subagentes · HITL</i>"]
+
+    subgraph TRANS["🔄 Camadas Transversais"]
+        T1["Modelo de Maturidade<br/>(5 níveis × 4 pilares)"]
+        T2["KPIs e Métricas<br/>(IDSC · TMpR · ISU · DAN · COT)"]
+        T3["Fase Zero<br/>(Playbook 30 dias)"]
+    end
+
+    P1 --- P2 --- P3
+    P4 -.acelera.-> P1 & P2 & P3
+    TRANS -.mede & guia.-> CORE
+
+    classDef core fill:#0f4c81,stroke:#0a3255,color:#fff
+    classDef ai fill:#7a3ea8,stroke:#4f2670,color:#fff
+    classDef trans fill:#1f7a4d,stroke:#12492e,color:#fff
+    class P1,P2,P3 core
+    class P4 ai
+    class T1,T2,T3 trans
+```
+
+---
+
+## 🧑‍💼 Trilhas por Persona
+
+Escolha seu perfil e siga a sequência recomendada. Tempos são estimativas de leitura + primeira execução.
+
+### 👔 Dono / CEO (não técnico) — _~1 hora_
+Você quer entender o valor e controlar a TI sem virar técnico.
+1. [Guia GP-PME para Leigos](guide-for-dummies/Guia_GP-PME_para_Leigos.md) — jargão zero, a jornada da TI Enxuta.
+2. [Guia Leigo · Pilar 1](guide-for-dummies/Guia_Leigo_Pilar_1.md) — como rodar o comitê CD-TI Lite quinzenal de 30 min.
+3. **Proposta de valor** em [`../Comercial/`](../Comercial/) — one-pager, precificação e ROI para decisão.
+
+### 🛠️ Gestor de TI / Profissional de Tecnologia — _~3 horas_
+Você vai implantar o método na prática.
+1. [Documento Mestre Consolidado](GP-PME_Documento_Mestre_Consolidado.md) — arquitetura e a jornada da TI Enxuta.
+2. [Guia da Fase Zero](Guides/Guia_de_Implementacao_Fase_Zero.md) — cronograma dos primeiros 30 dias.
+3. [Templates GP-PME](Templates_GP-PME.md) + biblioteca em [Templates/](Templates/) — artefatos de 1 página prontos.
+4. [Guia de KPIs e Quick Wins](Guides/Guia_KPIs_e_Quick_Wins.md) — para provar valor com métricas.
+
+### 🎯 Consultor / Implantador — _~1 dia_
+Você instala o GP-PME em clientes e precisa de escala.
+1. Todos os 4 Guias de Pilar + [Modelo de Maturidade](Guides/Guia_Modelo_de_Maturidade.md).
+2. **Agentes ADK** em [`../agents/gp-pme-adk/`](../agents/gp-pme-adk/) — o orquestrador instala o kanban GP-PME direto no ClickUp/Notion/Trello/Jira/Linear (com _dry-run_ para demo).
+3. **Simulação de implantação** em [`../Simulacao/`](../Simulacao/) — perfis de TI solo/25/50/100 funcionários, com e sem framework, e o ROI comparado.
+4. **Kit comercial** em [`../Comercial/`](../Comercial/) — proposta, precificação e onboarding.
+
+### 🧑‍💻 Dev / Entusiasta de IA — _~2 horas_
+Você quer explorar as camadas de automação e o ecossistema técnico.
+1. [Guia Pilar 4 · Assistência por IA e Agentes](Guides/Guia_Pilar_4_Assistencia_IA_e_Agentes.md) — prompts, subagentes, grounding e HITL.
+2. **Busca semântica** em [`../search/`](../search/) — CLI `python -m search.query` e API FastAPI.
+3. **Skills Claude Code** em [`../.claude/skills/`](../.claude/skills/) e **agentes plug-and-play** em [Templates/AI-Skills-and-Agents/Agentes_Prontos/](Templates/AI-Skills-and-Agents/Agentes_Prontos/).
+4. **Servidor MCP + API REST** em [`../server/`](../server/) e o **grafo de conhecimento** em [`../graphify-out/graph.html`](../graphify-out/graph.html).
+
+---
+
+## 📚 Catálogo Completo do Framework
+
+Todo artefato do GP-PME, navegável. Colunas: **artefato · o que é · quando usar · link**.
+
+### 📖 Documento Mestre e Templates de Base
+
+| Artefato | O que é | Quando usar | Link |
+|----------|---------|-------------|------|
+| Documento Mestre Consolidado | Visão geral de arquitetura, Iceberg Invertido, Governança vs Gestão e métricas financeiras (DAN/COT) | Para entender o framework por inteiro | [abrir](GP-PME_Documento_Mestre_Consolidado.md) |
+| Templates GP-PME | Os 7 artefatos de 1 página prontos para preencher | Ao implantar o método no dia a dia | [abrir](Templates_GP-PME.md) |
+
+### 🧱 Guias Avançados (os 4 Pilares + Transversais)
+
+| Artefato | O que é | Quando usar | Link |
+|----------|---------|-------------|------|
+| Pilar 1 · Governança Essencial | ADM-Lite, comitê CD-TI Lite, RACI, Matriz 4 Quadrantes | Para alinhar TI a faturamento e prioridades | [abrir](Guides/Guia_Pilar_1_Governanca_Essencial.md) |
+| Pilar 2 · Execução Ágil | Kanban de TI, WIP 3, Canal Único, MVP e ciclo One-Man-Band | Para organizar o fluxo operacional diário | [abrir](Guides/Guia_Pilar_2_Execucao_Agil.md) |
+| Pilar 3 · Segurança Crítica | NIST CSF 2.0 e CIS v8 (IG1), Backup 3-2-1, PRI de 1 página | Para blindar ativos e crescer com segurança | [abrir](Guides/Guia_Pilar_3_Seguranca_Critica.md) |
+| Pilar 4 · Assistência por IA | Prompts de contexto/restrição/validação, 4 subagentes, HITL | Ao acelerar a burocracia técnica com IA | [abrir](Guides/Guia_Pilar_4_Assistencia_IA_e_Agentes.md) |
+| Fase Zero (Implementação) | Cronograma semanal dos primeiros 30 dias com checkpoints | No arranque da implantação | [abrir](Guides/Guia_de_Implementacao_Fase_Zero.md) |
+| KPIs e Quick Wins | Os 3 KPIs visíveis + DAN/COT + Quick Wins da Fase Zero | Para medir e provar valor cedo | [abrir](Guides/Guia_KPIs_e_Quick_Wins.md) |
+| Modelo de Maturidade | Matriz 5 níveis × 4 pilares, questionário e checklists de transição | Para diagnosticar e planejar evolução | [abrir](Guides/Guia_Modelo_de_Maturidade.md) |
+
+### 🧑‍🏫 Guias para Leigos (jargão zero)
+
+| Artefato | O que é | Quando usar | Link |
+|----------|---------|-------------|------|
+| GP-PME para Leigos (Mestre) | Framework explicado sem termos técnicos | CEO/dono não técnico começando | [abrir](guide-for-dummies/Guia_GP-PME_para_Leigos.md) |
+| Leigo · Pilar 1 | Rodar CD-TI Lite e Matriz 4 Quadrantes sem complicação | Para conduzir o comitê quinzenal | [abrir](guide-for-dummies/Guia_Leigo_Pilar_1.md) |
+| Leigo · Pilar 2 | Kanban de post-its, WIP 3 e MVP de 2 semanas | Para organizar tarefas visualmente | [abrir](guide-for-dummies/Guia_Leigo_Pilar_2.md) |
+| Leigo · Pilar 3 | Auditar backup, configurar MFA, roteiro PRI na parede | Para segurança básica sem TI | [abrir](guide-for-dummies/Guia_Leigo_Pilar_3.md) |
+
+### 🧩 Biblioteca de Templates Desacoplados
+
+| Artefato | O que é | Quando usar | Link |
+|----------|---------|-------------|------|
+| Prompt Mestre | Estrutura canônica de engenharia de prompts (Persona/Contexto/Instruções/Saída/Restrições) | Base para qualquer prompt do método | [abrir](Templates/Prompts/Template_Prompt_Mestre.md) |
+| Prompt PRD | Transforma dor de negócio em PRD de 1 página | Ao especificar um MVP rápido | [abrir](Templates/Prompts/Template_Prompt_PRD.md) |
+| Prompt Risco | Análise de risco NIST-Lite / CIS IG1 | Em auditorias rápidas de segurança | [abrir](Templates/Prompts/Template_Prompt_Risco.md) |
+| PRD Completo | Modelo de PRD com critérios Dado/Quando/Então e escopo negativo | Ao documentar requisitos ágeis | [abrir](Templates/PRDs/Template_PRD_Completo.md) |
+| Tasklist Operacional | Checklist de sprints com status, responsáveis e validação | Na condução de sprints | [abrir](Templates/Tasklists/Template_Tasklist_Operacional.md) |
+| System Prompt dos Agentes | Prompts de sistema dos 4 agentes (Orquestrador/Analista/Guardião/Auditor) | Ao instanciar os agentes de IA | [abrir](Templates/AI-Skills-and-Agents/Template_System_Prompt_Agentes.md) |
+| Checklist de Auditoria HITL | Revisão humana obrigatória contra alucinação | Antes de homologar saídas de IA | [abrir](Templates/AI-Skills-and-Agents/Template_Checklist_Auditoria_HITL.md) |
+| Mapeamento de Maturidade | Folha de pontuação, questionário e plano de transição | No diagnóstico inicial e reavaliações | [abrir](Templates/Mapeamento_Maturidade/Template_Mapeamento_Maturidade.md) |
+
+### 🤖 Ecossistema de IA e Automação (Edição Comercial)
+
+| Artefato | O que é | Quando usar | Link |
+|----------|---------|-------------|------|
+| Skills Claude Code | 8 skills (`consultor`, `fase-zero`, `kanban`, `governanca`, `seguranca`, `metricas`, `maturidade`, `prd`) | Dentro do Claude Code, para operar o método | [`../.claude/skills/`](../.claude/skills/) |
+| Agentes Prontos (Markdown) | 9 agentes copiar-e-colar em Claude Projects / GPTs | Sem infra, direto na sua conta de IA | [Agentes_Prontos/](Templates/AI-Skills-and-Agents/Agentes_Prontos/) |
+| Agentes ADK (Google) | Orquestrador "Gestor GP-PME" + 8 especialistas com adapters ClickUp/Notion/Trello/Jira/Linear | Para instalar e operar o kanban GP-PME na sua plataforma | [`../agents/gp-pme-adk/`](../agents/gp-pme-adk/) |
+| Servidor MCP + API REST | Endpoint programático do framework | Em ambientes hostis a ferramentas de gestão | [`../server/`](../server/) |
+| Busca Semântica | CLI `python -m search.query` + API FastAPI | Para achar qualquer conceito por significado | [`../search/`](../search/) · [busca.html](../GP-Pme%20Article/busca.html) |
+| Grafo de Conhecimento | Visualização interativa das relações do framework | Para navegar dependências entre conceitos | [graph.html](../graphify-out/graph.html) · [GRAPH_REPORT.md](../graphify-out/GRAPH_REPORT.md) |
+
+### 📈 Vitrine, Simulação e Comercial
+
+| Artefato | O que é | Quando usar | Link |
+|----------|---------|-------------|------|
+| Portal Visual | Navegação web interativa (design "Google Stitch") | Para explorar o framework visualmente | [index.html](../GP-Pme%20Article/index.html) |
+| Simulação de Implantação | Perfis TI solo/25/50/100, com/sem framework, ROI | Para justificar o investimento | [`../Simulacao/`](../Simulacao/) |
+| Kit Comercial | Proposta de valor, one-pager, precificação, onboarding | No processo de venda e adoção | [`../Comercial/`](../Comercial/) |
+
+---
+
+## 🧠 Ecossistema de IA do GP-PME — As 4 Camadas
+
+O GP-PME oferece **quatro formas de deixar a IA operar o método por você**. Elas não competem: você escolhe pela infraestrutura que tem e pelo grau de automação que quer.
+
+| Camada | O que é | Onde roda | Escolha quando... |
+|--------|---------|-----------|-------------------|
+| **1 · Skills** | Habilidades nativas do Claude Code | Terminal / Claude Code | Você já usa Claude Code e quer o método como comandos |
+| **2 · Agentes Markdown** | 9 personas prontas para copiar-e-colar | Claude Projects / GPTs | Você quer zero setup — só colar em uma conta de IA |
+| **3 · Agentes ADK** | Orquestrador + 8 especialistas em Python (Google ADK) | Seu servidor / nuvem | Você quer que a IA **instale e opere** o kanban na sua plataforma (ClickUp, Notion, Trello, Jira, Linear) |
+| **4 · MCP + API REST** | Servidor programático do framework | Qualquer stack | Você precisa integrar o GP-PME a sistemas ou ambientes sem ferramentas de gestão |
+
+> **Regra de ouro:** todas as camadas são **opcionais** (Pilar IV). O núcleo obrigatório — Pilares I, II e III — funciona 100% no papel. A IA só acelera; nunca é pré-requisito.
 
 ---
 
@@ -173,16 +349,54 @@ Esta seção contém blocos de metadados semânticos estruturados para indexador
             <topic-coverage>Template oficial contendo folha de pontuação, questionário rápido de autoavaliação e plano de ação de transição.</topic-coverage>
             <keywords>Template de Maturidade, IM-TI, Questionário de Autoavaliação, Plano de Transição</keywords>
         </document>
+        <document file="../search/">
+            <topic-coverage>Motor de busca semântica (RAG) do GP-PME. CLI via `python -m search.query` e API FastAPI (search/api.py) que indexa todos os guias, templates e capítulos do framework para recuperação por significado.</topic-coverage>
+            <keywords>Busca Semântica, RAG, FastAPI, python -m search.query, Embeddings, Recuperação, busca.html</keywords>
+        </document>
+        <document file="../graphify-out/graph.html">
+            <topic-coverage>Grafo de conhecimento interativo do GP-PME que visualiza as relações entre pilares, guias, templates e conceitos. Acompanhado do relatório GRAPH_REPORT.md com a análise das conexões.</topic-coverage>
+            <keywords>Grafo de Conhecimento, Knowledge Graph, graph.html, GRAPH_REPORT, Relações, Dependências entre Conceitos</keywords>
+        </document>
+        <document file="../agents/gp-pme-adk/">
+            <topic-coverage>Suíte de agentes Google ADK: orquestrador "Gestor GP-PME" e 8 especialistas (governança, execução ágil, segurança, métricas/auditoria, maturidade, fase zero, PRD, prompts) com adapters para ClickUp, Notion, Trello, Jira e Linear que instalam o kanban GP-PME na plataforma (modo dry-run para demonstração).</topic-coverage>
+            <keywords>Google ADK, Orquestrador Gestor GP-PME, Agentes Especialistas, Adapters, ClickUp, Notion, Trello, Jira, Linear, Kanban, Dry-run, Instalação Automatizada</keywords>
+        </document>
+        <document file="Templates/AI-Skills-and-Agents/Agentes_Prontos/">
+            <topic-coverage>Nove agentes de IA plug-and-play em formato Markdown, prontos para copiar-e-colar em Claude Projects ou GPTs, sem qualquer infraestrutura, para operar o método GP-PME diretamente em contas de IA generativa.</topic-coverage>
+            <keywords>Agentes Prontos, Plug-and-Play, Markdown, Claude Projects, GPTs, Copiar e Colar, Sem Setup</keywords>
+        </document>
+        <document file="../.claude/skills/">
+            <topic-coverage>Oito skills para Claude Code que operam o método GP-PME como comandos nativos: gp-pme-consultor, gp-pme-fase-zero, gp-pme-kanban, gp-pme-governanca, gp-pme-seguranca, gp-pme-metricas, gp-pme-maturidade e gp-pme-prd.</topic-coverage>
+            <keywords>Claude Code Skills, gp-pme-consultor, gp-pme-fase-zero, gp-pme-kanban, gp-pme-governanca, gp-pme-seguranca, gp-pme-metricas, gp-pme-maturidade, gp-pme-prd</keywords>
+        </document>
+        <document file="../server/">
+            <topic-coverage>Servidor MCP (Model Context Protocol) e API REST que expõem o framework GP-PME de forma programática, para integração com sistemas e uso em ambientes hostis a ferramentas de gestão tradicionais.</topic-coverage>
+            <keywords>Servidor MCP, Model Context Protocol, API REST, Integração, Endpoint Programático</keywords>
+        </document>
+        <document file="../Simulacao/">
+            <topic-coverage>Simulação de implantação do GP-PME com perfis de TI (solo, 25, 50 e 100 funcionários), cenários com e sem framework e cálculo comparativo de ROI para justificar o investimento.</topic-coverage>
+            <keywords>Simulação, ROI, Perfis de TI, Solo, 25 funcionários, 50 funcionários, 100 funcionários, Com e Sem Framework, Justificativa de Investimento</keywords>
+        </document>
+        <document file="../Comercial/">
+            <topic-coverage>Kit comercial do GP-PME: proposta de valor, one-pager, tabela de precificação e roteiro de onboarding para venda e adoção do framework como produto.</topic-coverage>
+            <keywords>Comercial, Proposta de Valor, One-Pager, Precificação, Pricing, Onboarding, Vendas</keywords>
+        </document>
     </document-mapping>
 </rag-metadata>
 ```
 
 ---
 
-## 🎯 Instruções para Leitura Humana
+## 📌 Changelog
 
-Se você está começando a ler a documentação do GP-PME agora, siga este roteiro de leitura recomendado:
+### v2.0 — Edição Comercial · 2026-07-07
+- **Reposicionamento como produto premium**: nova capa, tagline, proposta de valor e trilhas por persona com tempo estimado (CEO/dono, gestor de TI, consultor, dev/IA).
+- **Quick Start "Comece em 30 minutos"** com checkpoints verificáveis.
+- **Arquitetura em 1 imagem** (diagrama Mermaid dos 4 pilares + camadas transversais).
+- **Catálogo completo navegável** em tabelas (artefato · o que é · quando usar · link).
+- **Ecossistema de IA em 4 camadas**: Skills (`.claude/skills/`), Agentes Markdown (`Agentes_Prontos/`), Agentes ADK (`agents/gp-pme-adk/`) e MCP/API (`server/`).
+- **Novos ativos**: busca semântica (`search/` + `busca.html`), grafo de conhecimento (`graphify-out/`), simulação de ROI (`Simulacao/`) e kit comercial (`Comercial/`).
+- **Bloco `<rag-metadata>` estendido** com entradas para todos os novos artefatos (entradas originais preservadas intactas).
 
-1.  **Dono da Empresa / CEO (Não Técnico)**: Inicie com o **[Guia_GP-PME_para_Leigos.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/guide-for-dummies/Guia_GP-PME_para_Leigos.md)** para compreender os conceitos sem termos complexos. A seguir, leia o **[Guia_Leigo_Pilar_1.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/guide-for-dummies/Guia_Leigo_Pilar_1.md)** para ver como operar o seu comitê CD-TI Lite quinzenal de 30 minutos.
-2.  **Gestor de TI / Profissional de Tecnologia**: Leia o **[GP-PME_Documento_Mestre_Consolidado.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/GP-PME_Documento_Mestre_Consolidado.md)** para compreender a arquitetura técnica geral e a jornada evolutiva da TI Enxuta. Na sequência, implemente a **Fase Zero** utilizando o cronograma contido em **[Guia_de_Implementacao_Fase_Zero.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_de_Implementacao_Fase_Zero.md)** e os modelos prontos em **[Templates_GP-PME.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates_GP-PME.md)**.
-3.  **Para Aceleração Digital**: Caso deseje automatizar seus processos e utilizar ferramentas de IA Generativa de forma segura e profissional, utilize o **[Guia_Pilar_4_Assistencia_IA_e_Agentes.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_Pilar_4_Assistencia_IA_e_Agentes.md)** para configurar seus subagentes e prompts de grounding.
+### v1.0 — Framework Base
+- Núcleo dos 4 pilares, guias avançados e para leigos, biblioteca de templates de 1 página, modelo de maturidade e bloco de metadados RAG original.

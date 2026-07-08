@@ -48,4 +48,23 @@ Isso garante que a TI possa ser **micro-adaptativa** — respondendo a incidente
 
 ---
 
+## 🚀 Novidades da Edição Comercial (v2.0)
+
+O GP-PME agora é um produto completo: além da documentação, ele traz busca inteligente, agentes de IA prontos para operar a gestão e integração com as principais plataformas de mercado.
+
+| Capacidade | O que faz | Onde está |
+|---|---|---|
+| 🔎 **Busca Semântica** | Pergunte em linguagem natural e receba a seção exata do framework (CLI, API REST e página web offline) | [search/](search/) · [busca.html](GP-Pme%20Article/busca.html) |
+| 🕸️ **Grafo de Conhecimento** | Mapa navegável de todos os conceitos do framework e suas conexões | [graphify-out/](graphify-out/) |
+| 🤖 **Agentes Google ADK** | Orquestrador "Gestor GP-PME" + 8 especialistas que instalam e operam o kanban do framework em ClickUp, Notion, Trello, Jira e Linear | [agents/gp-pme-adk/](agents/gp-pme-adk/) |
+| 📋 **Agentes Plug-and-Play** | 9 system prompts prontos para copiar em Claude Projects, GPTs ou qualquer chat | [Agentes_Prontos/](GP-PME%20antigravity/Templates/AI-Skills-and-Agents/Agentes_Prontos/) |
+| 🧩 **Skills Claude Code** | 8 skills engatáveis (consultor, fase zero, kanban, governança, segurança, métricas, maturidade, PRD) | [.claude/skills/](.claude/skills/) |
+| 🔌 **Servidor MCP + API** | O framework como serviço para ambientes hostis a ferramentas de gestão | [server/](server/) |
+| 📊 **Simulação de Implantação** | Antes × depois com ROI para empresas de 10 a 100 funcionários | [Simulacao/](Simulacao/) |
+| 💼 **Kit Comercial** | Proposta de valor, one-pager, precificação e onboarding de cliente | [Comercial/](Comercial/) |
+
+> Comece pelo novo [INDEX.md](GP-PME%20antigravity/INDEX.md) — o índice premium com trilhas por persona e o catálogo completo de artefatos.
+
+---
+
 *Repositório gerido sob os padrões de qualidade técnica do framework GP-PME.*
