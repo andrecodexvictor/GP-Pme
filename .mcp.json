@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "gp-pme": {
+      "command": "python",
+      "args": ["-m", "server.mcp_server"]
+    },
+    "dotcontext": {
+      "command": "npx",
+      "args": ["-y", "@dotcontext/mcp@latest"]
+    },
+    "graphify": {
+      "command": "python",
+      "args": ["-m", "graphify.serve", "graphify-out/graph.json"]
+    }
+  }
+}

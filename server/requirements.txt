@@ -1,0 +1,12 @@
+# Dependencias da camada de servidor do GP-PME.
+#
+# IMPORTANTE: server/core.py roda SEM nenhuma dependencia (so biblioteca padrao).
+# Estas libs sao necessarias apenas para as fachadas API/MCP:
+
+mcp>=1.2.0          # SDK do servidor MCP (mcp_server.py) — requer Python 3.10+
+fastapi>=0.110      # API REST (api.py)
+uvicorn>=0.27       # servidor ASGI que executa a API (uvicorn server.api:app)
+pydantic>=2.0       # validacao dos modelos de entrada da API (ja e dependencia do FastAPI)
+
+# Busca no corpus (buscar_conhecimento): as dependencias ficam em search/requirements.txt.
+# Sem os indices de search/, a busca degrada com mensagem clara — nao quebra o servidor.
