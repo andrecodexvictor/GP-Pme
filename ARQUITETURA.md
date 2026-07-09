@@ -74,6 +74,88 @@ flowchart TB
     CLIENTE(("👤 Cliente /<br/>Consultor")) --> WEB & CLI & MCP & REST & ORQ & SKILLS & PRONTOS & SIM & COM
 ```
 
+## 🧱 Diagrama de blocos (visão em quadradinhos)
+
+A mesma arquitetura em blocos, camada por camada, com o fluxo que cada coisa segue —
+de onde o conhecimento nasce (topo) até quem consome (base):
+
+```
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                     📚 NÚCLEO DE CONHECIMENTO (fonte da verdade)               │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌───────────────────────┐  │
+│  │  INDEX.md    │ │  Guides/     │ │  Templates/  │ │  dummies + capítulos  │  │
+│  │  v2.0 + rag- │ │  7 guias dos │ │  7 artefatos │ │  + documentos mestre  │  │
+│  │  metadata    │ │  4 pilares   │ │  de 1 página │ │  (leigos e técnico)   │  │
+│  └──────┬───────┘ └──────┬───────┘ └──────┬───────┘ └───────────┬───────────┘  │
+└─────────┼────────────────┼────────────────┼─────────────────────┼──────────────┘
+          │ keywords       │ chunking / destilação / fórmulas     │
+          ▼                ▼                ▼                     ▼
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                          🔎 CAMADA DE DESCOBERTA                               │
+│  ┌───────────┐   ┌──────────────┐   ┌─────────────┐   ┌────────────────────┐  │
+│  │ ingest.py │──▶│ corpus.jsonl │──▶│ bm25.json + │──▶│ CLI · API /search  │  │
+│  │ (chunks)  │   │  675 chunks  │   │ embeddings  │   │ · busca.html (off) │  │
+│  └───────────┘   └──────┬───────┘   └─────────────┘   └────────────────────┘  │
+│                         │ export_web        ┌──────────────────────────────┐  │
+│                         └───────────────▶   │ graphify-out/ (grafo:        │  │
+│                                             │ graph.html + query + report) │  │
+│                                             └──────────────────────────────┘  │
+└───────────────────────────────────────────────────────────────────────────────┘
+          │
+          ▼
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                    🤖 ECOSSISTEMA DE IA (4 camadas, leve → integrado)          │
+│                                                                                │
+│  ① ┌────────────────────┐  ② ┌────────────────────┐                            │
+│    │ .claude/skills/    │    │ Agentes_Prontos/   │                            │
+│    │ 8 skills gp-pme-*  │    │ 9 system prompts   │                            │
+│    │ (Claude Code)      │    │ (Projects/GPTs)    │                            │
+│    └────────────────────┘    └────────────────────┘                            │
+│                                                                                │
+│  ③ ┌─────────────────────────────────────────────┐                             │
+│    │        agents/gp-pme-adk/ (Google ADK)      │                             │
+│    │  ┌───────────────┐   ┌────────────────────┐ │                             │
+│    │  │ orquestrador  │──▶│ 8 especialistas    │ │                             │
+│    │  │ Gestor GP-PME │   │ gov·agil·seg·metr· │ │                             │
+│    │  └───────┬───────┘   │ mat·fz·prd·prompts │ │                             │
+│    │          │           └────────────────────┘ │                             │
+│    │          ▼                                  │                             │
+│    │  ┌───────────────────────────────────────┐  │                             │
+│    │  │ adapters/ (base + 5 plataformas)      │  │                             │
+│    │  └──────────────────┬────────────────────┘  │                             │
+│    └─────────────────────┼───────────────────────┘                             │
+│                          ▼                                                     │
+│    ┌────────┐ ┌────────┐ ┌────────┐ ┌──────┐ ┌────────┐                        │
+│    │ClickUp │ │ Notion │ │ Trello │ │ Jira │ │ Linear │  🏢 plataformas        │
+│    └────────┘ └────────┘ └────────┘ └──────┘ └────────┘                        │
+│                                                                                │
+│  ④ ┌─────────────────────────────────────────────┐                             │
+│    │   server/ (para ambientes restritos)        │                             │
+│    │  ┌─────────┐    ┌──────────┐  ┌───────────┐ │                             │
+│    │  │ core.py │───▶│ api.py   │  │ mcp_      │ │                             │
+│    │  │ (regras │    │ REST ·12 │  │ server.py │ │                             │
+│    │  │  puras) │───▶│ rotas    │  │ ·11 tools │ │                             │
+│    │  └─────────┘    └──────────┘  └───────────┘ │                             │
+│    └─────────────────────────────────────────────┘                             │
+└───────────────────────────────────────────────────────────────────────────────┘
+          │
+          ▼
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                          💼 CAMADA DE NEGÓCIO                                  │
+│  ┌─────────────────────────────┐        ┌─────────────────────────────────┐   │
+│  │ Simulacao/                  │───────▶│ Comercial/                      │   │
+│  │ 4 perfis (10→100 func.)     │números │ proposta · one-pager ·          │   │
+│  │ + Calculadora_ROI           │        │ precificação · onboarding 30d   │   │
+│  └─────────────────────────────┘        └─────────────────────────────────┘   │
+└───────────────────────────────────────────────────────────────────────────────┘
+          │
+          ▼
+   ┌─────────────────┐
+   │ 👤 CLIENTE /    │   consome por qualquer porta: busca.html, CLI, API,
+   │    CONSULTOR    │   MCP, agentes, skills, simulação e kit comercial
+   └─────────────────┘
+```
+
 ## 🕸️ Grafo de relações entre componentes
 
 Visão em grafo (estilo knowledge graph): quem **deriva de**, **consome** ou **opera** quem.
