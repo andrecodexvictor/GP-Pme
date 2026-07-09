@@ -74,6 +74,144 @@ flowchart TB
     CLIENTE(("👤 Cliente /<br/>Consultor")) --> WEB & CLI & MCP & REST & ORQ & SKILLS & PRONTOS & SIM & COM
 ```
 
+## 🕸️ Grafo de relações entre componentes
+
+Visão em grafo (estilo knowledge graph): quem **deriva de**, **consome** ou **opera** quem.
+
+```mermaid
+graph LR
+    GUIAS(("Guias dos<br/>4 Pilares"))
+    TPL(("Templates<br/>1 página"))
+    RAG(("rag-metadata<br/>do INDEX"))
+
+    CORPUS["corpus.jsonl"]
+    IDX["índices<br/>BM25 + embeddings"]
+    BHTML["busca.html"]
+    GRAFO["graph.json<br/>(graphify)"]
+
+    SKILLS["8 skills<br/>gp-pme-*"]
+    PRONTOS["9 agentes<br/>markdown"]
+    ADK["9 agentes<br/>ADK"]
+    ADAPT["5 adapters"]
+    CORE["server/core.py"]
+    REST["API REST"]
+    MCPS["MCP server"]
+
+    SIM["Simulação<br/>4 perfis"]
+    COM["Kit<br/>Comercial"]
+    KAN["Quadro Kanban<br/>na plataforma"]
+
+    GUIAS -- "chunking" --> CORPUS
+    TPL -- "chunking" --> CORPUS
+    RAG -- "keywords" --> CORPUS
+    CORPUS --> IDX
+    CORPUS -- "export_web" --> BHTML
+    GUIAS -- "extração LLM" --> GRAFO
+
+    GUIAS -- "destilados em" --> SKILLS & PRONTOS & ADK
+    TPL -- "geram artefatos via" --> ADK
+    GUIAS -- "fórmulas exatas" --> CORE
+    CORE --> REST & MCPS
+    IDX -- "buscar()" --> CORE
+
+    ADK -- "usa tools de" --> ADAPT
+    ADAPT -- "cria/opera" --> KAN
+
+    GUIAS -- "metodologia" --> SIM
+    SIM -- "números-âncora" --> COM
+
+    classDef fonte fill:#1a5276,color:#fff
+    class GUIAS,TPL,RAG fonte
+```
+
+## 🔁 Fluxograma do protocolo de gestão (o que os agentes executam)
+
+O protocolo operacional do framework — é este fluxo que o orquestrador "Gestor GP-PME",
+as skills e os agentes prontos conduzem na empresa:
+
+```mermaid
+flowchart TD
+    START(["Empresa adota o GP-PME"]) --> DIAG["Autoavaliação de maturidade<br/>(10 perguntas → IM-TI)"]
+    DIAG --> NIVEL{"Nível de<br/>maturidade?"}
+    NIVEL -- "0-1 (caos)" --> FZ["FASE ZERO (30 dias):<br/>1. Nomear Dono da TI + CD-TI Lite<br/>2. Canal Único de demandas<br/>3. Kanban 4 colunas, WIP=3<br/>4. Matriz 4 Quadrantes<br/>5. KPIs IDSC/TMpR/ISU<br/>6. Checklist 10 controles<br/>7. Primeiro sprint semanal"]
+    NIVEL -- "2+" --> KANOP
+    FZ --> KANOP["OPERAÇÃO SEMANAL<br/>Sprint de 1 semana"]
+
+    KANOP --> PUXA["Puxar tarefa de 'A Fazer'<br/>para 'Em Andamento'"]
+    PUXA --> WIP{"WIP ≤ 3?"}
+    WIP -- "não" --> TERMINA["Terminar um item antes<br/>de puxar outro"] --> PUXA
+    WIP -- "sim" --> EXEC["Executar → Em Teste → Concluído"]
+
+    EXEC --> EMERG{"Emergência<br/>crítica?"}
+    EMERG -- "sim" --> RAIA["🔥 RAIA RÁPIDA:<br/>suspende tarefa menos prioritária,<br/>foco 100% no incidente"] --> PRI["Plano de Resposta<br/>a Incidentes (PRI)"] --> EXEC
+    EMERG -- "não" --> RETRO["Retrospectiva semanal<br/>+ atualizar tasklist"]
+
+    RETRO --> MES{"Fim do<br/>mês?"}
+    MES -- "não" --> KANOP
+    MES -- "sim" --> PAINEL["Painel mensal:<br/>IDSC · TMpR · ISU · DAN · COT"]
+    PAINEL --> CDTI["Reunião CD-TI Lite<br/>(quinzenal, 30 min, CEO + TI)"]
+    CDTI --> DECIDE{"DAN > 0,35<br/>ou KPI crítico?"}
+    DECIDE -- "sim" --> INVEST["Aprovar investimento COT<br/>(Matriz 4 Quadrantes)"] --> KANOP
+    DECIDE -- "não" --> KANOP
+
+    CDTI -. "a cada trimestre" .-> DIAG
+```
+
+## 📊 Pipeline de dados da busca semântica
+
+```mermaid
+flowchart LR
+    MD["62 documentos .md<br/>do framework"] --> I["ingest.py<br/>split H2/H3<br/>300-500 palavras"]
+    META["rag-metadata<br/>(INDEX.md)"] -- keywords --> I
+    I --> C[("corpus.jsonl<br/>675 chunks")]
+    C --> B["build_index.py"]
+    B --> BM[("bm25.json<br/>índice lexical<br/>stdlib")]
+    B -. "se sentence-transformers<br/>instalado" .-> E[("embeddings.npz<br/>MiniLM 384d<br/>L2-norm")]
+    C --> X["export_web.py"] --> W[("search-data.js +<br/>search-index.json")]
+
+    Q(["pergunta do usuário"]) --> QP["query.py :: buscar()"]
+    BM --> QP
+    E -. "0,6·cos + 0,4·bm25" .-> QP
+    QP --> R1["CLI"] & R2["GET /search<br/>(search/api.py)"] & R3["tool MCP<br/>buscar_conhecimento"]
+    W --> R4["busca.html<br/>(offline no navegador)"]
+
+    QP --> OUT(["top-k chunks com<br/>doc § seção + score"])
+```
+
+## 🤝 Sequência: instalando o GP-PME numa plataforma de gestão
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor U as Gestor da PME
+    participant O as Orquestrador<br/>(Gestor GP-PME)
+    participant M as agente_maturidade
+    participant F as agente_fase_zero
+    participant A as Adapter<br/>(ex.: Trello)
+    participant P as Plataforma
+
+    U->>O: "Instale o GP-PME no meu Trello"
+    O->>M: delega diagnóstico
+    M-->>U: 10 perguntas da autoavaliação
+    U-->>M: respostas
+    M-->>O: IM-TI + nível (ex.: Nível 1)
+    O->>F: solicita plano de implantação
+    F-->>O: checklist Fase Zero + cronograma
+    O->>U: apresenta plano — confirma? (HITL)
+    U-->>O: aprovado ✅
+    O->>A: instalar_gp_pme_na_plataforma()
+    A->>P: criar quadro + 4 colunas<br/>(Em Andamento máx 3)
+    A->>P: criar 8 cards da Fase Zero
+    A->>P: label 🔥 Raia Rápida
+    A-->>O: quadro pronto + relatório
+    O-->>U: link do quadro + próximos passos
+    loop toda semana
+        O->>A: verificar_wip() + relatorio_do_quadro()
+        A->>P: ler estado do quadro
+        O-->>U: diagnóstico do fluxo + pauta do CD-TI Lite
+    end
+```
+
 ## Leitura do diagrama
 
 - **Fluxo de conhecimento:** os guias/templates são a única fonte da verdade. Tudo deriva deles — chunks da busca, instructions dos agentes, fórmulas do server, metodologia da simulação. Atualizou um guia → reindexe (`python -m search.ingest && python -m search.build_index && python -m search.export_web`) e revise o agente correspondente.
