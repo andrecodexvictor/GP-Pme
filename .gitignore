@@ -14,6 +14,7 @@
 # 3. Permitir explicitamente o próprio arquivo .gitignore e README.md
 !.gitignore
 !README.md
+!LICENSE.md
 
 # 4. Entregáveis da Edição Comercial (v2.0)
 !/search/
@@ -52,7 +53,6 @@ GP-PME_Hypothesis_Validation.md
 .context/**/archive/
 
 
-# 5. Documentos de fechamento da entrega
-!progress.md
-!RELATORIO_ENTREGA_v2.md
-!ARQUITETURA.md
+# 5. Documentos internos (não publicar)
+# progress.md, RELATORIO_ENTREGA_v2.md e ARQUITETURA.md são internos
+GP-Pme Article/stitch_prompt.md

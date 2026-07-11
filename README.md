@@ -68,3 +68,11 @@ O GP-PME agora é um produto completo: além da documentação, ele traz busca i
 ---
 
 *Repositório gerido sob os padrões de qualidade técnica do framework GP-PME.*
+
+---
+
+## ⚖️ Licença
+
+**© 2026 Andre Victor. Todos os direitos reservados.**
+
+Este repositório é protegido por licença proprietária. Reprodução, distribuição ou uso comercial sem autorização prévia por escrito é expressamente proibido. Consulte o arquivo [LICENSE.md](LICENSE.md) para detalhes completos.
