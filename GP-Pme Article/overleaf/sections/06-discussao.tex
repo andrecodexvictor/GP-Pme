@@ -1,0 +1,40 @@
+\section{Discussão}
+\label{sec:discussao}
+
+\subsection{Contribuição teórica e de desenho}
+
+O GP-PME sugere que a simplificação de governança não precisa significar remoção arbitrária de controles. Uma alternativa é preservar funções essenciais e reduzir a carga de coordenação por meio de papéis acumuláveis, cadências curtas, artefatos de uma página e evidência mínima. Essa lógica aproxima a teoria da contingência de uma especificação operacional: cada mecanismo deve justificar seu custo pela decisão, risco ou fluxo que torna observável.
+
+O artefato também ajuda a separar governança, gestão e automação. Governança define direção, responsabilidade e monitoramento; gestão organiza o fluxo que transforma direção em serviço; segurança trata riscos que podem comprometer o valor; e IA acelera tarefas informacionais sem receber autoridade própria. Essa separação reduz a tendência de apresentar um conjunto de agentes como se fosse, por si só, um modelo de governança.
+
+\subsection{Implicações práticas}
+
+Para uma empresa pequena, a porta de entrada importa tanto quanto o catálogo de boas práticas. Começar por canal, quadro, inventário, backup, resposta a incidente e reunião curta cria dados que antes não existiam e permite que decisões posteriores sejam menos intuitivas. A Fase Zero é, portanto, uma hipótese de sequência: visibilidade operacional antecede sofisticação de processo.
+
+Para consultores e responsáveis de TI, a rastreabilidade até referências de origem define o limite do termo ``Lite''. O GP-PME pode indicar uma linha de base e produzir evidências iniciais, mas não deve prometer certificação ISO, conformidade integral com NIST/CIS, ou implantação completa de ITIL e COBIT. Quando regulação, criticidade ou porte excederem o recorte, o resultado correto do diagnóstico é escalar a análise para especialista e estrutura apropriados.
+
+\subsection{Melhorias de desenho identificadas}
+
+A primeira melhoria é desacoplar maturidade central de adoção de IA. O questionário corrente contém um item sobre uso de IA com HITL dentro da pontuação global, embora a IA seja declarada opcional. Isso pode impedir uma empresa manual, porém disciplinada, de alcançar o nível máximo. Uma revisão deverá publicar dois resultados: \emph{IM-TI Core}, calculado apenas sobre governança, execução, segurança e medição; e \emph{Prontidão para IA}, escala separada que avalie dados, validação, rastreabilidade e supervisão.
+
+A segunda melhoria é publicar uma matriz normativa por prática. Cada controle do GP-PME deverá apontar para sua fonte, versão, objetivo, grau de cobertura e evidência exigida. Essa matriz reduzirá ambiguidades como chamar um checklist interno de ``NIST-Lite'' e permitirá atualizar o artefato quando uma norma mudar, sem reescrever todo o modelo.
+
+A terceira melhoria é tornar metas e fórmulas sensíveis ao contexto. Limiares de disponibilidade, tempo de resolução, satisfação, DAN e payback são úteis como valores iniciais, mas não podem ser universais. O diagnóstico deve registrar janela de observação, criticidade do serviço, custo-hora, sazonalidade e qualidade da fonte. A comparação futura também deverá apresentar análise de sensibilidade, em vez de um ROI pontual.
+
+A quarta melhoria é consolidar a terminologia e o versionamento. Materiais históricos alternam entre três e quatro pilares e entre quantidades distintas de agentes. Um manifesto de versão deve fixar arquitetura conceitual, inventário de componentes e compatibilidade entre guias, skills e código. O manuscrito adota três pilares essenciais e uma camada opcional de IA como referência para essa normalização.
+
+\subsection{Ameaças à validade}
+
+A validade de constructo é limitada pela mensuração de conceitos como ``acionabilidade'', ``overhead'' e ``aceitação''. Rubricas publicadas, dupla avaliação e apresentação das métricas componentes reduzem o risco de que um índice composto esconda trade-offs. Reações de personas e plausibilidade do crítico continuarão sendo propriedades da simulação, não medidas de comportamento humano real.
+
+A validade interna pode ser afetada pelo modelo de linguagem, ordem dos prompts, recuperação documental, aleatoriedade e conhecimento prévio do avaliador. O protocolo controla esses fatores com manifestos pareados, sementes, orçamento equivalente, rótulos embaralhados, logs completos e tratamento explícito de falhas. Ainda assim, uma saída pode favorecer padrões com maior presença nos dados de treinamento do modelo.
+
+A validade externa é a principal limitação. Os 25 casos cobrem somente organizações sintéticas de 5 a 20 colaboradores, com cenários inspirados em pequenas empresas brasileiras. Setores regulados aparecem como testes de estresse, não como autorização de uso profissional. Mesmo um resultado consistente no Frame-sim sustentará apenas validade analítica dentro do simulador; generalização requer implantação longitudinal em empresas reais.
+
+A validade de conclusão também será restrita pela amostra de 25 casos e pela multiplicidade de métricas. O estudo priorizará estimativas pareadas, intervalos e falhas observadas, usando testes de hipótese apenas como apoio exploratório. Resultados nulos ou desfavoráveis serão mantidos e deverão orientar revisão do artefato.
+
+\subsection{Agenda de avaliação}
+
+O próximo ciclo possui três etapas. Primeiro, corrigir a instrumentação do Frame-sim e registrar o protocolo antes de observar os resultados. Segundo, executar o piloto e os 25 casos pareados, publicar os manifestos, saídas anonimizadas, rubricas e scripts de análise. Terceiro, selecionar casos contrastantes para estudo de campo, acompanhando tempo de adoção, aderência às rotinas, incidentes, qualidade decisória e abandono de práticas ao longo de meses.
+
+Uma avaliação posterior deverá ainda isolar os componentes do GP-PME. Remover a Fase Zero, o limite de WIP, o CD-TI Lite, a linha de base de segurança ou a camada de IA permitirá investigar qual mecanismo produz cada mudança e em que contexto. Sem essa ablação, um eventual ganho do pacote completo não explica sua causalidade.

@@ -1,0 +1,37 @@
+flowchart TB
+    Z["Fase Zero · 30 dias<br/>visibilidade mínima"]
+
+    subgraph CORE["Núcleo essencial"]
+      direction LR
+      P1["Pilar I<br/>Governança Essencial<br/>ADM-Lite · CD-TI Lite"]
+      P2["Pilar II<br/>Execução Ágil<br/>canal · Kanban · PRD"]
+      P3["Pilar III<br/>Segurança Crítica<br/>inventário · acesso · backup · PRI"]
+      P1 <--> P2
+      P2 <--> P3
+      P3 <--> P1
+    end
+
+    X["Métricas e maturidade<br/>IDSC · TMpR · ISU · DAN"]
+    AI["Assistência por IA · opcional<br/>grounding · lacunas · HITL"]
+    H["Decisão e evidência humanas"]
+
+    Z --> CORE
+    X --> P1
+    X --> P2
+    X --> P3
+    AI -. acelera .-> P1
+    AI -. acelera .-> P2
+    AI -. acelera .-> P3
+    P1 --> H
+    P2 --> H
+    P3 --> H
+    AI --> H
+
+    classDef core fill:#EAF3F8,stroke:#184E77,color:#102A43,stroke-width:1.5px;
+    classDef cross fill:#E8F5E9,stroke:#2F855A,color:#1C4532,stroke-width:1.5px;
+    classDef optional fill:#FFF4D6,stroke:#B7791F,color:#5F370E,stroke-width:1.5px,stroke-dasharray: 5 3;
+    classDef human fill:#F4ECF7,stroke:#7D3C98,color:#4A235A,stroke-width:1.5px;
+    class Z,P1,P2,P3 core;
+    class X cross;
+    class AI optional;
+    class H human;

@@ -1,0 +1,50 @@
+\section{Fundamentação e trabalhos relacionados}
+\label{sec:fundamentacao}
+
+\subsection{Governança adaptativa em organizações pequenas}
+
+A governança de TI pode ser operacionalizada por estruturas, processos e mecanismos relacionais que definem direitos decisórios, coordenam negócio e tecnologia e monitoram a geração de valor. Em organizações pequenas, a utilidade desses mecanismos depende de fatores contingenciais como porte, centralização, maturidade, setor e disponibilidade de competências. O estudo de caso de \citet{levstek2022adaptive} mostra que uma parcela relevante dos mecanismos analisados é situacional e adverte que modelos universais podem ser custosos e difíceis de aplicar em PMEs. Como se trata de um único caso, o resultado fundamenta o desenho adaptativo, mas não demonstra por si só qual configuração é superior em outros contextos.
+
+O estudo exploratório de \citet{silva2018baseline}, baseado em entrevistas semiestruturadas com sete especialistas, propõe dez mecanismos de linha de base para governança empresarial de TI em PMEs: três estruturas, quatro processos e três mecanismos relacionais. Entre os mecanismos destacados estão a centralização da organização de TI, reuniões informais entre as lideranças de negócio e TI e controle e reporte do orçamento de TI. O GP-PME converge com essa ênfase em mecanismos relacionais leves, mas a transforma em rotinas com cadência, entradas, saídas e responsáveis explicitados.
+
+A transformação digital acrescenta uma dimensão temporal ao problema. A revisão sistemática de \citet{sagala2024transformation} recomenda que PMEs considerem sua linha de base e suas limitações, com avanços incrementais e investimento contínuo em aprendizagem. Essa orientação sustenta dois requisitos do GP-PME: a entrada por uma fase curta de estabilização e o aumento gradual de práticas conforme evidências de maturidade. A revisão também registra concentração geográfica de estudos, o que recomenda cautela ao transferir seus achados para micro e pequenas empresas brasileiras.
+
+\subsection{Bases normativas e gerenciais}
+
+A ISO/IEC~38500:2024 fornece a estrutura de alto nível para o primeiro pilar. Seu ciclo de avaliar, direcionar e monitorar é preservado no GP-PME, mas o corpo governante é representado, no caso mínimo, pelo proprietário ou diretor e pelo responsável por TI \citep{iso38500_2024}. O COBIT~2019 amplia esse domínio ao oferecer objetivos, componentes e fatores de desenho para um sistema de governança ajustado ao contexto \citep{isaca2018cobit}. O GP-PME não reproduz o catálogo do COBIT; usa sua orientação a objetivos e desenho como origem para um subconjunto rastreável de decisões, responsabilidades e métricas.
+
+O ITIL~4 oferece a principal referência para execução e entrega de serviços. Seus princípios orientadores, entre eles foco no valor, começar de onde se está e progredir iterativamente com feedback, são compatíveis com um fluxo de trabalho reduzido \citep{axelos2019itil}. No GP-PME, essa orientação é materializada por canal único de demanda, quadro Kanban com limite de trabalho em progresso, ciclos semanais e um PRD de uma a duas páginas para iniciativas que exijam desenvolvimento. Essa seleção não representa uma implementação integral do sistema de valor de serviço do ITIL.
+
+Para segurança, o NIST CSF~2.0 organiza resultados de gestão de risco nas funções Governar, Identificar, Proteger, Detectar, Responder e Recuperar \citep{nist2024csf}. Os CIS Controls~v8 acrescentam salvaguardas priorizadas e grupos de implementação; o IG1 foi concebido como higiene cibernética essencial \citep{cis2021controls}. O GP-PME usa essas referências para formar uma linha de base centrada em inventário de ativos críticos, identidade e privilégio mínimo, backup verificável e resposta a incidentes. A expressão ``NIST-Lite'' usada no artefato designa uma adaptação interna e não uma publicação ou certificação do NIST.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Posicionamento das referências e do GP-PME. A comparação descreve escopo e mecanismo, não efetividade observada.}
+  \label{tab:posicionamento}
+  \small
+  \begin{tabularx}{\textwidth}{@{}L{2.3cm}L{3.0cm}R R@{}}
+    \toprule
+    Referência & Escopo predominante & Força aproveitada & Tradução no GP-PME \\
+    \midrule
+    ISO/IEC 38500 & Governança do uso atual e futuro da TI & Avaliar, direcionar e monitorar & Ciclo ADM-Lite e CD-TI Lite \\
+    COBIT 2019 & Governança e gestão de informação e tecnologia & Objetivos, componentes e fatores de desenho & Rastreabilidade, responsabilidades e portfólio mínimo \\
+    ITIL 4 & Gestão de produtos e serviços digitais & Foco em valor, fluxo e melhoria iterativa & Canal único, Kanban, ciclos semanais e PRD curto \\
+    NIST CSF 2.0 & Resultados para gestão de risco cibernético & Funções de governança e ciclo de risco & Organização do pilar de Segurança Crítica \\
+    CIS Controls v8 & Salvaguardas cibernéticas priorizadas & IG1 e ações mensuráveis de higiene essencial & Checklist mínimo e evidências operacionais \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{IA como assistência, não como fonte de verdade}
+
+Há evidência de que sistemas de IA generativa podem elevar produtividade em tarefas delimitadas. No experimento controlado de \citet{peng2023copilot}, 95 desenvolvedores profissionais implementaram um servidor HTTP em JavaScript; o grupo com GitHub Copilot concluiu a tarefa 55,8\% mais rápido, com intervalo de confiança amplo. Em outro contexto, \citet{brynjolfsson2025work} analisaram a introdução de assistência por IA entre 5.179 agentes de suporte e observaram ganho médio de 14\%, concentrado entre trabalhadores menos experientes. Esses resultados motivam a hipótese de aceleração documental, mas não podem ser transferidos diretamente para governança de TI nem usados como estimativa de ganho do GP-PME.
+
+A engenharia de prompts oferece meios para fornecer contexto, restrições e exemplos a modelos sem alterar seus parâmetros \citep{sahoo2025prompt}. Em pesquisa qualitativa, o mapeamento de \citet{barros2025qualitative} identifica potencial de automação, mas também dependência de prompts, imprecisões ocasionais e limitações contextuais. Por isso, o módulo de IA do GP-PME exige dados de origem, indicação de lacunas, citações quando aplicáveis e aprovação humana antes que uma saída gere decisão ou ação.
+
+Os relatórios recentes do Google DeepMind ajudam a qualificar essa escolha. \citet{griffin2024golden} descrevem oportunidades de IA para ciência, mas destacam riscos de confiabilidade e uma lacuna de evidência. \citet{wallace2026conjecture} argumentam que a produção rápida de hipóteses desloca o gargalo para sua validação e defendem registros curtos das interações humano--IA, verificação por fontes e exposição da incerteza. Como esses documentos são ensaios e relatórios de política baseados em análise e entrevistas, eles são empregados aqui para orientar governança e transparência, não como prova empírica da eficácia do artefato.
+
+\subsection{Lacuna e distinção do artefato}
+
+Os trabalhos existentes sustentam a adaptação contingencial, os mecanismos mínimos e a implantação incremental, enquanto as normas oferecem cobertura conceitual robusta. Permanece, porém, uma lacuna entre essas orientações e uma implementação integrada que uma equipe muito pequena consiga iniciar, medir e revisar. O GP-PME ocupa esse espaço ao combinar três pilares essenciais, uma porta de entrada temporal, artefatos compactos e uma camada opcional de automação com controles de validação.
+
+A novidade reivindicada é de composição e operacionalização, não a criação isolada dos mecanismos de governança, agilidade ou segurança. O valor científico esperado está na justificativa explícita das escolhas, na rastreabilidade entre fonte e prática, e na avaliação do ajuste organizacional sob protocolo comparativo. Essa formulação torna verificável tanto a contribuição quanto seus limites.

@@ -1,0 +1,60 @@
+\section{Método de pesquisa}
+\label{sec:metodo}
+
+\subsection{Estratégia metodológica}
+
+O estudo adota Design Science Research (DSR), paradigma adequado à criação e avaliação de artefatos destinados a resolver problemas organizacionais relevantes \citep{hevner2004design}. A estrutura do projeto de pesquisa original era exploratória e qualitativa; nesta versão, ela é reorganizada segundo as seis atividades da Design Science Research Methodology (DSRM): identificação do problema, definição dos objetivos da solução, desenho e desenvolvimento, demonstração, avaliação e comunicação \citep{peffers2007dsrm}. Essa mudança explicita o vínculo entre problema, decisão de desenho e evidência esperada.
+
+O artefato estudado é o GP-PME em quatro representações complementares: (i) constructos, como maturidade, dívida de arquitetura normalizada e trabalho em progresso; (ii) um modelo composto por três pilares e uma camada opcional de IA; (iii) métodos operacionais, como Fase Zero, CD-TI Lite e ciclo microadaptativo; e (iv) instanciações em guias, templates, código, busca e agentes. A unidade de análise da avaliação futura será o par \emph{empresa simulada--framework}, mantendo a empresa constante entre as três alternativas comparadas.
+
+\begin{figure}[H]
+  \centering
+  \IfFileExists{figures/generated/research-pipeline.pdf}{%
+    \includegraphics[width=\textwidth]{figures/generated/research-pipeline.pdf}%
+  }{%
+    \fbox{\parbox{0.92\textwidth}{\centering
+      Problema e requisitos $\rightarrow$ desenho do GP-PME $\rightarrow$ instanciação no repositório $\rightarrow$ verificação de engenharia $\rightarrow$ avaliação comparativa futura $\rightarrow$ revisão do artefato.}}
+  }
+  \caption{Processo de pesquisa do GP-PME. O arquivo Mermaid editável acompanha o projeto; a avaliação comparativa é prospectiva nesta versão.}
+  \label{fig:processo-pesquisa}
+\end{figure}
+
+\subsection{Identificação do problema e requisitos de desenho}
+
+A identificação do problema partiu do projeto de pesquisa do TCC~I e foi atualizada por uma leitura estruturada do repositório e das referências. Foram examinados o documento do projeto, os guias dos pilares, o guia de Fase Zero, o modelo de maturidade, os templates, as skills, os agentes e os componentes de software. As fontes acadêmicas foram agrupadas em quatro tópicos: governança contingencial em PMEs, transformação digital incremental, referências normativas e assistência por IA.
+
+Da síntese emergiram seis requisitos de desenho: \textbf{R1}, operação por equipe mínima e acumulação de papéis; \textbf{R2}, início incremental e reversível; \textbf{R3}, cobertura conjunta de direção, execução e risco; \textbf{R4}, produção de evidências simples para cada prática; \textbf{R5}, funcionamento integral sem IA; e \textbf{R6}, quando houver IA, rastreabilidade, declaração de incerteza e aprovação humana. Esses requisitos funcionam como critérios de aceitação do artefato e orientam as métricas do protocolo futuro.
+
+\subsection{Desenho, desenvolvimento e demonstração}
+
+O desenvolvimento ocorreu por ciclos de decomposição e integração. Em cada ciclo, um princípio ou mecanismo de origem foi convertido em uma rotina mínima com evento de início, responsável, entrada, saída e evidência. Os componentes foram então conectados por um fluxo comum: diagnosticar a situação, escolher a ação prioritária, executar em um limite curto, verificar a evidência e ajustar a próxima decisão. A \cref{sec:artefato} apresenta o resultado consolidado desse processo.
+
+A demonstração desta etapa é tecnológica e documental. Ela verifica se as representações do artefato existem, se regras determinísticas podem ser executadas, se os guias são recuperáveis por busca e se os agentes conseguem ser acionados em ambiente de teste. Essa demonstração responde à pergunta ``o artefato foi construído de forma coerente e executável?'', mas não à pergunta ``o artefato melhora uma organização?''. A segunda pergunta exige a avaliação descrita na \cref{sec:protocolo}.
+
+\subsection{Rastreabilidade entre alegações e evidências}
+
+A \cref{tab:claim-evidence} define antecipadamente o tipo de evidência necessário para sustentar cada alegação. Essa matriz impede que uma inspeção de repositório seja apresentada como validação organizacional e que resultados de produtividade de outras tarefas sejam usados como efeito estimado do GP-PME.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Mapa de alegações e evidências desta pesquisa.}
+  \label{tab:claim-evidence}
+  \small
+  \begin{tabularx}{\textwidth}{@{}L{3.0cm}R R@{}}
+    \toprule
+    Alegação & Evidência admissível nesta versão & Evidência ainda necessária \\
+    \midrule
+    Há um problema de ajuste em PMEs & Estudos empíricos e revisão da literatura & Replicação no contexto brasileiro de 5--20 colaboradores \\
+    O GP-PME foi implementado & Inventário versionado, testes de unidade/dry-run e inspeção de artefatos & Auditoria independente da cobertura e da usabilidade \\
+    O GP-PME exige menos overhead & Hipótese derivada do desenho e contagem planejada de artefatos/rituais & Comparação pareada com baselines configurados de forma justa \\
+    A IA acelera a operação & Evidência externa em tarefas delimitadas; capacidade implementada & Medidas de tempo, custo, correção e retrabalho no domínio de governança \\
+    O GP-PME melhora resultados organizacionais & Não alegado nesta versão & Estudo longitudinal de campo, além da simulação \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{Procedimento de síntese e controle do uso de IA}
+
+Ferramentas de IA foram utilizadas como assistência para localizar trechos, estruturar o manuscrito, revisar consistência e gerar código editorial. Cada alegação factual foi confrontada com o documento de origem ou com o estado versionado do repositório. Resultados numéricos externos foram mantidos com população, tarefa e limite de generalização; lacunas foram marcadas em vez de preenchidas por estimativa. Os registros intermediários de extração permanecem separados do manuscrito e podem ser regenerados.
+
+Esse procedimento segue a lógica de ``cartão de interação humano--IA'' sugerida por \citet{wallace2026conjecture}: ferramenta e finalidade são declaradas, a responsabilidade permanece humana e a saída não se torna evidência apenas por ter sido produzida de forma plausível. Na avaliação futura, cada execução deverá registrar modelo, versão, parâmetros, contexto recuperado, prompts, respostas, correções e decisão final do avaliador.

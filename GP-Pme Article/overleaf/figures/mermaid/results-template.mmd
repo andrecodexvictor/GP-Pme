@@ -1,0 +1,22 @@
+flowchart LR
+    A["25 casos únicos<br/>5--20 colaboradores"] --> B1["GP-PME"]
+    A --> B2["ITIL 4<br/>adaptado"]
+    A --> B3["COBIT 2019<br/>adaptado"]
+
+    B1 --> C["Saídas sem rótulo<br/>ordem aleatória"]
+    B2 --> C
+    B3 --> C
+    C --> D["Rubrica por dois avaliadores<br/>+ adjudicação"]
+    D --> E1["Completude<br/>PENDENTE"]
+    D --> E2["Esforço<br/>PENDENTE"]
+    D --> E3["Rastreabilidade<br/>PENDENTE"]
+    D --> E4["Falhas e limites<br/>PENDENTE"]
+
+    classDef input fill:#EAF3F8,stroke:#184E77,color:#102A43,stroke-width:1.5px;
+    classDef arm fill:#E8F5E9,stroke:#2F855A,color:#1C4532,stroke-width:1.5px;
+    classDef eval fill:#F4ECF7,stroke:#7D3C98,color:#4A235A,stroke-width:1.5px;
+    classDef pending fill:#FFF4D6,stroke:#B7791F,color:#5F370E,stroke-width:1.5px,stroke-dasharray: 5 3;
+    class A input;
+    class B1,B2,B3 arm;
+    class C,D eval;
+    class E1,E2,E3,E4 pending;

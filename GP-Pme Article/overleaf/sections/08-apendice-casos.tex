@@ -1,0 +1,50 @@
+\clearpage
+\appendix
+\section{Catálogo pré-especificado dos 25 casos}
+\label{ap:casos}
+
+\begingroup
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}L{0.8cm}L{2.8cm}L{1.0cm}L{1.0cm}L{7.0cm}@{}}
+  \caption{Empresas sintéticas planejadas. O nível indica a maturidade inicial (0--2).}\label{tab:catalogo-casos}\\
+  \toprule
+  ID & Setor & Colab. & Nível & Desafio principal \\
+  \midrule
+  \endfirsthead
+  \toprule
+  ID & Setor & Colab. & Nível & Desafio principal \\
+  \midrule
+  \endhead
+  C01 & Contabilidade & 5 & 0 & Senhas compartilhadas, phishing e fechamento mensal dependente de uma estação. \\
+  C02 & Comércio eletrônico & 6 & 1 & Pedidos dispersos entre marketplace e mensagens; prioridades mudam diariamente. \\
+  C03 & Clínica odontológica & 7 & 1 & Agenda instável, dados pessoais e ausência de teste de restauração. \\
+  C04 & Construção civil & 7 & 0 & Arquivos de obra em dispositivos locais e decisões técnicas sem responsável claro. \\
+  C05 & Alimentação e delivery & 6 & 1 & Queda do ponto de venda durante o pico e atendimento por canais paralelos. \\
+  C06 & Curso profissionalizante & 8 & 1 & Matrículas manuais, base duplicada e suporte sem fila visível. \\
+  C07 & Hospedagem & 9 & 1 & Reservas em canais distintos, acesso compartilhado e conflito entre recepção e direção. \\
+  C08 & Advocacia & 10 & 0 & Documentos sensíveis sem classificação e fornecedor de TI sem acordo de responsabilidades. \\
+  C09 & Autopeças & 10 & 2 & Estoque e ERP divergentes, backlog de integrações e indisponibilidade recorrente. \\
+  C10 & Logística local & 9 & 1 & Operação coordenada por mensagens pessoais e falha de rastreio de entregas. \\
+  C11 & Confecção & 11 & 0 & Planejamento em planilhas isoladas e máquina crítica sem inventário de dependências. \\
+  C12 & Farmácia & 12 & 1 & Risco de ransomware, estoque regulado e recuperação nunca exercitada. \\
+  C13 & Arquitetura & 13 & 2 & Equipe híbrida, versões conflitantes de projetos e dívida de armazenamento. \\
+  C14 & Software como serviço & 12 & 2 & Backlog excessivo, incidente de acesso e pressão por lançar em duas semanas. \\
+  C15 & Serviços agrícolas & 11 & 1 & Suporte de campo intermitente, equipamento compartilhado e baixa conectividade. \\
+  \pagebreak
+  C16 & Restaurante (duas unidades) & 14 & 1 & Pontos de venda heterogêneos e decisão sobre consolidação com orçamento restrito. \\
+  C17 & Laboratório clínico & 15 & 2 & Dados sensíveis, cadeia de backup incompleta e dependência de fornecedor externo. \\
+  C18 & Agência de marketing & 16 & 1 & Ferramentas contratadas sem aprovação, retrabalho e permissões não revogadas. \\
+  C19 & Atacado & 15 & 2 & Integração fiscal/ERP legada, fila de mudanças e disputa entre custo e continuidade. \\
+  C20 & Assistência técnica & 14 & 1 & Chamados sem SLA, peças sem vínculo com ordens e escaladas informais. \\
+  C21 & Panificação industrial & 17 & 1 & Rastreabilidade de lote, terminais antigos e manutenção reativa. \\
+  C22 & Pequena rede hoteleira & 18 & 2 & Três unidades, perfis de acesso inconsistentes e indicadores não consolidados. \\
+  C23 & Edtech & 20 & 2 & Incidente em período de prova, dívida técnica e pressão simultânea por novas funções. \\
+  C24 & Organização social & 19 & 1 & Dados de doadores, equipe voluntária e governança de fornecedores em nuvem. \\
+  C25 & Metalurgia & 20 & 0 & Dependência de computador de produção, ausência de inventário e decisão centralizada no dono. \\
+  \bottomrule
+\end{longtable}
+
+Cada descrição será expandida por um manifesto JSON versionado contendo premissas econômicas, stack tecnológica, eventos, tarefas, critérios de sucesso, personas, papéis acumulados e sementes. A narrativa pode variar dentro dessas restrições, mas setor, porte, nível e desafio principal permanecerão congelados entre os braços.
+\endgroup
