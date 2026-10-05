@@ -1,66 +1,39 @@
-# Bloco 1: O Pilar Estratégico: Transformando a TI em Vantagem Competitiva
+# Decidir prioridades com o negócio
 
----
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
-## 1.1. O Método DAA: Direcionar, Agir e Acompanhar
+## Percurso de leitura
 
-O coração estratégico da TI Enxuta na sua empresa bate através do método **DAA (Direcionar, Agir, Acompanhar)**, que é a simplificação prática do ciclo corporativo ADM-Lite. Ele garante que cada centavo investido em tecnologia traga retorno direto e mensurável para os seus negócios:
+- [Direção: decidir e acompanhar](#direcao-decidir-e-acompanhar)
+- [Preparar e concluir a revisão](#preparar-e-concluir-a-revisao)
 
-```
-                  [ DIRECIONAR ] 
-                        |
-                        v (Foco estratégico do CEO no comitê)
-                     [ AGIR ]    
-                        |
-                        v (Execução no Mapa do Tesouro)
-                  [ ACOMPANHAR ] 
-                        |
-                        +---> (Termômetro do Sucesso)
-```
+## Direção: decidir e acompanhar
 
-*   **Direcionar**: Você (CEO/dono) define as prioridades comerciais da empresa (ex: vender mais, cortar custos ou melhorar a velocidade de entrega) e a TI direciona os cartões de esforço técnico para essas prioridades.
-*   **Agir**: O técnico de TI implementa as ações diretamente vinculadas a esses objetivos estratégicos, concentrando seu tempo e energia naquilo que gera receita ou protege os dados.
-*   **Acompanhar**: O progresso das atividades e a estabilidade dos sistemas são monitorados através de indicadores simples, que mostram se estamos atingindo as metas desejadas.
+O manual anterior chamava essa participação de DAA: direcionar, agir e acompanhar. Na prática, direção decide a prioridade, TI executa o autorizado e ambos confrontam o resultado com evidências. ADM-Lite é o nome local de avaliar, dirigir e monitorar; não é o método ADM do TOGAF.
 
----
+A revisão CD-TI Lite reúne direção, TI e dono do processo. Quinze dias e 30 minutos são um começo possível, ajustável à necessidade. A pauta pode distribuir cinco minutos para indicadores, quinze para prioridades, cinco para riscos e cinco para decisões. Uma emergência pode exigir decisão antes da reunião.
 
-## 1.2. O "Papo Reto com o Chefe" (A Reunião CD-TI Lite)
+Registrar decisão, motivo, alternativas, aprovador, executor, prazo e próxima revisão. Se a mesma pessoa executa e aprova uma ação relevante, declarar o acúmulo e definir segunda conferência quando necessária. O registro deve permitir que uma pessoa ausente entenda o acordo.
 
-Esqueça relatórios longos e conversas chatas e cheias de jargão técnico sobre cabos e redes. A governança da TI Enxuta baseia-se em um ritual de apenas **30 minutos quinzenais ou mensais** entre o **Dono da Empresa** e o **Responsável pela TI**:
+A Matriz 4 Quadrantes relaciona iniciativas a receita, custos, experiência e resiliência. Configurar Pix pode ter hipótese de receita; rever licenças, hipótese de custo; preparar uma orientação, hipótese de experiência; testar recuperação, finalidade de continuidade. Nenhuma dessas classificações prova um benefício.
 
-```mermaid
-gantt
-    title Pauta Rígida de 30 Minutos (Papo Reto)
-    dateFormat  X
-    axisFormat %M min
-    section Pauta
-    Termômetro do Sucesso (KPIs) : active, 0, 5
-    Mapa do Tesouro (Projetos)   : 5, 20
-    Escudo de Segurança (Riscos) : 20, 25
-    Ata de 1 Página (Decisões)   : 25, 30
-```
+## Preparar e concluir a revisão
 
-1.  **Minuto 1 ao 5: Termômetro do Sucesso (KPIs)**: Revisão dos KPIs básicos de satisfação e estabilidade.
-2.  **Minuto 6 ao 20: Mapa do Tesouro (Projetos)**: Acompanhamento de projetos e validação do andamento das prioridades de negócios.
-3.  **Minuto 21 ao 25: Escudo de Segurança (NIST)**: Validação de backups diários e mitigação de riscos críticos de invasões digitais.
-4.  **Minuto 26 ao 30: Ata de 1 Página (Decisões)**: Fechamento das prioridades, liberação rápida de verbas e encerramento.
+Use quando prioridades concorrem por recurso ou quando uma decisão precisa ser revista. TI prepara fila, dados e opções; dono do processo explica impacto; direção ou autoridade delegada decide. As entradas são demandas, evidências e capacidade disponível. A saída é uma decisão atribuída e comunicada.
 
----
+1. Conferir decisões anteriores e o que ocorreu.
+2. Examinar necessidade, alternativas, custo e risco.
+3. Relacionar a proposta à finalidade principal de negócio.
+4. Registrar aprovação, adiamento ou recusa, com motivo e responsável.
+5. Comunicar a decisão e marcar a próxima verificação.
 
-## 1.3. O "Mapa do Tesouro" (Matriz 4 Quadrantes)
+Concluir quando a equipe consegue localizar o acordo e sabe quem executa e aprova. Uma demanda sem vínculo explícito com receita pode ser necessária por obrigação, dependência ou risco; investigar a necessidade antes de recusá-la. A matriz não autoriza eliminar trabalho por classificação automática.
 
-O **Mapa do Tesouro** é uma ferramenta visual de 1 página que divide o andamento da tecnologia na empresa em quatro quadrantes de valor de negócio, garantindo alinhamento total:
+Fundamento: adaptação local com referência pública de governança contextual no COBIT, F09. DAA e ADM-Lite são linguagem do GEAR, sem equivalência com TOGAF ADM. A pauta e as durações são parâmetros locais.
 
-*   **Quadrante 1: Ajudar a Vender Mais (Injeção de Receita)**: Projetos que geram faturamento rápido (ex: instalar Pix no ponto de venda, otimizar página de checkout).
-*   **Quadrante 2: Economizar Dinheiro (Redução de Custos)**: Otimização de despesas (ex: desativar licenças de softwares ociosos, renegociar contratos de internet).
-*   **Quadrante 3: Atender Rápido (Experiência e Agilidade)**: Iniciativas que destravam o dia a dia do time (ex: criar FAQ de autoatendimento para o Wi-Fi ou impressora).
-*   **Quadrante 4: Proteger a Empresa (Segurança e Risco)**: Defesas que evitam paradas operacionais (ex: backup automático cloud, MFA nas contas).
+## Próxima tarefa e referências
 
----
+- [Governança e direção](<../../../framework/nucleo/governanca.md>)
+- [Decisão e prioridade](<../../../framework/templates/decisoes-prioridades.md>)
 
-## 1.4. O "Termômetro do Sucesso" (3 KPIs Visíveis)
-
-Para que o CEO saiba como está a saúde da TI em menos de 1 minuto, nós acompanhamos apenas 3 métricas básicas:
-1.  **Os sistemas caíram? (Disponibilidade)**: Percentual de uptime das ferramentas vitais de faturamento da empresa (ERP, site). Meta: **> 99.5%**.
-2.  **O suporte está ágil? (Velocidade)**: Tempo médio que o técnico gasta para encerrar os problemas relatados pelos funcionários.
-3.  **A equipe está feliz? (Satisfação)**: Nota média de 1 a 5 estrelas dada pós-atendimento aos colaboradores. Meta: **> 4.5/5.0**.
+Fontes F01–F12 e limites de consulta: [referências completas](<../../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

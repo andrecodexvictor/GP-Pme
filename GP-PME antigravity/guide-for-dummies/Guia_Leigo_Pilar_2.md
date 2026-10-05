@@ -1,49 +1,48 @@
-# Guia Leigo - Pilar 2: Como Organizar o Trabalho Diário da TI (Kanban e MVPs)
+# Guia da fila de TI e de pequenas melhorias
 
-**Autor**: Antigravity AI (sob a direção de Andre Victor)
-**Versão**: 5.2 (Consolidada - Filosofia TI Enxuta Integrada)
-**Data**: 02 de Junho de 2026
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
----
+Origem: versão declarada 5.2, de 02/06/2026. Crédito declarado: Antigravity AI, sob a direção de Andre Victor.
 
-## 1. O que é o Pilar 2 (Execução Ágil)?
+## Percurso de leitura
 
-O **Pilar 2** é o braço operacional da TI da sua empresa. Ele define como as solicitações diárias de suporte, manutenção e novos projetos de melhoria são coletados, organizados e executados rapidamente, sem deixar tarefas esquecidas no meio do caminho.
+- [Execução: tornar o trabalho visível](#execucao-tornar-o-trabalho-visivel)
+- [Aplicar na rotina](#aplicar-na-rotina)
 
-Na TI Enxuta, a execução é estruturada para organizar a rotina cotidiana e liberar tempo para a inovação por meio de duas ferramentas essenciais:
-1.  **Fim do Caos (Fase 1)**: Centralização das demandas e organização visual do fluxo diário.
-2.  **Laboratório de Inovação (Fase 2)**: Prototipagem rápida de ferramentas simples em no máximo **2 semanas (MVP)**.
+## Execução: tornar o trabalho visível
 
----
+Use um registro oficial para a fila, com solicitante, executor, prioridade e saída esperada. Pedidos recebidos por telefone ou mensagem são registrados; uma emergência é atendida e entra na fila assim que viável. “Canal único” não significa recusar ajuda porque o formulário está indisponível.
 
-## 2. A Ferramenta Número 1: O Painel Visual Kanban
+| Estado | Significado |
+| --- | --- |
+| A Fazer | Ainda não iniciado |
+| Em Andamento | Trabalho iniciado |
+| Em Teste | Verificação técnica ou de negócio pendente |
+| Concluído | Saída aceita ou encerramento justificado |
 
-Para eliminar a desorganização de anotações soltas, WhatsApps perdidos e e-mails esquecidos, nós organizamos todo o trabalho da TI em um painel visual dividido em 4 colunas simples de fluxo. Você pode desenhar isso em uma lousa física usando post-its ou em um sistema digital simples como o Trello:
+Comece com até três itens iniciados por executor, contando andamento, teste e bloqueio. Esse limite é parâmetro local de capacidade, não garantia de rapidez. Uma equipe de uma pessoa mantém foco em uma atividade de cada vez. Bloquear ou suspender um cartão conserva seu início e seu histórico.
 
-1.  **A Fazer (Backlog)**: É a fila de espera. Todas as solicitações que chegam entram no topo desta coluna, organizadas por ordem de importância definida na reunião quinzenal.
-2.  **Em Andamento**: O que o técnico de TI está trabalhando de fato neste exato momento.
-    *   *Regra de Ouro da TI Enxuta*: O limite de Trabalho em Progresso (**WIP Limit**) deve ser de **no máximo 3 tarefas simultâneas** por técnico! Focar em poucas atividades por vez garante que o técnico termine o que começou com muito mais velocidade e qualidade, eliminando o estresse operacional de "atirar para todos os lados".
-3.  **Em Teste**: Tarefas concluídas pela TI que estão aguardando o colaborador que pediu o chamado realizar a validação (conferir se o problema sumiu).
-4.  **Concluído**: Onde o trabalho devidamente resolvido e testado é armazenado, gerando histórico de valor para a empresa.
+Para uma emergência, registrar quem decidiu interromper, qual trabalho foi suspenso e que capacidade ficou comprometida. Depois da recuperação, decidir quando retomar o item. Uma quarta tarefa comum aguarda capacidade.
 
----
+Uma melhoria começa com um PRD curto: problema, beneficiário, escopo, exclusões e critério de aceite. Uma ou duas semanas podem delimitar um piloto; se a entrega não couber, renegociar prazo ou escopo. TI verifica a solução e o dono do processo aceita o resultado. Aceite técnico não comprova retorno financeiro.
 
-## 3. O Canal Único de Suporte (Fim das Interrupções)
+## Aplicar na rotina
 
-Um dos maiores causadores de lentidão e estresse técnico em PMEs são as interrupções constantes: colaboradores parando o técnico nos corredores, mandando WhatsApp pessoal no meio da noite ou ligando a todo instante. 
+Use quando pedidos chegam dispersos ou a equipe inicia mais trabalho do que consegue encerrar. Responsável por TI mantém fila e capacidade; autoridade decide conflitos; usuário ou dono do processo verifica a saída. Entradas: demandas e responsáveis. Saídas: ordem de atendimento, trabalho concluído ou pendência atribuída.
 
-**A Regra é Rígida**: a empresa deve estabelecer um **Canal Único de Suporte** (como um e-mail específico de suporte ou um formulário eletrônico simples). 
-*   Todas as dores dos colaboradores entram exclusivamente por este canal, gerando cartões automáticos na coluna *A Fazer* do Kanban.
-*   O técnico de TI fica expressamente proibido de iniciar qualquer chamado informal que não tenha sido devidamente registrado no Canal Único. Isso disciplina a equipe e dá total visibilidade de trabalho para o CEO.
+1. Registrar solicitante, problema, serviço, responsável e prazo real.
+2. Ordenar a fila conforme impacto, urgência e dependências; um novo pedido não vai automaticamente ao topo.
+3. Conferir testes e bloqueios antes de iniciar outra tarefa.
+4. Executar e verificar os critérios acordados.
+5. Registrar aceite, pendência ou encerramento justificado e comunicar ao solicitante.
 
----
+Um piloto precisa de ambiente, permissões, teste e retorno apropriados. O grupo participante confere a entrega; a hipótese de benefício continua a ser acompanhada. Um pedido de suporte não precisa esperar a próxima semana se o efeito de adiar justificar outra prioridade.
 
-## 4. O Ciclo de Inovação de 2 Semanas (O MVP)
+Concluir quando a saída foi aceita ou o motivo de encerramento está claro. Rever demandas bloqueadas e exceções na cadência combinada. Fundamento: adaptação local de fluxo e entregas curtas; Scrum Guide F03 e ITIL F10 orientam conceitos, sem validar o WIP de três nem uma implantação integral desses frameworks.
 
-Quando o profissional de TI consegue organizar a rotina básica e responder autonomamente a dúvidas simples dos colaboradores (através de chatbots de FAQs ou documentos compartilhados), ele ganha tempo para propor inovações comerciais.
+## Próxima tarefa e referências
 
-Em vez de projetar softwares complexos e caros que demoram meses para ficar prontos e podem não servir para nada:
-1.  **PRD de 1 Página**: O gestor de TI escreve em apenas uma folha o que a nova ideia deve fazer, para quem serve e como mediremos o sucesso.
-2.  **MVP (Produto Mínimo Viável)**: Desenvolvemos a versão mais básica e utilizável da ideia em **no máximo 2 semanas**.
-3.  **Grupo Piloto**: Colocamos essa ferramenta simples imediatamente em produção para ser testada por um pequeno grupo de colaboradores ou clientes reais da PME.
-4.  **Ajuste Rápido**: O feedback dos usuários é coletado de forma contínua para decidir se devemos continuar investindo tempo no projeto ou se a ideia inicial precisa ser ajustada, evitando desperdício de tempo e recursos da PME.
+- [Execução e serviços](<../../framework/nucleo/execucao-servicos.md>)
+- [Entregar uma melhoria pequena](<../../framework/guias/entregar-melhoria.md>)
+
+Fontes F01–F12 e limites de consulta: [referências completas](<../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

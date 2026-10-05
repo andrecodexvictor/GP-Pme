@@ -1,0 +1,187 @@
+[
+  {
+    "origem": "References/AndréVictorAndradeOliveiraSantos-Projeto de pesquisa.docx",
+    "sha256": "14efdc96f0c1f12ce7976a6ee902749de58fbba2f2e3105b4f4de5951708139d",
+    "texto_sha256": "f3005d0951085ef353cc34879b32a14e46265ad75772ef23fda0b5bf4782744b",
+    "chars": 36306,
+    "duplicata_textual": false,
+    "tratamento": "Submissão histórica, leitura parcial, excluída da reedição."
+  },
+  {
+    "origem": "References/engenharia de prompt.docx",
+    "sha256": "d21ba3475fc9a32196316432708b5a14134530ac70990bfa103a8472efb20bae",
+    "texto_sha256": "b69b7e1a9aac06d77cf5a0f9c2a33737f18e17deffe3ded4e71448b8373dfb75",
+    "chars": 11915,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Inicio da modelagem.docx",
+    "sha256": "b6fa24f21c9fb53ee534f22c86cf8be8833c8579f4c04c082daad5cddba87ee8",
+    "texto_sha256": "9db51d268e901d7d8a0c69cbc98a4d215fe18bcef6419482a320e06120cdd98e",
+    "chars": 3323,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Roadmap inicial.docx",
+    "sha256": "7b5490250347fed1a612c8afb2af1b7851c33d50b34f4e586d3fb44555740a4f",
+    "texto_sha256": "b756bc02d3c45c8a837443c3beb3cfadffc77a3b36f039aac26da7d049832263",
+    "chars": 4505,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/TI enxuta.docx",
+    "sha256": "da5808551baaf99a2966dba857e878eeb0673c6d44c2520537d1f41dc78958e8",
+    "texto_sha256": "7fd68ba423c070d67196dfd9476f4eeff859ffd336da8104c85103e85b021fbf",
+    "chars": 3661,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Adoção.docx",
+    "sha256": "372000a8a0ab67c38b678e5508cb11eec01724a5f7d44bf618e4bcbe58efc2c7",
+    "texto_sha256": "0105ed0bd6bb7c632ca71a29f079e52dc5fd87c4f8d8bb9725e853c88889875d",
+    "chars": 3617,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/AMbientes estaticos.docx",
+    "sha256": "ae6c043ff4cfe4c61404dc7940f436469afc53d91bd63a77278e11abac4e3a69",
+    "texto_sha256": "b233a5df4f517ff01010695af0c28795993ade10af4c01b997e0dac129b55e48",
+    "chars": 3852,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Detalhamento pilar de segurança parte 1.docx",
+    "sha256": "218c325da07c50eec35f8dbdaf59ed90e54018646c963526cb140ec6ce33c387",
+    "texto_sha256": "2cc108a634824555ecd177eee428f965e63bbc897407d72d0155b8bf21e398e3",
+    "chars": 4278,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/detalhamento pilar estrategico.docx",
+    "sha256": "978e3fafb95b68df466a5d68d43800ffdbbfdab172402ae0c17e0ce7e70fe1b0",
+    "texto_sha256": "cda2615f5a9826b398e84131f361a1835250cfaa7cb79f1ce148f58bf647fe41",
+    "chars": 3035,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/detalhamento pilar executivo.docx",
+    "sha256": "db2e5baea839bb984563c40ce28c8ceaf69c7d4538710a40c52dae316805d702",
+    "texto_sha256": "8b5274eda84d5dd34f432536322ad568490bb13a0c5c3085edd2f67c17a5a8f7",
+    "chars": 4588,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/engenharia de prompt.docx",
+    "sha256": "d21ba3475fc9a32196316432708b5a14134530ac70990bfa103a8472efb20bae",
+    "texto_sha256": "b69b7e1a9aac06d77cf5a0f9c2a33737f18e17deffe3ded4e71448b8373dfb75",
+    "chars": 11915,
+    "duplicata_textual": true,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Fundamentação parte 1.docx",
+    "sha256": "55e6b5289add45fbbaf486bd7cf8fad867643621dc70cbef9d3e3974c75db8f8",
+    "texto_sha256": "23e63309e52d22be07aef1c5227ce91668f10642ee0f50d584c020f69e7fba1c",
+    "chars": 3696,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Inicio da modelagem.docx",
+    "sha256": "b6fa24f21c9fb53ee534f22c86cf8be8833c8579f4c04c082daad5cddba87ee8",
+    "texto_sha256": "9db51d268e901d7d8a0c69cbc98a4d215fe18bcef6419482a320e06120cdd98e",
+    "chars": 3323,
+    "duplicata_textual": true,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Inovação .docx",
+    "sha256": "0bbabecd2e98d090a9be9da8e9086c8515425feba1e438c92a6bec6cb9d28159",
+    "texto_sha256": "996c002d93bccee34be7574e686867b3806e08659b4f56cc3fdccf9c67a70197",
+    "chars": 3756,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Intra inovação(1).docx",
+    "sha256": "7cf16b02ff9237f6fc016c85620db19c25acdcc50bf1a07b602e0268f2815a69",
+    "texto_sha256": "cda20dde14875982bb4706056c65ba4edf7352d43481c21fdf7e20720046dcac",
+    "chars": 3993,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Intra inovação.docx",
+    "sha256": "d571c0407e82809254e32ecf7f15424e4bf51f7411641f17ec805d222c7fc9f7",
+    "texto_sha256": "cda20dde14875982bb4706056c65ba4edf7352d43481c21fdf7e20720046dcac",
+    "chars": 3993,
+    "duplicata_textual": true,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/modelos (1).docx",
+    "sha256": "68f727e4ce51e5f2a0b32b405632285de2799bddb1b095d0856f9bb220a1b9c4",
+    "texto_sha256": "379e6ae6f821c4168197b16cff47dae4d439b8dfcdcbfa141f2c016d2d5eb150",
+    "chars": 7605,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Refatoracção mais detalhado do pilar de segurança.docx",
+    "sha256": "175c7aa845aa03822856564996c314686c7ae91ab4a98d3aa4ac09fba0070e72",
+    "texto_sha256": "033beb2c98167196da5f01ad898d8f9f035796d1d7f50ec07a5d02fe8c14b17b",
+    "chars": 4616,
+    "duplicata_textual": false,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/Roadmap inicial.docx",
+    "sha256": "7b5490250347fed1a612c8afb2af1b7851c33d50b34f4e586d3fb44555740a4f",
+    "texto_sha256": "b756bc02d3c45c8a837443c3beb3cfadffc77a3b36f039aac26da7d049832263",
+    "chars": 4505,
+    "duplicata_textual": true,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços/Esboços/TI enxuta.docx",
+    "sha256": "da5808551baaf99a2966dba857e878eeb0673c6d44c2520537d1f41dc78958e8",
+    "texto_sha256": "7fd68ba423c070d67196dfd9476f4eeff859ffd336da8104c85103e85b021fbf",
+    "chars": 3661,
+    "duplicata_textual": true,
+    "tratamento": "Texto extraído comparado; binário preservado como origem, síntese e destinos em esbocos.md; layout não verificado."
+  },
+  {
+    "origem": "References/Esboços.zip",
+    "sha256": "bde5460fd5da9b6ac64932cff5611a447c9a40878bd224b9105eafb2a97a6241",
+    "tratamento": "Embalagem histórica de fontes ou submissão; preservada, excluída da reescrita e do commit. Membros não revisados individualmente."
+  },
+  {
+    "origem": "References/ReferencialTeorico-20260111T104957Z-3-001.zip",
+    "sha256": "d16046579b02a1bd007f8b132c80c43a08af5198d29328a7b729f6d36aeb67b4",
+    "tratamento": "Embalagem histórica de fontes ou submissão; preservada, excluída da reescrita e do commit. Membros não revisados individualmente."
+  },
+  {
+    "origem": "References/TI_enxuta.zip",
+    "sha256": "da5808551baaf99a2966dba857e878eeb0673c6d44c2520537d1f41dc78958e8",
+    "tratamento": "Embalagem histórica de fontes ou submissão; preservada, excluída da reescrita e do commit. Membros não revisados individualmente."
+  },
+  {
+    "origem": "References/TrabalhosCorrelatos-20260111T104959Z-3-001.zip",
+    "sha256": "7c0b04a861a76a3ceb3cc676a39575ada1f3664ee7b6c709cfd7a5afd2778ffa",
+    "tratamento": "Embalagem histórica de fontes ou submissão; preservada, excluída da reescrita e do commit. Membros não revisados individualmente."
+  },
+  {
+    "origem": "References/TrabalhosCorrelatos-20260111T104959Z-3-001/Trabalhos Correlatos/Documento de André Victor.zip",
+    "sha256": "8128e7f53eb7de998d43688913a9aa8c3c9f3b294a480f786ef807bf028f4933",
+    "tratamento": "Embalagem histórica de fontes ou submissão; preservada, excluída da reescrita e do commit. Membros não revisados individualmente."
+  }
+]

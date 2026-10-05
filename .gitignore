@@ -13,8 +13,29 @@
 
 # 3. Permitir explicitamente o próprio arquivo .gitignore e README.md
 !.gitignore
+!.gitattributes
 !README.md
 !LICENSE.md
+!package.json
+!package-lock.json
+!PRODUCT.md
+!DESIGN.md
+!.open-design.json
+!/framework/
+!/framework/**
+!/tools/
+!/tools/**
+!/tests/
+!/tests/**
+!/book/
+!/book/**
+!/Docs/
+!/Docs/**
+!/References/
+!/References/**/
+!/References/**/*.md
+!/GP-Pme Article/assets/
+!/GP-Pme Article/assets/**
 
 # 4. Entregáveis da Edição Comercial (v2.0)
 !/search/

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Instrução de tarefa e assistência · GEAR</title><meta name="description" content="Framework de governança e gestão de TI para pequenas e médias empresas."><link rel="stylesheet" href="../../assets/gear.css"><script defer src="../../assets/gear.js"></script></head>
+<body><a class="skip" href="#conteudo">Ir para o conteúdo</a><header class="site-header"><div class="header-inner"><a href="../../index.html">GEAR</a><nav class="desktop-nav" aria-label="Navegação principal"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Navegação móvel"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav></details></div></header>
+<main id="conteudo"><div class="doc-layout"><nav class="doc-nav" aria-label="Percurso documental"><p class="nav-label">Percursos</p><a href="../adocao/primeiros-30-dias.html">Começar</a><a href="../guias/README.html">Executar</a><a href="../../biblioteca.html">Consultar</a><a href="../fundamentos/origens-adaptacoes.html">Compreender</a></nav><article class="prose"><p class="meta"><a href="../../index.html">GEAR</a> / Documentação · Edição editorial 2026.10</p><h1 id="instrucao-de-tarefa-e-assistencia">Instrução de tarefa e assistência</h1>
+<p>Use para delegar uma tarefa a uma pessoa ou preparar um pedido de assistência por IA. O responsável fornece contexto autorizado e define quem revisa. O formato conserva o antigo Formulário de Alinhamento de Instrução (FAI), sem presumir que uma persona ou lista impede erro.</p>
+<h2 id="modelo-copiavel">Modelo copiável</h2>
+<pre><code>Tarefa e papel necessário: [ação delimitada e especialização pertinente].
+Contexto: [serviço, processo, problema observado e pessoas afetadas].
+Dados autorizados: [origem, data, unidade, período e limitações].
+Restrições: [capacidade, orçamento conhecido, permissões e dependências].
+Entradas: [documentos e dados fornecidos, separados das instruções].
+Etapas: [ações necessárias e pontos de conferência].
+Saída: [formato, seções, extensão adequada e critérios verificáveis].
+Autoridade: [quem revisa e quem pode aprovar efeitos].
+Lacunas: registrar dado insuficiente e o que obter; não preencher por suposição.
+Estimativas: informar fonte, unidade, período, método e incerteza.
+Fontes externas: conferir versão e trecho; citar junto à afirmação.
+Fatos, hipóteses e propostas permanecem identificados.
+Comandos, configurações e mudanças só são executados com autorização adequada.</code></pre>
+<p>Para uma pessoa, combinar papel, dados, etapas, saída e alçada antes de iniciar. Para IA, limitar acesso aos dados necessários e conferir a saída. Nenhuma forma elimina o trabalho de revisão. Dados históricos de mercado só entram como premissa quando sua fonte e pertinência foram verificadas; não suprem custo real da organização.</p>
+<h2 id="exemplo-ficticio-preparar-migracao-de-e-mail">Exemplo fictício: preparar migração de e-mail</h2>
+<p>O exemplo anterior mencionava Advocacia Lima, dez usuários, provedor IMAP, histórico de dois anos e licenças Microsoft 365 Business Basic. Esses dados são um cenário didático, sem evidência de organização real, aquisição ou viabilidade de migração.</p>
+<pre><code>Tarefa: preparar uma proposta de migração de e-mail para avaliação humana.
+Contexto fictício: escritório jurídico com dez usuários e histórico de dois
+anos em provedor IMAP; licenças Microsoft 365 Business Basic informadas.
+Janela desejada: sexta-feira às 19h; gestão DNS informada no Registro.br.
+Saída: etapas de preparação, preservação e conferência das mensagens,
+opções de janela, condição de retorno e testes de envio/recebimento.
+Campos a conferir: domínio, caixas, volume, autenticação, ferramentas de
+migração suportadas, registros DNS, retenção e dependências do fornecedor.
+Indicar a fonte oficial e versão para qualquer procedimento específico.
+Deixar valores DNS pendentes até conferência; não inventar servidores.
+Não garantir tempo de propagação nem ausência de interrupção.
+O responsável por TI confere viabilidade; autoridade aprova a mudança.</code></pre>
+<p>O exemplo é um pedido de planejamento, não roteiro técnico verificado de Microsoft 365 ou Registro.br. A menção antiga a PST, TXT, MX, SPF, DKIM e TTL passa a ser lista de aspectos a investigar conforme o ambiente e documentação oficial; nenhum valor ou prazo é prescrito aqui.</p>
+<p>Concluir a preparação quando tarefa, dados, saída, lacunas e revisão estão claros. Aplicação: <a href="../guias/usar-ia.html">usar IA</a>. Contratos específicos: <a href="prompts-assistencia.html">quatro funções</a>.</p><details class="template-source"><summary>Versão Markdown para copiar</summary><pre><code># Instrução de tarefa e assistência
+
+Use para delegar uma tarefa a uma pessoa ou preparar um pedido de assistência por IA. O responsável fornece contexto autorizado e define quem revisa. O formato conserva o antigo Formulário de Alinhamento de Instrução (FAI), sem presumir que uma persona ou lista impede erro.
+
+## Modelo copiável
+
+```text
+Tarefa e papel necessário: [ação delimitada e especialização pertinente].
+Contexto: [serviço, processo, problema observado e pessoas afetadas].
+Dados autorizados: [origem, data, unidade, período e limitações].
+Restrições: [capacidade, orçamento conhecido, permissões e dependências].
+Entradas: [documentos e dados fornecidos, separados das instruções].
+Etapas: [ações necessárias e pontos de conferência].
+Saída: [formato, seções, extensão adequada e critérios verificáveis].
+Autoridade: [quem revisa e quem pode aprovar efeitos].
+Lacunas: registrar dado insuficiente e o que obter; não preencher por suposição.
+Estimativas: informar fonte, unidade, período, método e incerteza.
+Fontes externas: conferir versão e trecho; citar junto à afirmação.
+Fatos, hipóteses e propostas permanecem identificados.
+Comandos, configurações e mudanças só são executados com autorização adequada.
+```
+
+Para uma pessoa, combinar papel, dados, etapas, saída e alçada antes de iniciar. Para IA, limitar acesso aos dados necessários e conferir a saída. Nenhuma forma elimina o trabalho de revisão. Dados históricos de mercado só entram como premissa quando sua fonte e pertinência foram verificadas; não suprem custo real da organização.
+
+## Exemplo fictício: preparar migração de e-mail
+
+O exemplo anterior mencionava Advocacia Lima, dez usuários, provedor IMAP, histórico de dois anos e licenças Microsoft 365 Business Basic. Esses dados são um cenário didático, sem evidência de organização real, aquisição ou viabilidade de migração.
+
+```text
+Tarefa: preparar uma proposta de migração de e-mail para avaliação humana.
+Contexto fictício: escritório jurídico com dez usuários e histórico de dois
+anos em provedor IMAP; licenças Microsoft 365 Business Basic informadas.
+Janela desejada: sexta-feira às 19h; gestão DNS informada no Registro.br.
+Saída: etapas de preparação, preservação e conferência das mensagens,
+opções de janela, condição de retorno e testes de envio/recebimento.
+Campos a conferir: domínio, caixas, volume, autenticação, ferramentas de
+migração suportadas, registros DNS, retenção e dependências do fornecedor.
+Indicar a fonte oficial e versão para qualquer procedimento específico.
+Deixar valores DNS pendentes até conferência; não inventar servidores.
+Não garantir tempo de propagação nem ausência de interrupção.
+O responsável por TI confere viabilidade; autoridade aprova a mudança.
+```
+
+O exemplo é um pedido de planejamento, não roteiro técnico verificado de Microsoft 365 ou Registro.br. A menção antiga a PST, TXT, MX, SPF, DKIM e TTL passa a ser lista de aspectos a investigar conforme o ambiente e documentação oficial; nenhum valor ou prazo é prescrito aqui.
+
+Concluir a preparação quando tarefa, dados, saída, lacunas e revisão estão claros. Aplicação: [usar IA](../guias/usar-ia.md). Contratos específicos: [quatro funções](prompts-assistencia.md).
+</code></pre></details></article><aside class="toc"><nav aria-label="Nesta página"><p class="nav-label">Nesta página</p><a href="#modelo-copiavel">Modelo copiável</a><a href="#exemplo-ficticio-preparar-migracao-de-e-mail">Exemplo fictício: preparar migração de e-mail</a></nav></aside></div></main><footer><div class="footer-inner"><p>GEAR · Gestão, Execução, Agilidade e Risco<br>Andre Victor · Edição editorial 2026.10</p><p><a href="../referencias/fontes.html">Fontes e limites</a> · <a href="../fundamentos/origens-adaptacoes.html">Evolução do método</a><br><a href="../../../LICENSE.md">Direitos e licença</a></p></div></footer></body></html>

@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import hashlib
 import sys
 from pathlib import Path
 from typing import Any
@@ -84,6 +85,13 @@ class BM25:
 def semantica_disponivel() -> bool:
     """``True`` se há embeddings gerados e o pacote sentence-transformers está instalado."""
     if not (EMBEDDINGS_PATH.exists() and INDEX_META_PATH.exists()):
+        return False
+    try:
+        meta = json.loads(INDEX_META_PATH.read_text(encoding="utf-8"))
+        digest = hashlib.sha256((DATA_DIR / "corpus.jsonl").read_bytes()).hexdigest()
+        if meta.get("corpus_sha256") != digest:
+            return False  # Não combinar um corpus novo com vetores históricos.
+    except (OSError, ValueError):
         return False
     try:
         import sentence_transformers  # noqa: F401

@@ -1,108 +1,89 @@
-# Capítulo 1: Arquitetura Geral do GP-PME e Princípios Fundamentais
+# GEAR: Arquitetura e princípios
 
----
+Edição editorial 2026.10. Caminho GP-PME preservado para compatibilidade. Capítulo revisto a partir do acervo anterior; práticas locais não constituem certificação. Direitos conforme LICENSE.md.
 
-## 1.1. O Modelo "Iceberg Invertido" e a Modularidade do Framework
+## Escopo e princípios
 
-O framework **GP-PME (Governança Prática para Pequenas e Médias Empresas)** adota o modelo do **"Iceberg Invertido"** como sua arquitetura fundamental. Esta metáfora ilustra de forma clara e intuitiva o equilíbrio entre a entrega de valor ágil na superfície e a solidez teórica de mercado nas camadas profundas:
+GEAR ajuda a direção e o responsável por TI a manter um ciclo de decisão: registrar uma necessidade, avaliar impacto e capacidade, atribuir responsabilidade, executar, verificar a saída e revisar o resultado. O recorte é a TI de pequenas e médias empresas, inclusive equipes internas reduzidas e serviços terceirizados.
 
-```
-                    A PONTA DO ICEBERG (Acessibilidade Imediata)
-                  - Fase Zero: Playbook Salva-Vidas de 30 Dias
-                  - Mapeamento Manual de Canais de Suporte
-                  - Kanban de TI de 4 Colunas
-     =================================================================
-                    O CORPO DO ICEBERG (Extensão Modular)
-                  - Pilar I: ADM-Lite (CD-TI Lite e 4 Quadrantes)
-                  - Pilar II: Execução Ágil (PRD e MVP)
-                  - Pilar III: NIST-Lite (Inventário 80/20, Backups, PRI)
-     =================================================================
-                    A BASE DO ICEBERG (Opcionais e Métricas)
-                  - Pilar IV: Aceleração por IA (Agentes e Prompts)
-                  - Pilar V: Métricas Avançadas (DAN e COT)
-```
+### Problemas tratados
 
-Na ponta do iceberg, visível na superfície operacional, situam-se as ferramentas de **acessibilidade imediata** focadas em *Quick Wins* (vitórias rápidas). Essas ferramentas — como o Kanban básico e o Canal Único — resolvem o caos operacional imediato da empresa nas primeiras horas, exigindo esforço administrativo baixíssimo e gerando alta visibilidade para a liderança.
+O framework aborda demandas dispersas, prioridades conflitantes, decisões sem responsável, trabalho iniciado sem capacidade disponível, controles de continuidade sem evidência e benefícios financeiros apresentados sem premissas. Esses são problemas de aplicação do método, não uma afirmação sobre toda PME.
 
-No corpo e na base do iceberg encontram-se os pilares táticos e estratégicos. Eles representam a **extensão modular** e a **profundidade metodológica** do framework. Embora baseados em complexas normas internacionais de TI, essas bases são destiladas e operacionalizadas de forma simples, permitindo à PME expandir a maturidade da sua governança no seu próprio ritmo, ativando módulos adicionais apenas quando a rotina anterior estiver consolidada.
+Não substitui gestão contábil, obrigação legal, avaliação especializada de segurança ou um sistema completo de gestão empresarial. Um risco jurídico ou regulatório identificado deve ser encaminhado à competência responsável, em vez de receber uma resposta improvisada de TI.
 
-### Adoção Modular na TI Enxuta
-Diferente dos grandes modelos corporativos que geram burocracia excessiva e demandam departamentos de conformidade inteiros, o GP-PME apoia-se na **Filosofia da TI Enxuta**. O framework reconhece que as práticas de TI devem se adaptar ao tamanho da equipe técnico-estratégica, e não o contrário. 
+### Princípios de aplicação
 
-Essa modularidade garante que um único profissional (*One-Man-Band*) ou uma pequena equipe de tecnologia possa implementar o framework sem interromper as operações do dia a dia. A evolução ocorre de forma natural, liberando capacidade de trabalho por meio de automações simples para focar em inovações de alto impacto financeiro.
+1. **Responsabilidade identificada.** Cada demanda e decisão têm executor e autoridade de aprovação. Uma pessoa pode acumular funções; o registro torna esse acúmulo visível.
+2. **Adoção proporcional.** Ativar uma prática porque resolve uma necessidade observada. Rever complexidade, capacidade e manutenção antes de ampliar o método.
+3. **Evidência antes de conclusão.** Uma política escrita, um backup concluído e um serviço restaurado são evidências diferentes. Registrar a que conclusão cada uma permite chegar.
+4. **Fluxo visível.** Mostrar fila, trabalho iniciado, bloqueios e exceções. Um incidente não apaga o histórico do trabalho que interrompeu.
+5. **Inspeção e adaptação.** Rever prioridades e hipóteses em uma cadência sustentável. Ajustes de duração e capacidade devem ter motivo registrado.
+6. **Assistência opcional.** O núcleo pode ser operado com reunião, quadro e registros. IA pode preparar saídas; pessoas permanecem responsáveis pelas decisões.
 
-```mermaid
-graph TD
-    A[Ponta do Iceberg: Acessibilidade Imediata] --> B(Canal Único de Suporte)
-    A --> C(Kanban de TI de 4 Colunas)
-    A --> D(FAQ de Autoatendimento)
-    
-    B --> E[Corpo do Iceberg: Extensão Modular]
-    C --> E
-    D --> E
-    
-    E --> F[Módulos Estratégicos]
-    F --> G(Pilar I: Governança ADM-Lite)
-    F --> H(Pilar II: Execução Ágil Scrum/ITIL)
-    F --> I(Pilar III: Segurança NIST-Lite)
-    
-    E --> J[Base do Iceberg: Profundidade e Opcionais]
-    J --> K(Pilar IV: Aceleração com IA)
-    J --> L(Métricas Avançadas: DAN e COT)
-    
-    style A fill:#1e293b,stroke:#3b82f6,stroke-width:2px,color:#fff
-    style E fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#fff
-    style J fill:#020617,stroke:#8b5cf6,stroke-width:2px,color:#fff
-```
+### Núcleo, aplicação e explicação
 
----
+O núcleo define termos e invariantes. Os guias explicam tarefas. Templates facilitam o registro. Fundamentos apresentam as adaptações e seus limites. Essa separação atende a necessidades distintas de documentação, seguindo a orientação Diátaxis. [F08](<../../framework/referencias/fontes.md#f08>)
 
-## 1.2. Princípios de Design: Adaptabilidade, Acionabilidade, Mensurabilidade e Incrementalidade
+Uma equipe pode usar software de chamados, planilha ou quadro físico. O suporte escolhido precisa preservar responsável, situação, critério de conclusão e evidência. Operação manual significa independência de uma plataforma de gestão, não ausência de tecnologia para executar backup ou proteger contas.
 
-O design conceitual e as ferramentas do GP-PME são estruturados sobre quatro pilares metodológicos fundamentais que garantem sua eficácia prática no dia a dia dinâmico das PMEs:
+### Situação da evidência
 
-*   **Adaptabilidade**: O framework rejeita receitas rígidas e padronizações estáticas. Ele molda-se ao contexto, orçamento e tamanho da equipe da PME. Cada processo e indicador pode ser simplificado ou ampliado dependendo das dores da empresa, garantindo aderência cultural e operacional.
-*   **Acionabilidade**: O GP-PME foca 100% na execução e na remoção de abstrações teóricas. O framework não apenas enuncia o que deve ser feito, mas traduz cada princípio de mercado em artefatos práticos de 1 página (templates, roteiros e listas binárias de validação) prontos para preenchimento manual ou por IA.
-*   **Mensurabilidade**: A saúde da tecnologia e o alinhamento de investimentos são monitorados através de indicadores numéricos objetivos. O framework utiliza métricas financeiras e de esforço claras para a liderança (como os 3 KPIs Visíveis e os passivos de arquitetura DAN e COT), convertendo dados técnicos em linguagem comercial consumível pelo CEO e diretores.
-*   **Incrementalidade**: O roadmap de adoção é dividido em marcos progressivos de maturidade. A PME inicia estabilizando a operação para recuperar capacidade produtiva (Fase Zero), formaliza a governança estratégica e cibersegurança básica (Fase Um) e escala suas automações analíticas e de IA (Fase Dois), mitigando a resistência à mudança.
+GEAR é uma composição autoral de práticas. Cenários demonstrativos e testes de software comprovam apenas o que efetivamente verificam. Metas de prazo, percentuais de melhoria e faixas de indicadores não são resultados médios esperados nem parâmetros normativos universais.
 
----
+A avaliação acadêmica prevista utiliza casos sintéticos pareados. Até a produção de dados, o protocolo permanece prospectivo. Uma comparação com referências adaptadas precisa declarar escopo e condições de cada configuração, sem construir alternativas deliberadamente fracas.
 
-## 1.3. O Papel Central da Inteligência Artificial (IA) como Habilitador Transversal
+Próxima leitura: [Governança e direção](<../../framework/nucleo/governanca.md>). Para executar: [Primeiros 30 dias](<../../framework/adocao/primeiros-30-dias.md>).
 
-No framework GP-PME, a Inteligência Artificial Generativa (IAG) atua como um **co-piloto transversal e habilitador opcional**. Ela foi desenhada para suprir a escassez crônica de braços técnicos e orçamentos em PMEs, multiplicando a produtividade do profissional de TI de forma extraordinária.
 
-### O Desacoplamento de IA
-O framework opera sob uma **arquitetura estritamente desacoplada**: todos os pilares, processos e rituais operam 100% de forma manual, analógica e sem custos extras (usando planilhas locais, post-its em quadros físicos e reuniões diretas). 
+## Origens, adaptações e evolução
 
-Para PMEs que decidirem ativar a aceleração, a IA atua nos bastidores:
-1.  **Orquestração de Suporte (Fase 1)**: Automatiza o autoatendimento de chamados rotineiros (FAQs) através de agentes inteligentes, liberando até 80% do tempo do técnico para focar em melhorias do negócio.
-2.  **Burocracia Zero na Execução**: Rascunha especificações técnicas, PRDs, histórias de usuário ágeis e planos de testes em minutos, removendo o overhead administrativo da equipe.
-3.  **Grounding e HITL (Human-in-the-loop)**: A IA opera sob regras rígidas de segurança corporativa (grounding em dados locais) e crivo de validação humana mandatória antes de colocar qualquer saída em produção.
+GEAR reúne práticas do acervo GP-PME e NEXUS-PME em uma edição coerente. A mudança de nome foi uma decisão editorial: Gestão, Execução, Agilidade e Risco descrevem as atividades do método sem criar um quarto domínio. O acervo contém versões com diferentes recortes; sua data não determina, por si, a qualidade ou completude.
 
----
+### Referência, adaptação e proposta local
 
-## 1.4. Mapeamento dos Módulos GP-PME aos Frameworks Basilares
+| Referência | Conceito consultado | Adaptação do GEAR e limite |
+| --- | --- | --- |
+| NIST CSF 2.0 [F01](<../../framework/referencias/fontes.md#f01>), [F02](<../../framework/referencias/fontes.md#f02>) | Governar, Identificar, Proteger, Detectar, Responder e Recuperar | Priorização por serviço crítico e registro breve; seleção não cobre todo o CSF |
+| Scrum Guide 2020 [F03](<../../framework/referencias/fontes.md#f03>) | Inspeção, adaptação, transparência e responsabilidade | Ciclos curtos e aceite; omitir elementos significa não implementar Scrum integralmente |
+| TOGAF [F04](<../../framework/referencias/fontes.md#f04>) | Estrutura de conteúdo fundamental e guias de configuração | ADM-Lite é proposta local; não se afirma execução do ADM ou equivalência de fases |
+| COBIT [F09](<../../framework/referencias/fontes.md#f09>) | Governança ajustada ao contexto | Alçadas e revisão breve; não representa todo o sistema COBIT |
+| ITIL 4 [F10](<../../framework/referencias/fontes.md#f10>) | Gestão de serviços adaptável | Registro, recuperação e melhoria; não é implantação integral do ITIL |
+| CIS [F11](<../../framework/referencias/fontes.md#f11>) e CISA [F12](<../../framework/referencias/fontes.md#f12>) | Higiene cibernética e recuperação | Controles priorizados com evidência; quatro práticas não equivalem às 56 salvaguardas IG1 |
+| Diátaxis [F08](<../../framework/referencias/fontes.md#f08>) | Aprender, executar, consultar e compreender | Percursos de documentação; organização editorial, não método de gestão |
 
-Para garantir rigor metodológico e conformidade com os maiores padrões internacionais de mercado, o GP-PME destila e simplifica os princípios mais conceituados de governança corporativa, infraestrutura ágil e cibersegurança:
+WIP de três, revisão de 30 minutos, percurso de 30 dias, IM-TI, DAN financeiro e templates são escolhas locais. Não atribuir esses parâmetros às referências acima. Prazos e metas devem ser ajustados com motivo registrado.
 
-| Módulo/Pilar GP-PME | Frameworks Basilares Mapeados | Principais Conceitos Destilados e Simplificados | Adaptação e Abordagem Enxuta para PMEs |
-|:---|:---|:---|:---|
-| **Pilar I: Governança Essencial** | ISO/IEC 38500:2024 [1]<br>COBIT 2019 (EDM/APO02) [2] | Avaliar, Dirigir e Monitorar (ADM); Managed Strategy e Alinhamento Estratégico. | **ADM-Lite**: CD-TI Lite (reunião estratégica quinzenal de 30 minutos), Matriz RACI-Lite de 1 página e Matriz 4 Quadrantes. |
-| **Pilar II: Execução Ágil** | ITIL 4 SVS [3]<br>Scrum Framework [7] | Gestão de Requisições de Serviço, Gerenciamento de Incidentes, Ciclo de Sprints. | **Ciclo Micro-Adaptativo**: Canal Único obrigatório, Kanban de 4 colunas com WIP Limit de 3, PRD de 1 página e MVP de 2 semanas. |
-| **Pilar III: Segurança Crítica** | NIST CSF 2.0 (Functions) [4]<br>CIS Controls v8 (IG1) [5] | Identificar ativos, Proteção de Identidades, Resposta e Mitigação de Incidentes Cibernéticos. | **NIST-Lite**: Inventário de Ativos 80/20, Princípio do Privilégio Mínimo (LUA/MFA), backups 3-2-1 na nuvem e PRI de 1 página. |
-| **Métricas e Habilitadores** | ATD Index [6]<br>TCO e ROI Analysis | Dívida Técnica de Arquitetura, Custos de Infraestrutura e Retorno de Investimentos. | **DAN e COT**: Dívida de Arquitetura Normalizada (DAN) e Custo de Otimização (COT) traduzindo dívidas técnicas para o financeiro. |
+### O que foi consolidado
 
-Este mapeamento assegura que a PME implemente processos extremamente leves, mas com a chancela das normas técnicas globais mais respeitadas por auditorias e parceiros de mercado.
+Versões anteriores chamavam IA de quarto pilar e adoção de quinto pilar. O modelo vigente mantém três domínios; IA é assistência opcional, e adoção, indicadores e maturidade são transversais. Os quatro papéis conceituais de IA descrevem funções; o software implementado tem um orquestrador e oito especialistas. Essas contagens pertencem a camadas diferentes.
 
----
+Foram preservados mecanismos relacionais: conversa com o negócio, revisão de prioridades, comunicação de impedimentos, dono do processo, papéis acumulados e aprovação segundo alçada. Uma equipe pequena pode concentrar funções; precisa tornar visíveis os conflitos e buscar segunda conferência quando a decisão exigir.
 
-## Referências Bibliográficas
+“Fase Zero” de adoção foi separada da verificação pré-projeto. Razão benefício/investimento foi separada de ROI líquido; proporção de itens legados foi separada de DAN financeiro. IM-TI não exige IA para alcançar o nível máximo.
 
-*   **[1]** ISO/IEC 38500:2024. *Information technology — Governance of IT for the organization*.
-*   **[2]** ISACA. (2019). *COBIT 2019 Framework: Governance and Management Objectives*.
-*   **[3]** Axelos. (2019). *ITIL Foundation: ITIL 4 edition*.
-*   **[4]** NIST. (2024). *NIST Cybersecurity Framework (CSF) 2.0*.
-*   **[5]** CIS. (2023). *CIS Critical Security Controls Version 8: Implementation Group 1*.
-*   **[6]** Verdecchia, R. (2022). *Empirical evaluation of architectural technical debt indices in software-intensive systems*.
-*   **[7]** Schwaber, K., & Sutherland, J. (2020). *The Scrum Guide™: The Definitive Guide to Scrum*.
+### Adoção gradual e linguagem introdutória
+
+Os mestres de junho de 2026 usavam “Iceberg Invertido” para representar uma entrada simples seguida de aprofundamento. A contribuição preservada é a **divulgação progressiva**: começar pela necessidade observada, mostrar a prática correspondente e consultar fundamentos quando forem necessários. A metáfora não estabelece uma escala científica nem exige ativar todos os módulos em uma ordem fixa.
+
+“TI Enxuta” designa essa escolha de dimensionar registro, revisão e execução à capacidade disponível. Uma orientação recorrente pode ajudar antes de um chatbot; uma decisão registrada pode ajudar antes de um comitê formal. A possibilidade de reduzir esforço depende da aplicação e deve ser observada, sem pressupor custo zero.
+
+O manual introdutório também usava DAA, “direcionar, agir e acompanhar”, para explicar a participação da direção. Trata-se de uma descrição didática da responsabilidade: decidir o que importa, executar o autorizado e verificar o efeito. Não substitui o ciclo ADM-Lite nem cria outro domínio. Os nomes antigos “orquestrador de valor”, “agente de mudança” e “parceiro estratégico” expressavam funções pretendidas, sem comprovar promoção de cargo ou transformação profissional.
+
+Origem documental: mestres leigo e técnico em `GP-PME/` e mestre consolidado em `GP-PME antigravity/`, versões declaradas 6.0 e 5.2, de 02/06/2026. Essas contribuições são escolhas autorais, sem atribuição a uma norma externa.
+
+### Versões e direitos
+
+GEAR 2026.10 identifica a edição editorial. Números antigos 2.0, 5.2 e 6.0 são metadados de suas respectivas versões, não versões simultâneas do produto vigente. Identificadores de software GP-PME permanecem quando necessários à compatibilidade. O histórico de origem deve acompanhar a migração de conteúdo.
+
+Os direitos seguem [LICENSE.md](<../../LICENSE.md>). Não há nova certificação, validação de marca ou concessão de direitos nesta consolidação.
+
+### Evidência acadêmica
+
+O manuscrito mantém um protocolo prospectivo com casos sintéticos. Nenhuma simulação comprova ganho de campo. Silva, Mira da Silva e Pereira (2018), DOI [10.1109/CBI.2018.10044](https://doi.org/10.1109/CBI.2018.10044), é uma referência bibliográfica verificada; não se infere que valide GEAR. O conjunto de título, periódico e ano da referência antiga de Verdecchia não foi confirmado. A pesquisa identificou um estudo ATDx de 2022 na PeerJ e um artigo de teoria de 2021 no Journal of Systems and Software, ambos distintos da entrada antiga. Metadados e resumo não sustentam a fórmula de DAN financeiro; nenhum artigo foi adotado como substituto automático. Veja [fontes e limites](<../../framework/referencias/fontes.md#bibliografia-e-acesso-limitado>). Acesso limitado à ISO e a livros licenciados impede atribuição de detalhes não consultados.
+
+Consulta: [Fontes e limites](<../../framework/referencias/fontes.md>). Análise aplicada: [Caso didático](<../../framework/exemplos/caso-didatico.md>).
+
+
+
+Consulta: [fontes e limites](../../framework/referencias/fontes.md). Regra vigente: [documentação modular](../../framework/README.md).

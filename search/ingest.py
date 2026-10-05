@@ -18,11 +18,7 @@ from search._common import DIR_DADOS, RAIZ_REPO
 # Pastas varridas em busca de .md (relativas à raiz do repo), com um "codigo"
 # curto usado no `id` do chunk (ver `_slugificar_caminho`).
 PASTAS_FONTE: dict[str, str] = {
-    "GP-PME antigravity": "antigravity",
-    "GP-PME": "gp-pme",
-    "Docs": "docs",
-    "Simulacao": "simulacao",
-    "Comercial": "comercial",
+    "framework": "gear",
 }
 
 # Nomes de pasta (em qualquer nível) que nunca devem ser varridos.
@@ -96,6 +92,17 @@ def _slugificar_caminho(caminho_rel: Path, codigo_pasta: str) -> str:
 def _classificar_tipo(caminho_rel: Path) -> str:
     partes = [p.lower() for p in caminho_rel.parts]
     nome = caminho_rel.name.lower()
+
+    if "framework" in partes:
+        if "guias" in partes:
+            return "guia"
+        if "templates" in partes:
+            return "template"
+        if "adocao" in partes:
+            return "tutorial"
+        if "fundamentos" in partes or "exemplos" in partes:
+            return "explicacao"
+        return "referencia"
 
     if nome == "index.md":
         return "index"
@@ -181,10 +188,11 @@ def _carregar_keywords_por_basename() -> dict[str, list[str]]:
 # ---------------------------------------------------------------------------
 
 class _Secao:
-    def __init__(self, titulo: str, breadcrumb: str) -> None:
+    def __init__(self, titulo: str, breadcrumb: str, anchor: str = "") -> None:
         self.titulo = titulo
         self.breadcrumb = breadcrumb
         self.paragrafos: list[str] = []
+        self.anchor = anchor or _slug(titulo)
 
 
 def _dividir_em_secoes(linhas: list[str], titulo_doc: str) -> list[_Secao]:
@@ -193,6 +201,8 @@ def _dividir_em_secoes(linhas: list[str], titulo_doc: str) -> list[_Secao]:
     atual = _Secao(titulo_doc, titulo_doc)
     h2_corrente = ""
     paragrafo_buf: list[str] = []
+    heading_counts = {_slug(titulo_doc): 1}
+    in_code = False
 
     def fechar_paragrafo() -> None:
         if paragrafo_buf:
@@ -200,6 +210,13 @@ def _dividir_em_secoes(linhas: list[str], titulo_doc: str) -> list[_Secao]:
             paragrafo_buf.clear()
 
     for linha in linhas:
+        if linha.startswith("```"):
+            in_code = not in_code
+            paragrafo_buf.append(linha)
+            continue
+        if in_code:
+            paragrafo_buf.append(linha)
+            continue
         m = RE_HEADING.match(linha)
         if m and len(m.group(1)) in (2, 3):
             fechar_paragrafo()
@@ -215,7 +232,10 @@ def _dividir_em_secoes(linhas: list[str], titulo_doc: str) -> list[_Secao]:
                     if h2_corrente
                     else f"{titulo_doc} > {texto_heading}"
                 )
-            atual = _Secao(texto_heading, breadcrumb)
+            base = _slug(texto_heading)
+            n = heading_counts.get(base, 0)
+            heading_counts[base] = n + 1
+            atual = _Secao(texto_heading, breadcrumb, base + (f"-{n}" if n else ""))
             continue
         if m and len(m.group(1)) == 1:
             # H1 dentro do corpo (raro) — ignora a linha, não quebra seção.
@@ -301,6 +321,7 @@ def _processar_documento(
                     "keywords": keywords,
                     "pilar": pilar,
                     "tipo": tipo,
+                    "anchor": secao.anchor,
                 }
             )
             seq += 1

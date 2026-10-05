@@ -1,61 +1,30 @@
-# GP-PME — One Pager de Vendas
+# GEAR: decisões, serviços e riscos de TI
 
-> Fontes: `Comercial/Proposta_de_Valor.md`, `Simulacao/Calculadora_ROI.md`, `GP-PME antigravity/INDEX.md` (v2.0).
-> Números conservadores: exemplos resolvidos da própria Calculadora de ROI (fórmulas oficiais, premissas declaradas) — não são case de cliente real. Válido como âncora até os perfis `Simulacao/Perfil_A..D.md` estarem prontos.
+**Gestão, Execução, Agilidade e Risco.** Framework de governança e gestão de TI para pequenas e médias empresas.
 
----
+A rotina liga necessidade, decisão, executor e evidência de conclusão. Foi concebida para equipes reduzidas e funções acumuladas, com assistência por IA opcional.
 
-## Headline
+## Conteúdo e uso
 
-**Sua TI apaga incêndio ou evita incêndio? O GP-PME transforma o técnico "faz-tudo" reativo em governança de 1 página — com o primeiro resultado mensurável em 30 dias.**
+| Conteúdo | Uso |
+| --- | --- |
+| Três domínios essenciais | Direção, fluxo de serviços e continuidade |
+| Percurso inicial de 30 dias | Adoção conforme capacidade e dependências |
+| Guias de tarefa e modelos | Priorizar, entregar, responder e registrar evidências |
+| Maturidade e indicadores locais | Encontrar lacunas e acompanhar decisões |
+| Software opcional | Consulta, cálculos, busca lexical e propostas de integração |
 
-Framework de gestão de TI para PMEs brasileiras que destila ISO 38500, COBIT 2019, ITIL 4, NIST CSF e CIS Controls v8 em artefatos operáveis por 1 técnico solo ou uma equipe de até 8 pessoas — no papel, com IA como acelerador opcional.
+O acervo de assistência contém oito skills históricas, nove perfis em Markdown e uma implementação ADK com um orquestrador e oito especialistas. Cinco adaptadores preparam integrações; operação real exige configuração, permissão e verificação. Dry-run não comprova implantação. API/MCP dependem do ambiente documentado.
 
----
+## Quando considerar
 
-## 3 Números de Impacto (conservadores)
+Pedidos dispersos, prioridades sem decisão, excesso de trabalho iniciado, recuperação sem teste e indicadores sem uso. Direção e TI precisam ter disponibilidade para conferir registros e resolver alçadas. Rever o recorte quando criticidade, regulação ou coordenação exigir análise especializada.
 
-| # | Número | O que significa | Fonte |
-|---|---|---|---|
-| 1 | **R$ 4.930/mês** recuperáveis | R$ 1.750/mês de retrabalho por perda de rastreabilidade (Canal Único) + R$ 3.180/mês de tempo de TI desperdiçado em multitarefa (Kanban WIP=3) | `Calculadora_ROI.md §4.1–4.2` |
-| 2 | **R$ 12.000/ano** de risco evitado | Queda de probabilidade de incidente grave (ransomware) de 20%/ano para 5%/ano com Backup 3-2-1 + MFA + LUA + PRI | `Calculadora_ROI.md §5` |
-| 3 | **Payback em ~1,8 meses** (ROI de 651% no exemplo) | Sobre um custo de implantação (COT) de R$ 9.570 no exemplo resolvido | `Calculadora_ROI.md §3` |
+## O que comprovar no começo
 
-Esses três números somados (~R$ 71.000/ano em retrabalho + tempo desperdiçado + risco evitado) superam em várias vezes o investimento em qualquer um dos três tiers comerciais — ver `Modelo_de_Precificacao.md`.
+Fila localizável, executor e aprovador identificados, teste com resultado, contatos conferidos e pendências atribuídas. IM-TI ajuda a discutir lacunas; não certifica a empresa. Trinta dias orientam planejamento, sem garantia de nível ou resultado.
 
----
+Retorno depende dos dados da organização. Horas liberadas podem aumentar capacidade sem reduzir despesa. Não há ganho médio, probabilidade de proteção ou payback comprovado do GEAR nesta edição.
 
-## O que está incluso (por camada)
+Para avaliar uma proposta, reunir contexto, processos críticos, custos e evidências. Consultar [escopo](../framework/nucleo/escopo-principios.md), [adoção](../framework/adocao/primeiros-30-dias.md) e [condições em estudo](Modelo_de_Precificacao.md). Esta apresentação local não estabelece contato, SLA, preço vigente ou direito adicional a [LICENSE.md](../LICENSE.md).
 
-O GP-PME roda 100% no papel. As 4 camadas de IA abaixo são aceleradores opcionais — nenhuma é pré-requisito.
-
-| Camada | O que é | Onde roda |
-|---|---|---|
-| **Núcleo (obrigatório)** | 4 guias de pilar + guias para leigos + 7 templates de 1 página + modelo de maturidade (IM-TI) + guia de KPIs/DAN/COT + playbook Fase Zero (30 dias) | Papel, planilha ou quadro físico |
-| **1 · Skills** | 8 skills nativas do Claude Code (`consultor`, `fase-zero`, `kanban`, `governanca`, `seguranca`, `metricas`, `maturidade`, `prd`) | Terminal / Claude Code |
-| **2 · Agentes Markdown** | 9 personas prontas para copiar e colar (Orquestrador, Analista, Guardião, Auditor e especialistas de pilar) | Claude Projects / GPTs — zero setup |
-| **3 · Agentes ADK** | Orquestrador "Gestor GP-PME" + 8 especialistas em Python (Google ADK) que instalam o kanban GP-PME direto na sua plataforma | ClickUp, Notion, Trello, Jira, Linear |
-| **4 · MCP + API REST** | Servidor programático do framework para integrar a sistemas próprios | Sua stack |
-| **Extras** | Busca semântica (RAG) sobre todo o conteúdo + grafo de conhecimento interativo + simulação de ROI personalizada | Web / CLI |
-
----
-
-## Para quem é
-
-- TI solo ou equipe de até 8 pessoas numa PME (indústria, serviços, comércio, saúde, varejo).
-- Dono/CEO sem tempo ou apetite para consultoria pesada, mas cansado de decidir investimento de TI no escuro.
-- Gestor de TI que já sabe o que precisa fazer, mas não tem processo formalizado nem métrica para provar valor à diretoria.
-
-## Para quem NÃO é
-
-- Empresas que já operam ITIL/COBIT maduro com analista de governança dedicado — o GP-PME é a versão enxuta, não substitui um programa já maduro.
-- Times de TI com mais de ~15-20 pessoas e múltiplas squads — nesse porte, frameworks completos de mercado se pagam melhor.
-- Quem busca um produto de software pronto — o GP-PME é método + templates + aceleradores de IA, não um SaaS de ITSM.
-
----
-
-## Call to Action
-
-Quer ver o ROI com os números reais da sua empresa, não os do exemplo? Mande porte da equipe, custo-hora aproximado e horas de retrabalho/mês que você já reconhece — devolvemos a simulação personalizada (`Simulacao/`) e a proposta comercial (tier + preço) em até 2 dias úteis.
-
-**Contato**: [inserir e-mail/telefone do consultor responsável]

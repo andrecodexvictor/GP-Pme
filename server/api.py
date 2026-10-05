@@ -23,12 +23,12 @@ from pydantic import BaseModel, Field
 from . import core
 
 app = FastAPI(
-    title="GP-PME — API REST",
-    version="1.0.0",
+    title="GEAR: API REST",
+    version="2026.10",
     description=(
-        "Framework de gestão de TI para PMEs brasileiras. Expõe maturidade, KPIs, "
-        "DAN, COT, ROI, Kanban, Fase Zero, segurança e busca no corpus. Feita para "
-        "ambientes hostis a ferramentas de gestão: use com `curl`."
+        "Framework de governança e gestão de TI para pequenas e médias empresas. "
+        "Expõe regras locais, cálculos condicionais, documentos e busca canônica. "
+        "Cálculo ou checklist não demonstra resultado organizacional."
     ),
 )
 
@@ -62,7 +62,7 @@ class EntradaKPIs(BaseModel):
     horas_indisponibilidade: float = Field(..., description="Horas fora do ar no período.", examples=[2])
     horas_totais: float = Field(..., description="Horas totais do período (ex.: 720 = 30 dias).", examples=[720])
     tempos_resposta_horas: List[float] = Field(
-        default_factory=list, description="Tempos de primeira resposta (h) por chamado.", examples=[[1.5, 3.0, 2.0]]
+        default_factory=list, description="Tempos até restauração (h) por incidente encerrado.", examples=[[1.5, 3.0, 2.0]]
     )
     notas_satisfacao: List[float] = Field(
         default_factory=list, description="Notas de satisfação (escala 1-5).", examples=[[5, 4, 5]]
@@ -76,12 +76,19 @@ class EntradaDAN(BaseModel):
 
 class EntradaCOT(BaseModel):
     custo_otimizacao: float = Field(..., gt=0, description="Aporte único do COT (R$).", examples=[9000])
-    ganho_mensal: float = Field(..., gt=0, description="Ganho/economia mensal recorrente (R$).", examples=[3000])
+    ganho_mensal: float = Field(..., ge=0, description="Benefício bruto mensal estimado (R$).", examples=[3000])
+    custo_recorrente_mensal: float = Field(0, ge=0, description="Custo mensal de operação (R$).")
 
 
 class EntradaROI(BaseModel):
     investimento: float = Field(..., gt=0, description="Aporte único da iniciativa (R$).", examples=[9000])
-    retorno_mensal: float = Field(..., gt=0, description="Retorno mensal recorrente (R$).", examples=[3000])
+    retorno_mensal: float = Field(..., ge=0, description="Benefício bruto mensal estimado (R$).", examples=[3000])
+    custo_recorrente_mensal: float = Field(0, ge=0, description="Custo mensal de operação (R$).")
+
+
+class EntradaDANFinanceiro(BaseModel):
+    custo_refatoracao: float = Field(..., ge=0, description="Custo estimado de refatoração, na mesma moeda do orçamento.")
+    orcamento_anual_ti: float = Field(..., gt=0, description="Orçamento anual de TI.")
 
 
 _dep = [Depends(verificar_api_key)]
@@ -125,7 +132,7 @@ def buscar(
 
 @app.get("/kanban/protocolo", summary="Protocolo Kanban + tarefas-semente", tags=["Execução"], dependencies=_dep)
 def kanban_protocolo() -> dict:
-    """Especificação do Kanban (4 colunas, WIP=3, Raia Rápida) e 8 tarefas da Fase Zero."""
+    """Quatro colunas; limite inicial por executor inclui teste e bloqueio."""
     return core.protocolo_kanban()
 
 
@@ -135,9 +142,9 @@ def fase_zero() -> dict:
     return core.checklist_fase_zero()
 
 
-@app.get("/seguranca/checklist", summary="10 controles NIST-Lite / CIS IG1", tags=["Segurança"], dependencies=_dep)
+@app.get("/seguranca/checklist", summary="Dez verificações locais de segurança", tags=["Segurança"], dependencies=_dep)
 def seguranca_checklist() -> dict:
-    """Checklist dos 10 controles mínimos de segurança (todos nascem 'pendente')."""
+    """Seleção local pendente; não equivale ao CIS IG1 completo."""
     return core.checklist_10_controles()
 
 
@@ -162,19 +169,25 @@ def kpis(entrada: EntradaKPIs) -> dict:
     )
 
 
-@app.post("/dan", summary="Calcula a Dívida de Arquitetura Normalizada", tags=["Diagnóstico"], dependencies=_dep)
+@app.post("/dan", summary="Proporção legada (alias histórico)", tags=["Diagnóstico"], dependencies=_dep)
 def dan(entrada: EntradaDAN) -> dict:
-    """DAN = legados/totais; zonas: <0,15 saudável, 0,15-0,35 alerta, >0,35 crítico."""
+    """Campo dan é alias depreciado da proporção legada; não mede DAN financeiro."""
     return core.calcular_dan(entrada.itens_legados, entrada.itens_totais)
 
 
 @app.post("/cot", summary="Payback e ROI anual de um COT", tags=["Diagnóstico"], dependencies=_dep)
 def cot(entrada: EntradaCOT) -> dict:
     """Payback (meses) e ROI anual (%) de um investimento de otimização (COT)."""
-    return core.calcular_cot(entrada.custo_otimizacao, entrada.ganho_mensal)
+    return core.calcular_cot(entrada.custo_otimizacao, entrada.ganho_mensal, entrada.custo_recorrente_mensal)
 
 
 @app.post("/roi", summary="ROI operacional simplificado", tags=["Diagnóstico"], dependencies=_dep)
 def roi(entrada: EntradaROI) -> dict:
     """ROI anual e payback de qualquer iniciativa com retorno mensal recorrente."""
-    return core.calcular_roi_simplificado(entrada.investimento, entrada.retorno_mensal)
+    return core.calcular_roi_simplificado(entrada.investimento, entrada.retorno_mensal, entrada.custo_recorrente_mensal)
+
+
+@app.post("/dan-financeiro", summary="Custo de refatoração / orçamento anual", tags=["Diagnóstico"], dependencies=_dep)
+def dan_financeiro(entrada: EntradaDANFinanceiro) -> dict:
+    """Instrumento financeiro local, sem faixas universais de risco."""
+    return core.calcular_dan_financeiro(entrada.custo_refatoracao, entrada.orcamento_anual_ti)

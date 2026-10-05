@@ -13,18 +13,24 @@
 \usepackage{graphicx,float,caption}
 \usepackage{xcolor}
 \usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{etoolbox}
+\pretocmd{\section}{\Needspace{5\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+\setlength{\emergencystretch}{2em}
 \usepackage[round,authoryear]{natbib}
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
 
-\definecolor{gppmeblue}{HTML}{184E77}
-\definecolor{gppmelight}{HTML}{EAF3F8}
+\definecolor{gppmeblue}{HTML}{8A421E}
+\definecolor{gppmelight}{HTML}{F3F5F2}
 \hypersetup{
   colorlinks=true,
   linkcolor=gppmeblue,
   citecolor=gppmeblue,
   urlcolor=gppmeblue,
-  pdftitle={GP-PME: um framework enxuto e adaptativo de governança e gestão de TI},
+  pdflang={pt-BR},
+  pdftitle={GEAR: um framework enxuto e adaptativo de governança e gestão de TI},
   pdfauthor={André Victor Andrade Oliveira Santos}
 }
 
@@ -35,11 +41,11 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}{>{\raggedright\arraybackslash}X}
 
-\title{\textbf{GP-PME: um framework enxuto e adaptativo de governança e gestão de TI para empresas de pequeno porte}}
+\title{\textbf{GEAR: um framework enxuto e adaptativo de governança e gestão de TI para empresas de pequeno porte}}
 \author{Andr\'{e} Victor Andrade Oliveira Santos\\
 Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia da Bahia (IFBA)\\
 Campus Vit\'{o}ria da Conquista}
-\date{Primeira versão do manuscrito --- agosto de 2026}
+\date{Primeira versão: agosto de 2026. Revisão editorial: outubro de 2026}
 
 \begin{document}
 \selectlanguage{brazil}
@@ -52,14 +58,14 @@ Campus Vit\'{o}ria da Conquista}
 \end{center}
 
 \begin{abstract}
-Pequenas empresas dependem de tecnologia da informação, mas frequentemente não dispõem de pessoas, tempo e orçamento para operacionalizar, em conjunto, referências abrangentes de governança, gestão de serviços e segurança. Este artigo apresenta o GP-PME, um artefato contingencial que preserva funções essenciais dessas referências e reduz seu custo de coordenação por meio de três pilares, uma Fase Zero de 30 dias, artefatos compactos, métricas verificáveis e assistência opcional por inteligência artificial com revisão humana. O estudo é organizado como Design Science Research e documenta requisitos, decisões de desenho, instanciação computacional e rastreabilidade entre alegações e evidências. Na etapa atual, testes de engenharia confirmam a existência e a execução básica dos componentes do repositório, mas não demonstram efetividade organizacional. Para avaliar essa lacuna, pré-especifica-se um estudo com 25 empresas sintéticas de 5 a 20 colaboradores; cada caso será executado de forma pareada com GP-PME, ITIL~4 adaptado e COBIT~2019 adaptado, usando personas semeadas, pacote comum de tarefas, rubrica cega e métricas de completude, esforço, rastreabilidade e afirmações sem suporte. A contribuição desta primeira versão é, portanto, um artefato inspecionável e um protocolo falseável, e não uma alegação antecipada de superioridade.
+Pequenas empresas dependem de tecnologia da informação, mas frequentemente não dispõem de pessoas, tempo e orçamento para operacionalizar, em conjunto, referências abrangentes de governança, gestão de serviços e segurança. Este artigo apresenta o GEAR (anteriormente GP-PME), um artefato contingencial que preserva funções essenciais dessas referências e propõe reduzir seu custo de coordenação por meio de três domínios, uma Fase Zero de 30 dias, artefatos compactos, métricas verificáveis e assistência opcional por inteligência artificial com revisão humana. O estudo é organizado como Design Science Research e documenta requisitos, decisões de desenho, instanciação computacional e rastreabilidade entre alegações e evidências. Na etapa atual, testes de engenharia confirmam a existência e a execução básica dos componentes do repositório, mas não demonstram efetividade organizacional. Para avaliar essa lacuna, pré-especifica-se um estudo com 25 empresas sintéticas de 5 a 20 colaboradores; cada caso será executado de forma pareada com GEAR, ITIL~4 adaptado e COBIT~2019 adaptado, usando personas semeadas, pacote comum de tarefas, rubrica cega e métricas de completude, esforço, rastreabilidade e afirmações sem suporte. A contribuição desta primeira versão é, portanto, um artefato inspecionável e um protocolo falseável, e não uma alegação antecipada de superioridade.
 
 \noindent\textbf{Palavras-chave:} governança de TI; pequenas empresas; teoria da contingência; Design Science Research; inteligência artificial; simulação baseada em personas.
 \end{abstract}
 
 \begin{otherlanguage}{english}
 \begin{abstract}
-Small firms depend on information technology but often lack the people, time, and budget required to operationalize comprehensive governance, service-management, and security references as an integrated system. This paper presents GP-PME, a contingency-based artifact that preserves essential functions from those references while reducing coordination cost through three pillars, a 30-day Phase Zero, compact artifacts, verifiable metrics, and optional artificial-intelligence assistance under human review. The study follows Design Science Research and documents requirements, design decisions, the computational instantiation, and traceability between claims and evidence. At this stage, engineering checks confirm that repository components exist and execute at a basic level, but they do not demonstrate organizational effectiveness. To address this gap, we pre-specify a study with 25 synthetic firms employing 5 to 20 people; each case will be run as a paired comparison of GP-PME, tailored ITIL~4, and tailored COBIT~2019, using seeded personas, a common task package, blinded scoring, and metrics for completeness, effort, traceability, and unsupported claims. The contribution of this first version is therefore an inspectable artifact and a falsifiable protocol, not an advance claim of superiority.
+Small firms depend on information technology but often lack the people, time, and budget required to operationalize comprehensive governance, service-management, and security references as an integrated system. This paper presents GEAR (formerly GP-PME), a contingency-based artifact that preserves essential functions from those references while reducing coordination cost through three essential domains, a 30-day Phase Zero, compact artifacts, verifiable metrics, and optional artificial-intelligence assistance under human review. The study follows Design Science Research and documents requirements, design decisions, the computational instantiation, and traceability between claims and evidence. At this stage, engineering checks confirm that repository components exist and execute at a basic level, but they do not demonstrate organizational effectiveness. To address this gap, we pre-specify a study with 25 synthetic firms employing 5 to 20 people; each case will be run as a paired comparison of GEAR, tailored ITIL~4, and tailored COBIT~2019, using seeded personas, a common task package, blinded scoring, and metrics for completeness, effort, traceability, and unsupported claims. The contribution of this first version is therefore an inspectable artifact and a falsifiable protocol, not an advance claim of superiority.
 
 \noindent\textbf{Keywords:} IT governance; small firms; contingency theory; Design Science Research; artificial intelligence; persona-based simulation.
 \end{abstract}
@@ -77,7 +83,7 @@ Small firms depend on information technology but often lack the people, time, an
 Ferramentas de IA generativa auxiliaram a busca no acervo local, a organização do manuscrito, a revisão de consistência e a preparação de código LaTeX e Mermaid. O autor permanece responsável pela seleção das fontes, verificação das alegações, interpretação e versão final. Nenhuma saída de IA foi tratada como dado empírico, e nenhum teste comparativo foi executado para esta versão.
 
 \section*{Disponibilidade de artefatos}
-O código-fonte do artigo, os diagramas Mermaid e o catálogo prospectivo de cenários acompanham o repositório do GP-PME. Os manifestos completos, logs de execução e dados de resultados serão publicados apenas após o congelamento e a execução do protocolo no Frame-sim.
+O código-fonte do artigo, os diagramas Mermaid e o catálogo prospectivo de cenários acompanham o repositório do GEAR. Os manifestos completos, logs de execução e dados de resultados serão publicados apenas após o congelamento e a execução do protocolo no Frame-sim.
 
 \section*{Aspectos éticos}
 Esta versão não envolve participantes humanos nem coleta de dados organizacionais. A avaliação planejada empregará empresas e personas sintéticas sem identificação de pessoas reais. Estudos de campo posteriores dependerão de consentimento, proteção de dados e apreciação ética institucional quando aplicável.

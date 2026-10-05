@@ -1,74 +1,93 @@
-# Template: Prompt para Análise de Riscos de Segurança (NIST-Lite)
+# GEAR: Prompt para análise de risco
 
-Este template disponibiliza o **Prompt de Aceleração por IA** estruturado para realizar análises de riscos rápidas e alinhadas aos padrões **NIST CSF 2.0** e **CIS Controls (IG1)**. Ele permite mapear ameaças e sugerir ações de blindagem cibernética de baixo custo e alta eficiência para ativos críticos de Pequenas e Médias Empresas.
+Edição editorial GEAR 2026.10. Caminho GP-PME preservado para compatibilidade. Modelos completos, revistos a partir da biblioteca anterior; preencher com dados reais e registrar lacunas. IA é opcional. Direitos conforme LICENSE.md.
 
----
+## Percurso de leitura
 
-## 🛡️ Copiar Prompt de Aceleração (IA)
+- [Risco e continuidade](#risco-e-continuidade)
 
-Copie o bloco de texto abaixo e envie para o subagente **Guardião de Segurança** ou seu assistente de IA:
+## Risco e continuidade
+
+Use quando uma dependência pode impedir o serviço ou expor informações. Proprietário do serviço descreve impacto; TI verifica controles e recuperação; direção aceita risco dentro da alçada.
+
+| Campo | Registro |
+| --- | --- |
+| Serviço, proprietário e data | |
+| Ativos, dados e fornecedores críticos | |
+| Evento e consequência | |
+| Evidência de exposição e incerteza | |
+| Controles existentes e verificação | |
+| Tratamento escolhido, responsável e prazo | |
+| Risco residual e aprovador | |
+| Tempo de recuperação tolerável (RTO) | |
+| Perda de dados tolerável (RPO) | |
+| Backup, proteção, retenção e responsável | |
+| Teste: cenário, ambiente, horários e resultado | |
+| Validação do serviço pelo negócio | |
+| Pendências e próxima revisão | |
+
+O teste pode recuperar um arquivo, uma base ou o serviço inteiro. Declarar o recorte para que a conclusão corresponda à evidência. Se o tempo medido exceder a tolerância, registrar o desvio e decidir tratamento, sem alterar o objetivo retroativamente para declarar sucesso.
+
+Fundamento: NIST [F01](<../../../framework/referencias/fontes.md#f01>), [F02](<../../../framework/referencias/fontes.md#f02>) e CISA [F12](<../../../framework/referencias/fontes.md#f12>). O formato é uma adaptação local.
+
+### Análise qualitativa e assistência opcional
+
+Se usar probabilidade e impacto baixo/médio/alto, definir critérios, origem e incerteza antes de combinar categorias. Sem evidência, registrar hipótese a investigar, sem converter rótulo em probabilidade numérica. A análise local não certifica conformidade NIST ou CIS.
 
 ```text
-Você é um Engenheiro de Segurança da Informação Sênior e Auditor de Riscos em Segurança Cibernética especialista em PMEs e no framework GP-PME. 
-Sua tarefa é analisar o ativo de informação enviado pelo usuário, mapear os principais riscos de segurança (ameaças e vulnerabilidades) e propor um plano de ação prático e de baixo custo alinhado ao padrão NIST-Lite e CIS Controls IG1 (Grupo de Implementação 1).
-
----
-
-### 1. ESTRUTURA DO RELATÓRIO DE SAÍDA (Tabela e Ações)
-Gere sua análise formatada em Markdown contendo as seções abaixo:
-
-# Relatório de Riscos [GP-PME]: [Nome do Ativo Analisado]
-
-## 1. Mapeamento de Riscos (Matriz 80/20)
-Forneça a análise em formato de tabela Markdown contendo as seguintes colunas:
-- Risco Identificado: Descrição resumida do perigo.
-- Ameaça Relacionada: O agente ou evento causador (ex: Ransomware, Ataque de Força Bruta, Erro Humano).
-- Vulnerabilidade Crítica: A falha atual que permite o ataque (ex: Ausência de MFA, Usuários Administradores locais, Sem Backup externo).
-- Probabilidade (Baixa / Média / Alta)
-- Impacto (Baixo / Médio / Alto)
-- Nível de Risco Geral: Correlacionando Probabilidade e Impacto (ex: Crítico, Alto, Médio, Baixo).
-
-## 2. Controles de Mitigação Recomendados (Padrão NIST-Lite)
-Liste de 3 a 4 ações específicas de segurança física, lógica ou administrativa com foco em custo zero ou mínimo, priorizando:
-- Privilégio Mínimo (Remover direitos de admin).
-- Autenticação Multifator (MFA).
-- Criptografia local e backup redundante.
-
-## 3. Roteiro de Resposta Rápida (PRI) de 3 Linhas
-Escreva 3 passos simples que qualquer funcionário não técnico deve fazer caso esse ativo sofra um incidente (ex: desconectar cabo de rede, acionar TI).
-
----
-
-### 2. DIRETRIZES DE BLINDAGEM CONTRA ALUCINAÇÕES
-- Não assuma a existência de firewalls de borda caros ou sistemas de monitoramento SOC na PME, a menos que especificado pelo usuário.
-- Não invente nomes de malwares ou vulnerabilidades de dia zero complexos de forma teórica. Foque em riscos reais e comuns de PMEs (ex: Phishing, vazamento de credenciais).
-- Caso falte dados sobre a rede da empresa, inclua uma nota: "*Aviso: Requer auditoria local física do profissional de TI para verificar a presença de [inserir o que falta]*".
-
----
-
-### 3. ENTRADA DO USUÁRIO (ATIVO DE INFORMAÇÃO)
-"[INSERIR AQUI O ATIVO CRÍTICO E CONTEXTO DE USO]"
+Tarefa: preparar minuta de análise de risco do GEAR.
+Entrada: [serviço, ativo, uso, dependências e evidências autorizadas].
+Saída: evento, exposição verificada ou hipótese, consequência, controles
+existentes, lacunas, alternativas, esforço, responsável e verificação.
+Quando houver classificação qualitativa, usar os critérios informados.
+Não inferir vulnerabilidade, CVE, configuração ou probabilidade por marca.
+Não garantir custo zero, proteção integral ou recuperação em prazo fixo.
+Conferir fontes externas junto à afirmação, incluindo versão e trecho.
+Identificar autoridade para contenção, comunicação e aceitação de risco.
+Deixar contato não fornecido pendente; não prescrever isolamento universal.
+A pessoa responsável confere a análise e autoriza os efeitos apropriados.
 ```
 
----
+### Cenários fictícios dos modelos anteriores
 
-## 💡 Exemplos de Ativos para Inserir no Prompt
+- ERP em nuvem com dados cadastrais e financeiros. O exemplo mencionava cinco mil clientes e acesso por senha; é hipótese didática. Conferir identidade, MFA, dados tratados, permissões e recuperação antes de avaliar exposição.
+- Serviço de arquivos de escritório contábil com versão antiga de Windows Server e acesso compartilhado. Confirmar versão, suporte, permissões e cópia; “antigo” não identifica sozinho uma vulnerabilidade ou CVE.
+- Notebooks usados em viagens com propostas e planilhas confidenciais. Conferir acesso, criptografia, atualização, guarda e recuperação; não inferir configuração real pelo cargo do usuário.
 
-Substitua o bloco `3. ENTRADA DO USUÁRIO (ATIVO DE INFORMAÇÃO)` com um dos ativos críticos reais de PMEs:
+Na análise manual, partir do efeito sobre o serviço, conferir acesso e evidências de cópia e recuperação, depois comparar tratamentos. Frequência mensal ou trimestral depende do requisito local. Uma falha de controle precisa de investigação e resposta proporcional, não de ordem automática de alteração sem alçada.
 
-*   **Exemplo 1 (Financeiro/Nuvem)**: *"Nosso sistema ERP online (SaaS) que roda na nuvem, onde processamos faturamento, emitimos notas fiscais e guardamos os CPFs/dados bancários de mais de 5.000 clientes ativos. O acesso é feito apenas por navegadores web com usuário e senha padrão."*
-*   **Exemplo 2 (Infraestrutura/Local)**: *"O Servidor de Arquivos da rede interna do escritório de contabilidade. É um computador rodando Windows Server antigo compartilhado na rede sem senha para toda a equipe, onde ficam guardados os arquivos de balanços, folhas de pagamento e impostos dos clientes."*
-*   **Exemplo 3 (Físico/Dispositivos)**: *"Os notebooks dos gerentes comerciais, que viajam frequentemente para reuniões externas e feiras de negócios. Os notebooks contêm planilhas de metas, dados confidenciais de propostas comerciais e não possuem senha de login forte no Windows ou criptografia de disco."*
+### Verificações complementares locais
 
----
+As skills anteriores mantinham dez verificações de segurança. Esta lista conserva a cobertura do modelo, como seleção autoral a adaptar. Ela não representa o catálogo completo do NIST CSF ou do CIS IG1, nem demonstra conformidade por quantidade de itens marcados.
 
-## 🛠️ Como Realizar a Análise Manualmente (Sem IA)
+| Verificação | Evidência a obter no recorte |
+| --- | --- |
+| Hardware e dispositivos | Inventário, proprietário, uso, localização e cobertura desconhecida |
+| Software e serviços | Versões, uso autorizado, responsável e dependências |
+| Vulnerabilidades | Origem da informação, aplicabilidade, correção ou exceção e verificação |
+| Configuração | Baseline local, funções necessárias, alterações e revisão |
+| Contas e autenticação | Contas individuais, cobertura de MFA, exceções e recuperação de acesso |
+| Privilégio | Permissões necessárias, contas administrativas e revisão |
+| Proteção contra malware | Cobertura, atualização, alertas e resposta no ambiente |
+| Cópias e recuperação | Retenção, separação, proteção e teste com resultado e limites |
+| Rede | Fluxos necessários, regras e conferência de filtragem no recorte |
+| Orientação de pessoas | Situações abordadas, participação, modo de verificar e atualização |
 
-Caso opere a segurança de forma puramente manual, realize a auditoria em 3 etapas simples:
+Para cada item, registrar implementado no recorte verificado, em andamento, ausente ou não verificado, com fonte, data, responsável e próxima ação. O resumo informa cobertura conhecida; não converter evidência de um equipamento em cobertura de toda a empresa.
 
-1.  **Mapear o Ativo**: Liste o sistema/servidor e pergunte: *"Se esse computador queimar ou for invadido hoje, a empresa consegue faturar amanhã?"* Se a resposta for não, o ativo é **Criticidade 5 (Crítico)**.
-2.  **Auditoria dos 3 Checks**:
-    - **Check 1**: O sistema possui usuário e senha individual para cada funcionário com MFA ativado?
-    - **Check 2**: Os computadores que acessam possuem privilégios de usuário comum (não admin)?
-    - **Check 3**: Existe um backup automático feito em um HD externo ou nuvem isolada que é testado mensalmente?
-3.  **Correção Rápida**: Priorize corrigir imediatamente qualquer ativo nível 5 que falhar em algum dos 3 checks acima.
+As três perguntas manuais de identidade, privilégio e recuperação ajudam a iniciar a análise. Elas complementam a lista, sem substituí-la. A ordem dos controles e a frequência de revisão dependem da exposição e do serviço; a antiga escolha de quatro itens por menor esforço não demonstrava redução de risco medida.
+
+### Grade qualitativa opcional
+
+Esta grade preserva a combinação usada nas skills anteriores. Seus rótulos são convenções locais; definir primeiro o significado dos eixos, sua evidência e incerteza. A ausência de dado sobre probabilidade permanece não verificada, sem escolher “baixa” por padrão.
+
+| Probabilidade local / impacto local | Baixo | Médio | Alto |
+| --- | --- | --- | --- |
+| Alta | Médio | Alto | Crítico |
+| Média | Baixo | Médio | Alto |
+| Baixa | Baixo | Baixo | Médio |
+
+A classificação orienta conversa e tratamento; não estima frequência de ataque, não autoriza alteração automática e não substitui a análise de consequência e alçada. Registrar o risco residual e o motivo da decisão.
+
+Modelo complementar: [inventário de dependências](<../../../framework/templates/inventario-dependencias.md>). Para resposta operacional: [incidente](<../../../framework/templates/incidente.md>).
+

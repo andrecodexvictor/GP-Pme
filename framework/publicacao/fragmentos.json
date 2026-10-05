@@ -1,0 +1,387 @@
+[
+  {
+    "fragmento": "${cardId}",
+    "destino": null,
+    "tratamento": "Identificador interno de script ou cartão de demonstração; excluído de compatibilidade de URL pública. O quadro vigente começa vazio e usa dados de exercício."
+  },
+  {
+    "fragmento": "card-1",
+    "destino": null,
+    "tratamento": "Identificador interno de script ou cartão de demonstração; excluído de compatibilidade de URL pública. O quadro vigente começa vazio e usa dados de exercício."
+  },
+  {
+    "fragmento": "card-2",
+    "destino": null,
+    "tratamento": "Identificador interno de script ou cartão de demonstração; excluído de compatibilidade de URL pública. O quadro vigente começa vazio e usa dados de exercício."
+  },
+  {
+    "fragmento": "card-3",
+    "destino": null,
+    "tratamento": "Identificador interno de script ou cartão de demonstração; excluído de compatibilidade de URL pública. O quadro vigente começa vazio e usa dados de exercício."
+  },
+  {
+    "fragmento": "cat-agentes",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-leigo-overview",
+    "destino": "docs/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-leigo-pilar1",
+    "destino": "docs/nucleo/governanca.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-leigo-pilar2",
+    "destino": "docs/nucleo/execucao-servicos.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-leigo-pilar3",
+    "destino": "docs/nucleo/seguranca-continuidade.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-leigo-visao",
+    "destino": "docs/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-prds",
+    "destino": "docs/templates/prd-aceite.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-prompts",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tasklists",
+    "destino": "docs/nucleo/execucao-servicos.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tecnico-fasezero",
+    "destino": "docs/adocao/primeiros-30-dias.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tecnico-kpis",
+    "destino": "docs/indicadores/operacionais.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tecnico-overview",
+    "destino": "docs/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tecnico-pilar1",
+    "destino": "docs/nucleo/governanca.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tecnico-pilar2",
+    "destino": "docs/nucleo/execucao-servicos.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tecnico-pilar3",
+    "destino": "docs/nucleo/seguranca-continuidade.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cat-tecnico-pilar4",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "col-doing",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "col-done",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "col-testing",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "col-todo",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cotDowntime",
+    "destino": "ferramentas.html#capacidade",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cotInvestment",
+    "destino": "ferramentas.html#retorno",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cotPayback",
+    "destino": "ferramentas.html#retorno",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cotPeople",
+    "destino": "ferramentas.html#capacidade",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cotROI",
+    "destino": "ferramentas.html#retorno",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "cotRate",
+    "destino": "ferramentas.html#capacidade",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "count-doing",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "count-done",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "count-testing",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "count-todo",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "danBar",
+    "destino": "ferramentas.html#divida",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "danBudget",
+    "destino": "ferramentas.html#divida",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "danDesc",
+    "destino": "ferramentas.html#divida",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "danHourlyRate",
+    "destino": "ferramentas.html#divida",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "danHours",
+    "destino": "ferramentas.html#divida",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "danResultBox",
+    "destino": "ferramentas.html#divida",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "danValue",
+    "destino": "ferramentas.html#divida",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "dummies",
+    "destino": "docs/adocao/primeiros-30-dias.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "simuladores",
+    "destino": "ferramentas.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-agentes",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-leigo-overview",
+    "destino": "docs/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-leigo-pilar1",
+    "destino": "docs/nucleo/governanca.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-leigo-pilar2",
+    "destino": "docs/nucleo/execucao-servicos.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-leigo-pilar3",
+    "destino": "docs/nucleo/seguranca-continuidade.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-leigo-visao",
+    "destino": "docs/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-prds",
+    "destino": "docs/templates/prd-aceite.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-prompts",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tasklists",
+    "destino": "docs/nucleo/execucao-servicos.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tecnico-fasezero",
+    "destino": "docs/adocao/primeiros-30-dias.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tecnico-kpis",
+    "destino": "docs/indicadores/operacionais.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tecnico-overview",
+    "destino": "docs/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tecnico-pilar1",
+    "destino": "docs/nucleo/governanca.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tecnico-pilar2",
+    "destino": "docs/nucleo/execucao-servicos.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tecnico-pilar3",
+    "destino": "docs/nucleo/seguranca-continuidade.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "subtab-btn-tecnico-pilar4",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "tab-btn-dummies",
+    "destino": "docs/adocao/primeiros-30-dias.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "tab-btn-simuladores",
+    "destino": "ferramentas.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "tab-btn-tecnico",
+    "destino": "docs/guias/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "tab-btn-templates",
+    "destino": "biblioteca.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "tab-btn-visao",
+    "destino": "docs/nucleo/escopo-principios.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "tailwind-config",
+    "destino": null,
+    "tratamento": "Identificador interno de script ou cartão de demonstração; excluído de compatibilidade de URL pública. O quadro vigente começa vazio e usa dados de exercício."
+  },
+  {
+    "fragmento": "tecnico",
+    "destino": "docs/guias/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "temp-checklist-hitl",
+    "destino": "docs/templates/revisao-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "temp-prd-completo",
+    "destino": "docs/templates/prd-aceite.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "temp-prompt-mestre",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "temp-prompt-prd",
+    "destino": "docs/templates/prd-aceite.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "temp-prompt-risco",
+    "destino": "docs/nucleo/seguranca-continuidade.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "temp-system-agentes",
+    "destino": "docs/guias/usar-ia.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "temp-tasklist-operacional",
+    "destino": "docs/nucleo/execucao-servicos.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "templates",
+    "destino": "biblioteca.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "visao",
+    "destino": "docs/nucleo/escopo-principios.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "wipAlert",
+    "destino": "ferramentas.html#fluxo",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  },
+  {
+    "fragmento": "workspace",
+    "destino": "docs/README.html",
+    "tratamento": "Equivalência de navegação na página de entrada; seguir link para tarefa atual."
+  }
+]

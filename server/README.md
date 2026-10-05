@@ -1,107 +1,70 @@
-# Servidor GP-PME — MCP + API REST
+# GEAR — serviços locais e ferramentas MCP
 
-> O framework GP-PME como **serviço**: para ambientes hostis a ferramentas de gestão —
-> empresas onde não se pode instalar ClickUp/Jira/Notion, mas onde um agente de IA
-> (via MCP) ou um `curl` numa API interna funcionam. Todo o conhecimento e as
-> calculadoras do framework (maturidade IM-TI, KPIs, DAN, COT, ROI, protocolo kanban,
-> Fase Zero, checklist de segurança) ficam acessíveis por duas portas: **MCP** e **REST**.
+A camada `server/core.py` oferece regras locais, leitura de documentos e busca. `api.py` expõe uma API REST; `mcp_server.py` expõe ferramentas MCP para assistência opcional. Os identificadores `gp-pme` e variáveis `GPPME_*` permanecem por compatibilidade. A edição editorial vigente está em [framework](../framework/README.md).
 
-## Arquitetura
+## Arquitetura e requisitos
 
-```
-                 ┌───────────────────────────┐
-                 │        server/core.py     │  ← regras de negócio puras
-                 │  (sem dependências; lê os │    (fórmulas dos guias do
-                 │   guias e a busca search/)│     framework, com fontes)
-                 └────────────┬──────────────┘
-                    ┌─────────┴──────────┐
-        ┌───────────▼─────────┐ ┌────────▼────────────┐
-        │  server/api.py      │ │ server/mcp_server.py │
-        │  FastAPI (REST)     │ │ MCP stdio (FastMCP)  │
-        │  curl / integrações │ │ Claude Code/Desktop, │
-        │  internas           │ │ qualquer cliente MCP │
-        └─────────────────────┘ └─────────────────────┘
+O núcleo usa a biblioteca padrão de Python. As bordas dependem de FastAPI/Uvicorn/Pydantic ou do SDK MCP. O pacote MCP requer Python 3.10 ou superior. Instale as dependências no ambiente destinado ao serviço:
+
+```powershell
+python -m pip install -r server/requirements.txt
 ```
 
-`core.py` roda **sem nenhuma dependência externa** (stdlib). As dependências só
-entram nas bordas (fastapi/uvicorn para REST, mcp para o servidor MCP).
+A partir da raiz do projeto, `python -m server.core` executa uma verificação local mínima. Cálculos e checklists não comprovam implantação, ganho ou conformidade.
 
-## Requisitos
+## MCP no ambiente deste usuário
 
-- **Python ≥ 3.10** (o SDK `mcp` exige; nesta máquina use `py -3.10`).
-- `pip install -r server/requirements.txt` (mcp, fastapi, uvicorn, pydantic).
+MCPs são registrados globalmente em `%USERPROFILE%/.agents/mcp-hub/registry.json` e executados pelo hub compartilhado em `http://127.0.0.1:18888`. Os clientes usam URLs do hub; não configurar um subprocesso stdio por cliente nem criar instalação local de MCP neste projeto.
 
-## Instalação no Claude Code / Claude Desktop (MCP)
+Antes de mudar o registro, ler `%USERPROFILE%/.agents/mcp-hub/README.md`. Usar `mcp-hub status`, `add NAME --config FILE`, `restart` e `sync-clients` conforme o contrato global. O backend precisa de executável absoluto, versão fixada e diretório deste projeto. A entrada `python -m server.mcp_server` é um transporte de backend para o serviço gerenciado; não é instrução de instalação no cliente. Esta reforma não registra nem publica um novo servidor por consequência.
 
-O repositório já traz um [`.mcp.json`](../.mcp.json) na raiz — abrir o Claude Code
-dentro da pasta do framework registra o servidor automaticamente. Para registrar
-manualmente (Claude Desktop → `claude_desktop_config.json`):
+| Ferramenta | Comportamento |
+| --- | --- |
+| `buscar_conhecimento` | Consulta corpus canônico; informa modo efetivo, com fallback lexical |
+| `listar_artefatos` | Catálogo de documentos e caminhos relativos |
+| `obter_documento` | Lê Markdown dentro da raiz, com limite de 200 KB |
+| `avaliar_maturidade` | Dez respostas 0/1; IM-TI 0–10 e nível local 0–4 |
+| `calcular_kpis` | Disponibilidade, resolução média e satisfação, com limites de entrada |
+| `calcular_dan` | Alias histórico da proporção de itens legados; não é DAN financeiro |
+| `calcular_dan_financeiro` | Custo de refatoração/orçamento anual, sem faixas universais |
+| `calcular_cot` / `calcular_roi` | ROI líquido em 12 meses, razão bruta e payback simples |
+| `protocolo_kanban` | Quatro colunas; três iniciados por executor, incluindo teste e bloqueio |
+| `checklist_fase_zero` | Nove passos da janela inicial de 30 dias |
+| `checklist_seguranca` | Dez verificações locais; não equivalem ao CIS IG1 completo |
 
-```json
-{
-  "mcpServers": {
-    "gp-pme": {
-      "command": "python",
-      "args": ["-m", "server.mcp_server"],
-      "cwd": "C:/caminho/para/GP-PME framework"
-    }
-  }
-}
-```
-
-### Tools MCP expostas
-
-| Tool | O que faz |
-|---|---|
-| `buscar_conhecimento` | Busca híbrida (semântica + BM25) no corpus do framework |
-| `listar_artefatos` | Catálogo de guias, templates, agentes e skills com caminhos |
-| `obter_documento` | Lê um `.md` do framework (anti path-traversal, máx 200 KB) |
-| `avaliar_maturidade` | Autoavaliação de 10 perguntas → IM-TI, nível 1–5 por pilar |
-| `calcular_kpis` | IDSC (disponibilidade %), TMpR, ISU |
-| `calcular_dan` | Dívida de Arquitetura Normalizada + zona (<0,15 / 0,15–0,35 / >0,35) |
-| `calcular_cot` | Custo de Otimização Tecnológica + payback |
-| `calcular_roi` | ROI simplificado de implantação por perfil de empresa |
-| `protocolo_kanban` | Spec do quadro canônico (4 colunas, WIP=3, raia rápida) + 8 tasks da Fase Zero |
-| `checklist_fase_zero` | Passos ordenados da implantação de 30 dias |
-| `checklist_seguranca` | Os 10 controles NIST-Lite / CIS IG1 |
+O checklist e as sugestões começam pendentes. Campo de status ou total de pontos não demonstra verificação organizacional. O nome histórico `pilares` na resposta de maturidade agrupa três domínios.
 
 ## API REST
 
-Subir (nesta máquina: `py -3.10` no lugar de `python`):
-
-```bash
-python -m uvicorn server.api:app --port 8766
+```powershell
+python -m uvicorn server.api:app --host 127.0.0.1 --port 8766
 ```
 
-Documentação interativa (OpenAPI/Swagger): `http://127.0.0.1:8766/docs`.
+OpenAPI: `http://127.0.0.1:8766/docs`. Configurar `GPPME_API_KEY` exige `X-API-Key` em todas as rotas; sem a variável, não há autenticação. O CORS atual aceita qualquer origem. Esses são limites da implementação; exposição além do ambiente local exige controles adequados.
 
-| Método | Rota | Exemplo |
-|---|---|---|
-| GET | `/health` | `curl http://127.0.0.1:8766/health` |
-| GET | `/artefatos` | `curl http://127.0.0.1:8766/artefatos` |
-| GET | `/documento?caminho=` | `curl "http://127.0.0.1:8766/documento?caminho=README.md"` |
-| GET | `/buscar?q=&k=&modo=` | `curl "http://127.0.0.1:8766/buscar?q=kanban&k=3"` |
-| GET | `/kanban/protocolo` | `curl http://127.0.0.1:8766/kanban/protocolo` |
-| GET | `/fase-zero` | `curl http://127.0.0.1:8766/fase-zero` |
-| GET | `/seguranca/checklist` | `curl http://127.0.0.1:8766/seguranca/checklist` |
-| POST | `/maturidade` | `curl -X POST .../maturidade -H "Content-Type: application/json" -d "{\"respostas\":[3,3,3,3,3,3,3,3,3,3]}"` |
-| POST | `/kpis` | body com horas de indisponibilidade/totais, tempos de resposta, notas |
-| POST | `/dan` | `-d "{\"itens_legados\":3,\"itens_totais\":10}"` |
-| POST | `/cot` | `-d "{\"custo_otimizacao\":9570,\"ganho_mensal\":5195}"` |
-| POST | `/roi` | perfil (`A`/`B`/`C`/`D`) + parâmetros opcionais |
+| Método e rota | Entrada |
+| --- | --- |
+| GET `/health` | Estado e versão |
+| GET `/artefatos?categoria=` | Categoria opcional |
+| GET `/documento?caminho=` | Caminho retornado pelo catálogo |
+| GET `/buscar?q=&k=&modo=` | Texto, até 50 trechos e modo |
+| GET `/kanban/protocolo` | Política de fluxo |
+| GET `/fase-zero` | Percurso inicial |
+| GET `/seguranca/checklist` | Seleção local de verificações |
+| POST `/maturidade` | `{"respostas":[1,1,0,1,0,1,1,0,0,1]}` |
+| POST `/kpis` | Horas indisponíveis/totais, tempos de resolução e notas |
+| POST `/dan` | `{"itens_legados":3,"itens_totais":10}` |
+| POST `/dan-financeiro` | `{"custo_refatoracao":9000,"orcamento_anual_ti":30000}` |
+| POST `/cot` | `{"custo_otimizacao":9000,"ganho_mensal":3000,"custo_recorrente_mensal":500}` |
+| POST `/roi` | `{"investimento":9000,"retorno_mensal":3000,"custo_recorrente_mensal":500}` |
 
-## Segurança
+Os exemplos são entradas ilustrativas. Em COT, o exemplo retorna ROI líquido de 233,33% e payback de 3,6 meses; benefício líquido mensal não positivo retorna payback nulo. [Convenções e limites](../framework/indicadores/financeiros.md).
 
-- **Path traversal bloqueado**: `obter_documento` resolve o caminho contra a raiz do
-  repositório e rejeita qualquer escape (`../`, absolutos); só serve `.md` até 200 KB.
-- **API key opcional**: defina `GPPME_API_KEY` no ambiente e a API passa a exigir o
-  header `X-API-Key` em toda rota (sem a env, a API fica aberta — pensada para rede
-  interna; não exponha à internet sem a chave e um proxy TLS).
-- **CORS liberado** por padrão para facilitar integrações internas.
+## Conhecimento e verificação
 
-## Busca semântica
+[Busca](../search/README.md) usa `framework/` e README raiz, excluindo versões antigas e materiais externos do corpus vigente. Índices ausentes produzem orientação de reconstrução. Embeddings ausentes ou incompatíveis com o hash do corpus conduzem a BM25. Não apresentar esse fallback como busca semântica.
 
-`buscar_conhecimento`/`/buscar` usam o motor de [`search/`](../search/README.md).
-Se os índices não existirem, a resposta orienta: `python -m search.ingest` →
-`python -m search.build_index`. Sem `sentence-transformers`, a busca degrada
-automaticamente para BM25 (lexical) — nenhuma dependência pesada é obrigatória.
+Leitura resolve caminhos contra a raiz e aceita somente Markdown até 200 KB; caminhos externos são rejeitados. Isso não transforma documentos locais em conteúdo público autorizado: examinar o catálogo e a política de dados do ambiente.
+
+Verificações: `python -m unittest discover -s tests -v`, em ambiente com FastAPI/httpx para incluir os testes HTTP. Dependência ausente pode resultar em teste pulado; isso não é aprovação. A validação do transporte MCP exige SDK e sessão própria, além das funções puras.
+

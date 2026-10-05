@@ -26,7 +26,6 @@ import os
 import re
 from typing import Any
 
-import httpx
 
 from .base import Cartao, PlataformaGestao, Quadro
 
@@ -73,6 +72,7 @@ class Adapter(PlataformaGestao):
         }
 
     def _request(self, method: str, caminho: str, **kwargs: Any) -> Any:
+        import httpx  # Dependência apenas do transporte real.
         try:
             resposta = httpx.request(
                 method, f"{self._url}{caminho}", headers=self._headers(), timeout=30, **kwargs

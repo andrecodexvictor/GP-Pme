@@ -10,6 +10,8 @@ Ver `search/SCHEMA.md` §2 e §3 para o contrato completo dos artefatos gerados.
 from __future__ import annotations
 
 import json
+import argparse
+import hashlib
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -89,6 +91,7 @@ def construir_embeddings(chunks: list[dict[str, Any]]) -> bool:
         "dim": int(vetores.shape[1]) if vetores.size else 0,
         "n_chunks": len(ids),
         "created": datetime.now(timezone.utc).isoformat(),
+        "corpus_sha256": hashlib.sha256((DIR_DADOS / "corpus.jsonl").read_bytes()).hexdigest(),
     }
     with INDEX_META_PATH.open("w", encoding="utf-8") as arq:
         json.dump(meta, arq, ensure_ascii=False, indent=2)
@@ -97,6 +100,9 @@ def construir_embeddings(chunks: list[dict[str, Any]]) -> bool:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Reconstruir índices GEAR")
+    parser.add_argument("--bm25-only", action="store_true", help="Não baixar modelo nem gerar embeddings")
+    args = parser.parse_args()
     chunks = carregar_corpus()
     if not chunks:
         print(
@@ -113,7 +119,7 @@ def main() -> int:
         json.dump(bm25, arq, ensure_ascii=False)
     print(f"OK: bm25.json gravado ({bm25['n_docs']} docs, {len(bm25['postings'])} termos).")
 
-    if construir_embeddings(chunks):
+    if not args.bm25_only and construir_embeddings(chunks):
         print(f"OK: embeddings.npz + index_meta.json gravados ({len(chunks)} chunks).")
     else:
         print("OK: build_index concluído somente com BM25 (sem embeddings semânticos).")

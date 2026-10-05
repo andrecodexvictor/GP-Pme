@@ -1,0 +1,307 @@
+{
+  "References/GP-PME Versions/gp-pme-apendice-a-mapeamento-frameworks.md": {
+    "sha256_original": "562e2d6a56417c90e82e2b488286da3a55f78bb2c3564ab3716c89007fbdaaa0",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": [
+      "https://www.iso.org/standard/83017.html](https://www.iso.org/standard/83017.html",
+      "https://www.isaca.org/resources/cobit](https://www.isaca.org/resources/cobit",
+      "https://www.nist.gov/cyberframework](https://www.nist.gov/cyberframework",
+      "https://www.cisecurity.org/controls](https://www.cisecurity.org/controls",
+      "https://www.iso.org/standard/82875.html](https://www.iso.org/standard/82875.html",
+      "https://www.axelos.com/certifications/itil-certifications/itil-4-foundation](https://www.axelos.com/certifications/itil-certifications/itil-4-foundation",
+      "https://scrumguides.org/](https://scrumguides.org/",
+      "https://www.nist.gov/privacy-framework](https://www.nist.gov/privacy-framework",
+      "https://platform.openai.com/docs/guides/gpt-best-practices](https://platform.openai.com/docs/guides/gpt-best-practices"
+    ]
+  },
+  "References/GP-PME Versions/gp-pme-apendice-b-biblioteca-prompts.md": {
+    "sha256_original": "d27eec0c723a79b26a32d7778afe9a3ff63f48ada9d53eb2932538bc627dba89",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": [
+      "https://platform.openai.com/docs/guides/gpt-best-practices](https://platform.openai.com/docs/guides/gpt-best-practices",
+      "https://developers.google.com/machine-learning/practica/llms/large-language-models-intro](https://developers.google.com/machine-learning/practica/llms/large-language-models-intro",
+      "https://openai.com/blog/what-are-hallucinations-in-ai](https://openai.com/blog/what-are-hallucinations-in-ai"
+    ]
+  },
+  "References/GP-PME Versions/gp-pme-apendice-c-estudos-de-caso.md": {
+    "sha256_original": "6acb0172b40bea8e5228af6c67b696597348d607d9e38c37dbbef61a90e6ecf7",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-apendice-d-ferramentas-tecnologias.md": {
+    "sha256_original": "8ad3800a647f1797b9ae9e0e9316d3d05a06e3352410e2b3b4196de7de57a7aa",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": [
+      "https://blogs.microsoft.com/blog/2023/03/16/introducing-microsoft-copilot-your-everyday-ai-companion/](https://blogs.microsoft.com/blog/2023/03/16/introducing-microsoft-copilot-your-everyday-ai-companion/"
+    ]
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-tecnico-estrutura.md": {
+    "sha256_original": "e7587186dfa58348f8b5c10db2189127636ac88d15298da0056f7ad241ffb6f7",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 4.0 (Técnica Aprofundada) **Data**: 07 de Março de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-tecnico-cap1.md": {
+    "sha256_original": "72394030f2855ed2778b83b2aa6f3c98d9ebafca7d336ac02dce3468ef4a9c96",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-tecnico-cap2.md": {
+    "sha256_original": "2da7c4ff6fa3f2f495733539b6285a4e589bbc5902f1179032cfeebaa2dc0f60",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-tecnico-cap3.md": {
+    "sha256_original": "71d4bd7a6fd3c75ea76f1007bd4e11aeec6603173a13880acd7cbac2d7b1bc0f",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-tecnico-cap4.md": {
+    "sha256_original": "7e0d021db3b28f101fa1f915f31da859d6a112301570644a27179ca7f5fc2b25",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-tecnico-cap5.md": {
+    "sha256_original": "d73dded3f4509e61459cdcc18cbff0e071192d6e9399772c53431c0a96a65cc4",
+    "credito": "",
+    "urls": [
+      "https://cargosapiens.com/blog/tco-total-cost-of-ownership/](https://cargosapiens.com/blog/tco-total-cost-of-ownership/",
+      "https://www.cedrotech.com/blog/quais-metricas-utilizadas-viabilizam-projeto-de-ti/](https://www.cedrotech.com/blog/quais-metricas-utilizadas-viabilizam-projeto-de-ti/",
+      "https://blog.antharys.com.br/2021/03/05/tco-e-tca-em-ti-calculando-as-medias-e-custos-da-estrutura-de-governanca-de-ti-no-brasil/](https://blog.antharys.com.br/2021/03/05/tco-e-tca-em-ti-calculando-as-medias-e-custos-da-estrutura-de-governanca-de-ti-no-brasil/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9044209/](https://pmc.ncbi.nlm.nih.gov/articles/PMC9044209/",
+      "https://robertoverdecchia.github.io/papers/ENASE_2020.pdf](https://robertoverdecchia.github.io/papers/ENASE_2020.pdf",
+      "https://arxiv.org/pdf/1711.06109](https://arxiv.org/pdf/1711.06109",
+      "https://swc.rwth-aachen.de/docs/2019_TEAR_Hacks2.pdf](https://swc.rwth-aachen.de/docs/2019_TEAR_Hacks2.pdf"
+    ]
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-tecnico-cap6.md": {
+    "sha256_original": "45b2f068c9e56208871056869afedb96b3d0c8eaecc392a3a705e5b4c046e9e2",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-modulo-1-organizacao-caos.md": {
+    "sha256_original": "ceaf4ba2cc67c1fe06b67949305fd71536e7f92bfe99c0e30b9c6b5ce7d2be7b",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-modulo-2-governanca-minima.md": {
+    "sha256_original": "f4de779b63e6f05fe1251141f0a314991164347d491b474fb1d4a13d7f1d551e",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-modulo-3-seguranca-critica.md": {
+    "sha256_original": "5217580866c52d553473f9a03c6a2022ab0d899c2e108cdf05a53dad14f15574",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-modulo-4-micro-inovacao.md": {
+    "sha256_original": "e5467f3f4b55be757be004cc93f156d88cf31eda47dc06c2aef81b206a65ca5d",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-modulo-5-escalabilidade.md": {
+    "sha256_original": "39f7cf3c14401110f4826513786d8eb43d4e59a5ce3702ddcc3ce158362487e9",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/matriz_4_quadrantes.md": {
+    "sha256_original": "5bbca3671c1b468a1e3992106bcb19f7ec08ffc4a790923a2f80421376a9f8d7",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/modulo2_template_prd_simplificado.md": {
+    "sha256_original": "a548254fb26be7334711ac33051350239ee117567940622860c10b50293ed5fb",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/prd_simplificado.md": {
+    "sha256_original": "7fda2ac6b04a9c177c20fd3e88c4fab34a1a7bed1cbef607cee55cd709d43060",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/pri_1_pagina.md": {
+    "sha256_original": "bef555af7edef65769a54836806888f693e171452e7b5a93d573c49ca9a578bd",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/prompt_analise_riscos_seguranca.md": {
+    "sha256_original": "43f50f07a4d0f7984a2424ef7ec818af0897cef230fe651b7b8f53a7e47b6ea2",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/prompt_prd_simplificado.md": {
+    "sha256_original": "8cf6fbbfbdf0912f1f16716ab2cfa5dc112893b80b5d782fe84cff54d486b6b3",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/prompt_user_stories.md": {
+    "sha256_original": "8fef9a0d66b2c4061fb9e3992acf74fb7ae3dcef3f5fc6b39eff5777b4b2c2d6",
+    "credito": "",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-academico-modular.md": {
+    "sha256_original": "993de5204a0ed0e120e29329b6f4778533cf32d68621a8ad7b3c9912f68e57ca",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Modular Acadêmica com Implementação C) **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/gp-pme-documento-academico-final-completo.md": {
+    "sha256_original": "4b017295669dab8be5b9ae4f81e1661ef62daffaf78b89b108f2dfe121908796",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 2.1 (Final Acadêmica) **Data**: 22 de Fevereiro de 2026",
+    "urls": [
+      "https://www.iso.org/standard/83017.html](https://www.iso.org/standard/83017.html",
+      "https://www.isaca.org/resources/cobit](https://www.isaca.org/resources/cobit",
+      "https://www.nist.gov/cyberframework](https://www.nist.gov/cyberframework",
+      "https://www.cisecurity.org/controls](https://www.cisecurity.org/controls",
+      "https://www.iso.org/standard/82875.html](https://www.iso.org/standard/82875.html",
+      "https://www.axelos.com/certifications/itil-certifications/itil-4-foundation](https://www.axelos.com/certifications/itil-certifications/itil-4-foundation",
+      "https://scrumguides.org/](https://scrumguides.org/",
+      "https://www.nist.gov/privacy-framework](https://www.nist.gov/privacy-framework",
+      "https://platform.openai.com/docs/guides/gpt-best-practices](https://platform.openai.com/docs/guides/gpt-best-practices",
+      "https://developers.google.com/machine-learning/practica/llms/large-language-models-intro](https://developers.google.com/machine-learning/practica/llms/large-language-models-intro",
+      "https://openai.com/blog/what-are-hallucinations-in-ai](https://openai.com/blog/what-are-hallucinations-in-ai",
+      "https://blogs.microsoft.com/blog/2023/03/16/introducing-microsoft-copilot-your-everyday-ai-companion/](https://blogs.microsoft.com/blog/2023/03/16/introducing-microsoft-copilot-your-everyday-ai-companion/"
+    ]
+  },
+  "References/GP-PME Versions/gp-pme-documento-mestre-marketavel.md": {
+    "sha256_original": "546455d90dbdcbb966c27315083a5ffa40d48447ee237150ca8c2d9484fa900a",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 1.0 (Rascunho) **Data**: 21 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/GP-PME_ Framework de Governança de TI para PMEs - Arquitetura Técnica e Métricas de Desempenho.md": {
+    "sha256_original": "4b741f05b6fdae0135cf3e082f29865237b96fb127b5baca25ed1fc05cb6de1d",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 4.0 (Técnica Aprofundada) **Data**: 02 de junho de 2026",
+    "urls": [
+      "https://robertoverdecchia.github.io/papers/ENASE_2020.pdf](https://robertoverdecchia.github.io/papers/ENASE_2020.pdf",
+      "https://arxiv.org/pdf/1711.06109](https://arxiv.org/pdf/1711.06109",
+      "https://swc.rwth-aachen.de/docs/2019_TEAR_Hacks2.pdf](https://swc.rwth-aachen.de/docs/2019_TEAR_Hacks2.pdf",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9044209/](https://pmc.ncbi.nlm.nih.gov/articles/PMC9044209/"
+    ]
+  },
+  "References/GP-PME Versions/GP-PME_ Governança Prática para Pequenas e Médias Empresas (Documento Mestre - Versão Concisa).md": {
+    "sha256_original": "fb62e5b8346901872c90127fde27356765562b6ae99bb87d7546afe2bdeb8f10",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 3.0 (Concisa) **Data**: 05 de Março de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/GP-PME_ Governança Prática para Pequenas e Médias Empresas.md": {
+    "sha256_original": "faac008021e2347cc20a4a303f7410120a2fbb181b8b49501cb753190b6b4da6",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 1.0 (Rascunho) **Data**: 21 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/GP-PME_ Guia de Implementação Fase Zero - Seus Primeiros 30 Dias.md": {
+    "sha256_original": "4407085041e3b9f0f54d2ecd7fb929a320074e8906bc7ec2362b695bf6912138",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 1.0 **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/GP-PME_ Guia de Início Rápido para Governança de TI em PMEs.md": {
+    "sha256_original": "976fafec18e5d81a174d9d8c2630b687adf1d387f46123091e8ea41808fd012a",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 1.0 (Quick Start) **Data**: 21 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/GP-PME_ Kit de Quick Start - Comece em 2 Horas.md": {
+    "sha256_original": "89353fcf4724f8988b791f9bcbf26ee022686051c2ddebc29100aaa69faa9ec9",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 1.0 **Data**: 22 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/GP-PME_ Seu Guia Prático para o Sucesso da TI na Pequena e Média Empresa.md": {
+    "sha256_original": "0a01b027dc02f7fb4d5363b1009645481d577b126ddafc2109bd379e9bfa0b90",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 1.0 (Final) **Data**: 21 de Fevereiro de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/Guia de Suporte do Pilar 1_ Governança Essencial (Direção Estratégica).md": {
+    "sha256_original": "f0167066faa723142b5198502a348628b01e477861b18d8485cb104719cacb23",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 3.0 (Concisa - Guia de Suporte) **Data**: 05 de Março de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/Guia de Suporte do Pilar 2_ Execução Ágil (Entrega de Valor).md": {
+    "sha256_original": "7b1bc629c53fea73ca95630c754fd10f5d3b3b4e653b428a217ec647d168d2a4",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 3.0 (Concisa - Guia de Suporte) **Data**: 05 de Março de 2026",
+    "urls": []
+  },
+  "References/GP-PME Versions/Guia de Suporte do Pilar 3_ Segurança Crítica (Proteção e Resiliência).md": {
+    "sha256_original": "03107c1fa413b8f2ddde8fdacbe6b6a66279344960eaf23e9933281ae143bb8d",
+    "credito": "**Autor**: Manus AI (sob a direção de Andre Victor) **Versão**: 3.0 (Concisa - Guia de Suporte) **Data**: 05 de Março de 2026",
+    "urls": []
+  },
+  "Docs/PRD.md": {
+    "sha256_original": "27fad55139d9bbcefde179608462b8c071ecb9320c055e91053eaa956d4da23a",
+    "credito": "",
+    "urls": []
+  },
+  "Docs/Roadmap.md": {
+    "sha256_original": "ff36586aed826b278cc699ff2b2a80826bacabbdf46f86e53a4926f9fae5f0bf",
+    "credito": "",
+    "urls": []
+  },
+  "Docs/Tasklist.md": {
+    "sha256_original": "409faa218cb983a88da5938bbce676cb0b6e44820a81e9d32944a171740ba05c",
+    "credito": "",
+    "urls": []
+  },
+  "Docs/Specialist_Agents.md": {
+    "sha256_original": "507f2cd3cb3a233ef1175bb9076e178ea49c1aada6421a53e03c1eba573f867c",
+    "credito": "",
+    "urls": []
+  },
+  "References/Análise Consolidada_ Referencial Teórico e Trabalhos Correlatos (Novos Documentos).md": {
+    "sha256_original": "92b3afa55cceffe8b3aa33599e19f5c99e85c1c3e81cad0ea91110453e0ac75c",
+    "credito": "",
+    "urls": []
+  },
+  "References/checklist_10_controles_nist.md": {
+    "sha256_original": "b4a01a74395589dec9751c954ee82c3b8507a7e2f4b9d9e3be272244f8f4f0a2",
+    "credito": "",
+    "urls": []
+  },
+  "References/Dados da Conversa do Claude.md": {
+    "sha256_original": "2dd2a22d62a149b2e4b593b15cc4476f8906fec74fb21082bb0bcdb3f61aff12",
+    "credito": "",
+    "urls": [
+      "https://claude.ai/share/bbe35261-eda0-408a-adb9-ec9ee5cfbc3f"
+    ]
+  },
+  "References/Dados das Conversas do Gemini.md": {
+    "sha256_original": "982baec3b1cc66777a94747ad4acec23de5c5e14e13d3d7c3276f193478c7d31",
+    "credito": "",
+    "urls": [
+      "https://gemini.google.com/gem/11sjULYRUPJAizWR2vHNQtIN38iRuZg6a?usp=sharing",
+      "https://gemini.google.com/share/986d4584ae85"
+    ]
+  },
+  "References/Dados do Repositório GitHub_ Frame-sim.md": {
+    "sha256_original": "2bd1418be01a5c90fec9736732d0d6c13b7fb571dd625d1f06245642baa73d9f",
+    "credito": "",
+    "urls": [
+      "https://github.com/andrecodexvictor/Frame-sim"
+    ]
+  },
+  "References/Notebook 1_ Adaptive IT Governance_ AI for SME Agility.md": {
+    "sha256_original": "eb4b2c8227ec08e1d76d08f83c1ce42d7b6fba70247fab245f3da5798c3fbd71",
+    "credito": "",
+    "urls": [
+      "https://notebooklm.google.com/notebook/8f520ca3-a8c6-47cf-b20c-28b1059babbf"
+    ]
+  },
+  "References/Notebook 2_ Gestão e Governança de TI para PMEs com IA.md": {
+    "sha256_original": "4789843bcedf1c97cff4b49d2747fc65c7faf89fdddd71c4bc351696605cb751",
+    "credito": "",
+    "urls": [
+      "https://notebooklm.google.com/notebook/e46b4a20-1440-44fd-aa94-167298f47bc6"
+    ]
+  },
+  "References/Notebook 3_ GP-PME Framework de Intra-inovação para Governança Adaptativa em PMEs.md": {
+    "sha256_original": "93de4c29c5d0ac6ddfbd205956a395249fbf22be6ff0ab417e9d1a7e4b6b8b3c",
+    "credito": "",
+    "urls": [
+      "https://notebooklm.google.com/notebook/91ad76ea-57bf-4008-a291-d82830c84a39"
+    ]
+  },
+  "References/Relatório de Consolidação de Dados_ Projeto GP-PME e Frame-sim.md": {
+    "sha256_original": "eeaebc1c7b6f30f25d3de280e9775b5329f6dcf87fb6c970653b487c72eea781",
+    "credito": "",
+    "urls": []
+  },
+  "References/Visão Consolidada do Modelo GP-PME (Governança Prática para PMEs).md": {
+    "sha256_original": "538caa060b15b83ec2f0a205e7a32bc9682895362006c8677f785a0d77ad41c7",
+    "credito": "",
+    "urls": []
+  }
+}

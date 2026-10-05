@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node tools/run_python.cjs build",
+    "test": "node tools/run_python.cjs test",
+    "check:web": "node tools/check_portal.cjs",
+    "build:figures": "node tools/run_python.cjs figures"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.9.0"
+  }
+}

@@ -38,7 +38,7 @@ def _exigir_quadro() -> Quadro:
     return _quadro_atual
 
 
-def instalar_gp_pme_na_plataforma(nome_quadro: str = "GP-PME — Gestão de TI") -> dict:
+def instalar_gp_pme_na_plataforma(nome_quadro: str = "GEAR — Gestão de TI") -> dict:
     """Instala o quadro Kanban canônico do GP-PME na plataforma ativa.
 
     Cria o quadro do Pilar 2 (Execução Ágil) com as 4 colunas do Ciclo

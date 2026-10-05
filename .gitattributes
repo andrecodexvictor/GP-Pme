@@ -1,0 +1,5 @@
+# Preserve PDF cross-reference offsets and licensed font binaries on checkout.
+*.pdf binary
+*.ttf binary
+*.woff2 binary
+*.png binary

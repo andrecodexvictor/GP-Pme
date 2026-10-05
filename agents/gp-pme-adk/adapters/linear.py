@@ -16,7 +16,6 @@ from __future__ import annotations
 import os
 from typing import Any
 
-import httpx
 
 from .base import ETIQUETA_RAIA_RAPIDA, Cartao, PlataformaGestao, Quadro
 
@@ -59,6 +58,7 @@ class Adapter(PlataformaGestao):
         return item_id
 
     def _graphql(self, query: str, variaveis: dict[str, Any] | None = None) -> dict[str, Any]:
+        import httpx  # Dependência apenas do transporte real.
         try:
             resposta = httpx.post(
                 URL_GRAPHQL,

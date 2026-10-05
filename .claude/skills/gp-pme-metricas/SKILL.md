@@ -1,85 +1,63 @@
 ---
 name: gp-pme-metricas
-description: Use esta skill quando o usuário pedir para calcular KPIs do GP-PME (IDSC, TMpR, ISU), a Dívida de Arquitetura Normalizada (DAN), o Custo de Otimização Tecnológica (COT) e seu ROI/payback, ou montar o painel mensal de métricas para o CD-TI Lite. Gatilhos: "calcule o IDSC", "qual o TMpR", "qual a DAN", "calcule o COT", "payback do investimento", "dashboard de KPIs", "painel mensal", "ROI da otimização".
+description: Use para calcular indicadores operacionais, DAN financeira local, COT, ROI ou payback, preparar painel e comparar períodos com premissas explícitas.
 ---
 
-# Skill: GP-PME · Métricas e KPIs (IDSC, TMpR, ISU, DAN, COT)
+# GEAR: cálculos e painel de indicadores
 
-Motor enxuto que **calcula** os indicadores oficiais do GP-PME a partir dos dados brutos fornecidos pelo usuário (não estima nem inventa números). Sempre peça os insumos numéricos que faltarem antes de calcular — nunca preencha uma métrica com um valor não informado. Todas as fórmulas abaixo são as fórmulas oficiais do framework; não as substitua por aproximações.
+Identificador GP-PME preservado para chamadas existentes. Edição editorial 2026.10; escopo consultivo e IA opcional. O método tem três domínios e camadas transversais de adoção, indicadores e maturidade.
 
-## QUANDO USAR
+## Executar a tarefa
 
-1. **Cálculo de KPI operacional isolado** — "qual foi nosso uptime esse mês?", "quanto tempo levamos pra resolver chamados?", "qual a nota de satisfação dos usuários?".
-2. **Cálculo de dívida técnica / justificativa de investimento** — "quanto vale nossa dívida técnica?", "vale a pena migrar esse servidor?", "calcule o ROI dessa automação".
-3. **Montagem do painel mensal** — "monte o dashboard de métricas para a reunião com o CEO", "prepare os KPIs para o CD-TI Lite".
-4. **Classificação de zona de risco** — "estamos em zona de alerta na DAN?", "isso é crítico ou saudável?".
-5. **Comparação antes/depois** — validar se uma iniciativa (ex.: Fase Zero) melhorou os indicadores.
+1. Identificar a medida e sua decisão: disponibilidade, restauração, satisfação, composição de inventário, custo, retorno ou comparação. Projeção autorizada é cenário condicional identificado.
+2. Conferir origem, unidade, janela, amostra, denominador e premissas. Ausência ou zero incompatível com a fórmula é dado insuficiente; não preencher com média presumida.
+3. Consultar a convenção pertinente e mostrar fórmula, substituição, resultado e arredondamento. Fechamento administrativo não é restauração; proporção de legados não é DAN financeira.
+4. Comparar somente com tolerância informada e manter sentido de desigualdade. Faixas históricas não demonstram probabilidade de ataque ou parada.
+5. Para investimento, separar inicial e recorrência, horizonte e benefício. Horas liberadas são capacidade potencial até comprovar mudança de gasto. Apresentar sensibilidade e limite do payback simples.
+6. Para painel, registrar valor, origem, período, tolerância, interpretação e ação. Média de notas, proporção de satisfeitos e NPS são medidas distintas; acesso a FAQ não comprova resolução.
+7. Encerrar com memória de cálculo e lacunas. Cálculo favorável prepara decisão humana, sem aprovar investimento ou comprovar efeito do método.
 
-Não use esta skill para prever métricas futuras sem dados (projeção especulativa) — ela calcula com base em números reais informados pelo usuário; se um dado estiver ausente, pergunte por ele.
+## Consultar conforme o pedido
 
-## FLUXO PASSO A PASSO
+- [Indicadores operacionais](<../../../framework/indicadores/operacionais.md>): abrir quando a tarefa exigir esse assunto.
+- [Indicadores financeiros e hipóteses](<../../../framework/indicadores/financeiros.md>): abrir quando a tarefa exigir esse assunto.
+- [Indicadores de negócio e comparação da rotina](<../../../framework/indicadores/negocio-comparacao.md>): abrir quando a tarefa exigir esse assunto.
+- [Revisão de uma saída assistida por IA](<../../../framework/templates/revisao-ia.md>): abrir quando a tarefa exigir esse assunto.
 
-### 1. Identificar quais métricas o pedido exige
-Mapeie o pedido para um ou mais dos 6 indicadores abaixo. Se o usuário pedir "o painel mensal", calcule todos que tiverem dados suficientes.
+As fontes canônicas distinguem referência primária, adaptação e hipótese. Quando a plataforma não acessar os arquivos, solicitar os trechos pertinentes e registrar o limite. Arquivo anexado não garante recuperação correta.
 
-### 2. Coletar os insumos numéricos
-Para cada métrica, pergunte exatamente os números que a fórmula exige (veja tabela de fórmulas abaixo). Não avance sem os insumos mínimos.
+## Entregar e conferir
 
-### 3. Aplicar a fórmula e mostrar o cálculo
-Sempre exiba a fórmula com os números substituídos (não apenas o resultado final) — isso é o que dá credibilidade ao número perante o CEO.
+Entregar artefato adequado ao recorte, dados com origem e período, memória dos cálculos pertinentes, fontes de pesquisa junto à afirmação e lacunas atribuídas. Informação ausente fica como DADO INSUFICIENTE, com próximo passo necessário. Exemplos são fictícios.
 
-#### Fórmulas Oficiais
+Minuta, cálculo e diagnóstico textual não comprovam execução no ambiente. Usar somente ferramentas disponíveis para efeitos autorizados e registrar entrada, resultado e limite. Aprovação, recurso, contenção, comunicação externa, implantação e publicação pertencem à autoridade humana indicada. Revisão por outro modelo é assistência.
 
-| KPI | Fórmula | Meta / Zona |
-|:---|:---|:---|
-| **IDSC** (Disponibilidade de Serviços Críticos) | `IDSC (%) = ((Tempo Total Comercial − Tempo de Inatividade) / Tempo Total Comercial) × 100` | > 99,5% em horário comercial |
-| **TMpR** (Tempo Médio para Resolução) | `TMpR = Soma de horas do registro ao fechamento / Total de chamados concluídos no mês` | < 4h para incidentes de alta gravidade |
-| **ISU** (Índice de Satisfação do Usuário) | `ISU = Soma das notas (1 a 5 estrelas) pós-atendimento / Total de respostas` | > 4,5 / 5,0 |
-| **DAN** (Dívida de Arquitetura Normalizada) | `DAN = (Esforço estimado de refatoração em horas × Custo-hora do técnico) / Orçamento anual de TI da PME` | ver zonas abaixo |
-| **COT** (Custo de Otimização Tecnológica) | `COT = Custos diretos (servidores, licenças, terceiros) + Custos indiretos (horas/homem internas)` | payback ideal: poucos meses |
-| **ROI do COT** | `ROI (%) = (Redução mensal de custos ou perdas evitadas / Investimento total em COT) × 100`; `Payback = COT / Economia mensal` | quanto menor o payback, melhor |
+[Registro de revisão](<../../../framework/templates/revisao-ia.md>): consultar quando houver saída assistida com efeito material.
 
-#### Zonas de Risco da DAN
-- `🟢 Saudável: DAN < 0,15` — arquitetura ágil, baixo risco de parada.
-- `🟡 Alerta: 0,15 ≤ DAN ≤ 0,35` — gargalos começam a atrasar projetos; propor COT no CD-TI Lite.
-- `🔴 Crítico: DAN > 0,35` — alto risco de parada geral de faturamento; ação imediata do CD-TI Lite.
+## Exemplos fictícios para conferência
 
-### 4. Classificar e contextualizar o resultado
-Compare o resultado com a meta/zona e diga explicitamente se está dentro ou fora do esperado (ex.: "IDSC de 98,7% está abaixo da meta de 99,5% — investigar causa do tempo de inatividade").
+### Caso 1
 
-### 5. Montar o painel mensal (quando solicitado)
-Consolide os KPIs calculados em uma tabela única com coluna de meta e status (✅/⚠️/🔴), pronta para a pauta do CD-TI Lite.
+Entrada: Quatro horas indisponíveis em 220 horas comerciais.
 
-## FONTES NO FRAMEWORK
+Conferência esperada: IDSC 98,18%, se as horas têm a mesma janela e exclusões. Comparar com tolerância acordada; 99,5% era referência local.
 
-| Artefato | Caminho | Uso nesta skill |
-|:---|:---|:---|
-| Guia de KPIs e Quick Wins | `GP-PME antigravity/Guides/Guia_KPIs_e_Quick_Wins.md` | Fórmulas de IDSC, TMpR, ISU, DAN, COT + metas oficiais + exemplo prático de ROI |
-| Capítulo 5 — Métricas Avançadas | `GP-PME antigravity/GP-Pme complete/Capitulo_5_Metricas_Avancadas_DAN_e_COT.md` | Detalhamento acadêmico de DAN/COT, zonas de risco em Mermaid, exemplo de negócio passo a passo |
-| Guia do Pilar 1 (Governança Essencial) | `GP-PME antigravity/Guides/Guia_Pilar_1_Governanca_Essencial.md` | Definição operacional dos 3 KPIs Visíveis (IDSC/TMpR/ISU) usados no CD-TI Lite |
-| Templates GP-PME (dashboard) | `GP-PME antigravity/Templates_GP-PME.md` | Prompt de aceleração por IA para gerar o relatório do dashboard mensal |
+### Caso 2
 
-## SAÍDAS ESPERADAS
+Entrada: 300 horas de refatoração a R$ 80; orçamento anual de R$ 96.000.
 
-- **Cálculo mostrado** (fórmula + números substituídos + resultado) para cada KPI pedido.
-- **Classificação** de zona/meta (dentro da meta, alerta ou crítico) com uma frase de interpretação de negócio.
-- **Painel mensal consolidado** em tabela Markdown (KPI | Valor | Meta | Status), quando o pedido for amplo.
-- Quando a DAN for Crítica ou o payback do COT for atrativo (< 6 meses), sinalizar explicitamente que o item deve virar pauta do CD-TI Lite.
+Conferência esperada: DAN financeira estimada 0,25, com escopo e incerteza. O valor não classifica risco de paralisação.
 
-## EXEMPLOS
+### Caso 3
 
-**Exemplo 1 — KPI isolado:**
-> "Ficamos 4 horas fora do ar em um mês com 220 horas comerciais totais. Qual o IDSC?"
-→ `IDSC = ((220 − 4) / 220) × 100 = 98,18%` — abaixo da meta de 99,5%, sinalizar como ponto de atenção.
+Entrada: Migrar custa R$ 9.000 e benefício proposto é R$ 3.000/mês.
 
-**Exemplo 2 — DAN e zona de risco:**
-> "Precisamos de 300 horas de refatoração, custo-hora de R$ 80, e o orçamento anual de TI é R$ 96.000."
-→ `DAN = (300 × 80) / 96.000 = 0,25` → Zona 🟡 Alerta (0,15–0,35) — recomendar proposta de COT no próximo CD-TI Lite.
+Conferência esperada: Pedir recorrência e horizonte. No exercício de recorrência zero e doze meses estabilizados: razão bruta 4, ROI líquido 300% e payback três meses; benefício pela metade dá 100% e seis meses.
 
-**Exemplo 3 — ROI/payback de um COT:**
-> "O time de faturamento perde R$ 3.000/mês com um sistema manual. Migrar custaria R$ 9.000 (pagamento único)."
-→ `ROI = (3.000 / 9.000) × 100 = 33,3% ao mês` (400% ao ano); `Payback = 9.000 / 3.000 = 3 meses` — recomendar aprovação.
+### Caso 4
 
-**Exemplo 4 — Painel mensal:**
-> "Monte o painel do mês: IDSC 98,9%, TMpR 5,2h com 40 chamados, ISU com notas somando 176 em 40 respostas."
-→ Calcular ISU = 176/40 = 4,4 (abaixo da meta 4,5), montar tabela final com os 3 KPIs, metas e status ⚠️/✅.
+Entrada: IDSC 98,9%; média 5,2 h em 40 chamados; notas somam 176 em 40 respostas.
+
+Conferência esperada: ISU 4,4 se notas válidas de 1 a 5. Só chamar a média TMpR se forem durações de restauração; conferir janela e tolerância antes de classificar.
+
+Concluir quando artefato, evidências disponíveis e pendências tiverem responsável e próximo passo. Campos de decisão ficam para quem tem alçada.

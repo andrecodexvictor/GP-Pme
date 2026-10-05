@@ -23,7 +23,7 @@ OUT_JS = OUT_DIR / "search-data.js"
 
 TEXTO_MAX_CHARS = 800
 
-CAMPOS = ("id", "doc", "titulo_doc", "secao", "breadcrumb", "texto", "keywords", "pilar", "tipo")
+CAMPOS = ("id", "doc", "titulo_doc", "secao", "breadcrumb", "texto", "keywords", "pilar", "tipo", "anchor")
 
 
 def _carregar_corpus(path: Path) -> list[dict]:
@@ -48,6 +48,13 @@ def _projetar(chunk: dict) -> dict:
     projetado = {campo: chunk.get(campo) for campo in CAMPOS}
     projetado["texto"] = texto
     projetado["keywords"] = chunk.get("keywords") or []
+    from urllib.parse import quote
+    doc = Path(chunk["doc"])
+    if doc.parts[0] == "framework":
+        page = Path("docs", *doc.parts[1:]).with_suffix(".html")
+    else:
+        page = Path("docs/README.html")
+    projetado["href"] = quote(page.as_posix(), safe="/") + "#" + (chunk.get("anchor") or "gear")
     return projetado
 
 
@@ -63,6 +70,8 @@ def exportar() -> Path:
     chunks = _carregar_corpus(CORPUS_PATH)
     payload = {
         "gerado_em": datetime.now(timezone.utc).isoformat(),
+        "modo": "lexical",
+        "edicao": "GEAR 2026.10",
         "docs": [_projetar(c) for c in chunks],
     }
 
@@ -73,9 +82,9 @@ def exportar() -> Path:
 
     with OUT_JS.open("w", encoding="utf-8") as f:
         f.write("// Gerado automaticamente por search/export_web.py -- NAO editar manualmente.\n")
-        f.write("window.GPPME_INDEX = ")
+        f.write("window.GEAR_INDEX = ")
         json.dump(payload, f, ensure_ascii=False)
-        f.write(";\n")
+        f.write(";\nwindow.GPPME_INDEX = window.GEAR_INDEX; // Alias de compatibilidade.\n")
 
     print(f"OK: {len(chunks)} chunks exportados para:\n  {OUT_JSON}\n  {OUT_JS}")
     return OUT_JSON

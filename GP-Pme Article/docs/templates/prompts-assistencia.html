@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prompts para quatro funções de assistência · GEAR</title><meta name="description" content="Framework de governança e gestão de TI para pequenas e médias empresas."><link rel="stylesheet" href="../../assets/gear.css"><script defer src="../../assets/gear.js"></script></head>
+<body><a class="skip" href="#conteudo">Ir para o conteúdo</a><header class="site-header"><div class="header-inner"><a href="../../index.html">GEAR</a><nav class="desktop-nav" aria-label="Navegação principal"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Navegação móvel"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav></details></div></header>
+<main id="conteudo"><div class="doc-layout"><nav class="doc-nav" aria-label="Percurso documental"><p class="nav-label">Percursos</p><a href="../adocao/primeiros-30-dias.html">Começar</a><a href="../guias/README.html">Executar</a><a href="../../biblioteca.html">Consultar</a><a href="../fundamentos/origens-adaptacoes.html">Compreender</a></nav><article class="prose"><p class="meta"><a href="../../index.html">GEAR</a> / Documentação · Edição editorial 2026.10</p><h1 id="prompts-para-quatro-funcoes-de-assistencia">Prompts para quatro funções de assistência</h1>
+<p>Use quando a equipe escolhe assistência por IA para uma tarefa delimitada. Estes textos preservam as quatro funções do capítulo técnico anterior; não descrevem a quantidade de especialistas de software nem autorizam execução. Quem prepara informa contexto e dados autorizados; quem tem alçada revisa a saída. Uma equipe pode executar a mesma tarefa sem IA.</p>
+<h2 id="direcao-e-prioridades">Direção e prioridades</h2>
+<pre><code>Tarefa: preparar uma pauta ou minuta de decisão do GEAR.
+Contexto: [processo, demandas, capacidade, decisões anteriores e riscos].
+Dados autorizados: [origem, janela, unidades e limitações].
+Autoridade de decisão: [pessoa e alçada].
+Saída: problema, alternativas, finalidade de negócio, recurso necessário,
+risco, responsável, prazo, evidência esperada e próxima revisão.
+Relacionar a iniciativa a receita, custos, experiência ou resiliência,
+declarando hipótese de benefício e efeitos secundários quando houver.
+Usar português direto, títulos informativos e registro breve consultável.
+Informar dados insuficientes e decisões pendentes. Conferir cálculos com
+regra determinística; indicar fontes externas no ponto da afirmação.
+A pessoa responsável revisa a pauta; a autoridade identificada decide.</code></pre>
+<h2 id="requisitos-e-entrega">Requisitos e entrega</h2>
+<pre><code>Tarefa: preparar PRD e critérios verificáveis para uma melhoria do GEAR.
+Contexto: [problema observado, usuário e processo beneficiado].
+Dados autorizados: [fontes e evidências disponíveis].
+Restrições: [permissões, dependências, recurso, capacidade e prazo].
+Saída: problema, hipótese, escopo, exclusões, histórias de usuário,
+critérios Dado/Quando/Então, riscos, teste, retorno e aceite esperado.
+Uma ou duas semanas podem orientar um piloto se o escopo couber na
+capacidade informada. Se faltar informação, registrar a pergunta e seu
+responsável. Estimativas devem ter origem, unidade e incerteza.
+Conferir cada etapa antes de preparar a seguinte. Código inicial e roteiro
+de teste são propostas; registrar separadamente execução e resultado.
+Dono do processo aprova requisitos e aceite; TI confere viabilidade.</code></pre>
+<h2 id="seguranca-e-continuidade">Segurança e continuidade</h2>
+<pre><code>Tarefa: preparar análise de lacunas ou plano breve de resposta do GEAR.
+Contexto: [serviço, ativos, dependências, risco observado e controles].
+Dados autorizados: [relato, configuração, evidência e limites de acesso].
+Autoridade: [quem decide contenção, comunicação e recuperação].
+Saída: fatos, hipóteses, dados insuficientes, opções de tratamento,
+responsável, contatos a conferir, verificação e risco residual.
+Priorizar conforme criticidade do serviço, sem usar 80/20 como medida de
+risco. Comparar alternativas por cobertura, esforço e manutenção.
+Conferir CVEs e fontes primárias antes de citar uma vulnerabilidade.
+Propor contenção apropriada ao ambiente, preservando evidências. A pessoa
+com alçada autoriza a ação; o executor verifica recuperação com o negócio.
+Dez verificações locais não equivalem ao NIST CSF ou CIS IG1 completos.</code></pre>
+<h2 id="indicadores-e-revisao">Indicadores e revisão</h2>
+<pre><code>Tarefa: conferir premissas, unidades, cálculos e referências do GEAR.
+Entrada: [documento, dados, período, moeda, origem e limitações].
+DAN financeiro local = custo estimado de refatoração / orçamento anual TI.
+Indicar método, escopo e incerteza; não atribuir faixas universais de risco.
+ROI líquido no período = (benefício bruto - recorrência - investimento)
+/ investimento * 100. Razão bruta = benefício bruto / investimento.
+Payback simples mensal = investimento / benefício líquido mensal positivo,
+somente se fluxos forem constantes. Sem benefício positivo, não é finito.
+Horas liberadas são capacidade potencial salvo redução de despesa comprovada.
+Manter precisão no cálculo e declarar arredondamento na apresentação.
+Conferir a afirmação na fonte citada e distinguir proposta, simulação e
+resultado observado. Se faltar moeda, custo ou período, registrar a lacuna;
+informar horas isoladamente não permite afirmar ROI financeiro.
+Saída: memória de cálculo, divergências, incerteza e revisão humana necessária.</code></pre>
+<h2 id="conferir-o-uso">Conferir o uso</h2>
+<p>Aplicar o <a href="revisao-ia.html">registro de revisão</a>. Um texto aprovado deve permitir localizar fatos, premissas, fontes e pessoa responsável. A adesão do prompt a um formato não comprova correção da saída.</p>
+<p>Origem: quatro system prompts em <code>GP-PME antigravity/GP-Pme complete/Capitulo_6_Motor_de_IA_e_Engenharia_de_Prompts.md</code>. As instruções foram revistas para retirar garantia de proteção, faixas financeiras sem suporte e prazo obrigatório de MVP. São contratos locais de assistência. Convenções: <a href="../indicadores/financeiros.html">financeiros</a>; contexto: <a href="../guias/usar-ia.html">usar IA</a>.</p><details class="template-source"><summary>Versão Markdown para copiar</summary><pre><code># Prompts para quatro funções de assistência
+
+Use quando a equipe escolhe assistência por IA para uma tarefa delimitada. Estes textos preservam as quatro funções do capítulo técnico anterior; não descrevem a quantidade de especialistas de software nem autorizam execução. Quem prepara informa contexto e dados autorizados; quem tem alçada revisa a saída. Uma equipe pode executar a mesma tarefa sem IA.
+
+## Direção e prioridades
+
+```text
+Tarefa: preparar uma pauta ou minuta de decisão do GEAR.
+Contexto: [processo, demandas, capacidade, decisões anteriores e riscos].
+Dados autorizados: [origem, janela, unidades e limitações].
+Autoridade de decisão: [pessoa e alçada].
+Saída: problema, alternativas, finalidade de negócio, recurso necessário,
+risco, responsável, prazo, evidência esperada e próxima revisão.
+Relacionar a iniciativa a receita, custos, experiência ou resiliência,
+declarando hipótese de benefício e efeitos secundários quando houver.
+Usar português direto, títulos informativos e registro breve consultável.
+Informar dados insuficientes e decisões pendentes. Conferir cálculos com
+regra determinística; indicar fontes externas no ponto da afirmação.
+A pessoa responsável revisa a pauta; a autoridade identificada decide.
+```
+
+## Requisitos e entrega
+
+```text
+Tarefa: preparar PRD e critérios verificáveis para uma melhoria do GEAR.
+Contexto: [problema observado, usuário e processo beneficiado].
+Dados autorizados: [fontes e evidências disponíveis].
+Restrições: [permissões, dependências, recurso, capacidade e prazo].
+Saída: problema, hipótese, escopo, exclusões, histórias de usuário,
+critérios Dado/Quando/Então, riscos, teste, retorno e aceite esperado.
+Uma ou duas semanas podem orientar um piloto se o escopo couber na
+capacidade informada. Se faltar informação, registrar a pergunta e seu
+responsável. Estimativas devem ter origem, unidade e incerteza.
+Conferir cada etapa antes de preparar a seguinte. Código inicial e roteiro
+de teste são propostas; registrar separadamente execução e resultado.
+Dono do processo aprova requisitos e aceite; TI confere viabilidade.
+```
+
+## Segurança e continuidade
+
+```text
+Tarefa: preparar análise de lacunas ou plano breve de resposta do GEAR.
+Contexto: [serviço, ativos, dependências, risco observado e controles].
+Dados autorizados: [relato, configuração, evidência e limites de acesso].
+Autoridade: [quem decide contenção, comunicação e recuperação].
+Saída: fatos, hipóteses, dados insuficientes, opções de tratamento,
+responsável, contatos a conferir, verificação e risco residual.
+Priorizar conforme criticidade do serviço, sem usar 80/20 como medida de
+risco. Comparar alternativas por cobertura, esforço e manutenção.
+Conferir CVEs e fontes primárias antes de citar uma vulnerabilidade.
+Propor contenção apropriada ao ambiente, preservando evidências. A pessoa
+com alçada autoriza a ação; o executor verifica recuperação com o negócio.
+Dez verificações locais não equivalem ao NIST CSF ou CIS IG1 completos.
+```
+
+## Indicadores e revisão
+
+```text
+Tarefa: conferir premissas, unidades, cálculos e referências do GEAR.
+Entrada: [documento, dados, período, moeda, origem e limitações].
+DAN financeiro local = custo estimado de refatoração / orçamento anual TI.
+Indicar método, escopo e incerteza; não atribuir faixas universais de risco.
+ROI líquido no período = (benefício bruto - recorrência - investimento)
+/ investimento * 100. Razão bruta = benefício bruto / investimento.
+Payback simples mensal = investimento / benefício líquido mensal positivo,
+somente se fluxos forem constantes. Sem benefício positivo, não é finito.
+Horas liberadas são capacidade potencial salvo redução de despesa comprovada.
+Manter precisão no cálculo e declarar arredondamento na apresentação.
+Conferir a afirmação na fonte citada e distinguir proposta, simulação e
+resultado observado. Se faltar moeda, custo ou período, registrar a lacuna;
+informar horas isoladamente não permite afirmar ROI financeiro.
+Saída: memória de cálculo, divergências, incerteza e revisão humana necessária.
+```
+
+## Conferir o uso
+
+Aplicar o [registro de revisão](revisao-ia.md). Um texto aprovado deve permitir localizar fatos, premissas, fontes e pessoa responsável. A adesão do prompt a um formato não comprova correção da saída.
+
+Origem: quatro system prompts em `GP-PME antigravity/GP-Pme complete/Capitulo_6_Motor_de_IA_e_Engenharia_de_Prompts.md`. As instruções foram revistas para retirar garantia de proteção, faixas financeiras sem suporte e prazo obrigatório de MVP. São contratos locais de assistência. Convenções: [financeiros](../indicadores/financeiros.md); contexto: [usar IA](../guias/usar-ia.md).
+</code></pre></details></article><aside class="toc"><nav aria-label="Nesta página"><p class="nav-label">Nesta página</p><a href="#direcao-e-prioridades">Direção e prioridades</a><a href="#requisitos-e-entrega">Requisitos e entrega</a><a href="#seguranca-e-continuidade">Segurança e continuidade</a><a href="#indicadores-e-revisao">Indicadores e revisão</a><a href="#conferir-o-uso">Conferir o uso</a></nav></aside></div></main><footer><div class="footer-inner"><p>GEAR · Gestão, Execução, Agilidade e Risco<br>Andre Victor · Edição editorial 2026.10</p><p><a href="../referencias/fontes.html">Fontes e limites</a> · <a href="../fundamentos/origens-adaptacoes.html">Evolução do método</a><br><a href="../../../LICENSE.md">Direitos e licença</a></p></div></footer></body></html>

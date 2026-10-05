@@ -1,90 +1,152 @@
-# Capítulo 2: Pilar I: Governança Essencial (ADM-Lite)
+# GEAR: Governança e direção
 
----
+Edição editorial 2026.10. Caminho GP-PME preservado para compatibilidade. Capítulo revisto a partir do acervo anterior; práticas locais não constituem certificação. Direitos conforme LICENSE.md.
 
-## 2.1. O Ciclo ADM-Lite (Avaliar, Dirigir e Monitorar)
+## Governança e direção
 
-O Pilar I do GP-PME baseia-se na simplificação do ciclo clássico de governança corporativa estabelecido pela norma **ISO/IEC 38500:2024**, denominado **ADM-Lite (Avaliar, Dirigir, Monitorar)**. Projetado para ser executado de forma enxuta e puramente manual, o ciclo remove a burocracia documental tradicional e foca em conexões diretas entre a tecnologia e a saúde financeira e comercial da PME.
+Este domínio conecta decisões de TI a necessidades do negócio e a riscos conhecidos. A direção define prioridades e autoriza recursos; o responsável por TI organiza a execução e apresenta evidências. A prática admite papéis acumulados, mas exige que cada decisão tenha uma autoridade identificada.
 
-```
-                    [ AVALIAR ] 
-                         |
-                         v (Dores de Negócio e Gargalos de TI)
-                    [ DIRIGIR ] 
-                         |
-                         v (Prioridades na Matriz 4 Quadrantes)
-                    [ MONITORAR ]
-                         |
-                         +---> (3 KPIs Visíveis e CD-TI Lite)
-```
+### Avaliar, dirigir e monitorar
 
-1.  **Avaliar**: O Gestor de TI e o CEO realizam uma auditoria contínua dos gargalos técnicos de infraestrutura e do andamento de chamados operacionais. O objetivo é mapear se existem lentidões ou falhas tecnológicas impactando setores vitais da empresa (como vendas, notas fiscais ou atendimento).
-2.  **Dirigir**: Com base nas dores avaliadas, as prioridades e recursos da quinzena são estabelecidos e direcionados utilizando a **Matriz 4 Quadrantes**. Cada iniciativa de TI é obrigatoriamente vinculada a um objetivo comercial (como vender mais, mitigar custos ou agilizar o suporte).
-3.  **Monitorar**: O desempenho geral da TI e o cumprimento das prioridades direcionadas são acompanhados quinzenalmente através dos **3 KPIs Visíveis**, alimentando o comitê CD-TI Lite com dados reais e eliminando achismos e relatórios volumosos.
+O acervo chama o ciclo de **ADM-Lite**: avaliar, dirigir e monitorar. No GEAR, avaliar é examinar situação, alternativas, custos e riscos; dirigir é decidir prioridade, limites e responsabilidade; monitorar é confrontar a decisão com evidências e rever a ação.
 
----
+Essa sigla local não designa o Architecture Development Method do TOGAF. A correspondência detalhada com ISO/IEC 38500 exige consulta à edição oficial; o conteúdo fechado não foi verificado na pesquisa que sustenta esta edição. A apresentação pública do COBIT oferece evidência de dimensionamento e adaptação da governança, sem validar o instrumento local. [F09](<../../framework/referencias/fontes.md#f09>)
 
-## 2.2. O Comitê de Direção de TI de Baixo Custo (CD-TI Lite)
+### Papéis e acordos
 
-O **CD-TI Lite** é a estrutura decisória central do framework. Ele substitui comitês corporativos pesados por uma reunião executiva quinzenal ou mensal estritamente limitada a **30 minutos** entre o **CEO/Dono da PME** e o **Gestor de TI**.
+| Função | Responsabilidade | Evidência mínima |
+| --- | --- | --- |
+| Direção ou patrocinador | Autorizar prioridade, recurso e aceitação de risco | Decisão com data e condição de revisão |
+| Responsável por TI | Preparar alternativas e conduzir a execução | Registro de demanda, responsável e situação |
+| Dono do processo de negócio | Explicar impacto e validar a entrega | Critério de aceite e confirmação da saída |
+| Usuário afetado | Informar necessidade e efeito percebido | Solicitação e feedback contextualizados |
 
-Nesse ritual estratégico, a governança atua como a **bússola do crescimento seguro da PME (TI Enxuta Fase 3)**. A tecnologia deixa de ser vista como um departamento técnico reativo focado em "consertar cabos e servidores" e transita para parceiro estratégico do negócio, capacitando o profissional de TI a atuar como **Chief Innovation Officer (CIO)**.
+Um técnico terceirizado pode executar sem poder aprovar orçamento. Um proprietário pode ser também dono de processo. Quando o executor é o aprovador, registrar a limitação e buscar revisão de outra pessoa em ações de maior impacto, conforme os controles já existentes na organização.
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor CEO as CEO / Proprietário
-    actor TI as Gestor de TI / CIO
-    
-    Note over CEO,TI: Início da Reunião CD-TI Lite (Limite: 30 Minutos)
-    TI->>CEO: Apresenta os 3 KPIs Visíveis (IDSC, TMpR, ISU) - [5 min]
-    CEO->>TI: Analisa e valida Uptime e Satisfação
-    TI->>CEO: Revisa os cartões da Matriz 4 Quadrantes (Andamento) - [15 min]
-    Note over CEO,TI: Conexão direta entre tarefas de TI e Metas de Vendas
-    TI->>CEO: Apresenta testes de Backup e riscos de arquitetura (DAN) - [5 min]
-    CEO->>TI: Direciona novos orçamentos emergentes ou de otimização (COT) - [5 min]
-    Note over CEO,TI: Encerramento com Ata Simplificada de 1 Página
-```
+Use a [matriz de responsabilidades](<../../framework/templates/responsabilidades.md>). RACI-Lite é um suporte de registro: R executa; A aprova; C é consultado; I é informado. Não precisa criar cargos adicionais.
 
-### Pauta Rígida e Gestão de Tempo:
+### Matriz de quatro finalidades
 
-*   **Março de Performance (0 a 5 minutos) - Revisão de KPIs**: O Gestor de TI apresenta o uptime de sistemas críticos, o tempo médio de suporte e a satisfação média dos usuários finais.
-*   **Alinhamento Tático (5 a 20 minutos) - Matriz 4 Quadrantes**: Revisão dos cartões de projetos em execução no Kanban e acompanhamento das iniciativas conectadas às metas comerciais do CEO.
-*   **Gestão de Riscos (20 a 25 minutos) - NIST-Lite & DAN**: O Gestor de TI reporta o sucesso dos testes de recuperação de backup diário e o índice matemático de dívida técnica DAN.
-*   **Decisões e Orçamento (25 a 30 minutos) - Resumo & COT**: Liberação de verbas operacionais ou aportes para otimização tecnológica (COT) e assinatura física da ata simplificada de 1 página.
+A Matriz 4 Quadrantes relaciona iniciativas a receita, custos, experiência e resiliência. Uma iniciativa pode ter finalidade principal e efeitos secundários. A classificação não garante benefício: precisa de hipótese, medida e responsável.
 
----
+Antes de aprovar, perguntar: qual problema observável será tratado; quem recebe o resultado; que condição indicará conclusão; qual recurso será comprometido; que risco permanece; que alternativa é viável? Uma proposta sem essas informações volta para refinamento ou tem a lacuna explicitada na decisão.
 
-## 2.3. Artefatos de Governança Estratégica (Manual)
+### Revisão de direção
 
-O Pilar I operacionaliza-se através de três ferramentas enxutas de 1 página:
+CD-TI Lite é o nome histórico da revisão de direção. Uma reunião quinzenal de 30 minutos é o ponto de partida do método, não uma duração obrigatória para toda empresa. A pauta pode reservar cinco minutos para indicadores, quinze para demandas, cinco para riscos e cinco para decisões. Uma emergência pode exigir uma decisão fora dessa cadência.
 
-### 2.3.1. Matriz de Responsabilidades Simplificada (RACI-Lite)
-Uma planilha enxuta contendo quem executa a tarefa técnica (R - Responsável) e quem detém o poder de decisão e aprovação final de verbas e prioridades (A - Aprovador) para cada serviço essencial de TI. Isso elimina ambiguidades corporativas comuns ("quem é dono de qual processo").
+Registrar decisão, alternativas consideradas, motivo, responsável, prazo e evidência esperada. Comunicar às pessoas afetadas o que mudou e qual canal usar. O registro de conflito entre negócio e TI evita que uma discordância fique escondida sob um status de tarefa.
 
-### 2.3.2. A Matriz 4 Quadrantes
-Painel visual de alinhamento tático que divide 100% dos cartões de projetos e infraestrutura de TI em quatro áreas de geração de valor para o negócio:
-*   **Quadrante 1: Injeção de Receita (Vender Mais)**: Projetos que geram faturamento (ex: instalar Pix no PDV ou otimizar portal de vendas).
-*   **Quadrante 2: Redução de Custos (Economizar)**: Projetos que otimizam despesas (ex: desligar licenças ociosas de software ou virtualizar servidores físicos).
-*   **Quadrante 3: Experiência do Cliente e Usuário (Agilizar)**: Iniciativas que destravam o time (ex: construir FAQ de autoatendimento ou reestruturar Wi-Fi).
-*   **Quadrante 4: Resiliência e Segurança (Proteger)**: Controles que evitam desastres (ex: automatizar backups diários ou implantar privilégios mínimos).
+### Critério de funcionamento
 
-### 2.3.3. Dashboard dos 3 KPIs Visíveis
-O GP-PME monitora apenas três indicadores cruciais que refletem a saúde da TI de forma inteligível para a diretoria:
+O domínio está operacional quando decisões relevantes têm autoridade, justificativa e acompanhamento, e quando a equipe consegue localizar o acordo vigente. A quantidade de atas produzidas não mede a qualidade da governança.
 
-1.  **IDSC (Índice de Disponibilidade de Serviços Críticos)**: Mede a porcentagem de tempo que os sistemas vitais de faturamento ficaram de pé no mês.
-    $$\text{IDSC} = \left( 1 - \frac{\text{Tempo Total de Parada Operacional Inesperada (Horas)}}{\text{Tempo Comercial de Operação da PME (Horas)}} \right) \times 100$$
-    *   *Meta de Mercado*: **> 99.5%**.
-2.  **TMpR (Tempo Médio para Resolução)**: Velocidade com que as solicitações de chamados comuns dos colaboradores são encerradas.
-3.  **ISU (Índice de Satisfação do Usuário Final)**: Nota média de 1 a 5 estrelas coletada pós-atendimento aos chamados.
-    *   *Meta de Mercado*: **> 4.5/5.0**.
+Para executar: [Conduzir uma revisão](<../../framework/guias/conduzir-revisao.md>). Modelo: [Decisão e prioridades](<../../framework/templates/decisoes-prioridades.md>).
 
----
 
-## 2.4. Aceleração Opcional com Inteligência Artificial
+## Conduzir uma revisão de direção
 
-Para PMEs que utilizarem o **Pilar IV (IA)**, o Gestor de TI pode acionar o **Agente 1: Orquestrador Estratégico (ADM-Lite)** para remover o overhead burocrático:
+Use para decidir prioridades, recursos e tratamento de risco com base na situação atual de TI. Responsável por TI prepara a pauta; direção ou autoridade delegada decide; dono de processo contribui quando há impacto direto. Entrada: fila, indicadores com contexto, decisões anteriores e riscos. Saída: registro de decisões, responsáveis e próximos pontos de verificação.
 
-*   **Briefings e Pautas Automáticas**: Ao alimentar a IA com as planilhas brutas de chamados e status de cartões do Kanban, o agente gera em menos de 2 minutos uma pauta focada de 30 minutos com os tópicos de alerta e as perguntas que o CEO deve realizar para auditar a TI.
-*   **Grounding Estratégico**: A IA está restrita a sugerir iniciativas de preenchimento dos quadrantes da Matriz que respeitem as premissas de orçamento descritas nas metas do CEO, evitando sugestões inviáveis.
-*   **Validação HITL**: Toda pauta ou ata gerada por IA deve obrigatoriamente passar pela verificação e assinatura do Gestor técnico humano antes de sua oficialização.
+### Preparar
+
+Reunir dados da mesma janela, itens bloqueados, incidentes relevantes e propostas que exigem decisão. Mostrar a origem de cada informação e o que falta. Uma tabela com três indicadores sem período, amostra e critério de coleta não basta para decidir.
+
+Distribuir o material antes da reunião quando isso for viável. Não preparar dezenas de páginas para uma decisão que cabe em um registro curto. Questões que exigem análise técnica podem receber responsável e prazo fora da reunião.
+
+### Decidir
+
+1. Retomar decisões anteriores e suas evidências.
+2. Examinar fila, capacidade e conflitos de prioridade.
+3. Relacionar propostas às finalidades de receita, custo, experiência e resiliência.
+4. Examinar riscos, lacunas e alternativas.
+5. Registrar decisão, motivo, autoridade, executor, limite de recurso, prazo e condição de revisão.
+6. Comunicar alterações às pessoas afetadas.
+
+### Conferir o registro
+
+A ata precisa permitir que uma pessoa ausente entenda a decisão e encontre seu responsável. “A TI deve melhorar” não define saída. “Responsável por TI apresenta teste de recuperação do serviço de faturamento até a data acordada” cria um compromisso verificável, desde que escopo e recursos estejam definidos.
+
+A frequência inicial quinzenal e os 30 minutos são parâmetros locais. Rever a cadência quando decisões pendentes ou indisponibilidade da direção tornam o ritual insuficiente. Adaptação é parte do método, não descumprimento de uma norma externa. [F09](<../../framework/referencias/fontes.md#f09>) [F10](<../../framework/referencias/fontes.md#f10>)
+
+Modelo: [Decisão e prioridades](<../../framework/templates/decisoes-prioridades.md>). Próxima leitura: [Maturidade](<../../framework/adocao/maturidade.md>).
+
+
+## Registro de responsabilidades
+
+Preencher no início da adoção e revisar após mudanças de pessoas ou fornecedores. Direção confirma alçadas; cada pessoa confirma disponibilidade e acesso. Saída: lista consultável de responsáveis e substitutos.
+
+**Processo/serviço:** [preencher]  
+**Data e responsável pelo registro:** [preencher]
+
+| Função | Pessoa ou fornecedor | Decide o quê | Limite da alçada | Substituto/contato |
+| --- | --- | --- | --- | --- |
+| Patrocinador/direção | | Recursos e risco aceito | | |
+| Responsável por TI | | Organização e execução | | |
+| Dono do processo | | Necessidade e aceite | | |
+| Executor | | Trabalho autorizado | | |
+| Segurança/continuidade | | Teste e resposta | | |
+
+**Acúmulos e conflitos:** [quem acumula aprovação e execução; como haverá segunda conferência quando necessária].
+
+**Comunicação:** [registro oficial, contato de urgência, frequência de atualização e destinatários].
+
+**Verificação:** pessoas designadas confirmaram os papéis em [data/evidência]. Exceções: [ausência de substituto, serviço terceirizado, limites de disponibilidade]. Não preencher nomes fictícios no registro operacional.
+
+### RACI-Lite por atividade
+
+Quando houver dúvida entre funções, usar R para executor, A para autoridade de aprovação, C para pessoa consultada e I para pessoa informada. Identificar uma autoridade final por decisão; se houver mais de uma aprovação necessária, explicitar decisões e alçadas distintas.
+
+| Atividade | R: executor | A: autoridade | C: consultado | I: informado |
+| --- | --- | --- | --- | --- |
+| Orçamento anual de TI | | | | |
+| Priorização da fila | | | | |
+| Triagem e atendimento | | | | |
+| Teste de recuperação | | | | |
+| Requisitos e aceite da melhoria | | | | |
+
+Uma ferramenta pode preparar a minuta ou auxiliar o teste. Registrar a pessoa responsável pela execução e conferência; não atribuir à IA a alçada humana. Validar disponibilidade e conflitos antes de considerar a tabela vigente. A quantidade de linhas é ajustável ao serviço.
+
+
+## Indicadores operacionais
+
+Escolha um indicador quando houver uma decisão a tomar. TI coleta os dados; o dono do serviço confirma o que foi medido; direção e TI definem tolerâncias. Uma meta sem janela, origem e responsável não permite avaliar a rotina.
+
+### Definições
+
+| Indicador | Cálculo e unidade | Limite de interpretação |
+| --- | --- | --- |
+| IDSC: disponibilidade de serviço crítico | `(horas observadas − horas indisponíveis) / horas observadas × 100`, em % | Definir serviço, horário coberto e exclusões; não somar incidentes simultâneos duas vezes |
+| TMpR: tempo médio para restauração | Soma dos tempos de recuperação / incidentes encerrados, em horas | Informar quantidade e distribuição; a média pode ocultar um incidente longo |
+| ISU: satisfação do usuário | Soma das notas / respostas válidas, em escala 1 a 5 | Informar taxa de resposta e pergunta; ausência de respostas é dado insuficiente |
+| Trabalho iniciado | Quantidade por executor em andamento, teste ou bloqueio | Não confundir tamanho da fila com WIP |
+| Tempo de fluxo | Conclusão menos início, na unidade escolhida | Informar política de pausa e itens ainda abertos |
+
+### Coletar e revisar
+
+1. Definir decisão e serviço: por exemplo, se a recuperação atende à necessidade do faturamento.
+2. Escolher período e fonte. Preservar horários e identificador do incidente.
+3. Validar domínios: horas observadas positivas, indisponibilidade entre zero e o período; duração não negativa; notas de 1 a 5.
+4. Calcular e informar amostra, lacunas e exclusões.
+5. Comparar com tolerância local e períodos comparáveis.
+6. Registrar ação, responsável e data de revisão.
+
+Sem incidentes encerrados, TMpR é **dado insuficiente**, não zero. Um período sem incidentes registrados pode indicar falta de coleta. Indicadores não substituem testes de restauração nem a avaliação de riscos.
+
+### Metas e compatibilidade
+
+As versões anteriores usavam disponibilidade >99,5%, TMpR <4 horas e ISU >4,5. São exemplos de metas locais, sem validade universal. A calculadora mantém esses padrões para compatibilidade e permite configuração; o resultado deve declarar as metas aplicadas. Igualdade no limite não satisfaz uma comparação estrita.
+
+### DORA para entrega de software
+
+As métricas DORA consultadas em 2026 são frequência de implantação, tempo de entrega de mudanças, tempo de recuperação de implantação com falha, taxa de falha de mudanças e taxa de retrabalho de implantação. Seu recorte é entrega de software. Não substituir TMpR de incidentes gerais pelo tempo de recuperação de uma implantação com falha. Consultar definições e contexto antes de incorporar uma métrica [F05](<../../framework/referencias/fontes.md#f05>), [F06](<../../framework/referencias/fontes.md#f06>).
+
+Exemplo: 720 horas observadas e 2 horas de indisponibilidade produzem IDSC de 99,7222%. Dois incidentes restaurados em 1 e 3 horas produzem TMpR de 2 horas. Duas respostas 5 e 4 produzem ISU de 4,5; a amostra é pequena e não prova satisfação de todos.
+
+Próxima leitura: [Indicadores financeiros](<../../framework/indicadores/financeiros.md>). Modelo: [Decisões e prioridades](<../../framework/templates/decisoes-prioridades.md>).
+
+Consulta complementar: [indicadores de negócio e comparação da rotina](<../../framework/indicadores/negocio-comparacao.md>), com definições para custos, canais, entregas e autoatendimento.
+
+
+
+Consulta: [fontes e limites](../../framework/referencias/fontes.md). Regra vigente: [documentação modular](../../framework/README.md).

@@ -1,7 +1,7 @@
 \section{Estado do artefato e evidências de engenharia}
 \label{sec:estado}
 
-O estado analisado corresponde à revisão \texttt{7d9a2926ccb8} do repositório GP-PME, registrada em julho de 2026 \citep{gppme2026repo}. O inventário contém um núcleo documental, templates preenchíveis, busca, grafo de conhecimento, agentes, adaptadores e serviços de integração. A \cref{tab:estado-engenharia} resume apenas evidências verificadas no repositório; números de retorno financeiro presentes em cenários demonstrativos foram excluídos desta síntese por serem projeções condicionais.
+O estado analisado corresponde à revisão \texttt{7d9a2926ccb8} do repositório histórico GP-PME, registrada em julho de 2026 \citep{gppme2026repo}. Os números desta seção descrevem aquela revisão, não o índice reconstruído na edição GEAR de outubro. O inventário histórico contém um núcleo documental, templates preenchíveis, busca, grafo de conhecimento, agentes, adaptadores e serviços de integração. A \cref{tab:estado-engenharia} resume apenas evidências verificadas no repositório; números de retorno financeiro presentes em cenários demonstrativos foram excluídos desta síntese por serem projeções condicionais.
 
 \begin{table}[htbp]
   \centering
@@ -22,7 +22,7 @@ O estado analisado corresponde à revisão \texttt{7d9a2926ccb8} do repositório
   \end{tabularx}
 \end{table}
 
-Essa evidência demonstra completude de uma instanciação e reduz o risco de avaliar apenas uma ideia abstrata. Ela não demonstra facilidade de aprendizagem, custo real de adesão, melhoria de desempenho ou superioridade frente a outras referências. A avaliação necessária começa, portanto, no ponto em que termina a verificação de engenharia.
+Essa evidência documenta componentes da instanciação histórica e reduz o risco de avaliar apenas uma ideia abstrata. Ela não demonstra facilidade de aprendizagem, custo real de adesão, melhoria de desempenho ou superioridade frente a outras referências. A avaliação necessária começa, portanto, no ponto em que termina a verificação de engenharia.
 
 \section{Protocolo prospectivo de avaliação}
 \label{sec:protocolo}
@@ -31,21 +31,21 @@ Essa evidência demonstra completude de uma instanciação e reduz o risco de av
 
 A avaliação futura será guiada por três perguntas. \textbf{PA1}: em empresas simuladas de 5 a 20 colaboradores, qual configuração produz planos mais completos e acionáveis para um conjunto comum de problemas? \textbf{PA2}: qual é o esforço humano e documental exigido para chegar a uma primeira decisão verificável? \textbf{PA3}: em quais condições de porte, maturidade, setor e comportamento das personas cada configuração falha ou exige adaptação?
 
-A hipótese principal é que o GP-PME oferece uma relação favorável entre cobertura e esforço nos cenários de baixa maturidade, sem pressupor que supere ITIL~4 ou COBIT~2019 em seus escopos de origem. Duas hipóteses secundárias serão examinadas: os mecanismos relacionais e a Fase Zero terão maior contribuição nos cenários com papéis acumulados; e a camada de IA reduzirá tempo de preparação somente quando contexto, revisão e critérios de saída forem mantidos. Nenhuma dessas hipóteses é tratada como confirmada nesta versão.
+A hipótese principal é que o GEAR oferece uma relação favorável entre cobertura e esforço nos cenários de baixa maturidade, sem pressupor que supere ITIL~4 ou COBIT~2019 em seus escopos de origem. Duas hipóteses secundárias serão examinadas: os mecanismos relacionais e a Fase Zero terão maior contribuição nos cenários com papéis acumulados; e a camada de IA reduzirá tempo de preparação somente quando contexto, revisão e critérios de saída forem mantidos. Nenhuma dessas hipóteses é tratada como confirmada nesta versão.
 
 \subsection{Desenho pareado dos 25 casos}
 
-Serão executados 25 blocos de teste, cada um correspondente a uma empresa sintética única. Em cada bloco, o mesmo manifesto de empresa, as mesmas personas, os mesmos eventos e o mesmo conjunto de tarefas serão submetidos a três configurações: GP-PME, ITIL~4 adaptado e COBIT~2019 adaptado. Assim, 25 testes produzem 75 execuções de framework, mas a unidade de comparação permanece o caso pareado. Os IDs, setores, portes e desafios estão pré-especificados no \cref{ap:casos} e no arquivo suplementar \texttt{scenario-catalog.csv}.
+Serão executados 25 blocos de teste, cada um correspondente a uma empresa sintética única. Em cada bloco, o mesmo manifesto de empresa, as mesmas personas, os mesmos eventos e o mesmo conjunto de tarefas serão submetidos a três configurações: GEAR, ITIL~4 adaptado e COBIT~2019 adaptado. Assim, 25 testes produzem 75 execuções de framework, mas a unidade de comparação permanece o caso pareado. Os IDs, setores, portes e desafios estão pré-especificados no \cref{ap:casos} e no arquivo suplementar \texttt{scenario-catalog.csv}.
 
-Os casos serão estratificados em cinco faixas de porte (5--7, 8--10, 11--13, 14--16 e 17--20 colaboradores), com cinco empresas por faixa. Setores e incidentes variam para evitar que o resultado dependa de uma única narrativa. A maturidade inicial será limitada aos níveis 0, 1 e 2, coerentes com a porta de entrada do GP-PME. Cada caso conterá ao menos uma tensão de direção, uma de fluxo de trabalho e uma de risco, mas sua severidade será balanceada antes das execuções.
+Os casos serão estratificados em cinco faixas de porte (5--7, 8--10, 11--13, 14--16 e 17--20 colaboradores), com cinco empresas por faixa. Setores e incidentes variam para evitar que o resultado dependa de uma única narrativa. A maturidade inicial será limitada aos níveis 0, 1 e 2, coerentes com a porta de entrada do GEAR. Cada caso conterá ao menos uma tensão de direção, uma de fluxo de trabalho e uma de risco, mas sua severidade será balanceada antes das execuções.
 
 \subsection{Configuração justa das alternativas}
 
-A unidade avaliada não será o texto integral de cada referência, mas uma configuração declarada e reproduzível. O GP-PME usará sua Fase Zero e seus três pilares essenciais. A configuração ITIL~4 usará princípios orientadores, cadeia de valor e um subconjunto documentado de práticas compatíveis com o pacote de tarefas. A configuração COBIT~2019 usará fatores de desenho e objetivos selecionados por critérios publicados antes do teste. Especialistas deverão revisar os dois baselines para evitar versões deliberadamente fracas.
+A unidade avaliada não será o texto integral de cada referência, mas uma configuração declarada e reproduzível. O GEAR usará sua Fase Zero e seus três domínios essenciais. A configuração ITIL~4 usará princípios orientadores, cadeia de valor e um subconjunto documentado de práticas compatíveis com o pacote de tarefas. A configuração COBIT~2019 usará fatores de desenho e objetivos selecionados por critérios publicados antes do teste. Especialistas deverão revisar os dois baselines para evitar versões deliberadamente fracas.
 
 Como ITIL e COBIT não possuem o mesmo escopo, os resultados serão divididos em dois painéis. O painel de \emph{desempenho no escopo comum} comparará somente tarefas que as três configurações se propõem a tratar. O painel de \emph{cobertura do problema completo} registrará lacunas em direção, serviço e segurança sem interpretar toda ausência como falha intrínseca do framework. Essa decomposição torna visível quando uma diferença decorre do escopo e quando decorre da execução.
 
-No ensaio principal, qualquer assistência por LLM receberá o mesmo modelo, orçamento de contexto, temperatura, ferramentas e tempo entre os três braços. Agentes especializados exclusivos do GP-PME não serão usados nessa comparação, pois confundiriam o efeito do conteúdo do framework com o efeito da implementação. A camada opcional de IA será examinada em uma ablação separada, GP-PME manual versus GP-PME assistido, depois do ensaio principal.
+No ensaio principal, qualquer assistência por LLM receberá o mesmo modelo, orçamento de contexto, temperatura, ferramentas e tempo entre os três braços. Agentes especializados exclusivos do GEAR não serão usados nessa comparação, pois confundiriam o efeito do conteúdo do framework com o efeito da implementação. A camada opcional de IA será examinada em uma ablação separada, GEAR manual versus GEAR assistido, depois do ensaio principal.
 
 \subsection{Personas mais realistas e reprodutíveis}
 
@@ -78,7 +78,7 @@ Os resultados serão resumidos por mediana e intervalo interquartil. Diferenças
   \small
   \begin{tabular}{@{}lccc@{}}
     \toprule
-    Métrica & GP-PME & ITIL 4 adaptado & COBIT 2019 adaptado \\
+    Métrica & GEAR & ITIL 4 adaptado & COBIT 2019 adaptado \\
     \midrule
     Completude acionável $\uparrow$ & -- & -- & -- \\
     Esforço humano (min) $\downarrow$ & -- & -- & -- \\

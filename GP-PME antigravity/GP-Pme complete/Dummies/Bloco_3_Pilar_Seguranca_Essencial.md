@@ -1,54 +1,42 @@
-# Bloco 3: O Pilar da Segurança Essencial: Proteja Seu Negócio sem Complicação
+# Conferir continuidade e resposta
 
----
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
-## 3.1. O Escudo de Segurança Mínimo (Sem Custos Altos!)
+## Percurso de leitura
 
-Você não precisa gastar milhares de reais em softwares complexos de segurança digital. O GP-PME estabelece o **NIST-Lite**, focando nos **4 controles essenciais** que geram a máxima proteção prática com o menor custo e esforço operacional:
+- [Continuidade: conhecer dependências e testar](#continuidade-conhecer-dependencias-e-testar)
+- [O que direção e TI precisam conferir](#o-que-direcao-e-ti-precisam-conferir)
 
-```
-[ IDENTIFICAR ] -> Mapa de Ativos Críticos 80/20 (Saber o que proteger)
-      |
-      +---> [ PROTEGER ] -> Privilégio Mínimo (MFA ativo, sem logins Admin)
-      |
-      +---> [ PROTEGER ] -> Backups Automáticos (Testados a cada 3 meses)
-      |
-      +---> [ RESPONDER ] -> Plano de Emergência de 1 Página (Checklist físico)
-```
+## Continuidade: conhecer dependências e testar
 
-Estes controles atuam como a **bússola de crescimento seguro** da sua empresa, garantindo que o seu faturamento e sua expansão comercial estejam protegidos contra incidentes catastróficos.
+Identifique o serviço que precisa continuar, seus dados, contas, equipamentos e fornecedores. Comece pelas dependências críticas e registre o que falta mapear. O nome antigo “Inventário 80/20” expressava priorização; não prova que 20% dos ativos geram 80% do faturamento.
 
----
+Contas individuais, acesso necessário e MFA reduzem exposições específicas, sem impedir todo ataque. Registre cobertura e exceções. MFA é autenticação multifator; um código de celular é apenas uma implementação possível, não a definição completa.
 
-## 3.2. Os 4 Controles de Segurança que Você Deve Exigir da TI
+Combine frequência e retenção de backup com a perda de dados tolerável. Proteja a cópia e teste restauração em ambiente autorizado. Um arquivo recuperado não comprova recuperação do serviço inteiro. Os antigos parâmetros de backup diário, teste trimestral e 30 minutos precisam de justificativa local.
 
-### Controle 1: O Mapa de Ativos Críticos (Inventário 80/20)
-Tentar blindar 100% de tudo em uma PME de uma vez gera perda de foco. Nós focamos na Regra de Pareto: o seu gestor de TI mantém uma planilha simples local listando apenas os **20% dos computadores e sistemas que se pegarem vírus ou pararem de funcionar, destroem seu faturamento** (ex: o banco de dados do ERP, o notebook do faturamento financeiro e a conta de e-mail do administrador). Toda nossa proteção prioritária é voltada para esses ativos críticos.
+Prepare o PRI com contatos conferidos, autoridade para contenção, comunicação e passos de recuperação. No incidente, preserve evidências e confirme serviço e dados com seu dono. Formatação e desligamento não são instruções universais. Obrigações legais vão à competência responsável.
 
-### Controle 2: Contas Sem Acesso "Admin" e MFA Ativo
-*   **MFA (Confirmação de Acesso)**: Você deve exigir a ativação obrigatória de confirmação de dois fatores (código enviado ao celular) em 100% dos e-mails profissionais dos colaboradores e contas de sistemas. Isso bloqueia até 98% dos roubos de contas tradicionais.
-*   **Privilégio Mínimo (Sem Admin local)**: Seus colaboradores comuns **não devem ter contas com acesso de "Administrador local"** nos computadores corporativos. Se um colaborador clicar acidentalmente em um link malicioso e um vírus for baixado, o computador pedirá a senha do administrador da TI para instalar, impedindo que o vírus contamine a máquina ou se alastre pela rede de forma invisível.
+## O que direção e TI precisam conferir
 
-### Controle 3: Backup Automático em Nuvem (e Testado de Verdade!)
-*   Os arquivos e dados cruciais da sua empresa (listados no Mapa de Ativos Críticos) devem ser copiados sozinhos diariamente para um local seguro na internet (Google Drive corporativo, OneDrive, etc.).
-*   **O Teste do Balde de Água Fria**: A cada **3 meses**, o seu profissional de TI deve realizar um teste manual prático simulando que um arquivo vital sumiu da rede, recuperando-o do backup em menos de 30 minutos. O sucesso desse teste prático de recuperação deve ser obrigatoriamente apresentado e assinado na ata da sua reunião quinzenal Papo Reto com o Chefe.
+Use antes de depender de uma cópia de segurança e quando um serviço crítico muda. Direção confirma recursos e risco; dono do serviço define tolerâncias; TI organiza teste e controles. Entradas: serviço, dependências, cópia, acesso e autorização. Saída: evidência de recuperação com limites e ações atribuídas.
 
-### Controle 4: O Plano de Ação de Emergência (PRI) de 1 Página
-Se a empresa for atacada por hackers ou pegarem um vírus ransomware (sequestrador de dados), o pânico e o desespero podem piorar a situação (ex: funcionários apagando coisas erradas ou desligando sistemas incorretamente).
+- [ ] Serviços e dependências prioritários estão registrados com proprietário?
+- [ ] Contas críticas têm acesso necessário, MFA e exceções visíveis?
+- [ ] A cópia tem proteção, retenção e frequência acordadas?
+- [ ] O teste registra dados recuperados, serviço verificado, duração e limitações?
+- [ ] O plano de incidente tem contatos e autoridades conferidos?
+- [ ] Pendências têm responsável e próxima revisão?
 
-A empresa deve manter uma **folha física impressa e fixada na parede da TI** contendo as seguintes diretrizes emergenciais de 1 página:
+Backup concluído, arquivo restaurado e serviço recuperado são evidências diferentes. Se o teste falhar, registrar a falha e planejar correção; a assinatura de uma folha não altera o resultado. Guardar o plano onde possa ser acessado durante indisponibilidade, preservando informações restritas.
 
-```mermaid
-graph TD
-    A[Ataque Detectado / Ransomware] --> B(1. Desplugar cabos de rede e Wi-Fi IMEDIATAMENTE)
-    B --> C(2. NÃO desligar a máquina da tomada)
-    C --> D(3. Ligar para o suporte de emergência da TI)
-    D --> E(4. Recuperar sistemas a partir do backup em nuvem testado)
-    
-    style A fill:#ef4444,stroke:#fff,color:#fff
-    style B fill:#1e293b,stroke:#3b82f6,color:#fff
-```
+No incidente, registrar sinais observados, acionar o responsável, avaliar contenção autorizada e comunicar fatos verificados. Confirmar recuperação com o negócio. Contatos não fornecidos ficam pendentes; não inventar números ou obrigações legais. Se a capacidade local for insuficiente, acionar especialista ou fornecedor previsto.
 
-1.  **Contenção Imediata**: Desconectar fisicamente todos os cabos de rede e desligar o Wi-Fi de computadores infectados ou suspeitos, **sem desligar a máquina da tomada** (isso impede o vírus de contaminar outras máquinas na rede local e preserva evidências digitais importantes na memória).
-2.  **Lista de Chamada**: Nome e contato direto dos técnicos emergenciais da TI, do CEO e de provedores de internet a serem notificados imediatamente na primeira hora da crise.
-3.  **Restauro Planejado**: Roteiro simples de reinstalação dos sistemas operacionais e início da restauração passo a passo dos arquivos do backup em nuvem testado.
+Fundamento: NIST F01–F02 e CISA F12. Quatro práticas locais não equivalem ao NIST completo nem às 56 salvaguardas CIS IG1 (F11). Não há eficácia de 98% demonstrada para essa seleção.
+
+## Próxima tarefa e referências
+
+- [Testar restauração](<../../../framework/guias/testar-restauracao.md>)
+- [Plano breve de resposta a incidente](<../../../framework/templates/incidente.md>)
+
+Fontes F01–F12 e limites de consulta: [referências completas](<../../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

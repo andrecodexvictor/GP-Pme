@@ -1,78 +1,73 @@
-# Framework GP-PME
+# GEAR
 
-Bem-vindo ao repositório do **Framework GP-PME (Governança Prática para Pequenas e Médias Empresas)**.
+**Gestão, Execução, Agilidade e Risco.** Framework de governança e gestão de TI para pequenas e médias empresas, de Andre Victor.
 
-Este repositório contém a documentação completa, guias práticos e ativos interativos do framework GP-PME. O framework foi desenhado especificamente para ajudar pequenas e médias empresas a gerenciarem sua tecnologia de forma eficiente, segura e orientada a valor, utilizando os princípios da **TI Enxuta (Lean IT)**, agentes de Inteligência Artificial especialistas e estratégias de vitórias rápidas (*Quick Wins*).
+GEAR organiza prioridades, trabalho e riscos quando poucas pessoas acumulam funções. Há três domínios essenciais: governança e direção, execução e serviços, segurança e continuidade. Adoção, indicadores e maturidade são transversais. Assistência por IA é opcional, inclusive no nível máximo de maturidade.
 
----
+## Começar a leitura
 
-## 🗺️ Estrutura do Repositório
+| Necessidade | Percurso |
+| --- | --- |
+| Conhecer o método | [Escopo e princípios](framework/nucleo/escopo-principios.md) |
+| Iniciar a rotina | [Primeiros 30 dias](framework/adocao/primeiros-30-dias.md) |
+| Resolver uma tarefa | [Guias](framework/guias/README.md) |
+| Consultar um registro | [Templates](framework/templates/README.md) |
+| Entender uma conta | [Indicadores financeiros](framework/indicadores/financeiros.md) |
+| Ler no navegador | [Portal](GP-Pme%20Article/index.html), [biblioteca](GP-Pme%20Article/biblioteca.html) e [notas de aplicação](GP-Pme%20Article/blog/index.html) |
 
-*   **`GP-PME antigravity/`**: O diretório central que contém todos os guias detalhados, guias simplificados para leigos (*dummies*), templates operacionais de 1 página e o documento mestre consolidado.
-*   **`GP-PME Article/`**: Contém um portal web interativo em HTML (`index.html`) com o design "Google Stitch" para navegação visual amigável por todos os pilares e documentos do framework.
-*   **`Docs/`**: Diretório contendo diretrizes do projeto (PRD, Roadmap, Lista de Tarefas, Agentes Especialistas e o guia editorial `GEMINI.MD.md`).
-*   **`References/`**: Repositório de materiais bibliográficos e histórico de versões acadêmicas e técnicas do framework (`GP-PME Versions`).
+## Fluxo de trabalho
 
----
+Registrar necessidade e responsável; decidir prioridade com o negócio; selecionar trabalho compatível com capacidade; executar; verificar resultado acordado; revisar risco e próxima ação. O limite inicial é três itens iniciados por executor, contando andamento, teste e bloqueio. Emergências são atendidas e registradas, com autorização para exceções e histórico do trabalho interrompido.
 
-## 🚀 Como Começar
+O canal oficial reúne os registros; não impede ajuda a quem recebeu urgência por telefone ou mensagem. Prazo de piloto, duração de reunião e metas são parâmetros locais, ajustados com motivo. O método não garante retorno em 24 horas, redução percentual de esforço ou recuperação de qualquer serviço em prazo fixo.
 
-1.  **Explore o Framework Visualmente**:
-    Abra o arquivo `GP-PME Article/index.html` em qualquer navegador web para acessar a versão interativa do framework. Lá você poderá visualizar os mapas de processos, cards de pilares e ler os guias com estilo tipográfico moderno.
-2.  **Leia os Guias Técnicos**:
-    Se você prefere os documentos em formato Markdown bruto para leitura ou para sistemas de busca e recuperação por IA (RAG), navegue até [Guides/](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/) para ler os guias avançados, ou até [guide-for-dummies/](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/guide-for-dummies/) para versões explicadas com jargão zero.
-3.  **Adote os Templates Operacionais**:
-    Acesse [Templates/](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Templates/) para encontrar planilhas prontas de RACI-Lite, Matrizes 4 Quadrantes, templates de PRD de 1 página, planos de contingência de incidentes (PRI) e receitas de prompts.
+## Fontes e evidência
 
----
+A [edição canônica](framework/README.md) distingue referências externas, adaptações locais e hipóteses. O [registro de fontes](framework/referencias/fontes.md) informa versões, consulta e limites. Cenários são ilustrativos; não representam resultado de campo. A avaliação com 25 empresas sintéticas e 75 execuções pareadas permanece prospectiva no [manuscrito científico](GP-Pme%20Article/overleaf/README.md).
 
-## 🎯 Filosofias Centrais
+A edição GEAR 2026.10 consolida núcleo, interface, regras determinísticas e versões autorais. O [registro de publicação](framework/publicacao/README.md) documenta preservação, verificações e limites. GP-PME e NEXUS-PME são nomes históricos. Identificadores de software e caminhos antigos podem permanecer por compatibilidade, sem definir pilares adicionais ou versões concorrentes.
 
-*   **TI Enxuta (Lean IT)**: Foco estrito em maximizar a entrega de valor de negócio ao mesmo tempo em que se elimina o desperdício de tempo e recursos operacionais. A TI se adapta ao tamanho da equipe, não o contrário.
-*   **Vitórias Rápidas (Quick Wins)**: Cronogramas pragmáticos como a Fase Zero (playbook de 30 dias) garantem que a empresa veja retorno financeiro e estabilidade operacional desde as primeiras 24 horas.
-*   **Aceleração Opcional por IA**: A IA generativa atua como um copiloto transversal opcional (Pilar IV) para automatizar a burocracia técnica sob supervisão humana estrita (Human-in-the-loop).
+## Estrutura e capacidades
 
----
+| Diretório | Conteúdo e manutenção |
+| --- | --- |
+| `framework/` | Fonte editorial vigente: editar regras, guias, indicadores e modelos aqui |
+| `GP-Pme Article/` | Portal estático derivado e manuscrito LaTeX próprio |
+| `book/` e `tools/` | Fontes derivadas e geradores; PDFs em `GP-Pme Article/output/pdf/`; verificação local em `.context/publicacoes/` |
+| `GP-PME/` e `GP-PME antigravity/` | Manuais completos derivados do núcleo, com caminhos preservados |
+| `References/GP-PME Versions/` | Versões consolidadas por perfil, com créditos de origem |
+| `References/` | Fontes externas e sínteses com proveniência; não reescrever textos de terceiros |
+| `Docs/` | [Diretrizes e decisões](Docs/README.md) |
+| `agents/` | [Orquestrador, oito especialistas e cinco adaptadores](agents/README.md) |
+| `server/` | Regras comuns e fachadas API/MCP, com nomes GP-PME compatíveis |
+| `search/` | Ingestão canônica, BM25 e exportação lexical |
+| `Simulacao/` e `Comercial/` | Cenários condicionais e materiais comerciais revisados |
+| `.claude/skills/` | Oito fluxos locais históricos; novas skills seguem o escopo global do usuário |
+| `graphify-out/` | Grafo histórico local; não representa automaticamente o núcleo atualizado |
 
-## 🔄 Destaque: O Ciclo de Serviço Micro-Adaptativo
+Agentes e adaptadores mantêm revisão humana para efeitos organizacionais. Modo simulado não comprova operação real nas plataformas. Novos MCPs devem seguir o hub global descrito em AGENTS.md; a reforma não instala um servidor por terminal nem usa o grafo de outro projeto.
 
-O **Ciclo de Serviço Micro-Adaptativo** (Pilar II: Execução Ágil) é o motor operacional do GP-PME. Em vez de forçar a PME a adotar frameworks ágeis pesados de mercado, ele funde práticas enxutas do Scrum e do ITIL 4 de forma a acomodar a realidade diária de equipes reduzidas ou de um único técnico (*One-Man-Band*).
+## Gerar e verificar
 
-### Como funciona na Prática:
-1.  **Sprints de 1 Semana**: O planejamento é realizado em ciclos curtíssimos de 1 semana. O técnico foca apenas em 2 ou 3 cartões de projetos de valor autorizados no CD-TI Lite.
-2.  **Limite Rígido de WIP (WIP Limit = 3)**: É expressamente proibido ter mais de 3 tarefas simultâneas na coluna *Em Andamento* do Kanban. Isso impede a dispersão mental e garante que tarefas iniciadas sejam rapidamente concluídas.
-3.  **Filtro do Canal Único**: Todas as demandas externas (WhatsApp, e-mails pessoais, telefonemas) são bloqueadas na origem. As demandas devem obrigatoriamente entrar pelo Canal Único, o que impede interrupções que quebram o fluxo de trabalho planejado.
-4.  **Amortecedor de Emergências (A "Raia Rápida")**: Quando uma emergência cibernética ou parada de faturamento crítica ocorre, o técnico aplica a regra de suspensão: ele arrasta sua tarefa menos prioritária do Kanban de volta para a coluna *A Fazer* e ativa a **Raia de Expedite (Rápida)** para focar 100% no incidente, retornando ao fluxo original imediatamente após a mitigação.
+Instalar dependências Node com `npm install`. O launcher usa Python configurado em `GEAR_PYTHON`; quando disponível, encontra o runtime documental do Codex no usuário. Em outro ambiente, usar Python 3.10 ou superior e as bibliotecas documentais do fluxo, incluindo `reportlab`. Fontes tipográficas licenciadas acompanham o portal.
 
-Isso garante que a TI possa ser **micro-adaptativa** — respondendo a incidentes operacionais diários sem quebrar os prazos de projetos estratégicos de negócios.
+```text
+npm run build
+npm run test
+npm run check:web
+npm run build:figures
+```
 
----
+`build` gera páginas, corpus, BM25, índice web, mestre e livro. `test` usa unittest para testes de comportamento. `check:web` usa Puppeteer/Edge em perfil isolado; configurar `GEAR_BROWSER` para outro executável compatível. O artigo tem [compilação própria](GP-Pme%20Article/overleaf/README.md), com fontes múltiplas.
 
-## 🚀 Novidades da Edição Comercial (v2.0)
+A busca web é lexical e funciona offline com JavaScript e índice local. Conteúdo e navegação documental funcionam sem JavaScript. Busca semântica exige reconstrução dos embeddings e correspondência de hash com o corpus; vetores históricos não são misturados com dados novos.
 
-O GP-PME agora é um produto completo: além da documentação, ele traz busca inteligente, agentes de IA prontos para operar a gestão e integração com as principais plataformas de mercado.
+## Publicações
 
-| Capacidade | O que faz | Onde está |
-|---|---|---|
-| 🔎 **Busca Semântica** | Pergunte em linguagem natural e receba a seção exata do framework (CLI, API REST e página web offline) | [search/](search/) · [busca.html](GP-Pme%20Article/busca.html) |
-| 🕸️ **Grafo de Conhecimento** | Mapa navegável de todos os conceitos do framework e suas conexões | [graphify-out/](graphify-out/) |
-| 🤖 **Agentes Google ADK** | Orquestrador "Gestor GP-PME" + 8 especialistas que instalam e operam o kanban do framework em ClickUp, Notion, Trello, Jira e Linear | [agents/gp-pme-adk/](agents/gp-pme-adk/) |
-| 📋 **Agentes Plug-and-Play** | 9 system prompts prontos para copiar em Claude Projects, GPTs ou qualquer chat | [Agentes_Prontos/](GP-PME%20antigravity/Templates/AI-Skills-and-Agents/Agentes_Prontos/) |
-| 🧩 **Skills Claude Code** | 8 skills engatáveis (consultor, fase zero, kanban, governança, segurança, métricas, maturidade, PRD) | [.claude/skills/](.claude/skills/) |
-| 🔌 **Servidor MCP + API** | O framework como serviço para ambientes hostis a ferramentas de gestão | [server/](server/) |
-| 📊 **Simulação de Implantação** | Antes × depois com ROI para empresas de 10 a 100 funcionários | [Simulacao/](Simulacao/) |
-| 💼 **Kit Comercial** | Proposta de valor, one-pager, precificação e onboarding de cliente | [Comercial/](Comercial/) |
+- [Livro GEAR](GP-Pme%20Article/output/pdf/GEAR_livro_2026-10.pdf)
+- [Artigo prospectivo](GP-Pme%20Article/output/pdf/GEAR_artigo_2026-10.pdf)
+- [Goal executável e decisões](Docs/GOAL-GEAR.md)
 
-> Comece pelo novo [INDEX.md](GP-PME%20antigravity/INDEX.md) — o índice premium com trilhas por persona e o catálogo completo de artefatos.
+## Direitos
 
----
-
-*Repositório gerido sob os padrões de qualidade técnica do framework GP-PME.*
-
----
-
-## ⚖️ Licença
-
-**© 2026 Andre Victor. Todos os direitos reservados.**
-
-Este repositório é protegido por licença proprietária. Reprodução, distribuição ou uso comercial sem autorização prévia por escrito é expressamente proibido. Consulte o arquivo [LICENSE.md](LICENSE.md) para detalhes completos.
+© 2026 Andre Victor. Todos os direitos reservados. Uso e distribuição seguem [LICENSE.md](LICENSE.md), sem alteração nesta reforma. Fontes tipográficas conservam as licenças de seus titulares, incluídas nos ativos.

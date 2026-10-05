@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "designSystem": {"slug": "ibm", "path": "design-systems/ibm"},
+  "skill": {"slug": "docs-page", "path": "design-templates/docs-page", "kind": "design-template", "mode": "prototype"},
+  "additionalTemplates": ["design-templates/blog-post"],
+  "boundAt": "2026-10-04T18:00:00Z",
+  "adaptation": "Identidade própria GEAR; organização funcional, sem vínculo com IBM."
+}

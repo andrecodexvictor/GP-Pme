@@ -22,18 +22,18 @@ except ImportError as exc:  # pragma: no cover - depende de ambiente
     ) from exc
 
 from search._common import carregar_corpus
-from search.query import INDEX_META_PATH, buscar, resolver_modo
+from search.query import INDEX_META_PATH, buscar, resolver_modo, semantica_disponivel
 
 app = FastAPI(
-    title="Busca GP-PME",
-    description="Busca híbrida (semântica + BM25) sobre o corpus do framework GP-PME.",
-    version="1.0.0",
+    title="GEAR: busca no conteúdo vigente",
+    description="Corpus canônico com consulta lexical e caminho semântico opcional; informa modo efetivo.",
+    version="2026.10",
 )
 
 
 def _modelo_atual() -> str | None:
     """Nome do modelo de embeddings em uso, ou ``None`` se ainda não indexado."""
-    if not INDEX_META_PATH.exists():
+    if not semantica_disponivel():
         return None
     try:
         with INDEX_META_PATH.open("r", encoding="utf-8") as arq:

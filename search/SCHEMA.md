@@ -1,101 +1,63 @@
-# Busca Semântica GP-PME — Contratos de Dados e Interfaces
+# GEAR — contratos de busca
 
-> Este arquivo é o CONTRATO entre os módulos do motor de busca. Qualquer módulo
-> (`ingest.py`, `build_index.py`, `query.py`, `api.py`, `export_web.py`, `busca.html`)
-> DEVE respeitar exatamente estes formatos.
+Este contrato descreve os arquivos e interfaces vigentes. Nomes e campos históricos permanecem quando necessários à compatibilidade. A fonte editorial é `framework/`; regras de geração estão em `ingest.py`, `build_index.py` e `export_web.py`.
 
-## Layout do pacote
+## 1. Corpus
 
-```
-search/
-├── __init__.py            # pacote python "search"
-├── SCHEMA.md              # este arquivo
-├── ingest.py              # corpus MD -> data/corpus.jsonl
-├── build_index.py         # corpus.jsonl -> data/embeddings.npz + data/bm25.json
-├── query.py               # CLI de consulta (híbrido semântico + BM25)
-├── api.py                 # FastAPI: GET /search
-├── export_web.py          # corpus.jsonl -> ../GP-Pme Article/search-index.json
-├── requirements.txt
-├── README.md              # PT-BR, inclui seção "para clientes"
-└── data/                  # artefatos gerados (commitáveis, exceto embeddings se >50MB)
-    ├── corpus.jsonl
-    ├── embeddings.npz
-    └── bm25.json
-```
-
-## 1. `data/corpus.jsonl` — 1 chunk por linha (UTF-8)
+`data/corpus.jsonl` contém um objeto JSON por linha, em UTF-8:
 
 ```json
 {
-  "id": "antigravity/guides/pilar2#03",
-  "doc": "GP-PME antigravity/Guides/Guia_Pilar_2_Execucao_Agil.md",
-  "titulo_doc": "Guia Pilar 2 — Execução Ágil",
-  "secao": "O Quadro Kanban e o Limite WIP",
-  "breadcrumb": "Pilar 2 > Ciclo Micro-Adaptativo > Kanban",
-  "texto": "<texto integral do chunk, sem markdown de heading>",
-  "keywords": ["kanban", "wip", "raia rápida"],
-  "pilar": "2",
-  "tipo": "guia"
+  "id": "identificador-estavel-do-trecho",
+  "doc": "framework/caminho.md",
+  "titulo_doc": "Título do documento",
+  "secao": "Título da seção",
+  "breadcrumb": "Percurso de leitura",
+  "texto": "Conteúdo da seção ou sua parte",
+  "keywords": [],
+  "pilar": "",
+  "tipo": "guia",
+  "anchor": "titulo-da-secao"
 }
 ```
 
-Regras de chunking:
-- Divisão por heading H2/H3; alvo 300–500 "palavras" por chunk; seções maiores são divididas mantendo parágrafos íntegros e repetindo `secao`+sufixo `(cont.)`.
-- `id` = caminho curto slugificado + índice sequencial de 2 dígitos.
-- `keywords` vêm do bloco `<rag-metadata>` de `GP-PME antigravity/INDEX.md` quando o
-  documento estiver mapeado lá; senão, lista vazia.
-- `tipo` ∈ {`guia`, `template`, `master`, `dummies`, `capitulo`, `index`, `simulacao`, `comercial`, `docs`, `outro`}.
-- `pilar` ∈ {"1","2","3","4",""} (vazio quando transversal).
-- Corpus de entrada: todos os `.md` sob `GP-PME antigravity/`, `GP-PME/`, `Docs/`,
-  `Simulacao/`, `Comercial/`, mais `README.md` raiz. EXCLUIR `References/`,
-  `SKill folder/`, `agents/`, `search/`, `graphify-out/`, `.claude/`, `.context/`.
+O exemplo descreve o formato, sem afirmar existência de documento ou score. `id` usa caminho slugificado e índice sequencial. Títulos H1/H2/H3 determinam seções; títulos dentro de blocos de código são ignorados. Alvo de chunking: 300–500 palavras, preservando parágrafos e âncora nas continuações.
 
-## 2. `data/embeddings.npz` (numpy)
+Entradas: todos os Markdown em `framework/` e README raiz. Versões antigas, fontes externas, agentes, dados do usuário e `.context/` ficam fora. Metadados históricos de RAG não tornam um documento fonte vigente.
 
-- `ids`: array de strings (mesma ordem das linhas do corpus)
-- `vectors`: float32 shape (N, dim), L2-normalizados
-- Modelo: `paraphrase-multilingual-MiniLM-L12-v2` (sentence-transformers). O nome do
-  modelo usado é gravado em `data/index_meta.json` (`{"model": ..., "dim": ..., "n_chunks": ..., "created": ...}`).
+Os tipos canônicos classificam guias, templates, referências, explicações e tutoriais. `pilar` é campo legado, conservado para consumidores; não acrescenta um quarto domínio ao GEAR. `anchor` deve corresponder ao renderizador HTML, inclusive para títulos repetidos.
 
-## 3. `data/bm25.json`
+## 2. Embeddings opcionais
 
-Índice BM25 puro-Python (sem dependências além de stdlib): `{"df": {termo: doc_freq}, "doc_len": {id: n_tokens}, "avgdl": float, "postings": {termo: {id: tf}}, "n_docs": int}`.
-Tokenização: lowercase, remoção de acentos (unicodedata), split em `\W+`, stopwords PT-BR mínimas embutidas no código.
+`data/embeddings.npz` contém `ids` Unicode na ordem do corpus e `vectors` float32, dimensão N × dim e normalização L2. Carga usa `allow_pickle=False`.
 
-## 4. CLI (`query.py`)
+`index_meta.json` registra `model`, `dim`, `n_chunks`, `created` e `corpus_sha256`. A disponibilidade semântica exige hash correspondente ao corpus atual e dependências. O modelo configurado é `paraphrase-multilingual-MiniLM-L12-v2`. Sem o caminho disponível, a consulta recorre a BM25 e informa o modo efetivo.
 
+## 3. BM25
+
+`data/bm25.json` contém `df`, `doc_len`, `avgdl`, `postings` e `n_docs`. Cada posting liga termo, id e frequência. Tokenização em minúsculas, sem acentos, com separação por caracteres não alfanuméricos e stopwords locais.
+
+Parâmetros: k1 = 1,5 e b = 0,75. A consulta híbrida combina 0,6 × similaridade normalizada e 0,4 × BM25 normalizado. São decisões da implementação; score não é probabilidade de correção.
+
+## 4. CLI e APIs
+
+```text
+python -m search.query "termo" --k 5 --modo bm25 --json
 ```
-python -m search.query "como implantar o kanban" [--k 5] [--modo hibrido|semantico|bm25] [--json]
-```
-- `hibrido` (default): score = 0.6*cos + 0.4*bm25_normalizado. Se embeddings.npz ou
-  sentence-transformers indisponíveis → degrada para `bm25` com aviso em stderr.
-- Saída humana: rank, score, `doc` § `secao`, 2 primeiras linhas do texto.
-- Saída `--json`: lista de objetos do corpus + campo `score`.
 
-## 5. API (`api.py`)
+Modos aceitos: `hibrido`, `semantico`, `bm25`. Saída humana apresenta ranking, score, documento, seção e contexto. JSON é lista de objetos do corpus acrescidos de score.
 
-- `GET /search?q=<str>&k=<int=5>&modo=<hibrido>` → `{"query": ..., "modo_efetivo": ..., "resultados": [chunk+score]}`
-- `GET /health` → `{"status":"ok","chunks":N,"modelo":...}`
-- Rodar: `uvicorn search.api:app --port 8765`.
+API de busca: `GET /search?q=&k=&modo=` → consulta, modo efetivo e resultados; `GET /health` → estado, quantidade e modelo disponível. API do núcleo: `GET /buscar`, com contrato próprio em [server](../server/README.md). Índice ausente produz erro e orientação, sem resultado inventado.
 
-## 6. `GP-Pme Article/search-index.json` (web)
+## 5. Exportação web
 
-```json
-{
-  "gerado_em": "ISO-8601",
-  "docs": [{"id","doc","titulo_doc","secao","breadcrumb","texto","keywords","pilar","tipo"}]
-}
-```
-- Igual ao corpus, mas `texto` truncado em 800 chars (busca lexical no browser).
-- `busca.html` embute MiniSearch (código inline, SEM CDN) e carrega este JSON via
-  fetch relativo; campos indexados: `texto`, `secao`, `titulo_doc`, `keywords`;
-  boost: keywords 3, secao 2. Visual: mesma paleta do portal (`index.html` usa
-  Google Stitch dark/blue) — mas NUNCA modificar `index.html`.
+`search-index.json` possui `gerado_em`, `modo: lexical`, `edicao` e `docs`. Cada documento conserva campos do corpus, com texto truncado a 800 caracteres, além de `href` para página documental e âncora.
 
-## 7. Convenções gerais
+`search-data.js` expõe `window.GEAR_INDEX` e alias `window.GPPME_INDEX`. A página usa script local, sem fetch necessário para o arquivo de índice. A busca do portal tem ranking lexical próprio: título/seção, corpo e keywords recebem pesos 5, 1 e 2. O primeiro resultado não implica verificação da afirmação. Não chamar esse ranking de BM25 ou semântico.
 
-- Python ≥3.10, Windows-safe (paths via `pathlib`, encoding="utf-8" explícito em TODO open()).
-- Nenhum módulo importa outro além de: `query.py`/`api.py` podem importar utilitários
-  comuns de `search/_common.py` (tokenização, carga de índices) — quem precisar cria/estende
-  `_common.py` de forma aditiva.
-- Raiz do repo detectada como `Path(__file__).resolve().parents[1]`.
+## 6. Reconstrução e compatibilidade
+
+Executar pela raiz e declarar UTF-8 em leitura/escrita. Sequência: ingestão, índice, exportação. `--bm25-only` evita geração ou download de embeddings. Regerar ao editar fontes. Não usar vetores históricos com corpus diferente.
+
+Testes verificam títulos em código, âncoras repetidas, corpus permitido e recuperação lexical. Verificação no navegador cobre resultado, contexto e navegação à seção. [Uso e limites](README.md).
+

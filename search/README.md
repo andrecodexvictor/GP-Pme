@@ -1,209 +1,53 @@
-# Busca GP-PME
+# GEAR — busca no conteúdo vigente
 
-Motor de busca híbrida (semântica + léxica) sobre todo o conteúdo do framework
-GP-PME: guias, templates, capítulos e material comercial. Responde em
-linguagem natural ("como implantar o kanban?") e devolve os trechos exatos
-dos documentos mais relevantes, com origem (`doc` § `seção`) rastreável.
+O motor Python oferece BM25 e um caminho opcional de embeddings. O portal oferece busca lexical local. Todos consultam conteúdo canônico de `framework/` e README raiz; versões GP-PME/NEXUS-PME, dados do usuário e documentos externos ficam fora do corpus vigente.
 
-## Por que híbrida
+## Gerar e consultar
 
-- **BM25** (léxico) acerta buscas por termo exato — sigla, nome de template,
-  jargão específico do framework ("WIP", "Pilar 3", "Guia_Dummies").
-- **Semântica** (embeddings multilíngues) acerta perguntas em linguagem
-  natural mesmo sem as palavras exatas do texto original.
-- **Modo `hibrido`** (default) combina os dois: `0.6 * cosseno + 0.4 * bm25`,
-  ambos normalizados (min-max) sobre o top-50 de cada método.
+A partir da raiz, a versão lexical usa a biblioteca padrão:
 
-Se o pacote de embeddings não estiver instalado, a busca **degrada
-automaticamente** para BM25 puro — nunca quebra, só fica menos esperta (com
-aviso em `stderr`).
-
-## Arquitetura
-
-```
-GP-PME antigravity/, GP-PME/, Docs/, Simulacao/, Comercial/, README.md
-                    │
-                    ▼
-            search/ingest.py            (*)
-                    │  chunking por H2/H3, 300–500 palavras
-                    ▼
-          search/data/corpus.jsonl      (*)
-                    │
-                    ▼
-          search/build_index.py         (*)
-             │                  │
-             ▼                  ▼
-  data/embeddings.npz     data/bm25.json      (*)
-  (sentence-transformers)  (puro Python)
-             │                  │
-             └────────┬─────────┘
-                       ▼
-               search/query.py   ── CLI: python -m search.query "..."
-                       │
-                       ▼
-               search/api.py     ── FastAPI: GET /search, GET /health
-                       │
-                       ▼
-          GP-Pme Article/busca.html   (MiniSearch, sem backend, via
-          + search-index.json           search/export_web.py)          (*)
-```
-`(*)` — gerados por outros módulos do pacote (`ingest.py`, `build_index.py`,
-`export_web.py`); este README documenta apenas `query.py` e `api.py`.
-
-## Instalação
-
-### Mínima (busca lexical, sem dependências)
-
-Nenhuma instalação além do Python 3.10+. O modo `bm25` roda só com
-biblioteca padrão:
-
-```bash
-python -m search.ingest          # gera data/corpus.jsonl
-python -m search.build_index     # gera data/bm25.json (embeddings.npz é opcional)
-python -m search.query "como implantar o kanban" --modo bm25
-```
-
-### Completa (busca semântica + API)
-
-```bash
-pip install -r search/requirements.txt
+```powershell
 python -m search.ingest
-python -m search.build_index     # agora também gera data/embeddings.npz
-python -m search.query "como implantar o kanban"     # modo hibrido (default)
-uvicorn search.api:app --port 8765
+python -m search.build_index --bm25-only
+python -m search.export_web
+python -m search.query "como priorizar demandas" --modo bm25 --k 3
 ```
 
-No Windows, use `py -3 -m search.ingest` se `python` não estiver no PATH, e
-rode sempre a partir da raiz do repositório (`GP-PME framework/`), pois os
-módulos usam `python -m search.<modulo>` (import relativo ao pacote).
+`ingest.py` separa seções por títulos, ignora títulos dentro de blocos de código e conserva âncoras. `build_index.py` gera BM25. `export_web.py` produz JSON e script local; o script permite consulta pelo portal em arquivo local, sem fetch ou CDN. O contrato está em [SCHEMA](SCHEMA.md).
 
-## Uso — CLI
+Cada resultado Python contém origem, seção, texto e score. `--json` emite saída estruturada. Exemplos e scores antigos foram substituídos pelo comando reproduzível acima; consultar a saída atual em vez de inferir sua relevância de um score ilustrativo.
 
-```bash
-python -m search.query "como implantar o kanban" --k 3
+## Caminho semântico opcional
+
+```powershell
+python -m pip install -r search/requirements.txt
+python -m search.build_index
+python -m search.query "priorização de backlog" --modo semantico
 ```
 
-Saída (formato humano):
+Esse caminho pode baixar o modelo configurado no código, `paraphrase-multilingual-MiniLM-L12-v2`. A disponibilidade exige embeddings, metadados, dependências e hash do corpus correspondente. Índice antigo não é combinado com corpus novo. Modo híbrido usa 0,6 da similaridade normalizada e 0,4 de BM25 normalizado, conforme implementação. Esses pesos são locais.
 
-```
-[1] score=0.9143  GP-PME antigravity/Guides/Guia_Pilar_2_Execucao_Agil.md § O Quadro Kanban e o Limite WIP
-    O quadro Kanban visualiza o fluxo de trabalho em colunas — A Fazer, Em
-    Andamento, Concluído — e o Limite de WIP (Work In Progress) trava quantas
+Sem o caminho semântico disponível, `hibrido` e `semantico` recorrem a BM25 com aviso. Não tratar fallback como validação de embeddings. A reforma gerou e verificou a saída lexical; não demonstra qualidade semântica em produção.
 
-[2] score=0.7820  GP-PME antigravity/Guides/Guia_Pilar_2_Execucao_Agil.md § Ciclo Micro-Adaptativo
-    O ciclo micro-adaptativo revisa prioridades a cada iteração curta,
-    permitindo que a PME reaja a mudanças de mercado sem reescrever o plano.
+## API opcional e integrações
 
-[3] score=0.6104  GP-PME antigravity/Templates/Template_Kanban_Semanal.md § Como usar este template
-    Preencha uma raia por responsável e mantenha o limite de WIP visível no
-    topo do quadro para toda a equipe.
+```powershell
+python -m uvicorn search.api:app --host 127.0.0.1 --port 8765
 ```
 
-Outras opções:
+- `GET /search?q=restauracao&k=3&modo=bm25` retorna consulta, modo efetivo e resultados.
+- `GET /health` retorna estado, tamanho do corpus e modelo disponível.
+- `http://127.0.0.1:8765/docs` apresenta OpenAPI.
 
-```bash
-python -m search.query "modelo de matriz de risco" --modo bm25      # força léxico
-python -m search.query "priorização de backlog" --modo semantico    # só embeddings
-python -m search.query "governança de TI" --k 5 --json              # saída JSON
-```
+Esta API de busca não implementa autenticação. A [API do núcleo](../server/README.md) possui autenticação opcional e também oferece consulta. Configure controles de acesso e limites no ambiente antes de exposição externa.
 
-Saída `--json` (lista de chunks do corpus + `score`):
+CLI, API e portal são três formas de consulta. O portal carrega `search-data.js`, usa pontuação lexical própria em `assets/search.js` e oferece origem, contexto, filtro e navegação à seção. Não é MiniSearch nem reproduz o ranking BM25 Python. O texto web é truncado em 800 caracteres por trecho, o que limita termos encontrados somente no restante da seção.
 
-```json
-[
-  {
-    "id": "antigravity/guides/pilar2#03",
-    "doc": "GP-PME antigravity/Guides/Guia_Pilar_2_Execucao_Agil.md",
-    "titulo_doc": "Guia Pilar 2 — Execução Ágil",
-    "secao": "O Quadro Kanban e o Limite WIP",
-    "breadcrumb": "Pilar 2 > Ciclo Micro-Adaptativo > Kanban",
-    "texto": "O quadro Kanban visualiza o fluxo de trabalho em colunas...",
-    "keywords": ["kanban", "wip", "raia rápida"],
-    "pilar": "2",
-    "tipo": "guia",
-    "score": 0.9143
-  }
-]
-```
+## Manutenção e limites
 
-Se `search/data/` ainda não existir:
+Reconstruir após editar fontes: `ingest → build_index → export_web`. `npm run build` faz a reconstrução lexical e as publicações locais. Caches, embeddings e dados privados seguem o ignore do projeto. Não indexar documentos históricos como vigentes apenas porque são mais extensos.
 
-```
-Erro: Nenhum índice encontrado em search/data/. Execute 'python -m search.ingest'
-e depois 'python -m search.build_index' primeiro.
-```
+Se a consulta informar índice ausente, gerar os arquivos. Se importar `search` falhar, executar pela raiz com `python -m`, não de dentro da pasta. Usar aspas em caminhos com espaços e encoding UTF-8. Dependências FastAPI/Uvicorn e embeddings pertencem ao Python/ambiente de execução escolhido.
 
-## Uso — API
+A busca recupera passagens; não verifica a veracidade de uma afirmação nem substitui leitura de suas fontes e limites. Testes conferem corpus canônico, âncoras e recuperação lexical, sem alegar qualidade semântica.
 
-```bash
-uvicorn search.api:app --port 8765
-```
-
-```bash
-curl "http://127.0.0.1:8765/search?q=como+implantar+o+kanban&k=3"
-```
-
-```json
-{
-  "query": "como implantar o kanban",
-  "modo_efetivo": "hibrido",
-  "resultados": [
-    { "id": "antigravity/guides/pilar2#03", "...": "...", "score": 0.9143 }
-  ]
-}
-```
-
-```bash
-curl "http://127.0.0.1:8765/health"
-```
-
-```json
-{ "status": "ok", "chunks": 842, "modelo": "paraphrase-multilingual-MiniLM-L12-v2" }
-```
-
-Documentação interativa automática do FastAPI em
-`http://127.0.0.1:8765/docs`.
-
-## Para clientes: integrando a busca GP-PME no seu ambiente
-
-Três formas de consumir a busca, da mais simples à mais integrada:
-
-1. **CLI local** — qualquer script/pipeline interno pode chamar
-   `python -m search.query "<pergunta>" --json` e consumir a saída
-   estruturada. Sem servidor, sem rede.
-2. **API REST** — suba `uvicorn search.api:app --port 8765` (ou atrás de um
-   `reverse proxy`/container) e consulte `GET /search?q=...` de qualquer
-   linguagem/ferramenta que fale HTTP. Use `GET /health` para checagem de
-   liveness em orquestradores (Kubernetes, systemd, etc.).
-3. **Busca embutida no portal (sem backend)** — o portal estático
-   (`GP-Pme Article/busca.html`) já embute um índice lexical (MiniSearch,
-   código inline, sem CDN) gerado por `search/export_web.py` a partir do
-   mesmo corpus. É a opção recomendada para distribuir o framework a
-   clientes que só têm acesso ao HTML estático, sem precisar rodar Python.
-
-Para produção recomenda-se: gerar os índices uma vez em CI
-(`ingest` → `build_index` → `export_web`), versionar `search/data/*.json*`
-(o `.npz` de embeddings pode ficar fora do controle de versão se ultrapassar
-50MB) e servir a API atrás de autenticação/rate-limit próprios do ambiente do
-cliente — este pacote não implementa autenticação.
-
-## Troubleshooting (Windows)
-
-- **`ModuleNotFoundError: No module named 'search'`** — rode sempre com
-  `python -m search.query ...` a partir da raiz do repositório
-  (`GP-PME framework\`), nunca `python search\query.py ...` diretamente nem
-  de dentro da pasta `search\`.
-- **Caminho com espaço** — o repositório vive em `C:\Users\...\GP-PME
-  framework\`; em scripts `.bat`/PowerShell sempre entre aspas:
-  `cd "C:\Users\adm\Desktop\GP-PME framework"`.
-- **Aviso "modo 'hibrido' indisponível... usando 'bm25'"** — normal se
-  `sentence-transformers` não foi instalado ou `build_index.py` não gerou
-  `embeddings.npz`. Instale com `pip install -r search/requirements.txt` e
-  rode `build_index.py` novamente para reativar a busca semântica.
-- **Erro de encoding/acentuação no console** — o PowerShell padrão do
-  Windows pode não exibir UTF-8 corretamente; rode
-  `chcp 65001` antes, ou redirecione a saída `--json` para um arquivo
-  (`> saida.json`) e abra em um editor UTF-8.
-- **`uvicorn` não encontrado** — está na seção opcional `api` de
-  `requirements.txt`; confirme que o ambiente virtual correto está ativo
-  (`.venv\Scripts\Activate.ps1`).

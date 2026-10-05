@@ -1,15 +1,9 @@
-"""Servidor MCP (stdio) do GP-PME — expõe `core` como ferramentas para um agente.
+"""Backend MCP GEAR: cálculos, instrumentos locais e busca no corpus.
 
-Roda em ambientes hostis a ferramentas de gestão: um cliente MCP (Claude Code,
-Claude Desktop) conversa com este processo via stdio e obtém as regras de negócio
-do GP-PME (maturidade, KPIs, DAN, COT, ROI, Kanban, Fase Zero, segurança) e a
-busca no corpus, sem depender de ClickUp/Jira.
-
-As docstrings PT-BR abaixo são a DESCRIÇÃO que o cliente MCP mostra ao modelo —
-por isso são ricas e orientam quando/como usar cada ferramenta.
-
-Executar:
-    python -m server.mcp_server
+O identificador técnico gp-pme preserva compatibilidade. A integração deste
+usuário usa o hub HTTP global; clientes não iniciam seus próprios processos
+stdio. Este módulo fornece o backend ao hub conforme server/README.md.
+As docstrings são descrições de ferramentas apresentadas aos modelos.
 """
 from __future__ import annotations
 
@@ -24,10 +18,10 @@ mcp = FastMCP("gp-pme")
 
 @mcp.tool()
 def buscar_conhecimento(q: str, k: int = 5, modo: str = "hibrido") -> dict[str, Any]:
-    """Busca os trechos mais relevantes do corpus GP-PME para responder uma dúvida.
+    """Busca trechos do corpus canônico GEAR para fundamentar uma resposta.
 
     Use SEMPRE que precisar embasar uma resposta nos guias do framework (maturidade,
-    pilares, segurança, Fase Zero) em vez de responder de memória.
+    domínios, segurança, adoção) em vez de responder de memória.
 
     Args:
         q: pergunta ou termo de busca em português.
@@ -42,7 +36,7 @@ def buscar_conhecimento(q: str, k: int = 5, modo: str = "hibrido") -> dict[str, 
 
 @mcp.tool()
 def listar_artefatos(categoria: str = "") -> dict[str, Any]:
-    """Lista os documentos do framework GP-PME (catálogo curado).
+    """Lista documentos do GEAR no catálogo curado.
 
     Use para descobrir quais guias/templates existem antes de ler um deles.
 
@@ -59,8 +53,8 @@ def obter_documento(caminho: str) -> dict[str, Any]:
     """Lê o conteúdo de um documento .md do framework.
 
     Use depois de `listar_artefatos` para ler o guia/template completo. Só lê .md
-    dentro do repositório: caminhos com "../", absolutos ou não-.md são recusados
-    por segurança (proteção anti path-traversal).
+    dentro do repositório: o caminho resolvido deve permanecer na raiz,
+    inclusive após resolver symlinks; arquivos externos ou não-.md são recusados.
 
     Args:
         caminho: caminho relativo à raiz, como retornado por `listar_artefatos`.
@@ -73,7 +67,8 @@ def avaliar_maturidade(respostas: List[int]) -> dict[str, Any]:
     """Calcula o Índice de Maturidade da TI (IM-TI 0-10 e nível 0-4).
 
     Aplique o questionário de 10 perguntas Sim/Não (na ordem do guia) e passe as
-    respostas aqui. Retorna o nível global, a interpretação e o nível por pilar.
+    respostas aqui. Retorna níveis locais, interpretação e resultado por domínio.
+    A chave histórica "pilar" permanece; nenhum nível exige IA. Conferir evidências.
 
     Args:
         respostas: EXATAMENTE 10 valores (1=Sim, 0=Não) na ordem do questionário.
@@ -88,16 +83,17 @@ def calcular_kpis(
     tempos_resposta_horas: List[float],
     notas_satisfacao: List[float],
 ) -> dict[str, Any]:
-    """Calcula os 3 KPIs Visíveis do GP-PME: IDSC, TMpR e ISU.
+    """Calcula disponibilidade, tempo médio de restauração e satisfação.
 
-    IDSC = disponibilidade % (meta >99,5%); TMpR = tempo médio de resposta em horas
-    (meta <4h); ISU = satisfação média 1-5 (meta >4,5). Campos sem dado retornam
-    "DADO INSUFICIENTE" em vez de estimar.
+    IDSC = disponibilidade %; TMpR = tempo médio até restauração em horas;
+    ISU = satisfação média 1-5. Valores de meta retornados são referências
+    históricas locais; a organização deve acordar metas e janela de observação.
+    Campos sem dado retornam "DADO INSUFICIENTE".
 
     Args:
         horas_indisponibilidade: horas fora do ar no período.
         horas_totais: horas totais do período (ex.: 720 = 30 dias).
-        tempos_resposta_horas: lista de tempos de primeira resposta, em horas.
+        tempos_resposta_horas: lista de tempos até restauração, em horas.
         notas_satisfacao: lista de notas de satisfação (escala 1-5).
     """
     return core.calcular_kpis(
@@ -107,10 +103,10 @@ def calcular_kpis(
 
 @mcp.tool()
 def calcular_dan(itens_legados: int, itens_totais: int) -> dict[str, Any]:
-    """Calcula a Dívida de Arquitetura Normalizada (DAN) por proxy de inventário.
+    """API histórica de proporção legada, distinta de DAN financeiro.
 
-    DAN = itens_legados / itens_totais. Zonas: <0,15 saudável, 0,15-0,35 alerta,
-    >0,35 crítico. Use com o inventário 80/20 do cliente.
+    Proporção legada = itens_legados / itens_totais. Zonas: <0,15 saudável, 0,15-0,35 alerta,
+    >0,35 crítico. Faixas locais históricas não validam risco financeiro.
 
     Args:
         itens_legados: itens legados/obsoletos.
@@ -120,39 +116,48 @@ def calcular_dan(itens_legados: int, itens_totais: int) -> dict[str, Any]:
 
 
 @mcp.tool()
-def calcular_cot(custo_otimizacao: float, ganho_mensal: float) -> dict[str, Any]:
+def calcular_cot(custo_otimizacao: float, ganho_mensal: float, custo_recorrente_mensal: float = 0) -> dict[str, Any]:
     """Calcula o payback (meses) e o ROI anual (%) de um investimento de COT.
 
-    Payback = custo/ganho_mensal; ROI anual = ganho_mensal*12/custo*100. Use para
-    justificar um Custo de Otimização Técnica ao CD-TI Lite.
+    ROI líquido anual = ((ganho_mensal-custo_recorrente_mensal)*12-custo)/custo*100.
+    Payback simples existe quando benefício líquido mensal é positivo.
+    Cenário condicional; não comprova ganho observado.
 
     Args:
         custo_otimizacao: aporte único do COT (R$).
         ganho_mensal: ganho/economia mensal recorrente (R$).
     """
-    return core.calcular_cot(custo_otimizacao, ganho_mensal)
+    return core.calcular_cot(custo_otimizacao, ganho_mensal, custo_recorrente_mensal)
 
 
 @mcp.tool()
-def calcular_roi(investimento: float, retorno_mensal: float) -> dict[str, Any]:
+def calcular_roi(investimento: float, retorno_mensal: float, custo_recorrente_mensal: float = 0) -> dict[str, Any]:
     """Calcula ROI anual e payback de qualquer iniciativa de TI (versão geral do COT).
 
-    Use para qualquer aporte único com retorno mensal recorrente (perdas evitadas
-    ou ganho de produtividade). Retorna também um "veredito" de apoio à decisão.
+    Cenário com aporte único e benefício mensal potencial estabilizado durante
+    doze meses. Horas recuperadas não são automaticamente redução de despesa.
+    Retorna ROI líquido, razão bruta e payback; verificar premissas e recorrência.
 
     Args:
         investimento: aporte único (R$).
         retorno_mensal: retorno mensal recorrente (R$).
     """
-    return core.calcular_roi_simplificado(investimento, retorno_mensal)
+    return core.calcular_roi_simplificado(investimento, retorno_mensal, custo_recorrente_mensal)
+
+
+@mcp.tool()
+def calcular_dan_financeiro(custo_refatoracao: float, orcamento_anual_ti: float) -> dict[str, Any]:
+    """Custo estimado de refatoração / orçamento anual, na mesma moeda; instrumento local."""
+    return core.calcular_dan_financeiro(custo_refatoracao, orcamento_anual_ti)
 
 
 @mcp.tool()
 def protocolo_kanban() -> dict[str, Any]:
-    """Retorna a especificação do Kanban do GP-PME + 8 tarefas-semente da Fase Zero.
+    """Retorna a política local de Kanban e oito propostas iniciais de trabalho.
 
-    Use para montar o quadro: 4 colunas, WIP Limit = 3, cadência semanal e a
-    mecânica da Raia Rápida (Expedite) para incidentes críticos.
+    Quatro estados; até três iniciados por executor, incluindo teste e bloqueio.
+    Cadência semanal é referência ajustável. Emergências exigem autorização,
+    exceção visível e histórico do trabalho suspenso.
     """
     return core.protocolo_kanban()
 
@@ -161,17 +166,18 @@ def protocolo_kanban() -> dict[str, Any]:
 def checklist_fase_zero() -> dict[str, Any]:
     """Retorna o checklist ordenado dos 30 dias da Fase Zero (9 passos).
 
-    Use para guiar a implantação inicial do framework do dia 1 ao dia 30.
+    Janela local de planejamento; não garante conclusão nem avanço de maturidade.
     """
     return core.checklist_fase_zero()
 
 
 @mcp.tool()
 def checklist_seguranca() -> dict[str, Any]:
-    """Retorna os 10 controles mínimos de segurança (NIST-Lite / CIS IG1).
+    """Retorna dez verificações de segurança selecionadas localmente.
 
     Use para auditar a segurança essencial da PME. Todos os itens nascem
-    "pendente" — a verificação de conclusão é sempre humana (HITL).
+    "pendente" — a verificação de conclusão é humana. A seleção não equivale
+    ao NIST CSF completo nem às salvaguardas CIS IG1 e não certifica conformidade.
     """
     return core.checklist_10_controles()
 

@@ -1,0 +1,25 @@
+{
+  "edicao": "GEAR 2026.10",
+  "autor": "Andre Victor",
+  "data": "2026-10-05",
+  "capitulos": [
+    "nucleo/escopo-principios.md", "nucleo/governanca.md",
+    "nucleo/execucao-servicos.md", "nucleo/seguranca-continuidade.md",
+    "adocao/primeiros-30-dias.md", "adocao/preparacao-cronograma.md",
+    "adocao/maturidade.md", "adocao/fichas-maturidade.md",
+    "guias/fluxos-de-trabalho.md", "guias/priorizar-demandas.md", "guias/tratar-incidentes.md",
+    "guias/testar-restauracao.md", "guias/entregar-melhoria.md",
+    "guias/conduzir-revisao.md", "guias/usar-ia.md", "guias/escolher-ferramentas.md",
+    "indicadores/operacionais.md", "indicadores/negocio-comparacao.md", "indicadores/financeiros.md", "indicadores/assistencia.md",
+    "exemplos/caso-didatico.md", "exemplos/cenarios-historicos.md", "templates/README.md",
+    "templates/responsabilidades.md", "templates/decisoes-prioridades.md", "templates/matriz-prioridades.md",
+    "templates/prd-aceite.md", "templates/incidente.md",
+    "templates/risco-continuidade.md", "templates/revisao-ia.md",
+    "templates/maturidade.md", "templates/painel-indicadores.md",
+    "templates/inventario-dependencias.md", "templates/tasklist.md",
+    "templates/instrucao-assistencia.md", "templates/prompts-assistencia.md", "templates/prompts-etapas.md", "templates/prompts-revisao-operacional.md",
+    "templates/carteira-iniciativas.md", "templates/dados-privacidade.md",
+    "fundamentos/origens-adaptacoes.md", "fundamentos/evolucao-indicadores.md",
+    "glossario.md", "referencias/fontes.md"
+  ]
+}

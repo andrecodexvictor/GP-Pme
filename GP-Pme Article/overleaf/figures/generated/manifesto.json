@@ -1,0 +1,20 @@
+[
+  {
+    "source": "GP-Pme Article/overleaf/figures/mermaid/gppme-architecture.mmd",
+    "source_sha256": "aebd2782f8932841675953639734f7361bcad74fdf08087690ace15374a8b29a",
+    "renderer": "tools/build_figures.py",
+    "output": "GP-Pme Article/overleaf/figures/generated/gppme-architecture.pdf"
+  },
+  {
+    "source": "GP-Pme Article/overleaf/figures/mermaid/research-pipeline.mmd",
+    "source_sha256": "a75059b33efa9fca62a855b3e836bbc4365d3c8d45e5a293c9ce82800fa34609",
+    "renderer": "tools/build_figures.py",
+    "output": "GP-Pme Article/overleaf/figures/generated/research-pipeline.pdf"
+  },
+  {
+    "source": "GP-Pme Article/overleaf/figures/mermaid/results-template.mmd",
+    "source_sha256": "ccb2ae570e2692353f7c11bbcccf30fb449deed28aca9f6a1d1a19649f41332f",
+    "renderer": "tools/build_figures.py",
+    "output": "GP-Pme Article/overleaf/figures/generated/results-template.pdf"
+  }
+]

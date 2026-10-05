@@ -1,50 +1,46 @@
-# Bloco 2: O Pilar da Execução Ágil: Transformando Ideias em Resultados Rápidos
+# Organizar demandas e verificar entregas
 
----
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
-## 2.1. O Quadro Kanban de Post-its: Fim da Desorganização
+## Percurso de leitura
 
-Um dos maiores causadores de lentidão e retrabalho na TI das PMEs é a desorganização. Cadernos de anotações soltos, WhatsApps pessoais de diretores e e-mails perdidos fazem com que tarefas importantes sejam esquecidas.
+- [Execução: tornar o trabalho visível](#execucao-tornar-o-trabalho-visivel)
+- [Aplicar na rotina](#aplicar-na-rotina)
 
-O GP-PME resolve isso organizando o fluxo diário em um **Quadro Kanban Básico**, que pode ser desenhado em uma lousa física na parede usando post-its coloridos ou em um sistema virtual simples (como o Trello gratuito). O quadro possui 4 colunas estritas:
+## Execução: tornar o trabalho visível
 
-1.  **A Fazer (Fila de Espera)**: Todas as solicitações que chegam entram no topo desta coluna, organizadas por prioridade.
-2.  **Em Andamento**: O que o técnico de TI está trabalhando de fato neste momento.
-    *   *Regra de Ouro da TI Enxuta*: O limite de Trabalho em Progresso (**WIP Limit**) deve ser de **no máximo 3 tarefas simultâneas** por técnico! Focar em poucas atividades por vez garante que o técnico termine o que começou com muito mais velocidade e qualidade, eliminando o estresse operacional de "atirar para todos os lados".
-3.  **Em Teste**: Tarefas concluídas pela TI que estão aguardando o colaborador que pediu o chamado realizar a validação (conferir se o problema sumiu).
-4.  **Concluído**: Onde o trabalho resolvido e testado é armazenado, gerando histórico de valor para a empresa.
+Use um registro oficial para a fila, com solicitante, executor, prioridade e saída esperada. Pedidos recebidos por telefone ou mensagem são registrados; uma emergência é atendida e entra na fila assim que viável. “Canal único” não significa recusar ajuda porque o formulário está indisponível.
 
----
+| Estado | Significado |
+| --- | --- |
+| A Fazer | Ainda não iniciado |
+| Em Andamento | Trabalho iniciado |
+| Em Teste | Verificação técnica ou de negócio pendente |
+| Concluído | Saída aceita ou encerramento justificado |
 
-## 2.2. O Canal Único de Suporte: Fim das Interrupções Constantes
+Comece com até três itens iniciados por executor, contando andamento, teste e bloqueio. Esse limite é parâmetro local de capacidade, não garantia de rapidez. Uma equipe de uma pessoa mantém foco em uma atividade de cada vez. Bloquear ou suspender um cartão conserva seu início e seu histórico.
 
-Um dos maiores causadores de lentidão e estresse técnico em PMEs são as interrupções constantes: colaboradores parando o técnico nos corredores, mandando WhatsApp pessoal no meio da noite ou ligando a todo instante.
+Para uma emergência, registrar quem decidiu interromper, qual trabalho foi suspenso e que capacidade ficou comprometida. Depois da recuperação, decidir quando retomar o item. Uma quarta tarefa comum aguarda capacidade.
 
-**A Regra é Rígida**: a empresa deve estabelecer um **Canal Único de Suporte** (como um e-mail específico de suporte ou um formulário eletrônico simples). 
-*   Todas as dores dos colaboradores entram exclusivamente por este canal, gerando cartões automáticos na coluna *A Fazer* do Kanban.
-*   O técnico de TI fica expressamente proibido de iniciar qualquer chamado informal que não tenha sido devidamente registrado no Canal Único. Isso disciplina a equipe e dá total visibilidade de trabalho para o CEO.
+Uma melhoria começa com um PRD curto: problema, beneficiário, escopo, exclusões e critério de aceite. Uma ou duas semanas podem delimitar um piloto; se a entrega não couber, renegociar prazo ou escopo. TI verifica a solução e o dono do processo aceita o resultado. Aceite técnico não comprova retorno financeiro.
 
-```mermaid
-graph LR
-    Colab[Colaborador com Problema] -->|WhatsApp / Corredor| Bloq((❌ PROIBIDO))
-    Colab -->|Canal Único / E-mail de TI| Ingest[Quadro Kanban: A Fazer]
-    Ingest --> Execute[Em Andamento: WIP Máx 3]
-    Execute --> Test[Em Teste: Usuário Valida]
-    Test --> Done[Concluído]
-    
-    style Bloq fill:#ef4444,stroke:#fff,color:#fff
-    style Ingest fill:#1e293b,stroke:#3b82f6,color:#fff
-    style Done fill:#15803d,stroke:#fff,color:#fff
-```
+## Aplicar na rotina
 
----
+Use quando pedidos chegam dispersos ou a equipe inicia mais trabalho do que consegue encerrar. Responsável por TI mantém fila e capacidade; autoridade decide conflitos; usuário ou dono do processo verifica a saída. Entradas: demandas e responsáveis. Saídas: ordem de atendimento, trabalho concluído ou pendência atribuída.
 
-## 2.3. O Ciclo de Inovação de 2 Semanas (O MVP)
+1. Registrar solicitante, problema, serviço, responsável e prazo real.
+2. Ordenar a fila conforme impacto, urgência e dependências; um novo pedido não vai automaticamente ao topo.
+3. Conferir testes e bloqueios antes de iniciar outra tarefa.
+4. Executar e verificar os critérios acordados.
+5. Registrar aceite, pendência ou encerramento justificado e comunicar ao solicitante.
 
-Quando o profissional de TI consegue organizar a rotina básica e responder autonomamente a dúvidas simples dos colaboradores (através de chatbots de FAQs ou documentos compartilhados), ele ganha tempo para propor inovações comerciais.
+Um piloto precisa de ambiente, permissões, teste e retorno apropriados. O grupo participante confere a entrega; a hipótese de benefício continua a ser acompanhada. Um pedido de suporte não precisa esperar a próxima semana se o efeito de adiar justificar outra prioridade.
 
-Em vez de projetar softwares complexos e caros que demoram meses para ficar prontos e podem não servir para nada:
-1.  **PRD de 1 Página (Requisitos)**: O gestor de TI escreve em apenas uma folha o que a nova ideia deve fazer, para quem serve e como mediremos o sucesso.
-2.  **MVP (Produto Mínimo Viável)**: Desenvolvemos a versão mais básica e utilizável da ideia em **no máximo 2 semanas**.
-3.  **Grupo Piloto**: Colocamos essa ferramenta simples imediatamente em produção para ser testada por um pequeno grupo de colaboradores ou clientes reais da PME.
-4.  **Ajuste Rápido**: O feedback dos usuários é coletado de forma contínua para decidir se devemos continuar investindo tempo no projeto ou se a ideia inicial precisa ser ajustada, evitando desperdício de tempo e recursos da PME.
+Concluir quando a saída foi aceita ou o motivo de encerramento está claro. Rever demandas bloqueadas e exceções na cadência combinada. Fundamento: adaptação local de fluxo e entregas curtas; Scrum Guide F03 e ITIL F10 orientam conceitos, sem validar o WIP de três nem uma implantação integral desses frameworks.
+
+## Próxima tarefa e referências
+
+- [Priorizar demandas de TI](<../../../framework/guias/priorizar-demandas.md>)
+- [PRD curto e registro de aceite](<../../../framework/templates/prd-aceite.md>)
+
+Fontes F01–F12 e limites de consulta: [referências completas](<../../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

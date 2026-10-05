@@ -1,79 +1,59 @@
-# GP-PME para Leigos: Como Organizar a TI da sua Empresa sem Complicar
+# Guia introdutório do GEAR
 
-**Autor**: Antigravity AI (sob a direção de Andre Victor)
-**Versão**: 5.2 (Consolidada - Filosofia TI Enxuta Integrada)
-**Data**: 02 de Junho de 2026
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
----
+Origem: versão declarada 5.2, de 02/06/2026. Crédito declarado: Antigravity AI, sob a direção de Andre Victor.
 
-## Bem-vindo ao GP-PME!
+## Percurso de leitura
 
-Se você é dono de uma Pequena ou Média Empresa (PME), gerente de negócios ou simplesmente alguém que não entende nada de computação, você provavelmente já teve dores de cabeça com a tecnologia da sua empresa. São computadores lentos bem na hora de faturar, backups que você não sabe se funcionam e aquele sentimento incômodo de que a TI é um "buraco negro" que só consome dinheiro sem trazer retorno claro.
+- [Começar pela rotina](#comecar-pela-rotina)
+- [Entender as três frentes](#entender-as-tres-frentes)
+- [Governança e gestão](#governanca-e-gestao)
+- [Consultar no momento certo](#consultar-no-momento-certo)
+- [Planejar os primeiros 30 dias](#planejar-os-primeiros-30-dias)
 
-Este guia foi feito exatamente para você! O **GP-PME** é um método simples para tirar a sua empresa do caos e colocar a tecnologia para trabalhar a favor do seu faturamento, sem termos técnicos difíceis ou processos burocráticos.
+## Começar pela rotina
 
-### O Diferencial Comercial da TI Enxuta
-A grande diferença entre o GP-PME e os grandes frameworks de mercado (como COBIT e ITIL corporativos) é a **Filosofia da TI Enxuta**. Os modelos tradicionais exigem equipes inteiras focadas apenas em preencher papeladas e gerenciar conformidades, o que é financeiramente inviável para PMEs. 
+GEAR ajuda uma equipe pequena a registrar necessidades, decidir prioridades e verificar entregas. Direção define recursos e riscos; TI organiza a execução; o dono do processo explica o problema e aceita o resultado. Uma pessoa pode acumular funções, desde que isso fique visível.
 
-O GP-PME entende que a TI deve se adaptar ao tamanho da sua equipe, e não o contrário. Ele empodera o seu profissional de TI—que muitas vezes trabalha sozinho ou em uma equipe curtíssima—a transitar de um "faz-tudo" sobrecarregado para um parceiro que gera resultados reais para o seu negócio.
+Não é necessário comprar uma plataforma ou usar IA. Um quadro e registros consultáveis podem apoiar a gestão; backup e proteção de contas continuam exigindo tecnologia apropriada. O método não garante aumento de faturamento, proteção integral ou promoção do profissional de TI.
 
-**Você Não Precisa de Inteligência Artificial para Funcionar**:
-Este framework foi desenhado para ser operado de forma **100% manual e analógica**. Você pode organizar toda a tecnologia da sua empresa usando apenas papel, post-its, planilhas compartilhadas simples e rituais presenciais curtos. A Inteligência Artificial Generativa pode ser utilizada como um acelerador **estritamente opcional** para automatizar tarefas repetitivas e gerar documentações se e quando você desejar.
+## Entender as três frentes
 
----
+| Frente | Decisão prática | Registro útil |
+| --- | --- | --- |
+| Governança e direção | O que fazer, por qual motivo e com qual recurso | Prioridade, responsável e prazo |
+| Execução e serviços | O que iniciar e como verificar a saída | Quadro, critério de conclusão e aceite |
+| Segurança e continuidade | O que precisa continuar e como recuperar | Dependências, controles e teste |
 
-## 1. A Jornada da TI Enxuta: Do Caos à Parceria Estratégica
+Adoção, indicadores e maturidade ajudam a rever essas frentes. IA pode preparar minutas e cálculos, sob revisão humana; seu uso é opcional inclusive no nível máximo de maturidade.
 
-O GP-PME orienta a TI da sua empresa em uma jornada de crescimento dividida em três fases bem simples:
+## Governança e gestão
 
-```
-[ TÉCNICO FAZ-TUDO ] -> Opera em reatividade, estresse e caos operacional.
-        |
-        v (Fase 1: Organizar o Caos com Kanban e Canal Único)
-[ ORQUESTRADOR DE VALOR ] -> Caos organizado, tempo liberado (resolvendo FAQs).
-        |
-        v (Fase 2: Laboratório de Inovação e testes rápidos em 2 semanas)
-[ AGENTE DE MUDANÇA ] -> Prototipagem rápida de baixo custo.
-        |
-        v (Fase 3: CD-TI Lite quinzenal de 30 minutos com o CEO)
-[ PARCEIRO ESTRATÉGICO ] -> Tecnologia guiando o faturamento e mitigando riscos.
-```
+Governança define finalidade, prioridade, recursos e risco aceito. Gestão organiza como executar o trabalho autorizado e como verificar a saída. Direção e TI precisam compartilhar o problema e os critérios de conclusão, mesmo quando uma pessoa acumula funções. A analogia antiga de uma viagem distinguia destino e condução; aqui as responsabilidades são explícitas no registro.
 
-1.  **Fase 1: O Orquestrador de Valor (Fim do Caos)**:
-    Centralizamos todas as solicitações em um único canal e organizamos o trabalho técnico em um quadro Kanban. Eliminamos o estresse de pedidos dispersos. Opcionalmente, usamos automações de respostas a perguntas frequentes (FAQs) que liberam até 80% do tempo do técnico para focar no que realmente importa.
-2.  **Fase 2: O Agente de Mudança (Laboratório de Inovação)**:
-    Com o tempo liberado da rotina diária, a TI passa a atuar como um pequeno laboratório de inovação para criar soluções rápidas e baratas de 2 semanas (os chamados MVPs ou Protótipos), como uma automação para o time de vendas ou faturamento.
-3.  **Fase 3: O Parceiro Estratégico (Chief Innovation Officer)**:
-    A TI e o CEO alinham-se em reuniões rápidas e periódicas de 30 minutos (CD-TI Lite) para garantir que a tecnologia ande lado a lado com os lucros e metas da empresa, enquanto o NIST-Lite assegura que a empresa cresça de forma segura contra riscos digitais (hackers, vírus).
+## Consultar no momento certo
 
----
+A metáfora histórica do “Iceberg Invertido” descrevia entrada simples seguida de aprofundamento. Começar pela prática que resolve a necessidade observada; consultar fundamentos e limites quando a decisão exigir. A simplicidade do registro não dispensa compreender risco, alçada e evidências. O conhecimento técnico não fica automaticamente validado por ter sido fornecido por IA.
 
-## 2. O Conceito do "Iceberg Invertido"
+Organizar demandas, testar uma melhoria e rever prioridades são atividades que podem coexistir. Não formam promoção de cargo nem trajetória garantida de crescimento. “TI Enxuta” é a escolha local de adequar esforço e registro à equipe, com custo e manutenção considerados.
+## Planejar os primeiros 30 dias
 
-Imagine que a TI da sua empresa é como um iceberg na água:
+| Janela local | Foco | Evidência esperada |
+| --- | --- | --- |
+| Semana 1 | Registrar demandas e capacidade | Fila real, responsáveis e prioridades |
+| Semana 2 | Conhecer dependências e testar recuperação | Inventário inicial e teste com limites |
+| Semana 3 | Decidir prioridades e exercitar resposta | Decisão e PRI com contatos conferidos |
+| Semana 4 | Rever evidências e pendências | Comparação por pergunta e próxima revisão |
 
-```
-                  [ A PONTA DO ICEBERG: O que você vê e usa ]
-                 -> Suas tarefas organizadas no Kanban (Post-its).
-                 -> Um canal único (como um e-mail simples) para pedir ajuda à TI.
-                 -> Reuniões rápidas de 30 minutos quinzenais (CD-TI Lite).
-  ---------------------------------------------------------------------
-                  [ A BASE DO ICEBERG: A engenharia complexa ]
-                 -> Normas internacionais (ISO, NIST, CIS, ITIL).
-                 -> Acelerador de IA e Agentes de IA especialistas (Opcional).
-                 -> Fórmulas matemáticas de Dívida de TI (DAN e COT).
-```
+Trinta dias são planejamento, sem garantir implantação ou avanço de maturidade. Períodos antigos de 31–90 e 91–180 dias exprimiam expansão pretendida; hoje a próxima etapa depende das lacunas e da capacidade. Não há ganho automático de 80% do suporte.
 
-### O que isso significa para você?
-Significa que você **não precisa entender a base complexa**. O seu profissional de TI cuida da parte difícil na base do iceberg. Para você, na ponta visível, a governança será apenas um conjunto de ferramentas simples de 1 página e reuniões rápidas que vão direto ao ponto operacional e financeiro do negócio.
+O IM-TI soma dez práticas verificadas, de 0 a 10. As faixas locais descrevem a rotina e ajudam a localizar lacunas; não certificam segurança nem comparam organizações diferentes. As perguntas foram revistas; resultados antigos exigem reaplicação. IA não é condição de resposta positiva.
 
----
 
-## 3. A Diferença entre Governança e Gestão
+## Próxima tarefa e referências
 
-Pense na tecnologia da sua empresa como um carro em uma viagem:
+- [GEAR](<../../framework/README.md>)
+- [Primeiros 30 dias](<../../framework/adocao/primeiros-30-dias.md>)
 
-*   **Governança de TI (Você, o Dono/CEO)**: É quem está no banco do passageiro escolhendo o destino da viagem no mapa. Você decide **o que** a empresa precisa e **por que** estamos gastando dinheiro com tecnologia (ex: "precisamos vender mais pelo Pix nas lojas" ou "precisamos proteger os dados dos nossos clientes").
-*   **Gestão de TI (O seu técnico ou parceiro de TI)**: É quem está no banco do motorista controlando o volante, a marcha e o motor. Ele decide **como** fazer o carro andar de forma rápida e segura para chegar ao destino que você escolheu.
-
-O GP-PME ajuda o passageiro (você) e o motorista (sua TI) a conversarem de forma clara e sem linguagens difíceis, garantindo o melhor uso de cada centavo investido.
+Fontes F01–F12 e limites de consulta: [referências completas](<../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

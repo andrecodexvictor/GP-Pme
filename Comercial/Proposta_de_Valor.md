@@ -1,65 +1,48 @@
-# GP-PME — Proposta de Valor
+# GEAR: proposta de valor
 
-> Fontes: `README.md`, `GP-PME antigravity/INDEX.md` (v2.0), `Docs/PRD.md`, `Simulacao/Calculadora_ROI.md`.
-> Nota de metodologia: na data desta proposta os perfis de simulação (`Simulacao/Perfil_A..D.md`) ainda estavam em elaboração por outra frente de trabalho. Os números de impacto abaixo usam os **exemplos resolvidos da própria Calculadora de ROI** (fórmulas oficiais do framework, premissas conservadoras e declaradas) — não são case reais de cliente. Assim que os perfis existirem, substitua pelos valores específicos de cada porte.
+GEAR — Gestão, Execução, Agilidade e Risco — organiza a governança e a gestão de TI de pequenas e médias empresas em três domínios: governança e direção, execução e serviços, segurança e continuidade. O método conecta uma necessidade a uma decisão, a um executor e a uma evidência de conclusão. Assistência por IA é opcional.
 
----
+Este documento orienta uma apresentação comercial. Não constitui oferta, contrato ou demonstração de retorno. Direitos seguem [LICENSE.md](../LICENSE.md); as [simulações](../Simulacao/README.md) são exercícios condicionais.
 
-## Posicionamento
+## Apresentação breve
 
-O GP-PME é o framework de governança de TI para PMEs que traduz ISO 38500, COBIT 2019, ITIL 4, NIST CSF e CIS Controls v8 em processos de 1 página que um técnico solo ou uma equipe de 5 pessoas conseguem operar sem contratar consultoria pesada nem parar a operação — com ou sem IA, e com IA como acelerador quando a empresa quiser.
+O GEAR ajuda a equipe a localizar demandas, negociar prioridades, tratar dependências críticas e verificar entregas. Direção e TI registram quem decide, quem executa e o que comprova o resultado. A entrada sugerida é um percurso de 30 dias, ajustado à capacidade; a janela não garante implantação, retorno financeiro ou avanço de maturidade.
 
-## Elevator Pitch (30 segundos)
+## Problemas e respostas
 
-"A maioria das PMEs não tem problema de tecnologia, tem problema de governança: a TI apaga incêndio o dia inteiro, ninguém sabe se o backup funciona de verdade e o dono decide investimento no escuro. O GP-PME resolve isso com 4 pilares simples — governança, execução ágil, segurança crítica e IA opcional — que cabem em templates de 1 página e entregam o primeiro resultado mensurável em 30 dias, a Fase Zero. Não é ITIL nem COBIT completos: é a versão enxuta que uma PME real consegue rodar."
+| Problema observado | Mecanismo do GEAR | Evidência a procurar |
+| --- | --- | --- |
+| Investimento sem critério | Revisão de direção, alçadas e quatro finalidades de negócio | Decisão com alternativas, motivo, recursos e responsável |
+| Pedidos dispersos | Registro oficial e comunicação do canal | Solicitação localizável, com situação e responsável |
+| Trabalho acima da capacidade | Limite inicial de três itens por executor, incluindo testes e bloqueios | Contagem por pessoa e exceções justificadas |
+| Dívida técnica sem estimativa | DAN financeiro local e memória de refatoração | Escopo, horas, custo, orçamento e incerteza |
+| Backup sem teste | Teste de recuperação e plano de incidente exercitado | Resultado, contatos conferidos e correções |
+| Acessos excessivos | Revisão de identidades, privilégios e MFA | Acesso necessário, exceções e revisão |
+| Indicadores sem uso | Medidas ligadas a decisões de serviço | Origem, janela, amostra, limites e ação |
 
----
+Uma urgência por telefone deve ser atendida e registrada assim que possível. Centralizar o histórico não elimina meios de pedir ajuda. O limite de três itens é uma configuração local, ajustável com justificativa.
 
-## As 7 Dores Clássicas da TI de PME
+## Operar em equipe pequena
 
-Para cada dor: o custo típico (metodologia `Calculadora_ROI.md`), a capacidade do GP-PME que resolve e a prova (norma + artefato).
+Direção aceita recursos e riscos; TI prepara e executa; o dono do processo explica necessidade e verifica a entrega. Uma pessoa pode acumular funções, tornando conflitos visíveis. A revisão usa registros da operação. Não é preciso criar cargos ou comprar uma plataforma para começar.
 
-### 1. TI reativa, sem alinhamento com o negócio
-**Custo típico**: decisões de investimento em TI tomadas sem critério — CD-TI inexistente, dono descobre problema quando o sistema já caiu.
-**Capacidade GP-PME**: Comitê CD-TI Lite (30 min quinzenais) + Matriz 4 Quadrantes de 1 página, conectando iniciativas de TI a objetivos de faturamento.
-**Prova**: ISO/IEC 38500:2024 (modelo EDM → ADM-Lite) e COBIT 2019 — `Guia_Pilar_1_Governanca_Essencial.md`.
+Percursos de adoção, guias de tarefa, modelos e instrumentos locais de medição apoiam essa rotina. A escolha entre quadro, planilha, software e assistência depende de acesso, capacidade, custo de manutenção e controles.
 
-### 2. Canais de suporte fragmentados (WhatsApp, corredor, ligação pessoal)
-**Custo típico**: retrabalho por perda de rastreabilidade. Usando `CRM = Horas_Retrabalho_Mês × Cu`, 70h/mês de retrabalho a R$ 25/h = **R$ 1.750/mês** perdidos só em trabalho refeito.
-**Capacidade GP-PME**: Canal Único de Suporte — todo pedido entra por um ponto só, elimina fragmentação.
-**Prova**: ITIL 4 (Sistema de Valor de Serviço) — `Guia_Pilar_2_Execucao_Agil.md`.
+## Comparação responsável
 
-### 3. Multitarefa sem limite — todo mundo "trabalhando em tudo"
-**Custo típico**: `CTD = Horas_TI_Desperdiçadas_Mês × Ch`. 60h/mês de tempo de TI disperso a R$ 53/h = **R$ 3.180/mês** de capacidade técnica desperdiçada em troca de contexto.
-**Capacidade GP-PME**: Kanban com WIP Limit = 3 e sprints de 1 semana — força conclusão antes de abrir nova frente.
-**Prova**: Princípios Lean/Kanban + ITIL 4 — `Guia_Pilar_2_Execucao_Agil.md`.
+COBIT e ITIL admitem adaptação ao contexto [F09 e F10](../framework/referencias/fontes.md). GEAR é uma composição autoral para seu recorte. Não há estudo concluído que demonstre superioridade, menor custo de adoção ou substituição integral dessas referências.
 
-### 4. Dívida técnica invisível, sem visibilidade financeira
-**Custo típico**: `DAN = (Esforço_Refatoração_h × Custo_Hora_TI) / Orçamento_Anual_TI`. Exemplo da Calculadora: 800h acumuladas a R$ 53/h sobre orçamento de R$ 220.000/ano → **DAN = 0,193 (zona de Alerta 🟡)** — dívida que já começa a frear projetos novos, mas invisível sem a métrica.
-**Capacidade GP-PME**: métrica DAN + COT institucionalizadas no CD-TI Lite, com zonas de risco (saudável/alerta/crítico) monitoradas mensalmente.
-**Prova**: COBIT 2019 (gestão de portfólio) — `Guia_KPIs_e_Quick_Wins.md §3`.
+O escopo de consultoria depende do contrato. A intenção do GEAR é deixar uma rotina consultável e mantida pela equipe. Essa intenção precisa ser verificada na adoção; não caracteriza toda consultoria como dependência permanente.
 
-### 5. Backup não testado / sem plano de resposta a incidente
-**Custo típico**: probabilidade de incidente grave (ransomware) sem controles ~20%/ano, custo médio R$ 80.000 → exposição esperada de **R$ 16.000/ano**. Com os controles do Pilar III, a Calculadora estima queda para ~5%/ano → **Risco_Evitado = (0,20 − 0,05) × 80.000 = R$ 12.000/ano**.
-**Capacidade GP-PME**: Backups 3-2-1 testados + PRI (Plano de Resposta a Incidentes) de 1 página.
-**Prova**: NIST CSF 2.0 (Proteger/Recuperar) + CIS Controls v8 IG1 — `Guia_Pilar_3_Seguranca_Critica.md`.
+## Como discutir benefício
 
-### 6. Acessos sem controle — sem MFA, sem privilégio mínimo
-**Custo típico**: mesma exposição de risco do item 5; MFA e LUA (privilégio mínimo) são dois dos cinco controles que sustentam a queda de probabilidade de 20% para 5%.
-**Capacidade GP-PME**: Inventário 80/20 de ativos críticos + Princípio do Privilégio Mínimo (LUA) + MFA mandatório.
-**Prova**: CIS Controls v8 IG1 (defesas essenciais e priorizadas) — `Guia_Pilar_3_Seguranca_Critica.md`.
+Coletar horas, incidentes e custos da própria organização. Separar capacidade potencial, despesa reduzida e receita adicional. Conferir sobreposição entre retrabalho, indisponibilidade e tempo técnico para não contar a mesma hora duas vezes. Implantação, custos recorrentes e revisão entram na conta.
 
-### 7. Sem métricas visíveis — dono decide no escuro
-**Custo típico**: sem IDSC/TMpR/ISU, a diretoria não distingue TI cara de TI ineficiente; decisões de contratação/corte são feitas por percepção, não por dado.
-**Capacidade GP-PME**: painel de 3 KPIs Visíveis (IDSC > 99,5%, TMpR, ISU > 4,5/5,0), medidos desde a Fase Zero.
-**Prova**: `Guia_KPIs_e_Quick_Wins.md` + `Guia_Pilar_1_Governanca_Essencial.md`.
+O acervo ilustrava 70 horas a R$ 25/h e 60 horas a R$ 53/h: R$ 4.930/mês. São premissas de exercício, sem amostra que permita chamá-las de custo típico ou ganho recuperável. Probabilidades de incidente do acervo não sustentam promessa de risco evitado. Usar as [convenções financeiras](../framework/indicadores/financeiros.md) e registrar a origem das premissas.
 
----
+## Preparar e avaliar a entrega
 
-## Diferenciais
+Confirmar problema, capacidade, autoridade, dados, dependências e aceite antes da proposta. Identificar material, acompanhamento, integrações, exclusões, preço e período. Após adoção, comparar práticas e evidências, medir benefício na janela acordada e registrar falhas.
 
-**Vs. consultoria tradicional de TI**: consultoria entrega diagnóstico e vai embora; o GP-PME entrega o método operacional (templates, kanban, playbook de 30 dias) que a própria PME roda depois, sem depender de reunião mensal de consultor para continuar funcionando.
+Fundamentos: [origens e adaptações](../framework/fundamentos/origens-adaptacoes.md). Aplicação: [onboarding](Onboarding_Cliente.md). Condições em estudo: [precificação](Modelo_de_Precificacao.md).
 
-**Vs. implantação completa de ITIL/COBIT**: frameworks de mercado completos exigem meses de maturação, comitês formais e, geralmente, um analista de governança dedicado — inviável para uma equipe de TI de 1 a 8 pessoas. O GP-PME destila as mesmas normas em artefatos de 1 página operáveis por um técnico solo, com a Fase Zero entregando resultado mensurável em 30 dias.
-
-**Vs. não fazer nada**: o custo de não agir não é zero — é o retrabalho, o tempo de TI desperdiçado e a exposição a incidente que a Calculadora de ROI já quantifica linha a linha (seção 4 e 5 de `Calculadora_ROI.md`). "Não decidir" é decidir continuar pagando esses três custos todo mês.

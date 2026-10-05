@@ -1,0 +1,202 @@
+{
+  "consulted": "2026-10-04",
+  "public_sans": {
+    "version": "v2.001",
+    "commit": "c7923167a592d941646f99fb7b5fba17aa7d69e1"
+  },
+  "source_serif_4": {
+    "version": "4.005R",
+    "commit": "2823e993c53fca27c5c8749f529b56a5a7c77b6b"
+  },
+  "files": [
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/ttf/PublicSans-Regular.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 84836,
+      "sha256": "b577e9bc9887284e90aae5ad0699689ce36b5cd96207efbec68f77f8aed88379"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-Regular.woff2",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/webfonts/PublicSans-Regular.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 33612,
+      "sha256": "f3931c3c3ec5301043634ac8f39bcfa7b30d29181864f2fd0c3e6796feacc471"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-Italic.ttf",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/ttf/PublicSans-Italic.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 86788,
+      "sha256": "d77f79eca3f513e0b883ddbd293a3d2bb8fd35453ff74aff4afc6a6a1c6ce8f1"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-Italic.woff2",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/webfonts/PublicSans-Italic.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 35644,
+      "sha256": "e5cb026df0e1d5ce114260e36b2bb3c78bcd728b4bea00714a59b854151e0ab0"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-SemiBold.ttf",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/ttf/PublicSans-SemiBold.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 84412,
+      "sha256": "9f537d607dc78450841dc31c401e3c4ba7a0ba7217e8b34c1be684a983806399"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-SemiBold.woff2",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/webfonts/PublicSans-SemiBold.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 33636,
+      "sha256": "f99ffc265cc790e0f058a9f430a465c88996008327abb0f8561cb713add40d73"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-Bold.ttf",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/ttf/PublicSans-Bold.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 84744,
+      "sha256": "bddd96a0bcd49b292524b4beff57d770ce97482fb3f84b788959422e06b863a6"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\PublicSans-Bold.woff2",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/fonts/webfonts/PublicSans-Bold.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 33664,
+      "sha256": "908322301d5d82f217d2819708c41e097528276b9e7296e0f7388c3a4e320c8c"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\LICENSE.md",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/LICENSE.md",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 6709,
+      "sha256": "82f0d3cad45f264192db156360b4a710fe7060885f6aa261e6539f13cb9eb0d9"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\OFL.txt",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/OFL.txt",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 4390,
+      "sha256": "157a9e77f7580246e97c769490e2e977ae94399f9d30f4556015c41fe8c28bac"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\public-sans\\README.md",
+      "url": "https://raw.githubusercontent.com/uswds/public-sans/c7923167a592d941646f99fb7b5fba17aa7d69e1/README.md",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 5849,
+      "sha256": "10ce59beda6431a865aff1b1add7efe110064ac87bfb93ba3dcc624ca63d72ee"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/TTF/SourceSerif4-Regular.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 261868,
+      "sha256": "e5a4ee6a3d87bb9024796be390c6771e2a0eb1883dae25effaf57ca01668e24b"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-Regular.woff2",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/WOFF2/TTF/SourceSerif4-Regular.ttf.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 76260,
+      "sha256": "6b053e98f0838afe81f3e784727be4583a7c13bb42f198dc5202ecffee0aaee0"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-It.ttf",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/TTF/SourceSerif4-It.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 187808,
+      "sha256": "9d2950a8f1da66e21502c35d646a1d2148e79f9ea43fd2158cf02f5232e7f430"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-It.woff2",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/WOFF2/TTF/SourceSerif4-It.ttf.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 59716,
+      "sha256": "ca3b17ed1e3e668ffd9e03385cfd46e1b095df783de53710d25d41241496026b"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-Semibold.ttf",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/TTF/SourceSerif4-Semibold.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 272088,
+      "sha256": "36db62940cb5728b12b1802476dc7fcf4c6c519a7bdd476ba23a4e555fc4655f"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-Semibold.woff2",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/WOFF2/TTF/SourceSerif4-Semibold.ttf.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 80732,
+      "sha256": "457a13ac92e977d82e376038a2daac7fdb5433610910bf5787bdf6c1c3781865"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-Bold.ttf",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/TTF/SourceSerif4-Bold.ttf",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 271568,
+      "sha256": "7cf4f4e1ad74f45058d5bc61716b82560442fbdcd9d3654d2dea96bf6c683d86"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\SourceSerif4-Bold.woff2",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/WOFF2/TTF/SourceSerif4-Bold.ttf.woff2",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 81540,
+      "sha256": "6d4fd4c0f08798a478fe34aafea9bf5cfa1cbc6ae4b834193febaee74254d10c"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\LICENSE.md",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/LICENSE.md",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 4492,
+      "sha256": "75784a295293a8992f5a8d99210566e0064a012e6dab6731305e3787f15896c7"
+    },
+    {
+      "file": ".context\\fontes-verificadas\\source-serif-4\\README.md",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/2823e993c53fca27c5c8749f529b56a5a7c77b6b/README.md",
+      "retrieved": "2026-10-04",
+      "returncode": 0,
+      "error": "",
+      "bytes": 1392,
+      "sha256": "ae0d3faac5144b90853f9ed570832fc5fb86a42e7632273ec7990ddd3ba8cd4f"
+    }
+  ]
+}

@@ -30,7 +30,6 @@ from __future__ import annotations
 import os
 from typing import Any
 
-import httpx
 
 from .base import Cartao, ETIQUETA_RAIA_RAPIDA, PlataformaGestao, Quadro
 
@@ -72,6 +71,7 @@ class Adapter(PlataformaGestao):
         return f"dry-{self._contador}"
 
     def _cliente(self) -> httpx.Client:
+        import httpx  # Dependência apenas do transporte real.
         token = os.environ["NOTION_TOKEN"]
         return httpx.Client(
             base_url=_BASE_URL,

@@ -1,159 +1,76 @@
-# Agentes GP-PME (Google ADK)
+# GEAR — assistência opcional com Google ADK
 
-Pacote de agentes de IA que operacionalizam o framework **GP-PME** (Gestão de
-TI Enxuta e Micro-Adaptativa para Pequenas e Médias Empresas) usando o
-[Google Agent Development Kit](https://google.github.io/adk-docs/) (ADK).
+Este pacote prepara rascunhos, cálculos e propostas de organização para o GEAR. A operação do framework e o nível máximo de maturidade podem ser alcançados sem IA. Fonte editorial: [documentação canônica](../../framework/README.md); referência técnica existente: [Google ADK](https://google.github.io/adk-docs/).
 
-Um agente orquestrador ("Gestor GP-PME") conduz o diagnóstico e a implantação
-do framework, delegando para 8 especialistas — um por tema — e operando o
-quadro Kanban diretamente na ferramenta de gestão da empresa (ClickUp,
-Notion, Trello, Jira ou Linear).
+## Componentes e responsabilidades
 
-## O que é
+Há um orquestrador e oito especialistas implementados. Eles distribuem tarefas técnicas; sua quantidade não cria novos domínios do framework. Os três domínios são governança e direção, execução e serviços, segurança e continuidade.
 
-O GP-PME organiza a TI de uma PME em 4 pilares (Governança, Execução Ágil,
-Segurança, IA) e uma Fase Zero de implantação. Este pacote traduz cada peça
-do framework — guias, templates, questionários e checklists — em agentes
-conversacionais que um CEO ou um técnico de TI sozinho ("One-Man-Band") pode
-usar diretamente, sem precisar ler os guias inteiros.
+| Módulo | Tarefa e limite |
+| --- | --- |
+| `orquestrador_gp_pme` | Encaminha tarefas e usa adaptadores de plataforma |
+| `agente_governanca` | RACI-Lite, decisões conjuntas e matriz valor/esforço |
+| `agente_execucao_agil` | Roteiro de trabalho e contagem agregada; conferir executor |
+| `agente_seguranca` | Menções textuais e rascunho de resposta; não estima risco por palavras |
+| `agente_metricas_auditoria` | Cálculos e verificações pendentes; não certifica entregas |
+| `agente_maturidade` | Questionário local e lacunas com evidências |
+| `agente_fase_zero` | Agenda apenas os 30 dias iniciais, sem transição automática |
+| `agente_prd` | Rascunho e triagem lexical de títulos; não valida viabilidade |
+| `agente_prompts` | Modelo de instruções e contagem de menções; não garante acerto |
 
-Nenhum agente inventa dados: quando falta informação (orçamento, métricas,
-nomes de sistemas), a resposta é "DADO INSUFICIENTE" em vez de uma suposição.
-Ações destrutivas ou irreversíveis em plataformas externas sempre pedem
-confirmação humana (HITL — Human-in-the-loop).
-
-## Arquitetura
+`adapters/tools.py` conecta o orquestrador a cinco adaptadores: ClickUp, Notion, Trello, Jira e Linear. As funções locais não consultam rede; os adaptadores podem produzir efeitos externos quando há credenciais e o dry-run não foi forçado. Conferir destino, alçada e autorização antes de executar.
 
 ```mermaid
 flowchart TB
-    U["CEO / Gestor de TI"] --> O["orquestrador_gp_pme\n(Gestor GP-PME)"]
-
-    O --> AG["agente_governanca\nCD-TI Lite · RACI-Lite · Matriz 4 Quadrantes"]
-    O --> AE["agente_execucao_agil\nKanban · WIP=3 · priorização"]
-    O --> AS["agente_seguranca\nNIST-Lite · Inventário 80/20 · PRI"]
-    O --> AM["agente_metricas_auditoria\nIDSC · TMpR · ISU · DAN · COT"]
-    O --> AT["agente_maturidade\nquestionário IM-TI · plano de transição"]
-    O --> AF["agente_fase_zero\nroteiro de implantação inicial"]
-    O --> AP["agente_prd\nPRD Simplificado · user stories"]
-    O --> APR["agente_prompts\nTemplate Mestre · anti-alucinação"]
-
-    O --> T["adapters/tools.py"]
-    T --> AD["adapters/\nclickup · notion · trello · jira · linear"]
-    AD --> PLAT["Plataforma de gestão ativa\n(GPPME_PLATAFORMA)"]
-
-    style O fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#fff
+    U[Responsável humano] --> O[Orquestrador]
+    O --> E[Oito especialistas]
+    E --> C[Núcleo local e fontes canônicas]
+    O --> T[Ferramentas de plataforma]
+    T --> A[Cinco adaptadores]
+    A --> P[Plataforma configurada]
 ```
 
-- **Orquestrador** (`orquestrador_gp_pme`): único `root_agent` pensado para
-  ser executado. Diagnostica maturidade, conduz a Fase Zero, instala o
-  quadro canônico na plataforma e delega perguntas de domínio aos
-  especialistas via `sub_agents`.
-- **8 especialistas**: cada um é um agente independente (`agente_x/agent.py`)
-  com ferramentas locais (sem rede) — cálculo de KPIs, scoring, geração de
-  artefatos em texto — destiladas dos guias e templates do framework.
-- **5 adapters**: implementam a interface `adapters/base.py` para cada
-  plataforma suportada. Só o orquestrador os utiliza, via
-  `adapters/tools.py`.
+## Instalar e executar
 
-## Instalação
-
-Pré-requisitos: Python ≥ 3.10.
+Requer Python 3.10 ou superior e dependências do pacote. A partir desta pasta:
 
 ```powershell
-cd "agents\gp-pme-adk"
-pip install -r requirements.txt
-```
-
-Copie o arquivo de configuração e preencha o que for necessário:
-
-```powershell
-copy .env.example .env
-```
-
-`GOOGLE_API_KEY` é **obrigatória** para rodar os agentes de verdade (ela
-autentica as chamadas ao Gemini feitas pelo `google-adk`). Sem ela, `adk
-run`/`adk web` falham ao iniciar. As credenciais de plataforma (Trello,
-ClickUp etc.) são opcionais — sem elas, o adapter ativo roda em modo
-dry-run automaticamente.
-
-## Executando
-
-A partir de `agents/gp-pme-adk/`:
-
-```powershell
-# CLI interativa, conversando com o orquestrador
+python -m pip install -r requirements.txt
+Copy-Item -LiteralPath .env.example -Destination .env
 adk run orquestrador_gp_pme
-
-# Interface web local (chat + inspeção de ferramentas/sub-agentes)
-adk web
 ```
 
-`adk web` sobe um servidor local e lista todos os agentes do diretório
-(`orquestrador_gp_pme` e cada `agente_x`) para você escolher com qual
-conversar — útil para testar um especialista isoladamente.
+`adk web` oferece a interface local e seleção de agentes. Use ambiente com credenciais do provedor configuradas para o modelo escolhido. O código atual usa Gemini e `GOOGLE_API_KEY`; sem acesso válido, chamadas reais não foram demonstradas. Não colocar segredos em documentos ou controle de versão.
 
-## Variáveis de ambiente
+| Variável | Função |
+| --- | --- |
+| `GOOGLE_API_KEY` | Acesso ao provedor no caminho Gemini configurado |
+| `GPPME_MODEL` | Padrão do código: `gemini-2.5-flash` |
+| `GPPME_PLATAFORMA` | Padrão `trello`; opções clickup, notion, trello, jira, linear |
+| `GPPME_DRY_RUN` | `1` força propostas locais mesmo com credenciais |
+| `CLICKUP_TOKEN` | Credencial de ClickUp |
+| `NOTION_TOKEN` | Credencial de integração Notion |
+| `TRELLO_KEY`, `TRELLO_TOKEN` | Credenciais de Trello |
+| `JIRA_URL`, `JIRA_EMAIL`, `JIRA_TOKEN` | Site e credenciais Jira |
+| `LINEAR_API_KEY` | Credencial de Linear |
 
-| Variável | Obrigatória | Padrão | Descrição |
-|---|---|---|---|
-| `GOOGLE_API_KEY` | Sim (para rodar) | — | Chave da API do Google AI Studio / Gemini. Obtenha em https://aistudio.google.com/app/apikey |
-| `GPPME_MODEL` | Não | `gemini-2.5-flash` | Modelo Gemini usado por todos os agentes. |
-| `GPPME_PLATAFORMA` | Não | `trello` | Plataforma de gestão ativa: `clickup` \| `notion` \| `trello` \| `jira` \| `linear`. |
-| `GPPME_DRY_RUN` | Não | vazio | `1` força modo simulação mesmo com credenciais configuradas. Se vazio, dry-run liga sozinho quando faltar credencial. |
-| `CLICKUP_TOKEN` | Não | — | Token de API do ClickUp. |
-| `NOTION_TOKEN` | Não | — | Token da integração Notion. |
-| `TRELLO_KEY` / `TRELLO_TOKEN` | Não | — | Chave e token de API do Trello. |
-| `JIRA_URL` / `JIRA_EMAIL` / `JIRA_TOKEN` | Não | — | URL do site Jira Cloud, e-mail da conta e token de API. |
-| `LINEAR_API_KEY` | Não | — | Chave de API pessoal do Linear. |
+Os nomes GP-PME permanecem em módulos, variáveis e contratos por compatibilidade. Não indicam outra edição conceitual.
 
-Veja `.env.example` para instruções de onde gerar cada credencial.
+## Proposta, execução e evidência
 
-## Exemplo de conversa
+`GPPME_DRY_RUN=1`, ou ausência de credenciais da plataforma, prepara ações em `acoes_planejadas` sem chamada de rede. A resposta traz `dry_run`. IDs e URLs simulados são dados de teste; não demonstram criação de um quadro real. Esse modo não dispensa credencial de modelo se a conversa usar ADK.
 
-```
-Você: instale o GP-PME no meu Trello
+O quadro tem A Fazer, Em Andamento, Em Teste e Concluído. O rótulo histórico “Em Andamento (máx 3)” permanece nos adaptadores, mas o limite é por executor e abrange testes e bloqueios. Sem executor ou informação de início, não atestar cumprimento de WIP. Emergência requer registro de decisão e efeito sobre trabalho já iniciado.
 
-Gestor GP-PME: Antes de instalar, preciso de um diagnóstico rápido de
-maturidade — vou te passar o questionário de 10 perguntas (Sim/Não) do
-agente_maturidade...
+Exemplo de procedimento: nomear responsáveis, aplicar diagnóstico com evidências, escolher a plataforma, revisar a proposta dry-run e conferir autorização antes de uma chamada real. A proposta inicial contém oito tarefas-semente; o checklist detalhado do núcleo contém nove passos. Uma lista criada não comprova execução desses passos.
 
-[usuário responde]
+As instruções pedem dados insuficientes e fontes, mas o modelo pode errar. Conferir conteúdo e evidência antes de uso. Funções de PRD e prompt fazem buscas lexicais; títulos presentes não demonstram critérios testáveis, aprovação humana ou qualidade.
 
-Gestor GP-PME: IM-TI = 3/10 → Nível 1 (Reativo Organizado). Vou seguir com
-a Fase Zero antes de montar o quadro. [...roteiro do agente_fase_zero...]
+## Verificação e problemas de execução
 
-Vou agora instalar o quadro canônico no Trello (colunas: A Fazer → Em
-Andamento (máx 3) → Em Teste → Concluído, com as 8 tarefas da Fase Zero em
-"A Fazer"). Confirma que posso prosseguir? [SIMULADO — sem TRELLO_KEY/
-TRELLO_TOKEN configurados, dry-run ativo]
+Na raiz: `python -m unittest discover -s tests -v`. A suíte original de adaptadores pode ser executada a partir desta pasta: `python -m pytest tests/test_adapters_dry_run.py`. Os testes dry-run verificam contratos locais; não validam APIs das plataformas, SDK em conversa real ou efetividade organizacional.
 
-Você: pode
+Em Windows, usar aspas em caminhos com espaços. Se `adk` não estiver no PATH, conferir o Python/ambiente que recebeu as dependências. Se houver erro de credencial, conferir a configuração do ambiente sem imprimir a chave. Para importação de `adapters` na suíte original, executar na pasta do pacote. Configuração de encoding UTF-8 pode ser feita pelo terminal ou com `PYTHONIOENCODING=utf-8`.
 
-Gestor GP-PME: Quadro simulado com sucesso (dry-run). Para aplicar de
-verdade, configure TRELLO_KEY e TRELLO_TOKEN no .env e peça novamente.
-```
+MCPs deste usuário são geridos pelo hub global, com clientes por URL; [serviços](../../server/README.md) registra a política. Não instalar servidor MCP por cliente ou neste pacote por inferência.
 
-## Modo dry-run
-
-Com `GPPME_DRY_RUN=1` (ou faltando credencial da plataforma escolhida),
-nenhum adapter faz chamada de rede: as ações ficam simuladas e acumuladas em
-`acoes_planejadas`, com payloads realistas. É o modo padrão para demonstrar
-o framework sem tocar em dados reais, e o modo usado pelos testes
-automatizados (`tests/test_adapters_dry_run.py`).
-
-## Troubleshooting (Windows)
-
-- **Caminho com espaço**: o repositório vive em `GP-PME framework\`. Sempre
-  use aspas em comandos: `cd "agents\gp-pme-adk"`.
-- **`adk` não é reconhecido**: confirme que `pip install -r requirements.txt`
-  rodou no mesmo Python/venv do `PATH` atual; reabra o terminal se acabou de
-  instalar.
-- **Erro de `GOOGLE_API_KEY` ausente**: verifique se `.env` está na pasta
-  `agents/gp-pme-adk/` (mesmo nível deste README) — o `python-dotenv` só
-  carrega arquivos `.env` locais, não do diretório do repositório.
-- **Emojis/acentos quebrados no console**: o PowerShell padrão do Windows
-  às vezes usa `cp1252`. Rode `chcp 65001` antes, ou use o Terminal
-  moderno do Windows (UTF-8 por padrão).
-- **`ModuleNotFoundError: adapters` ao rodar testes fora da pasta**: rode
-  `pytest` sempre a partir de `agents/gp-pme-adk/` — o `sys.path` é ajustado
-  relativo a esse diretório.

@@ -1,212 +1,141 @@
-# Perfil D — empresa de 100 funcionários: governança adaptativa sob pressão de LGPD
+# Perfil D — Serviços com dados pessoais
 
-> Simulação de ROI do framework **GP-PME**. Todas as fórmulas vêm de [`Calculadora_ROI.md`](./Calculadora_ROI.md); os números são conservadores e as premissas estão declaradas. Custo-hora de TI deste perfil: **`Ch` = R$ 70/h (blended)** — equipe de 5 a 8 pessoas, salário médio de referência R$ 7.950 bruto (`(7.950 × 1,55) / 176 ≈ R$ 70`). Este é o único perfil que **começa no Nível 1** (já saiu do caos puro) e onde os **agentes de IA + servidor MCP são centrais**, não opcionais, na implantação.
+Cenário didático do GEAR para 100 colaboradores. Os valores de partida e de melhoria são **premissas fictícias do acervo**, preservadas para comparar hipóteses. Não descrevem uma implantação realizada. Cálculos: [Calculadora de ROI](Calculadora_ROI.md); convenções: [indicadores financeiros](../framework/indicadores/financeiros.md).
 
----
+## 1. Retrato e escopo
 
-## 1. Retrato da empresa
+| Item | Premissa |
+| --- | --- |
+| Setor | Serviços B2B com dados pessoais, como saúde, finanças ou educação |
+| Pessoas | 100 |
+| Faturamento anual | R$ 45.000.000,00 |
+| Equipe | Seis pessoas: coordenador, três analistas de suporte e infraestrutura, desenvolvedor de integrações e especialista de segurança. Faixa histórica de cinco a oito pessoas. O papel de encarregado de dados exige definição própria. |
+| Orçamento anual de TI | R$ 1.200.000,00 |
+| Ambiente | ERP e CRM em nuvem, atendimento próprio, Microsoft 365, ambiente de dados com acesso restrito, mais de 100 estações, APIs e duas filiais. |
 
-| Item | Descrição |
-| :--- | :--- |
-| **Setor** | Serviços B2B com grande base de dados pessoais de clientes (saúde/financeiro/educação) |
-| **Porte** | 100 colaboradores (operação, atendimento, comercial, backoffice, produto) |
-| **Faturamento** | ~R$ 45 milhões/ano |
-| **Equipe de TI** | **6 pessoas** (1 coordenador, 3 analistas de suporte/infra, 1 dev de integrações, 1 foco em segurança/**DPO técnico**) — dimensionável de 5 a 8 |
-| **Orçamento anual de TI** | **R$ 1.200.000** (6 salários com encargos ~R$ 890k + ERP/CRM + nuvem + link redundante + ferramentas ~R$ 310k) |
-| **Stack** | ERP + CRM em nuvem, plataforma proprietária de atendimento, Microsoft 365, ambiente de dados restrito (LGPD), 100+ estações, integrações via API, 2 filiais |
+Os valores de faturamento e orçamento situam o exercício. Não constituem benchmark de porte, pessoal ou gasto. A alocação de salários e infraestrutura do texto antigo não foi verificada como orçamento de uma empresa real.
 
-A empresa já saiu do caos puro — tem Canal Único informal, backup rodando e um coordenador. O problema agora é **escala e conformidade**: 100 usuários geram um volume de chamados que a governança de Nível 1 não segura, e a base de dados pessoais coloca a **LGPD** como risco de negócio (multa de até 2% do faturamento). O dono não quer "mais um técnico" — quer **governança adaptativa** que prove conformidade e absorva crescimento sem estourar a folha. É aqui que os agentes de IA e o servidor MCP deixam de ser luxo e viram infraestrutura da operação.
+## 2. Situação de partida
 
----
+Há um canal oficial, mas gerentes também ligam ao coordenador. Cada analista prioriza sem regra comum. Integrações entre CRM, atendimento e ERP falham. O inventário de dados e a revisão de acesso são insuficientes para examinar o tratamento de dados pessoais.
 
-## 2. Sem o framework — a dor narrada
+A linha de base adota custo TI de R$ 70,00/h, custo de usuário de R$ 25/h e janela anual de 4.500 h. Pessoas afetadas pela indisponibilidade: 80. Volume hipotético: 2.400 incidentes/ano, equivalente a 200,00 por mês e 2,00 por pessoa/mês.
 
-O Canal Único existe, mas "vaza": gerentes ainda ligam direto para o coordenador nas urgências, e cada analista prioriza do seu jeito. O volume de 100 usuários enche a fila mais rápido do que 6 pessoas conseguem drenar, e o backlog cresce sem que ninguém consiga dizer ao dono **o que** está travado e **por quê**. As integrações via API entre CRM, plataforma de atendimento e ERP acumularam remendos — quando uma quebra, o atendimento cai e clientes ficam sem resposta. E paira a pergunta que ninguém sabe responder no comitê: **"se a Autoridade Nacional bater à porta amanhã, provamos onde estão os dados pessoais e quem os acessa?"** Hoje, não.
+Os custos-hora são valores arredondados do exemplo histórico, sem pesquisa salarial. Encargos de 1,55 e jornada de 176 h/mês são hipóteses locais, a substituir pelo custo real.
 
-O custo é grande, parcialmente visível (há algum KPI), mas **a conformidade LGPD é um passivo silencioso** que só aparece quando vira incidente — e aí é tarde.
+O DAN inicial usa 3.000 h de refatoração × R$ 70,00/h ÷ R$ 1.200.000,00: 0,175. As antigas cores e faixas não são limites financeiros validados.
 
-### Tabela de linha-de-base (o "antes")
+A soma dos três componentes de tempo da situação de partida é R$ 30.350,00/mês. Esse valor representa capacidade avaliada monetariamente, sem receita perdida, impostos ou dupla contagem entre categorias. Se as horas de indisponibilidade já estiverem nas horas de retrabalho, retirar a sobreposição.
 
-**Premissas de cálculo declaradas** — jornada `J` = 176 h/mês, encargos `f` = 1,55, custo-hora TI `Ch` = **R$ 70/h (blended)**, custo-hora do usuário final `Cu` = **R$ 25/h**, horas comerciais/ano `Hc` = **4.500 h** (operação de atendimento estendida).
+## 3. Plano inicial de 30 dias
 
-| Métrica | Valor (antes) | Como foi estimado |
-| :--- | :---: | :--- |
-| **IDSC** (disponibilidade de serviços críticos) | **98,5%** | Já em Nível 1; instabilidade concentrada nas integrações de API (~1,5% parado) |
-| **Horas paradas/ano** | **67,5 h** | `(1 − 0,985) × 4.500` |
-| **TMpR** (tempo médio de resolução) | **6,5 h** | Há fila, mas o vazamento de canais ainda atrasa a priorização |
-| **ISU** (satisfação do usuário, 1–5) | **3,6** | Volume alto satura a equipe; usuários esperam demais |
-| **Incidentes/ano** | **~2.400** | ~200/mês → 2,0 por colaborador/mês |
-| **Horas de TI desperdiçadas/mês** | **180 h** | 6 pessoas em multitarefa, priorização inconsistente, remendos de API |
-| **Horas de retrabalho dos usuários/mês** | **260 h** | Digitação dupla entre CRM/ERP, exportações manuais, correções de dados |
-| **DAN** (Dívida de Arquitetura Normalizada) | **0,175 🟡 Alerta** | `(3.000 h × R$ 70) / R$ 1.200.000 = 0,175` — integrações de API remendadas, sem catálogo de dados |
+TI organiza a execução; o dono do processo negocia prioridades e verifica entregas. [Primeiros 30 dias](../framework/adocao/primeiros-30-dias.md) define o percurso. Esforço hipotético inicial: 90 h somadas, distribuídas abaixo; ajustar à capacidade real.
 
-### Custo mensal das dores (fórmulas §4 da Calculadora)
+| Janela | Trabalho | Evidência de conclusão | Horas |
+| --- | --- | --- | ---: |
+| Dias 1–7 | Diagnóstico; canal oficial; quadro e responsáveis | Pedidos migrados e política de trabalho iniciado acordada | 30 |
+| Dias 8–14 | Orientações para senha, acesso, crm, erp e atendimento; inventário de erp, crm, plataforma de atendimento, apis e dados pessoais; revisão de cópias | Escopo inventariado e teste de restauração registrado | 24 |
+| Dias 15–21 | Plano de incidente; revisão conjunta de prioridades; matriz valor/esforço | Alçadas, contatos e decisões registradas | 20 |
+| Dias 22–30 | Indicadores necessários; retrospectiva; reaplicação do questionário | Origem dos dados, lacunas e próximas ações | 16 |
 
-```
-CTD (TI desperdiçado)   = 180 h × R$ 70 = R$ 12.600/mês
-CRM (retrabalho usuário)= 260 h × R$ 25 = R$  6.500/mês
-CHP                     = (80 colab × R$ 25) + 0 = R$ 2.000/h
-Perda_Indisp            = 2.000 × (67,5 / 12)     = R$ 11.250/mês
-------------------------------------------------------------
-Custo total das dores   ≈ R$ 30.350/mês  (≈ R$ 364.200/ano)
-```
-> `%_Receita_em_Risco = 0`: ignoramos a receita de atendimento perdida a cada queda de API, para não inflar o número. (O risco LGPD é tratado à parte, na seção 7.)
+O ponto de partida local para WIP é três itens por executor, contando execução, teste e bloqueio. Emergências têm alçada, efeito e exceção registrados. Um quadro em papel, Trello, Planner ou Jira pode servir conforme o contexto. A adoção de ferramenta não demonstra aplicação da regra.
 
-**IM-TI de partida: Nível 1 — Reativo Organizado** (4 de 10 respostas "Sim").
+Depois do dia 30, selecionar melhorias conforme evidência e capacidade. Reduzir digitação entre CRM e ERP, catalogar integrações e revisar decisões a partir de indicadores. Aprovar e verificar mudanças que envolvam dados pessoais. O acervo chamava esse percurso de Fases Um a Três; os nomes não impõem calendário anual, sprint semanal ou MVP obrigatório de duas semanas. O restante das 540 h de implantação inclui melhorias posteriores, e não é todo trabalho realizado no primeiro mês.
 
----
+IA pode auxiliar triagem, rascunhos de PRD, consulta de fontes e organização de indicadores, com revisão responsável. ADK e MCP são opções técnicas, inclusive neste porte. Caso adotados, acrescentar seus custos e restrições de dados; nenhum resultado abaixo depende da obrigatoriedade de IA. Um teste de restauração verifica seu escopo e duração; o prazo histórico de 30 minutos não é garantia universal.
 
-## 3. Implantação semana a semana
+## 4. Hipóteses de melhoria
 
-Com **6 pessoas e conformidade em jogo**, a implantação já nasce **assistida por IA e integrada ao ambiente restrito**. Aqui os agentes ADK/skills e o **servidor MCP** do framework não são atalho — são a forma de operar governança em escala sem contratar. Custo total da Fase Zero: **~90 h** de TI somadas.
+Hipóteses históricas para 90 dias: TMpR de 4,5 h, disponibilidade de 99,3% e autoatendimento de 45% das dúvidas recorrentes. Esses números não têm observações ou estudo que confirmem sua realização; não entram na conta anual. A linha posterior abaixo conserva as hipóteses usadas pelo exercício original para um estado estabilizado.
 
-### Fase Zero — os primeiros 30 dias (Consolidar e Blindar)
+| Indicador | Partida hipotética | Estado posterior hipotético | Unidade |
+| --- | ---: | ---: | --- |
+| Disponibilidade | 98,50 | 99,70 | % da janela de serviço |
+| Indisponibilidade | 67,50 | 13,50 | h/ano |
+| Resolução média | 6,50 | 3,50 | h por chamado |
+| Satisfação | 3,60 | 4,60 | média de 1 a 5 |
+| Tempo TI não aproveitado | 180,00 | 60,00 | h/mês |
+| Retrabalho do usuário | 260,00 | 70,00 | h/mês |
+| DAN financeiro | 0,17 | 0,11 | custo de refatoração/orçamento anual |
 
-Fonte: `Guia_de_Implementacao_Fase_Zero.md`. Como a empresa já está em Nível 1, a Fase Zero foca em **fechar os vazamentos** e **instrumentar conformidade**, não em construir do zero.
+Canal oficial e quadro podem ajudar a localizar pedidos e bloqueios. Orientações podem resolver dúvidas recorrentes. Melhorias nas integrações podem reduzir digitação duplicada. Cópias verificadas podem apoiar recuperação. A contribuição de cada prática depende de aplicação, falhas, escopo e contexto; as diferenças da tabela não foram causalmente demonstradas.
 
-| Semana | Ação | Artefato / agente usado | Horas |
-| :--- | :--- | :--- | :---: |
-| **1** | Diagnóstico de maturidade; o **Agente Orquestrador/Gestor instala o Kanban no Jira** com WIP e Raia Rápida e migra o backlog disperso; fechamento formal dos canais paralelos (comunicado do CEO) | `Agentes_Prontos/Agente_Orquestrador_Gestor_GP-PME.md`; `agents/` (ADK); board no Jira | 30 h |
-| **2** | **Servidor MCP** publicado no **ambiente de dados restrito**, expondo de forma controlada FAQ, catálogo de ativos e status de backup aos agentes (sem tirar dados do perímetro LGPD); **Inventário 80/20** + **catálogo de dados pessoais**; **Backup 3-2-1** + teste de restauração < 30 min | `server/` (MCP); `Agente_Seguranca.md`; `Templates_GP-PME.md` | 24 h |
-| **3** | **PRI de 1 página** + **playbook de incidente LGPD** (notificação à ANPD em 72 h) auditados pelo **Agente de Segurança**; 1º **CD-TI Lite** com o DPO técnico; **Matriz 4 Quadrantes** | `Guia_Pilar_3` (PRI); `Agente_Seguranca.md`; `Template_Checklist_Auditoria_HITL.md` | 20 h |
-| **4** | O **Agente de Métricas e Auditoria roda o painel mensal** (IDSC, TMpR, ISU + indicadores de conformidade) automaticamente; retrospectiva; recálculo do IM-TI → **Nível 2** | `Agentes_Prontos/Agente_Metricas_e_Auditoria.md` | 16 h |
+O questionário histórico atribuía 4 respostas positivas à partida e sugeria 10 no horizonte anual. Nenhuma transição está assegurada. As perguntas foram revistas nesta edição: reaplicar [IM-TI com evidências](../framework/adocao/maturidade.md), sem transferir os scores antigos. Nível máximo permanece possível sem IA.
 
-**Entregável Fase Zero**: IM-TI sobe de Nível 1 → **Nível 2 (Governança Básica)** com trilha de auditoria LGPD instrumentada.
+## 5. Comparação operacional e verificação
 
-### Fases Um a Três (meses 2 a 12)
-
-- **Fase Um — Orquestrador de Valor**: sprint semanal + Raia Rápida orquestrados pelo agente; o coordenador governa por exceção, olhando o painel em vez de tocar chamado.
-- **Fase Dois — Agente de Mudança**: **MVPs de 2 semanas** encadeados — o primeiro elimina a digitação dupla CRM↔ERP (maior fonte de retrabalho). O **Agente de PRD** redige cada MVP; a esteira **HITL** (`Template_Checklist_Auditoria_HITL.md`) garante revisão humana antes de qualquer mudança tocar dados pessoais.
-- **Fase Três — Parceiro Estratégico / Governança Adaptativa**: **DAN** sob gestão contínua (integrações de API refatoradas e catalogadas); os agentes passam a sugerir priorização a partir das próprias métricas — a governança começa a **se autoajustar** (Nível 4).
-
-> **Onde a IA é central (não opcional) neste perfil**: o **Agente Orquestrador** (`Agente_Orquestrador_Gestor_GP-PME.md`) instala e mantém o Kanban; o **Agente de Métricas** (`Agente_Metricas_e_Auditoria.md`) roda o painel mensal sem consumir a equipe; o **servidor MCP** (`server/`) atende o **ambiente restrito** dando contexto aos agentes sem violar o perímetro LGPD; o **Agente de Segurança** (`Agente_Seguranca.md`) audita PRI e conformidade. Toda ação sensível passa por **HITL** — humano no laço. Diferente dos perfis A–C, **parte do ganho de escala do Perfil D depende dessa camada de IA** para caber em 6 pessoas.
-
----
-
-## 4. Com o framework — resultados justificados
-
-### Aos 90 dias
-
-- **TMpR cai de 6,5 h → 4,5 h**: o fechamento dos canais paralelos + Raia Rápida orquestrada eliminam o vazamento de priorização.
-- **IDSC sobe de 98,5% → 99,3%**: o **Inventário 80/20** prioriza as integrações de API e o **backup testado** encurta a recuperação; o painel do Agente de Métricas expõe o gargalo real.
-- **Autoatendimento**: FAQ servida via MCP resolve ~45% das dúvidas de Nível 1 antes de abrir cartão.
-- **IM-TI: Nível 3 (Inovação Incremental)** — ciclo de MVP e conformidade LGPD instrumentada rodando.
-
-### Aos 12 meses (estado estabilizado — base do ROI)
-
-| Métrica | Antes | Depois (12 m) | Mecanismo do framework |
-| :--- | :---: | :---: | :--- |
-| IDSC | 98,5% | **99,7%** | Inventário 80/20 + Backups 3-2-1 + integrações de API refatoradas |
-| Horas paradas/ano | 67,5 h | **13,5 h** | `(1 − 0,997) × 4.500` |
-| TMpR | 6,5 h | **3,5 h** | Canal Único sem vazamento + Raia Rápida orquestrada por agente |
-| ISU | 3,6 | **4,6** | Fila drenada; painel de métricas + feedback pós-atendimento |
-| Horas TI desperdiçadas/mês | 180 h | **60 h** | WIP + orquestração por agente acabam com a multitarefa das 6 pessoas |
-| Horas retrabalho/mês | 260 h | **70 h** | MVP elimina a digitação dupla CRM↔ERP |
-| DAN | 0,175 🟡 | **0,11 🟢** | Matriz 4 Quadrantes + integrações de API catalogadas e refatoradas |
-| Maturidade | Nível 1 | **Nível 4 (Governança Adaptativa)** | Agentes sugerem priorização a partir das métricas; conformidade contínua |
-
-### Ganho mensal (fórmula §4.4 da Calculadora)
-
-```
-Saved_CTD  = (180 − 60) h × R$ 70 = 120 × 70 = R$ 8.400
-Saved_CRM  = (260 − 70) h × R$ 25 = 190 × 25 = R$ 4.750
-Perda_Indisp_depois = 2.000 × (13,5 / 12) = R$ 2.250
-Saved_Indisp = 11.250 − 2.250 = R$ 9.000
-------------------------------------------------------
-Ganho_Mensal = 8.400 + 4.750 + 9.000 = R$ 22.150/mês  (≈ R$ 265.800/ano)
-```
-
----
-
-## 5. Antes × Depois
-
-| Dimensão | Antes (Nível 1) | Depois — 12 m (Nível 4) |
-| :--- | :--- | :--- |
-| Entrada de chamados | Canal Único que "vaza" | **Canal Único fechado** + FAQ via MCP |
-| Fluxo de trabalho | 6 pessoas priorizando cada uma do seu jeito | **Kanban no Jira orquestrado por agente** |
-| Disponibilidade (IDSC) | 98,5% | **99,7%** |
-| Resolução (TMpR) | 6,5 h | **3,5 h** |
-| Satisfação (ISU) | 3,6 | **4,6** |
-| Retrabalho (CRM↔ERP) | 260 h/mês manuais | **70 h/mês** (integração automatizada) |
-| Dívida técnica (DAN) | 0,175 🟡 | 0,11 🟢 |
-| Conformidade LGPD | Passivo silencioso, não provável | **Catálogo de dados + trilha de auditoria + playbook ANPD** |
-| Papel da TI | Coordenação reativa em escala | **Governança adaptativa assistida por IA** |
+| Área | Situação descrita no cenário | Prática proposta | O que verificar |
+| --- | --- | --- | --- |
+| Demanda | Pedidos dispersos ou fora da regra | Canal oficial com rota para urgência | Amostra de pedidos registrados e encaminhados |
+| Execução | Priorização e interrupções sem critério comum | Quadro, WIP por executor e aceite | Idade, bloqueios, testes e exceções |
+| Continuidade | Cópias sem evidência suficiente | Escopo, retenção e restauração | Dependências, RTO/RPO e limitações do teste |
+| Melhorias | Rotinas manuais e integrações frágeis | PRD curto e decisão valor/esforço | Teste com dono do processo e efeito observado |
+| Relação com negócio | Expectativa sem decisão rastreável | Revisão conjunta de prioridades | Responsável, alçada, recurso e decisão |
 
 ```mermaid
-graph LR
-    subgraph ANTES["ANTES — Nivel 1 Reativo"]
-        A1[Canal Unico que vaza] --> A2[Fila cresce mais rapido que 6 pessoas]
-        A2 --> A3[Integracoes de API remendadas]
-        A3 --> A4[LGPD sem prova + R$ 30.350/mes em perdas]
-    end
-    subgraph DEPOIS["DEPOIS — Nivel 4 Governanca Adaptativa"]
-        D1[Kanban no Jira via Agente Orquestrador] --> D2[MCP no ambiente restrito]
-        D2 --> D3[Agente de Metricas roda painel mensal]
-        D3 --> D4[LGPD auditavel + R$ 22.150/mes recuperados]
-    end
-    ANTES ==>|Fase Zero: 90h + IA/MCP| DEPOIS
+flowchart LR
+    A[Registrar a situação] --> B[Escolher prática e responsável]
+    B --> C[Executar e verificar]
+    C --> D[Medir na mesma janela]
+    D --> E[Rever a hipótese e a decisão]
 ```
 
----
+O diagrama representa o método de avaliação. Não expressa um antes/depois já observado.
 
-## 6. ROI, payback e cenários
+## 6. Memória financeira e sensibilidade
 
-### Investimento (COT — fórmula §2.2 da Calculadora)
+| Componente | Conta | Valor |
+| --- | --- | ---: |
+| Capacidade TI potencial | (180 − 60) h/mês × R$ 70,00/h | R$ 8.400,00/mês |
+| Capacidade do usuário potencial | (260 − 70) h/mês × R$ 25/h | R$ 4.750,00/mês |
+| Capacidade por menor indisponibilidade | (67,50 − 13,50) h/ano × 80 pessoas × R$ 25/h ÷ 12 | R$ 9.000,00/mês |
+| Benefício bruto condicional | Soma sem arredondamento intermediário | R$ 22.150,00/mês |
+| Investimento inicial | 540 h × R$ 70,00/h + R$ 10.000,00 de treinamento/implantação | R$ 47.800,00 |
+| Operação anual incremental | Cópias R$ 10.000,00 + plataformas R$ 8.000,00 | R$ 18.000,00/ano |
 
-```
-Custos_Indiretos = 540 h de TI (Fase Zero 90 h + Fases 1-3 ~450 h) × R$ 70 = R$ 37.800
-Custos_Diretos   = R$ 10.000 (backup/DR em nuvem robusto/ano)
-                 + R$ 10.000 (treinamento + consultoria LGPD)
-                 + R$  8.000 (Jira + servidor MCP + plataforma de agentes/licenças)
-                 = R$ 28.000
-------------------------------------------------------------------------------
-COT = 37.800 + 28.000 = R$ 65.800
-```
-> O COT deste perfil é o maior das quatro simulações — mais horas de implantação (equipe maior, ambiente restrito) e a camada de IA/MCP nos custos diretos. Ainda assim, ~57% do COT é tempo de TI que a empresa **já pagava** na folha das 6 pessoas.
+As plataformas dos perfis C e D são classificadas como despesa anual recorrente neste exercício; o texto antigo não informava o período. Confirmar contratos antes de aplicar. O treinamento/licenças iniciais do perfil A foi mantido como implantação. Horas internas são custo de uso de capacidade, mesmo que a folha já seja paga. Para uma análise de caixa, separar desembolso incremental e custo de oportunidade.
 
-### ROI e Payback
+Horizonte ilustrativo: 12 meses em estado estabilizado. `ROI líquido = ((benefício mensal − custo mensal) × 12 − investimento) / investimento × 100`. `Payback simples = investimento / (benefício mensal − custo mensal)`, se o denominador for positivo. Não é uma previsão de payback desde o início: benefícios graduais e trabalhos posteriores requerem fluxo mensal datado.
 
-```
-ROI_Pratico = (Ganho_Mensal × 12 / COT) × 100 = (22.150 × 12 / 65.800) × 100 = 404% ao ano
-Payback     = COT / Ganho_Mensal = 65.800 / 22.150 = 3,0 meses
-```
+| Parcela do benefício realizada | Benefício bruto mensal | Benefício líquido mensal | ROI líquido em 12 meses | Payback simples |
+| --- | ---: | ---: | ---: | ---: |
+| 0% | R$ 0,00 | R$ -1.500,00 | -137,66% | Sem payback finito |
+| 60% | R$ 13.290,00 | R$ 11.790,00 | 195,98% | 4,05 meses |
+| 100% | R$ 22.150,00 | R$ 20.650,00 | 418,41% | 2,31 meses |
 
-### Cenários
+As parcelas de 0%, 60% e 100% são testes de sensibilidade; não representam probabilidade, piso conservador ou resultado esperado. Nenhuma redução de despesa foi comprovada. A conta exclui inflação, impostos, valor do dinheiro no tempo, receita perdida e risco de segurança. Conferir sobreposição de horas e a realização do benefício antes de decidir.
 
-| Cenário | Premissa | Ganho mensal | ROI anual | Payback |
-| :--- | :--- | :---: | :---: | :---: |
-| **Esperado** | Ganho integral projetado | R$ 22.150 | **404%** | **3,0 meses** |
-| **Conservador** | Apenas 60% do ganho (haircut de 40%) | R$ 13.290 | **242%** | **5,0 meses** |
+O total histórico de custos do primeiro ano, que misturava investimento e recorrência, era R$ 65.800,00. Sua preservação explica o número anterior; o cálculo antigo `benefício anual / total × 100` era uma razão bruta, sem subtrair investimento e operação.
 
-Mesmo no cenário pessimista, o investimento se paga em **5 meses** — e isso ignora completamente o risco LGPD evitado, que neste perfil é o maior de todos.
+## 7. Risco, controles e limites
 
----
+O cenário combina recuperação operacional, comunicação de incidente e possível exposição de dados pessoais; sanção e reputação não são perdas certas. O exemplo histórico usava probabilidade anual de 20% antes e 4% depois, com perda por incidente de R$ 250.000,00. A conta `(p antes − p depois) × perda` resulta em R$ 40.000,00/ano. **As probabilidades e a perda são arbitrárias**: o valor não demonstra risco evitado, média setorial ou proteção obtida. Ele foi preservado somente como exercício de valor esperado e não é somado ao benefício financeiro.
 
-## 7. Riscos evitados (upside de segurança + LGPD — não entra no ROI acima)
+Abaixo estão dez áreas de atenção do acervo, com evidência a coletar. Não se trata da lista completa do CIS IG1 nem de controles já implantados. Estado de todas as linhas: **não verificado neste cenário**. [Segurança e continuidade](../framework/nucleo/seguranca-continuidade.md) relaciona a seleção local ao NIST CSF 2.0; [fontes e limites](../framework/referencias/fontes.md) registra também CIS e o acesso às demais referências.
 
-Apresentado à parte para manter o ROI conservador. Fonte: `Guia_Pilar_3_Seguranca_Critica.md` — os **10 controles NIST-Lite** (destilação do CIS Controls v8, IG1). Neste perfil o vetor dominante não é só a parada operacional: é o **vazamento de dados pessoais** e a sanção da **LGPD**.
+Contexto específico: ERP, CRM, Microsoft 365 e APIs; acesso por necessidade; proteção gerenciada, segregação de ambientes e catálogo de dados pessoais.
 
-### Custo de risco evitado (fórmula §5 da Calculadora)
+| Nº | Área | Evidência a coletar | Exposição a examinar |
+| --- | --- | --- | --- |
+| 1 | Inventário de equipamentos | Lista com responsável, serviço e lacunas de cobertura | Ativos desconhecidos ou sem manutenção |
+| 2 | Inventário de software e dados | Versões, licenças, integrações e fluxos de dados | Dependências desconhecidas e uso sem rastreabilidade |
+| 3 | Vulnerabilidades | Prioridade de correção, teste e exceções documentadas | Exploração de falhas conhecidas |
+| 4 | Configuração segura | Revisão de serviços expostos e teste da configuração | Exposição desnecessária e propagação |
+| 5 | Identidade e MFA | Cobertura de contas críticas e exceções | Comprometimento de credenciais |
+| 6 | Privilégio mínimo | Aprovação, revisão e remoção de acesso excedente | Uso indevido de privilégios |
+| 7 | Proteção contra malware | Cobertura, atualização, alertas e encaminhamento | Código malicioso e ransomware |
+| 8 | Cópias e recuperação | Retenção, separação e restauração do escopo escolhido | Perda de dados e recuperação inviável |
+| 9 | Rede e perímetro | Regras revisadas e teste de segmentação | Acesso indevido e movimento lateral |
+| 10 | Conscientização e resposta | Orientação, exercício, contatos e alçadas | Fraude e resposta descoordenada |
 
-```
-Risco_Evitado_Ano = (Prob_SEM − Prob_COM) × Custo_Médio_por_Incidente
-                   = (0,20 − 0,04) × R$ 250.000 = 0,16 × 250.000 = R$ 40.000/ano
-```
-> Para uma empresa que trata dados pessoais em escala, o "incidente" combina ransomware **e** vazamento sujeito à LGPD: parada + recuperação + notificação à ANPD + sanção + dano reputacional. R$ 250.000 é uma estimativa conservadora do custo direto médio; a multa administrativa da LGPD pode chegar a **2% do faturamento** (aqui, até ~R$ 900 mil), o que colocaria o risco evitado em outra ordem de grandeza. Mantemos R$ 250.000 para não inflar.
+### Dados pessoais e resposta
 
-### Mapa dos 10 controles NIST-Lite + camada LGPD (o que a Fase Zero blindou)
+O plano deve identificar o controlador, quem avalia o incidente e quem comunica titulares e autoridade. O catálogo de dados, o uso de MCP e a presença de IA não comprovam conformidade com a LGPD. Não pressupor que o especialista técnico de segurança acumule automaticamente o papel de encarregado.
 
-| # | Controle | Status após implantação | Risco que mitiga |
-| :---: | :--- | :--- | :--- |
-| 1 | Inventário de Hardware | ✅ (80/20: ERP, CRM, plataforma, servidores) | Ativo crítico "invisível" sem proteção |
-| 2 | Inventário de Software + **catálogo de dados pessoais** | ✅ (base LGPD mapeada: onde estão e quem acessa) | Dados pessoais sem rastreabilidade → sanção LGPD |
-| 3 | Gestão de Vulnerabilidades | ✅ (ciclo de patch + varredura das APIs) | Exploração de falha conhecida |
-| 4 | Configurações Seguras | ✅ (hardening + segregação do ambiente restrito) | Serviços expostos / vazamento lateral |
-| 5 | Contas de Acesso + **MFA** | ✅ (MFA em 365, CRM, ERP e ambiente de dados) | Roubo de credencial / acesso indevido a dados pessoais |
-| 6 | **Privilégio Mínimo (LUA)** | ✅ (acesso a dados pessoais por necessidade, revisado) | Acesso excessivo → exposição LGPD |
-| 7 | Defesas contra Malware | ✅ (EDR gerenciado) | Ransomware / exfiltração |
-| 8 | **Backup 3-2-1 testado** | ✅ (restauração < 30 min validada trimestralmente) | Perda/sequestro de dados |
-| 9 | Firewall / Proteção de Rede | ✅ (segmentação + perímetro do ambiente restrito) | Movimentação lateral até os dados pessoais |
-| 10 | **Treinamento + playbook LGPD (ANPD 72 h)** | ✅ (anti-phishing + notificação de incidente ensaiada) | Engenharia social + descumprimento do prazo legal de notificação |
+O prazo geral de comunicação pelo controlador à ANPD e aos titulares é de **três dias úteis**, para incidentes que possam acarretar risco ou dano relevante aos titulares, ressalvadas regras específicas. O antigo prazo de “72 horas” foi retirado. Conferir marco inicial, contagem, conteúdo e regime aplicável antes de usar um playbook operacional. ANPD, orientação CIS, pergunta 4, que reproduz os arts. 6 e 9 da Resolução CD/ANPD nº 15/2024; consulta em 04.10.2026: [Orientação oficial](https://www.gov.br/anpd/pt-br/canais_atendimento/agente-de-tratamento/comunicado-de-incidente-de-seguranca-cis). O acesso ao regulamento integral falhou; não foram verificadas exceções para pequeno porte.
 
-**Upside total do Perfil D**: **~R$ 40.000/ano** de risco evitado (piso conservador; a exposição LGPD real é maior), *somados* aos R$ 265.800/ano de ganho de produtividade. Não contabilizamos isso no ROI de 404% — se o fizéssemos, o retorno subiria de forma expressiva.
+A multa simples prevista no art. 52, II, da LGPD pode alcançar 2% do faturamento da pessoa jurídica de direito privado, grupo ou conglomerado no Brasil no último exercício, excluídos tributos, limitada a R$ 50 milhões por infração. Sua aplicação depende de processo administrativo e critérios legais. R$ 900 mil seria apenas a multiplicação de 2% pelo faturamento hipotético de R$ 45 milhões; não é multa estimada nem perda provável deste cenário. [Lei nº 13.709/2018, texto atualizado, arts. 48 e 52](https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-normaatualizada-pl.html), consulta em 04.10.2026.
+
+Origem: perfil autoral histórico preservado em `.context/originais/gear-2026-10-04/Simulacao/`. Adaptação e fórmulas são locais; não são equações atribuídas a ISO, COBIT, ITIL, NIST ou CIS. Para usar: substituir hipóteses, registrar origem e data, conferir com finanças e dono do processo e decidir dentro da alçada.
+
+Voltar: [Índice dos cenários](README.md). Consultar: [Calculadora](Calculadora_ROI.md).

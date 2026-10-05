@@ -1,11 +1,7 @@
-"""Agente Governança — Orquestrador Estratégico (Pilar 1: ADM-Lite).
+"""Assistência opcional GEAR: agente_governanca.
 
-Consultor virtual de governança de TI para PMEs, destilado do modelo
-ADM-Lite (Avaliar, Dirigir, Monitorar), simplificação da ISO/IEC 38500:2024
-e do COBIT 2019. Gera pautas do CD-TI Lite, matrizes RACI-Lite e classifica
-sistemas na Matriz 4 Quadrantes.
-
-Fonte: GP-PME antigravity/Guides/Guia_Pilar_1_Governanca_Essencial.md
+Fonte vigente: framework/nucleo/governanca.md.
+Identificadores GP-PME são conservados para compatibilidade.
 """
 from __future__ import annotations
 
@@ -13,75 +9,21 @@ import os
 from typing import Any
 
 from google.adk.agents import Agent
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from server import core as _core
 
-INSTRUCTION = """\
-PERSONA:
-Você é o "Orquestrador Estratégico (ADM-Lite)" do framework GP-PME — um
-consultor sênior virtual de Governança de TI, especialista em destilar a
-ISO/IEC 38500:2024 e o COBIT 2019 para a realidade de Pequenas e Médias
-Empresas brasileiras. Você fala com o CEO (sem background técnico) e com o
-Gestor de TI (que pode ser um profissional único, "One-Man-Band").
 
-CONTEXTO DO FRAMEWORK:
-O Pilar 1 (Governança Essencial) opera 100% manual e analógico — planilhas
-locais e rituais presenciais simples, sem exigir software sofisticado. O
-ciclo ADM-Lite tem 3 etapas: AVALIAR (performance e riscos da TI sob a ótica
-de negócio), DIRIGIR (priorizar via Matriz 4 Quadrantes) e MONITORAR
-(acompanhar os 3 KPIs Visíveis: IDSC, TMpR, ISU no CD-TI Lite). O CD-TI Lite
-é a reunião quinzenal (ou semanal) de exatamente 30 minutos entre CEO e
-Gestor de TI, com pauta rígida: 5 min Revisão de KPIs, 15 min Alinhamento e
-Matriz, 5 min Análise de Riscos (DAN), 5 min Próximos Passos (aprovações e
-COT). A Matriz 4 Quadrantes classifica iniciativas de TI em: Q1 Injeção de
-Receita (Vender Mais), Q2 Redução de Custos (Economizar), Q3 Experiência do
-Cliente/Usuários (Agilizar), Q4 Resiliência e Segurança (Proteger). O
-RACI-Lite é uma tabela de 1 página com apenas dois papéis por atividade:
-R (Responsável — quem executa) e A (Aprovador — quem decide), eliminando a
-ambiguidade de "ninguém é dono de nada".
-
-O QUE VOCÊ FAZ:
-1. Gera a pauta da reunião CD-TI Lite (30 minutos) a partir do contexto de
-   KPIs, riscos e iniciativas fornecido pelo usuário, usando a tool
-   `gerar_pauta_cdti`.
-2. Monta a matriz RACI-Lite (Responsável/Aprovador) para uma lista de
-   atividades, usando a tool `montar_raci_lite`.
-3. Classifica sistemas/ativos de TI nos 4 quadrantes de valor de negócio
-   (Receita, Custos, Experiência, Segurança), usando a tool
-   `classificar_matriz_4_quadrantes`.
-4. Orienta sobre a cadência do ciclo ADM-Lite e ajuda a preparar a ata
-   simplificada de 1 página do comitê.
-
-COMO RESPONDE:
-- Português corporativo simples, direto, sem jargões técnicos desnecessários
-  — o CEO precisa entender de imediato.
-- Sempre associa cada recomendação a um quadrante da Matriz 4 Quadrantes e a
-  uma meta de negócio (faturamento ou redução de custo) quando possível.
-- Estruture saídas em blocos objetivos (máx. ~1 página / 500 palavras por
-  entregável), nunca em prosa longa.
-- Ao usar uma tool, apresente o resultado formatado e destaque os pontos
-  que o CEO deve questionar na reunião.
-
-RESTRIÇÕES:
-- Nunca invente estatísticas de mercado, dados financeiros ou promessas de
-  ROI impossíveis de auditar. Se faltar dado, marque explicitamente
-  "DADO INSUFICIENTE: requer validação do Gestor de TI" em vez de assumir.
-- Não gera código, scripts ou configurações de servidor — escopo é
-  estritamente estratégico e organizacional.
-- Nunca presume que a PME tem orçamento ou equipe de TI grande; priorize
-  sempre soluções manuais e de baixo custo (TI Enxuta).
-- Decisões de investimento e aprovações finais são sempre humanas
-  (Human-in-the-loop) — você prepara e recomenda, o CD-TI Lite decide.
-
-FONTES:
-GP-PME antigravity/Guides/Guia_Pilar_1_Governanca_Essencial.md
-"""
+INSTRUCTION = 'Você apoia o GEAR, framework de governança e gestão de TI para pequenas e médias empresas.\nHá três domínios essenciais: governança e direção, execução e serviços, segurança e continuidade.\nAdoção, indicadores e maturidade são transversais. Assistência por IA é opcional.\nUse framework/ como fonte vigente; material GP-PME/NEXUS-PME é histórico quando divergir.\nResponda em português com títulos informativos e ações concretas, sem vocativos, elogios automáticos ou separadores decorativos.\nRegistre dado insuficiente quando faltar informação; não invente cifra, contato, evidência, estudo ou ganho.\nReferencie pesquisas externas no ponto da afirmação e separe fonte, adaptação local e hipótese.\nUma ferramenta dry-run prepara uma proposta; não comprova execução real.\nSomente a autoridade humana indicada aprova efeitos organizacionais.\n\nTarefa: Preparar decisões com alçada, alternativas, risco e responsável. A matriz de quatro finalidades relaciona receita, custos, experiência e resiliência; não é prova de benefício. ADM-Lite é adaptação local, não TOGAF ADM. Manter papéis acumulados e comunicação com negócio visíveis.\nFontes: framework/README.md e guias correspondentes.\n'
 
 
 def gerar_pauta_cdti(contexto: str) -> str:
-    """Gera a pauta da reunião quinzenal de 30 minutos do CD-TI Lite.
+    """Prepara uma pauta de revisão de direção com agenda inicial ajustável.
 
     Recebe um resumo em texto livre do contexto atual (KPIs, riscos,
     iniciativas em andamento, pendências) e devolve a pauta formatada nos
-    4 blocos rígidos do ritual: Revisão de KPIs (5 min), Alinhamento e
+    quatro blocos iniciais de agenda, ajustáveis ao contexto: Revisão de KPIs (5 min), Alinhamento e
     Matriz 4 Quadrantes (15 min), Análise de Riscos/DAN (5 min) e Próximos
     Passos/COT (5 min).
 
@@ -95,11 +37,12 @@ def gerar_pauta_cdti(contexto: str) -> str:
     """
     contexto = contexto.strip() or "DADO INSUFICIENTE: contexto não informado pelo Gestor de TI."
     return (
-        "PAUTA CD-TI LITE — Reunião Quinzenal (30 minutos)\n"
-        "=====================================================\n\n"
+        "PAUTA CD-TI LITE — Agenda inicial de 30 minutos, ajustável\n"
+        "Cadência quinzenal como referência local; conferir capacidade e urgência.\n"
+        "\n"
         "1) REVISÃO DOS KPIs (5 min)\n"
-        "   - Apresentar IDSC (meta > 99,5%), TMpR e ISU (meta > 4,5/5,0)\n"
-        "     da última quinzena.\n\n"
+        "   - Selecionar indicadores necessários à decisão, como IDSC, TMpR ou ISU.\n"
+        "     Informar origem, janela, linha de base, limitações e metas acordadas.\n\n"
         "2) ALINHAMENTO E MATRIZ 4 QUADRANTES (15 min)\n"
         "   - Revisar cartões de projetos de TI em andamento.\n"
         "   - Avaliar alinhamento com as metas comerciais do negócio.\n\n"
@@ -107,8 +50,8 @@ def gerar_pauta_cdti(contexto: str) -> str:
         "   - Ameaças urgentes de segurança (backups, vírus, acessos).\n"
         "   - Debater o indicador DAN (Dívida de Arquitetura Normalizada).\n\n"
         "4) PRÓXIMOS PASSOS (5 min)\n"
-        "   - Aprovar verbas emergenciais/otimização (COT).\n"
-        "   - Formalizar decisões na ata simplificada de 1 página.\n\n"
+        "   - Submeter recursos e riscos à autoridade responsável, conforme alçada.\n"
+        "   - Registrar motivo, responsável, prazo, evidência e próxima revisão.\n\n"
         "CONTEXTO INFORMADO PARA ESTA REUNIÃO:\n"
         f"   {contexto}\n"
     )
@@ -117,10 +60,9 @@ def gerar_pauta_cdti(contexto: str) -> str:
 def montar_raci_lite(atividades: list) -> dict:
     """Monta a matriz de responsabilidades RACI-Lite (Responsável/Aprovador).
 
-    O RACI-Lite do GP-PME usa apenas dois papéis por atividade — R
-    (Responsável, quem executa a tarefa técnica) e A (Aprovador, quem tem o
-    poder final de decisão) — eliminando a ambiguidade de papéis em equipes
-    enxutas.
+    R executa, A aprova, C é consultado e I é informado. Funções podem ser
+    acumuladas, com conflitos e segunda conferência registrados. Campos
+    antigos de R e A permanecem para compatibilidade.
 
     Args:
         atividades: lista de dicts, cada um com as chaves "atividade"
@@ -139,6 +81,10 @@ def montar_raci_lite(atividades: list) -> dict:
             "atividade": item.get("atividade", "DADO INSUFICIENTE"),
             "responsavel_R": item.get("responsavel", "DADO INSUFICIENTE"),
             "aprovador_A": item.get("aprovador", "DADO INSUFICIENTE"),
+            "consultado_C": item.get("consultado", "DADO INSUFICIENTE"),
+            "informado_I": item.get("informado", "DADO INSUFICIENTE"),
+            "acumulo_R_A": bool(item.get("responsavel") and item.get("responsavel") == item.get("aprovador")),
+            "segunda_conferencia": item.get("segunda_conferencia", "DADO INSUFICIENTE"),
         })
     return {"matriz": matriz, "total_atividades": len(matriz)}
 
@@ -146,9 +92,8 @@ def montar_raci_lite(atividades: list) -> dict:
 def classificar_matriz_4_quadrantes(sistemas: list) -> dict:
     """Classifica sistemas/ativos de TI nos 4 quadrantes de valor de negócio.
 
-    Quadrantes: Q1 Injeção de Receita (Vender Mais), Q2 Redução de Custos
-    (Economizar), Q3 Experiência do Cliente/Usuários (Agilizar), Q4
-    Resiliência e Segurança (Proteger).
+    Finalidades: receita, custos, experiência e resiliência/segurança.
+    A classificação registra uma hipótese de valor; não comprova benefício.
 
     Args:
         sistemas: lista de dicts, cada um com "nome" (sistema/iniciativa) e
@@ -185,7 +130,7 @@ root_agent = Agent(
     name="agente_governanca",
     model=os.environ.get("GPPME_MODEL", "gemini-2.5-flash"),
     description=(
-        "Orquestrador Estratégico do Pilar 1 (ADM-Lite): pautas do CD-TI Lite, "
+        "Assistência a governança e direção: pautas do CD-TI Lite, "
         "RACI-Lite e Matriz 4 Quadrantes para governança de TI de PMEs."
     ),
     instruction=INSTRUCTION,

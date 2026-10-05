@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="720" height="830" preserveAspectRatio="xMinYMin meet" viewBox="0 0 720 830" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="720" height="830"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-830)" style="clip-path: url(#clip)">
+		<g transform="">
+			<polyline points="350 773, 350 745" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="350 745, 353.0448 751.3031, 346.9552 751.3031" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<polyline points="350 683, 350 651" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="350 651, 353.0448 657.3031, 346.9552 657.3031" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<polyline points="350 579, 350 552" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="350 552, 353.0448 558.3031, 346.9552 558.3031" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<polyline points="442 502, 491 502" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="491 502, 484.6969 505.0448, 484.6969 498.9552" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<text x="453.994" y="509.0" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 13px;fill: rgb(54%,25%,11%); stroke:none;" transform="translate(0,1018) scale(1,-1)">Não</text>
+			<polyline points="586 466, 586 388, 495 388" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="495 388, 501.3031 384.9552, 501.3031 391.0448" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<polyline points="350 452, 350 424" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="350 424, 353.0448 430.3031, 346.9552 430.3031" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<text x="361.94575" y="442.0" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 13px;fill: rgb(54%,25%,11%); stroke:none;" transform="translate(0,884) scale(1,-1)">Sim</text>
+			<polyline points="350 352, 350 313" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="350 313, 353.0448 319.3031, 346.9552 319.3031" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<polyline points="350 251, 350 219" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="350 219, 353.0448 225.3031, 346.9552 225.3031" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<polyline points="258 169, 207 169" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="207 169, 213.3031 165.9552, 213.3031 172.0448" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<text x="219.994" y="176.0" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 13px;fill: rgb(54%,25%,11%); stroke:none;" transform="translate(0,352) scale(1,-1)">Não</text>
+			<polyline points="112 205, 112 282, 215 282" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="215 282, 208.6969 285.0448, 208.6969 278.9552" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<text x="132.74675" y="243.5" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 13px;fill: rgb(54%,25%,11%); stroke:none;" transform="translate(0,487) scale(1,-1)">Reavaliar</text>
+			<polyline points="350 119, 350 75" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.4; fill: None; fill-rule: evenodd;"/>
+			<polygon points="350 75, 353.0448 81.30313, 346.9552 81.30313" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(45%,48%,45%); fill-rule: evenodd;"/>
+			<text x="361.94575" y="101.0" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 13px;fill: rgb(54%,25%,11%); stroke:none;" transform="translate(0,202) scale(1,-1)">Sim</text>
+			<rect x="225.0" y="773.0" width="250.0" height="44.0" rx="20" ry="20" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(95%,96%,94%); fill-rule: evenodd;"/>
+			<text x="254.67125" y="790" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,1580) scale(1,-1)">Sinal ou relato de incidente</text>
+			<rect x="215.0" y="683.0" width="270.0" height="62.0" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="265.43" y="718" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,1436) scale(1,-1)">Registrar fatos, horários</text>
+			<text x="307.775" y="700" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,1400) scale(1,-1)">e incertezas</text>
+			<rect x="215.0" y="579.0" width="270.0" height="72.0" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="246.05375" y="619" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,1238) scale(1,-1)">Acionar responsável e alçada;</text>
+			<text x="254.7125" y="601" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,1202) scale(1,-1)">avaliar resposta apropriada</text>
+			<polygon points="258 502, 350 552, 442 502, 350 452" style="stroke: rgb(54%,25%,11%); stroke-linecap: butt; stroke-width: 1.4; fill: rgb(95%,96%,94%); fill-rule: evenodd;"/>
+			<text x="301.90250000000003" y="506" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,1012) scale(1,-1)">A capacidade</text>
+			<text x="301.66625" y="488" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,976) scale(1,-1)">local atende?</text>
+			<rect x="491.0" y="466.0" width="190.0" height="72.0" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="518.57875" y="506" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,1012) scale(1,-1)">Acionar fornecedor</text>
+			<text x="533.755" y="488" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,976) scale(1,-1)">ou especialista</text>
+			<rect x="205.0" y="352.0" width="290.0" height="72.0" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="248.41625" y="392" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,784) scale(1,-1)">Conter conforme o ambiente,</text>
+			<text x="233.48375" y="374" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,748) scale(1,-1)">preservar evidências e comunicar</text>
+			<rect x="215.0" y="251.0" width="270.0" height="62.0" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="271.00625" y="286" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,572) scale(1,-1)">Recuperar ou preparar</text>
+			<text x="269.52125" y="268" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,536) scale(1,-1)">alternativa operacional</text>
+			<polygon points="258 169, 350 219, 442 169, 350 119" style="stroke: rgb(54%,25%,11%); stroke-linecap: butt; stroke-width: 1.4; fill: rgb(95%,96%,94%); fill-rule: evenodd;"/>
+			<text x="271.68125" y="173" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,346) scale(1,-1)">Serviço ou alternativa</text>
+			<text x="306.51125" y="155" style="font-family: Arial, sans-serif; font-weight: bold; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,310) scale(1,-1)">verificados?</text>
+			<rect x="17.0" y="133.0" width="190.0" height="72.0" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="48.79" y="173" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,346) scale(1,-1)">Manter pendência</text>
+			<text x="32.92750000000001" y="155" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,310) scale(1,-1)">e atualizar os afetados</text>
+			<rect x="200.0" y="11.0" width="300.0" height="64.0" rx="20" ry="20" style="stroke: rgb(45%,48%,45%); stroke-linecap: butt; stroke-width: 1.2; fill: rgb(95%,96%,94%); fill-rule: evenodd;"/>
+			<text x="227.79125" y="47" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,94) scale(1,-1)">Registrar restrições, encerramento</text>
+			<text x="272.40125" y="29" style="font-family: Arial, sans-serif; font-size: 15px;fill: rgb(12%,13%,12%); stroke:none;" transform="translate(0,58) scale(1,-1)">e correções atribuídas</text>
+		</g>
+	</g>
+</svg>

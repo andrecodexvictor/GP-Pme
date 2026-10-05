@@ -1,11 +1,11 @@
 flowchart TB
-    Z["Fase Zero · 30 dias<br/>visibilidade mínima"]
+    Z["Adoção inicial · 30 dias<br/>visibilidade mínima"]
 
     subgraph CORE["Núcleo essencial"]
       direction LR
-      P1["Pilar I<br/>Governança Essencial<br/>ADM-Lite · CD-TI Lite"]
-      P2["Pilar II<br/>Execução Ágil<br/>canal · Kanban · PRD"]
-      P3["Pilar III<br/>Segurança Crítica<br/>inventário · acesso · backup · PRI"]
+      P1["Domínio I<br/>Governança e direção<br/>ADM-Lite · CD-TI Lite"]
+      P2["Domínio II<br/>Execução e serviços<br/>canal · Kanban · PRD"]
+      P3["Domínio III<br/>Segurança e continuidade<br/>inventário · acesso · backup · PRI"]
       P1 <--> P2
       P2 <--> P3
       P3 <--> P1
@@ -19,9 +19,9 @@ flowchart TB
     X --> P1
     X --> P2
     X --> P3
-    AI -. acelera .-> P1
-    AI -. acelera .-> P2
-    AI -. acelera .-> P3
+    AI -. apoia .-> P1
+    AI -. apoia .-> P2
+    AI -. apoia .-> P3
     P1 --> H
     P2 --> H
     P3 --> H

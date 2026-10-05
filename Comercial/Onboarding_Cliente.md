@@ -1,119 +1,69 @@
-# GP-PME — Onboarding do Cliente (D0 → D30)
+# GEAR: início acompanhado da adoção
 
-> Fonte técnica: `GP-PME antigravity/Guides/Guia_de_Implementacao_Fase_Zero.md` — este documento reveste o playbook de 30 dias da Fase Zero com a camada comercial: responsáveis, critérios de aceite e materiais de kickoff. Não reescreve o conteúdo técnico; referencia os mesmos entregáveis e datas.
+Este roteiro organiza responsáveis, agenda e aceite. Complementa os [primeiros 30 dias](../framework/adocao/primeiros-30-dias.md). Acompanhamento é uma modalidade proposta; preço, disponibilidade e condições exigem contrato.
 
----
+## Acordo inicial
 
-## Visão geral
+Direção indica autoridade para prioridades, recursos e riscos. TI confirma capacidade e acesso. O dono do processo explica impacto e verifica entregas. Se houver consultor, registrar responsabilidades e limites. Funções podem ser acumuladas, mantendo conflitos visíveis.
 
-| | |
-|---|---|
-| **Duração** | 30 dias corridos (D0 a D30) |
-| **Meta de saída** | IM-TI sai do Nível 0 (Caótico) e certifica Nível 1 (Reativo Organizado) |
-| **Responsável cliente** | Dono/CEO (patrocinador) + Gestor de TI ou técnico responsável (executor) |
-| **Responsável GP-PME** | Consultor de implantação (tier Enterprise) ou material self-service acompanhado por e-mail (tiers Essencial/Profissional) |
-| **Tier aplicável** | Enterprise inclui consultor presencial nos checkpoints; Essencial/Profissional seguem o mesmo cronograma sem acompanhamento ativo |
+Antes do dia 1, acordar processo, registro oficial, evidências de partida, testes autorizados, comunicação e revisões. Não presumir maturidade ou metas. A verificação pré-projeto decide sobre uma iniciativa específica; difere da adoção inteira.
 
----
+## Reunião de início
 
-## D0 — Kickoff
+Agenda de 60 minutos como configuração ajustável:
 
-| Responsável | Ação | Artefato | Critério de aceite |
-|---|---|---|---|
-| Consultor | Reunião de kickoff (60 min) — ver script abaixo | Ata de kickoff | CEO e Gestor de TI confirmam disponibilidade semanal e nomeiam o responsável técnico |
-| Cliente | Nomear responsável técnico único pela Fase Zero | E-mail de nomeação | 1 nome, 1 e-mail, 1 telefone registrados |
-| Consultor | Enviar acesso aos materiais do tier contratado | E-mail de boas-vindas (modelo abaixo) | Cliente confirma acesso a `INDEX.md`, templates e (se aplicável) skills/agentes |
+1. Confirmar problema e objetivo, em cinco minutos.
+2. Examinar evidências e escolher até três prioridades, em quinze minutos.
+3. Percorrer semanas, dependências e aceite, em quinze minutos.
+4. Identificar executor, autoridade e dono do processo, em dez minutos.
+5. Agendar revisões e contato de urgência, em dez minutos.
+6. Registrar acordos e primeira entrega, em cinco minutos.
 
----
+Saída: escopo, responsáveis, capacidade, autorizações e próxima revisão. Conferir acesso aos materiais previstos, sem compartilhar credenciais.
 
-## Semana 1 (D1–D7) — Organizar o Caos
+## Cronograma e aceite
 
-| Dia | Responsável | Ação | Artefato | Critério de aceite |
-|---|---|---|---|---|
-| D1–D2 | Cliente (executa) / Consultor (revisa) | Aplicar `Template_Mapeamento_Maturidade.md` — questionário de 10 perguntas | Planilha de maturidade preenchida (IM-TI baseline) + 3 prioridades da semana | IM-TI de partida registrado (tipicamente Nível 0, ≤2 pontos) |
-| D3–D5 | Cliente | Montar quadro Kanban (físico ou digital) com 4 colunas: A Fazer / Em Andamento / Em Teste / Concluído, WIP=3 por técnico | Quadro Kanban ativo | Todas as tarefas em aberto migradas para o quadro; WIP respeitado |
-| D6–D7 | Cliente / Consultor valida | Criar Canal Único de suporte + comunicado do CEO proibindo canais informais | Canal Único ativo e divulgado | >90% das novas solicitações chegam pelo canal em 7 dias |
+| Janela | Trabalho | Quem verifica e o que conferir |
+| --- | --- | --- |
+| Dias 1–2 | Maturidade e prioridades | TI e negócio: respostas e evidências |
+| Dias 3–5 | Quadro de trabalho | Executor: teste, bloqueio, limite por pessoa e exceções |
+| Dias 6–7 | Registro oficial e urgências | Usuários: ajuda acessível e histórico |
+| Dias 8–10 | Orientações recorrentes | Usuário: instrução utilizável e manutenção atribuída |
+| Dias 11–14 | Dependências e recuperação | Negócio define tolerância; TI registra teste autorizado |
+| Dias 15–18 | Plano e exercício de incidente | Contatos, alçadas, passos e limitações |
+| Dias 19–21 | Revisão com direção | Decisão com motivo, risco, recursos e responsável |
+| Dias 22–25 | Indicadores necessários | Origem, janela, amostra e decisão |
+| Dias 26–30 | Comparação e transferência da rotina | Evidências, lacunas e manutenção assumida |
 
----
+Replanejar datas conforme capacidade, registrando motivo e responsável. Backup diário, restauração em 30 minutos, autoatendimento de 40% e centralização de 90% eram metas ilustrativas antigas; não são requisitos universais ou resultados esperados.
 
-## Semana 2 (D8–D14) — Automatizar e Proteger
+## Encerrar e manter
 
-| Dia | Responsável | Ação | Artefato | Critério de aceite |
-|---|---|---|---|---|
-| D8–D10 | Cliente | Escrever base de FAQs com as 5 dúvidas mais frequentes | FAQ ativa (documento ou bot) | Arquivo publicado e acessível a todos os colaboradores |
-| D11–D14 | Cliente (execução) / Consultor (auditoria) | Inventário 80/20 de ativos críticos + configurar backup diário + testar restauração | Planilha de inventário + backup em produção | Restauração testada com sucesso em <30 min |
+O percurso pode terminar com risco ou teste pendente. Encerrar com comparação entre partida e situação atual, evidência por prática, responsável pelas lacunas e próxima revisão. Se recuperação falhar, registrar a falha; backup concluído não comprova continuidade.
 
----
+Reaplicar [maturidade](../framework/adocao/maturidade.md) sem exigir IA. Soma diferente não comprova transição sustentada nem retorno. O relatório contém escopo, itens, evidências, exceções, custos, decisões e próximos passos. Quem assume operação confirma acesso e disponibilidade.
 
-## Semana 3 (D15–D21) — Formalizar e Alinhar
+Correção, suporte ou extensão seguem condições contratadas. Este roteiro não promete implantação ou acompanhamento gratuito ilimitado.
 
-| Dia | Responsável | Ação | Artefato | Critério de aceite |
-|---|---|---|---|---|
-| D15–D18 | Cliente (preenche) / Consultor (revisa contra ransomware) | Preencher PRI de 1 página, fixar na sala de TI | PRI assinado pelo CEO | Documento impresso/afixado + contatos de emergência validados |
-| D19–D21 | CEO + Gestor de TI (reunião) / Consultor facilita a 1ª sessão | Primeira reunião CD-TI Lite (30 min) + Matriz 4 Quadrantes | Ata CD-TI Lite de 1 página | Metas de faturamento conectadas aos projetos do Kanban |
+## Modelo de comunicação
 
----
+Preencher com acordos reais; envio cabe ao responsável autorizado.
 
-## Semana 4 (D22–D30) — Medir e Consolidar (Handover)
+```text
+Assunto: GEAR: materiais e primeira revisão
 
-| Dia | Responsável | Ação | Artefato | Critério de aceite |
-|---|---|---|---|---|
-| D22–D25 | Cliente | Configurar painel dos 3 KPIs (IDSC, TMpR, ISU) e iniciar coleta de satisfação | Painel de KPIs ativo | Pelo menos 1 ciclo de coleta registrado |
-| D26–D29 | Cliente + Consultor | Retrospectiva com o CEO + reaplicar questionário de maturidade | IM-TI final calculado | IM-TI ≥ 3 (Nível 1), com Canal Único, Kanban e FAQ ativos |
-| D30 | Consultor | Reunião de handover — entrega do relatório de transição de fase | Relatório de transição assinado pelo CEO | Todos os 6 indicadores da tabela "Antes/Depois" da Fase Zero atingidos (ver abaixo); cliente assume operação autônoma |
-
-### Critérios de aceite consolidados (D30)
-
-| Indicador | Baseline (D0) | Meta (D30) |
-|---|---|---|
-| Maturidade da TI (IM-TI) | Nível 0 (≤2) | Nível 1 (≥3) |
-| Centralização de solicitações | <30% | >90% no Canal Único |
-| Tempo de resposta (TMpR) | Indefinido / >24h | Redução de 30-40% |
-| Resoluções por autoatendimento | 0% | >40% via FAQ |
-| Conformidade de backup | Incerta / sem teste | 100% testado |
-| Alinhamento do CEO | Sem visibilidade financeira | 100% via Matriz 4 Quadrantes |
-
-Se algum critério não for atingido por falha do método (não por falta de adesão interna do cliente), tier Enterprise reforça acompanhamento sem custo adicional até a meta ser atingida (ver `Modelo_de_Precificacao.md` FAQ 5).
-
----
-
-## Script do Kickoff (D0, 60 min)
-
-1. **Abertura (5 min)** — apresentação do consultor e objetivo da reunião: alinhar expectativas e confirmar responsáveis antes de iniciar os 30 dias.
-2. **Diagnóstico rápido (15 min)** — perguntar ao CEO: qual é a dor mais visível hoje (retrabalho, backup, prazo, falta de métrica)? Isso define a prioridade nas primeiras 3 tarefas do Kanban.
-3. **Apresentar o cronograma (15 min)** — percorrer as 4 semanas (Organizar → Automatizar/Proteger → Formalizar → Medir), deixando claro que cada semana tem entregável verificável, não apenas leitura.
-4. **Nomear responsáveis (10 min)** — confirmar quem é o executor técnico do dia a dia e quem é o patrocinador (CEO) que participa do CD-TI Lite.
-5. **Definir cadência de checkpoint (10 min)** — agendar as reuniões de D7, D14, D21 e D30 (Enterprise) ou confirmar que o cliente seguirá sozinho com suporte por e-mail (Essencial/Profissional).
-6. **Fechamento (5 min)** — recapitular os 3 primeiros entregáveis (Semana 1) e confirmar prazo de envio do e-mail de boas-vindas com os acessos.
-
----
-
-## E-mail-modelo de Boas-vindas (pós-kickoff)
-
+Processo acompanhado: [processo]
+Responsável por TI: [pessoa e contato autorizado]
+Autoridade de aprovação: [pessoa e alçada]
+Materiais previstos: [links conferidos]
+Primeira tarefa: registrar maturidade, evidências e prioridades.
+Capacidade e data: [acordo]
+Próxima revisão: [data e participantes]
+Registro de demandas: [canal]
+Contato de urgência: [contato conferido]
+Pendências de acesso: [itens e responsáveis]
+Responsável por esta comunicação: [nome]
 ```
-Assunto: GP-PME — Seus acessos e os primeiros passos (Fase Zero, D1–D7)
 
-Olá [Nome],
+Modelos: [responsabilidades](../framework/templates/responsabilidades.md), [maturidade](../framework/templates/maturidade.md) e [decisões](../framework/templates/decisoes-prioridades.md).
 
-Foi ótimo conversar hoje. Como combinado, aqui estão os acessos e o primeiro passo
-da Fase Zero — os próximos 30 dias até sua TI sair do caos e ter governança de
-1 página funcionando.
-
-Seus acessos ([tier contratado]):
-- Portal e índice geral: [link INDEX.md / portal visual]
-- Templates de 1 página: [link Templates_GP-PME.md]
-- [Se Profissional/Enterprise] Skills Claude Code e agentes markdown: [link]
-- [Se Enterprise] Agentes ADK e integração com [ClickUp/Notion/Trello/Jira/Linear]: [link]
-
-Sua primeira tarefa (D1–D2, ~1h):
-Preencha o questionário de maturidade em [link Template_Mapeamento_Maturidade.md].
-Não existe resposta errada — o objetivo é fotografar o ponto de partida (IM-TI
-baseline) para medirmos a evolução em 30 dias.
-
-Próximo checkpoint: [data D7] — confirmamos Kanban e Canal Único ativos.
-
-Qualquer dúvida, responda este e-mail ou me chame em [telefone/canal].
-
-[Nome do consultor]
-GP-PME
-```

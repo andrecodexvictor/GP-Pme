@@ -1,42 +1,40 @@
-# Bloco 5: O Roadmap de Implementação: Seu Caminho para o Sucesso
+# Planejar adoção e exercitar cenários
 
----
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
-## 5.1. O Desafio da Mudança
+## Percurso de leitura
 
-Implantar novos processos em qualquer empresa gera ansiedade e natural resistência da equipe. Para garantir total segurança e eficácia, o GP-PME estabelece um roteiro passo a passo com marcos progressivos focado em **vitórias rápidas (*Quick Wins*)**, respeitando o andamento e a capacidade operacional da PME.
+- [Planejar os primeiros 30 dias](#planejar-os-primeiros-30-dias)
+- [Simular antes de decidir](#simular-antes-de-decidir)
 
-Antes de qualquer alteração física na TI, o framework sugere realizar um teste conceitual virtual — o **Frame-sim (Simulador de Negócios)** —, onde o gestor técnico modela as mudanças operacionais e simula as economias de esforço e redução de paradas em um "laboratório seco" (planilhas de modelagem ou prompts de simulação), demonstrando o sucesso do plano antes de gastar recursos.
+## Planejar os primeiros 30 dias
 
----
+| Janela local | Foco | Evidência esperada |
+| --- | --- | --- |
+| Semana 1 | Registrar demandas e capacidade | Fila real, responsáveis e prioridades |
+| Semana 2 | Conhecer dependências e testar recuperação | Inventário inicial e teste com limites |
+| Semana 3 | Decidir prioridades e exercitar resposta | Decisão e PRI com contatos conferidos |
+| Semana 4 | Rever evidências e pendências | Comparação por pergunta e próxima revisão |
 
-## 5.2. O Roadmap de Implementação em 3 Fases
+Trinta dias são planejamento, sem garantir implantação ou avanço de maturidade. Períodos antigos de 31–90 e 91–180 dias exprimiam expansão pretendida; hoje a próxima etapa depende das lacunas e da capacidade. Não há ganho automático de 80% do suporte.
 
-A evolução da sua TI é dividida em três fases progressivas e pragmáticas:
+O IM-TI soma dez práticas verificadas, de 0 a 10. As faixas locais descrevem a rotina e ajudam a localizar lacunas; não certificam segurança nem comparam organizações diferentes. As perguntas foram revistas; resultados antigos exigem reaplicação. IA não é condição de resposta positiva.
 
-```mermaid
-gantt
-    title Cronograma de Implementação GP-PME
-    dateFormat  YYYY-MM-DD
-    section Fase Zero: Salva-Vidas (30 dias)
-    Organização de incidentes & Kanban   :active, 2026-06-01, 30d
-    section Fase Um: Impulso Estratégico (60 dias)
-    CD-TI Lite & Segurança NIST-Lite     : 2026-07-01, 60d
-    section Fase Dois: A Escalada (90 dias)
-    Passivos DAN/COT & Escalar IA        : 2026-09-01, 90d
-```
+## Simular antes de decidir
 
-### Fase Zero: O Salva-Vidas (Dias 1 a 30)
-*   **Foco Principal**: Eliminar o caos operacional diário de chamados, restaurando a tranquilidade na TI.
-*   **Ações**: Implantação de Canal Único obrigatório para chamados, quadro Kanban de 4 colunas com WIP Limit de 3 e chatbot inteligente de respostas automáticas (FAQs).
-*   **Resultados Imediatos**: Redução de até 30% a 40% nas interrupções, e o profissional de TI recupera tempo produtivo precioso.
+Frame-sim era o nome de uma proposta de exercício de cenários. O responsável por TI pode variar esforço, custo, adoção e capacidade em uma planilha para discutir alternativas com direção e financeiro. Uma conta demonstra a consequência das premissas; não prova sucesso da mudança antes da execução.
 
-### Fase Um: O Impulso Estratégico (Dias 31 a 90)
-*   **Foco Principal**: Alinhar a tecnologia às metas financeiras do CEO e blindar os dados cruciais da PME.
-*   **Ações**: Reuniões quinzenais CD-TI Lite de 30 minutos, Matriz 4 Quadrantes, Mapa de Ativos Críticos, MFA ativado e backups Cloud automáticos.
-*   **Resultados Imediatos**: Visibilidade total dos custos de TI pelo CEO, projetos conectados a metas de vendas e proteção segura contra vírus de sequestro (ransomware).
+Registrar cenário, unidades, período, fontes dos valores, hipótese de benefício e sensibilidade. Conferir dados faltantes, duplicação de benefícios e recorrência. Horas recuperadas representam capacidade potencial enquanto não houver redução de despesa comprovada. Comparar o previsto ao observado posteriormente, preservando o cenário inicial.
 
-### Fase Dois: A Escalada do Sucesso (Dias 91 a 180+)
-*   **Foco Principal**: Otimizar custos técnicos avançados, calcular passivos de arquitetura e escalar a IA.
-*   **Ações**: Cálculos sistemáticos de Dívida de TI (DAN e COT), orquestração de prompts de IA encadeados e planejamento de infraestruturas em nuvem escaláveis.
-*   **Resultados Imediatos**: Comunicação matemática com o financeiro demonstrando o ROI real de melhorias, e a TI atuando como o motor de crescimento estratégico e inovação contínua da PME.
+Use a simulação para decidir o que testar e qual dado coletar. Direção autoriza recursos e riscos. Encerrar a preparação quando a proposta tem responsável, critérios, capacidade e condição de retorno. Essa verificação pré-projeto é distinta da adoção inicial de 30 dias.
+
+Os ganhos antigos de 30–40% de interrupções não tinham medição documentada e foram retirados. Segurança e governança não aguardam o dia 31 se o serviço já precisa delas. Expansão de métricas, nuvem ou IA depende de necessidade e capacidade; nenhuma é etapa obrigatória para o nível máximo.
+
+Fundamento de continuidade: NIST F01. A janela e a sequência semanal são propostas locais. Casos simulados são exercícios condicionais, sem resultado de campo.
+
+## Próxima tarefa e referências
+
+- [Primeiros 30 dias](<../../../framework/adocao/primeiros-30-dias.md>)
+- [Indicadores financeiros e hipóteses](<../../../framework/indicadores/financeiros.md>)
+
+Fontes F01–F12 e limites de consulta: [referências completas](<../../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

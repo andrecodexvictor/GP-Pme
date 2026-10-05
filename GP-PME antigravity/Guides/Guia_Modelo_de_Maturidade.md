@@ -1,128 +1,178 @@
-# Guia do Modelo e Matriz de Maturidade GP-PME
+# GEAR: Maturidade com evidências: guia técnico
 
-**Autor**: Antigravity AI (sob a direção de Andre Victor)  
-**Versão**: 1.0 (Oficial - Filosofia TI Enxuta Integrada)  
-**Data**: 02 de Junho de 2026  
+Edição editorial GEAR 2026.10. Framework de governança e gestão de TI para pequenas e médias empresas. Origem: GP-PME 1.0, 02/06/2026. Crédito declarado: Antigravity AI, sob a direção de Andre Victor. Direitos conforme LICENSE.md. Caminho anterior preservado para compatibilidade.
 
----
+## Percurso de leitura
 
-## 1. O que é e por que existe o Modelo de Maturidade GP-PME?
+- [Maturidade com evidências](#maturidade-com-evidencias)
+- [Fichas de desenvolvimento das práticas](#fichas-de-desenvolvimento-das-praticas)
+- [Registro de maturidade](#registro-de-maturidade)
+- [Planejar reaplicações](#planejar-reaplicacoes)
 
-O **Modelo de Maturidade GP-PME** é uma ferramenta de autoavaliação e direcionamento estratégico concebida para Pequenas e Médias Empresas (PMEs). A sua existência justifica-se pelo fato de que a governança de TI não deve ser implementada de forma abrupta, sob o risco de gerar rejeição cultural, burocracia excessiva e desperdício de recursos. Em vez disso, a evolução da TI deve ser **incremental, modular e adaptada ao tamanho da equipe**, em perfeita sintonia com a **Filosofia da TI Enxuta**.
+## Maturidade com evidências
 
-### 1.1. Metadados do Processo
-*   **O que é**: Um roteiro evolutivo estruturado em 5 níveis (0 a 4) e uma matriz operacional que cruza os 4 Pilares do GP-PME para medir o estágio de desenvolvimento da TI.
-*   **Por que existe**: Para eliminar a reatividade ("apagar incêndios") de forma segura, orientando o profissional de TI a transitar de *Faz-tudo* para *Orquestrador de Valor* e, futuramente, *Parceiro Estratégico*.
-*   **Quando deve ser usado**: 
-    1.  No início da adoção (Dia 1 da Fase Zero) para estabelecer o baseline de diagnóstico.
-    2.  Ao final de cada fase de implantação (ex: retrospectiva de 30 dias) para validar a transição de nível.
-    3.  A cada 6 meses (durante o CD-TI Lite) como auditoria de melhoria contínua.
-*   **Quem é o dono**: O **Gestor de TI** (como Orquestrador de Valor), com aprovação e supervisão do **CEO/Dono da PME** na reunião do CD-TI Lite.
-*   **Inputs necessários**: Respostas do Questionário de Maturidade, dados operacionais do Kanban (tempo de resolução), relatórios de conformidade de backup e segurança.
-*   **Outputs produzidos**: Índice de Maturidade da TI (IM-TI), Plano de Ação de Transição de Fase, Ata de Homologação de Maturidade assinada pelo CEO.
-*   **Como o sucesso é medido**: Pelo aumento consistente do Índice de Maturidade (IM-TI) associado à redução do DAN (Dívida de Arquitetura) e aumento do IDSC (uptime de serviços críticos).
+O IM-TI é um instrumento local para discutir a rotina de TI. Ele soma dez respostas binárias, de 0 a 10. Não é escala validada cientificamente, certificação ou comparação confiável entre empresas com contextos diferentes. Seu uso principal é encontrar lacunas e acompanhar a mesma organização ao longo do tempo.
 
----
+### Aplicar o questionário
 
-## 2. A Jornada da TI Enxuta: Os 5 Níveis de Maturidade
+TI e dono do processo respondem juntos. Marcar 1 somente quando a prática ocorre e existe evidência consultável; marcar 0 quando ausente ou insuficiente. Registrar “não verificado” na observação quando faltar informação, contabilizando 0 provisoriamente. Não excluir perguntas para elevar a pontuação.
 
-O modelo de evolução do GP-PME estabelece marcos claros para guiar a TI da PME do caos à adaptabilidade inteligente.
+| Nº | Prática a verificar | Evidência possível |
+| --- | --- | --- |
+| 1 | Demandas têm registro oficial e responsável | Amostra da fila com solicitante e executor |
+| 2 | Trabalho iniciado respeita a capacidade definida, incluindo testes e bloqueios | Quadro com testes, bloqueios e exceções |
+| 3 | Orientações recorrentes são mantidas e verificadas | Instrução revisada por usuário, com responsável |
+| 4 | Negócio e TI decidem prioridades em revisão registrada | Decisão com motivo, alçada e prazo |
+| 5 | Melhorias têm problema, escopo e aceite acordados | PRD curto e verificação pelo dono do processo |
+| 6 | Ativos e dependências críticos estão identificados | Inventário com proprietário e criticidade |
+| 7 | Recuperação foi testada na janela combinada | Registro de restauração e limitações |
+| 8 | Acessos críticos são controlados e revistos | Revisão de privilégios, MFA e exceções |
+| 9 | Indicadores usados têm origem, período e revisão | Registro de dados e decisão vinculada |
+| 10 | Decisões e mudanças passam por revisão responsável | Aprovação, verificação e correção registradas |
 
-```
-+------------------+     +-----------------------+     +------------------------+     +--------------------------+     +----------------------------+
-| NÍVEL 0: CAÓTICO | --> | NÍVEL 1: REATIVO ORG. | --> | NÍVEL 2: GOV. BÁSICA   | --> | NÍVEL 3: INOVAÇÃO INCREM.| --> | NÍVEL 4: GOV. ADAPTATIVA   |
-| (Apaga-incêndios)|     | (Caos Controlado)     |     | (Alinhamento e Risco)  |     | (Pragmatismo e Valor)    |     | (IA e Escala com HITL)     |
-+------------------+     +-----------------------+     +------------------------+     +--------------------------+     +----------------------------+
-```
+Nenhuma pergunta exige chatbot, agente, modelo generativo ou percentual de automação. O nível máximo pode ser alcançado com procedimentos manuais e controles tecnológicos apropriados.
 
-### Nível 0: Caótico (Inexistente / Ad-hoc)
-*   **Características**: A TI opera em modo puramente reativo. O profissional é um "faz-tudo" sobrecarregado e estressado. As solicitações chegam de forma desordenada (WhatsApp, e-mails, conversas de corredor). Não há visibilidade sobre os custos de TI, e o risco de parada geral de faturamento por falhas ou vírus é extremamente alto.
-*   **Foco Principal**: Sobrevivência e contenção do caos visível.
+### Interpretar sem ocultar lacunas
 
-### Nível 1: Reativo Organizado (Estabilizado)
-*   **Características**: A operação do dia a dia foi estruturada. Todas as solicitações são centralizadas em um **Canal Único** e acompanhadas visualmente no **Kanban de 4 Colunas**, respeitando o limite de tarefas em andamento (WIP Limit de 3). FAQs básicas de suporte estão disponíveis, reduzindo a carga do técnico.
-*   **Foco Principal**: Organização de demandas e liberação de capacidade produtiva.
+| IM-TI | Nível descritivo | Próxima ação típica |
+| --- | --- | --- |
+| 0–2 | 0: rotina pouco visível | Identificar responsáveis e registrar demandas |
+| 3–5 | 1: organização inicial | Verificar continuidade e critérios de aceite |
+| 6–8 | 2: práticas repetidas | Investigar lacunas e dependências entre práticas |
+| 9 | 3: rotina acompanhada | Rever qualidade das evidências e resultados |
+| 10 | 4: práticas verificadas | Manter a revisão e adequar o método ao contexto |
 
-### Nível 2: Governança Básica (Alinhado)
-*   **Características**: A TI passa a dialogar com o negócio através do comitê **CD-TI Lite** (reuniões quinzenais de 30 minutos) e da **Matriz 4 Quadrantes**. A segurança essencial foi blindada: o **Inventário 80/20** de ativos críticos foi mapeado, os **backups 3-2-1** são automáticos e testados trimestralmente, e o **PRI** (Plano de Resposta a Incidentes) está na parede.
-*   **Foco Principal**: Alinhamento estratégico e mitigação de riscos cibernéticos críticos.
+As faixas são convenções locais preservadas para continuidade do instrumento. As perguntas desta edição foram revistas: resultados antigos não são diretamente comparáveis sem reaplicação. As faixas não indicam probabilidade de ataque, retorno financeiro ou superioridade organizacional. Uma organização com pontuação alta e restauração não testada continua exposta.
 
-### Nível 3: Inovação Incremental (Proativo / Motor de Valor)
-*   **Características**: A TI executa projetos rápidos de desenvolvimento ou automação com foco em retorno direto. O ciclo **Ideia-MVP-Feedback** de 2 semanas está rodando, utilizando **PRDs Simplificados**. O profissional de TI mede sistematicamente a saúde financeira e técnica da infraestrutura usando os índices **DAN** (Dívida de Arquitetura Normalizada) e **COT** (Custo de Otimização).
-*   **Foco Principal**: Geração de valor comercial rápido e redução de débitos técnicos.
+### Decidir uma transição
 
-### Nível 4: Governança Adaptativa (Otimizado / Inteligente)
-*   **Características**: A Inteligência Artificial atua como copiloto transversal em todos os processos da empresa de forma formalizada. Os **4 Agentes Especialistas de IA** realizam triagem, geração de PRDs, monitoramento de riscos e cálculos do DAN. Aplica-se rigorosamente o **Protocolo HITL (Human-in-the-Loop)** para evitar alucinações de IA. Há um planejamento de transição de arquitetura de longo prazo (Escalabilidade).
-*   **Foco Principal**: Automação avançada sem overhead e inteligência distribuída.
+Comparar a aplicação atual à anterior na mesma janela de evidência. Registrar o que passou a ocorrer, quem verificou e o que permanece incerto. O score pode mudar imediatamente; a **transição sustentada** exige observar a prática na rotina, por um período acordado. Não declarar avanço automático no dia 30.
 
----
+Selecionar até três ações de melhoria por impacto e capacidade. Manter o resultado por pergunta junto ao total. Se uma resposta for contestada, revisar a evidência e corrigir o histórico, sem apagar a avaliação anterior.
 
-## 3. A Matriz de Maturidade GP-PME
+Responsável pela aplicação: TI. Responsável pela validação de efeitos no negócio: dono do processo. Direção aceita recursos e riscos conforme a alçada. Modelo: [Registro de maturidade](<../../framework/templates/maturidade.md>).
 
-A matriz abaixo detalha os requisitos práticos esperados para cada Pilar em cada nível de maturidade, servindo como referencial objetivo de auditoria.
+Para planejar uma melhoria específica, consultar as [fichas por domínio](<../../framework/adocao/fichas-maturidade.md>). Elas preservam a matriz detalhada das versões anteriores como opções de desenvolvimento, sem acrescentar condições ao IM-TI.
 
-| Pilar | Nível 0 (Caótico) | Nível 1 (Reativo Organizado) | Nível 2 (Governança Básica) | Nível 3 (Inovação Incremental) | Nível 4 (Governança Adaptativa) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Pilar I:<br>Governança Essencial<br>(ADM-Lite)** | **Características**: Sem fórum de decisões; TI vista apenas como despesa técnica.<br>**Inputs**: Reclamações.<br>**Saídas**: Nenhuma.<br>**Métricas**: Nenhuma. | **Características**: KPIs basais começam a ser medidos para comprovar valor.<br>**Inputs**: Chamados Kanban.<br>**Saídas**: Relatórios operacionais básicos.<br>**Métricas**: TMpR basal. | **Características**: CD-TI Lite quinzenal ativo; Matriz 4 Quadrantes orienta verbas.<br>**Inputs**: Planilha de 3 KPIs, Matriz 4Q.<br>**Saídas**: Atas CD-TI Lite, RACI-Lite.<br>**Métricas**: IDSC (>99.5%), ISU (>4.5), TMpR. | **Características**: Reuniões integradas com orçamento de inovação e análise DAN.<br>**Inputs**: Indicador DAN, Propostas COT.<br>**Saídas**: Roadmap de Inovação.<br>**Métricas**: ROI de Otimização. | **Características**: CD-TI Lite auxiliado por IA; governança integrada ao plano de fusões ou escala.<br>**Inputs**: Briefings gerados por IA.<br>**Saídas**: Plano de Arquitetura Futura.<br>**Métricas**: DAN < 0.15 estável. |
-| **Pilar II:<br>Execução Ágil** | **Características**: Caos operacional; chamados por canais dispersos (WhatsApp).<br>**Inputs**: Pedidos verbais.<br>**Saídas**: Nenhuma.<br>**Métricas**: Nenhuma. | **Características**: Canal Único ativo; Kanban de 4 colunas; WIP Limit = 3 ativo.<br>**Inputs**: Tickets Canal Único.<br>**Saídas**: Cartões Kanban resolvidos.<br>**Métricas**: Tempo de Ciclo operacional. | **Características**: Priorização no Kanban baseada em Impacto vs Urgência.<br>**Inputs**: Chamados classificados.<br>**Saídas**: Quadro Kanban limpo.<br>**Métricas**: TMpR sob controle. | **Características**: Ciclo MVP de 2 semanas; PRD Simplificado para novos recursos.<br>**Inputs**: Ideias de Negócio.<br>**Saídas**: PRDs de 1 pág, MVPs lançados.<br>**Métricas**: Redução do Time-to-Market. | **Características**: PRDs e códigos de MVPs acelerados por IA com crivo HITL.<br>**Inputs**: Prompts de PRD/Código.<br>**Saídas**: Protótipos funcionais ágeis.<br>**Métricas**: Taxa Eficiência IA (TEIA > 60%). |
-| **Pilar III:<br>Segurança Crítica<br>(NIST-Lite)** | **Características**: Vulnerabilidade extrema; backups manuais e não testados.<br>**Inputs**: Nenhum.<br>**Saídas**: Nenhuma.<br>**Métricas**: Nenhuma. | **Características**: Backups em nuvem diários ativos; privilégios de admin revisados.<br>**Inputs**: Logs de Backup.<br>**Saídas**: Planilha de controle.<br>**Métricas**: Taxa de Sucesso do Job. | **Características**: Inventário 80/20 ativo; Backups 3-2-1 com teste trimestral DR < 30min; PRI 1 pág.<br>**Inputs**: Inventário 80/20, PRI.<br>**Saídas**: Logs de Teste de DR, PRI assinado.<br>**Métricas**: Tempo de Restauração (RTO). | **Características**: Controles automatizados de MFA mandatórios; gestão de vulnerabilidades.<br>**Inputs**: Relatórios de scanner de rede.<br>**Saídas**: Plano de Mitigação.<br>**Métricas**: CVEs críticas mitigadas = 100%. | **Características**: NIST Privacy implementado; monitoramento de conformidade automatizado.<br>**Inputs**: Logs de Segurança.<br>**Saídas**: Auditoria automatizada.<br>**Métricas**: Zero vazamentos / zero paradas. |
-| **Pilar IV:<br>Engenharia de Prompts e IA<br>(Opcional / Acelerador)** | **Características**: Ausência de uso de IA, ou uso ad-hoc pessoal sem governança.<br>**Inputs**: Nenhum.<br>**Saídas**: Nenhuma.<br>**Métricas**: Nenhuma. | **Características**: FAQ manual disponibilizada; chatbot simples de triagem Nível 1.<br>**Inputs**: FAQ em Markdown.<br>**Saídas**: Respostas do chatbot.<br>**Métricas**: % Desvio de chamados (>40%). | **Características**: Prompts canônicos para suporte e triagem usados pelo técnico.<br>**Inputs**: Prompts de suporte.<br>**Saídas**: Instruções de ticket.<br>**Métricas**: Tempo de triagem. | **Características**: Prompt Chaining estruturado para PRD, código e planos de teste.<br>**Inputs**: Biblioteca de Prompts (BPE).<br>**Saídas**: Esboços estruturados.<br>**Métricas**: Tempo de escrita de PRDs. | **Características**: 4 Agentes Especialistas de IA instanciados e operando sob protocolo HITL.<br>**Inputs**: Dados brutos do Kanban/Negócio.<br>**Saídas**: Briefings, PRDs, Análises.<br>**Métricas**: Acurácia das saídas da IA (100% auditadas). |
+Anterior: [Primeiros 30 dias](<../../framework/adocao/primeiros-30-dias.md>). Para compreender: [Fundamentos e adaptações](<../../framework/fundamentos/origens-adaptacoes.md>).
 
----
 
-## 4. Questionário de Autoavaliação de Maturidade GP-PME
+## Fichas de desenvolvimento das práticas
 
-Este questionário rápido contém 10 perguntas binárias (Sim/Não) para mapear o estágio de maturidade da PME. Cada resposta "Sim" deve ser suportada por evidência concreta (ex: planilha de backups testados, quadro Kanban ativo).
+Estas fichas preservam a matriz extensa dos guias anteriores em blocos consultáveis. Descrevem possibilidades de desenvolvimento por domínio, com entradas, saídas e observações. São propostas locais para planejar melhorias; não constituem critérios adicionais de pontuação ou uma escala validada.
 
-### O Questionário
-1.  **[ ] Canal Único**: A TI possui um único canal formalizado para receber solicitações de suporte e projetos, tendo erradicado os chamados informais (WhatsApp pessoal, conversas)?
-2.  **[ ] Kanban Ativo**: Existe um quadro Kanban de 4 colunas (*A Fazer, Em Andamento, Em Teste, Concluído*) ativo, com limite de trabalho em andamento (WIP Limit de no máximo 3 tarefas por técnico)?
-3.  **[ ] FAQs Operacionais**: A PME disponibiliza um documento de FAQ ou um chatbot de triagem que resolve autonomamente mais de 40% das dúvidas básicas dos colaboradores?
-4.  **[ ] CD-TI Lite**: O CEO e o Gestor de TI realizam reuniões de 30 minutos periodicamente (quinzenal ou mensal) para revisar métricas e aprovar verbas estratégicas?
-5.  **[ ] Matriz 4 Quadrantes**: A TI utiliza a Matriz 4 Quadrantes para planejar e priorizar todas as iniciativas com base no impacto no faturamento e despesas do negócio?
-6.  **[ ] Inventário 80/20**: A empresa possui uma planilha atualizada contendo os 20% de ativos tecnológicos mais críticos que representam 80% do risco operacional?
-7.  **[ ] Backups Testados**: A PME possui backups automáticos em nuvem e **realizou com sucesso um teste físico de restauração** em menos de 30 minutos no último trimestre?
-8.  **[ ] PRI de 1 Página**: Existe um Plano de Resposta a Incidentes (PRI) de 1 página, assinado pelo CEO e impresso na sala de TI com contatos emergenciais e etapas de isolamento físico?
-9.  **[ ] Métricas DAN/COT**: O gestor calcula e apresenta ao CD-TI Lite o índice DAN (Dívida de Arquitetura) e o ROI do COT (Custo de Otimização)?
-10. **[ ] Auditoria HITL (IA)**: Caso utilize ferramentas de IA para gerar código ou documentos, a PME possui um checklist de auditoria de alucinações (HITL) que impede saídas de IA de irem para produção sem revisão?
+O nível descritivo é calculado pelo [IM-TI vigente](<../../framework/adocao/maturidade.md>). Uma empresa pode ter práticas desenvolvidas de modo desigual. Usar uma ficha quando ela corresponde à lacuna observada, mesmo que o nível do total seja outro. IA é opcional em todas as fichas.
 
-### Cálculo do Índice de Maturidade da TI (IM-TI)
-Some a quantidade de respostas **Sim** (1 ponto por resposta):
+### Visão de consulta
 
-*   **0 a 2 pontos**: **Nível 0 - Caótico**. (Urgente: implantar Fase Zero do GP-PME).
-*   **3 a 5 pontos**: **Nível 1 - Reativo Organizado**. (O caos operacional foi controlado, focar em segurança essencial e governança de alinhamento).
-*   **6 a 8 pontos**: **Nível 2 - Governança Básica**. (Operação segura e alinhada. Pronto para buscar inovação e ciclos de MVP).
-*   **9 pontos**: **Nível 3 - Inovação Incremental**. (TI ágil, proativa, orientada a valor comercial e controle de débitos técnicos).
-*   **10 pontos**: **Nível 4 - Governança Adaptativa**. (Excelência operacional acelerada por IA sob estrito controle humano).
+| Nível descritivo | Foco de desenvolvimento possível | Conferência necessária |
+| --- | --- | --- |
+| 0: rotina pouco visível | Identificar responsáveis e o trabalho existente | O que está conhecido e o que falta registrar |
+| 1: organização inicial | Tornar fila e controles consultáveis | Se os registros refletem a prática |
+| 2: práticas repetidas | Decidir e executar com critérios e evidência | Lacunas de continuidade e alçada |
+| 3: rotina acompanhada | Comparar resultados e investigar diferenças | Premissas, limites e efeitos observados |
+| 4: práticas verificadas | Adaptar o método às mudanças do contexto | Sustentação das práticas e novos riscos |
 
----
+### Ficha 0: conhecer a situação
 
-## 5. Checklists de Transição de Nível (Evolução Contínua)
+**Governança.** Entradas: reclamações, demandas e restrições conhecidas. Ação: identificar quem pode decidir e quais acordos já existem. Saída: responsáveis, prioridades provisórias e lacunas. Observação: ausência de atas não comprova ausência de toda decisão.
 
-Use estes checklists para estruturar os planos de ação e avançar nos degraus de maturidade da governança.
+**Execução.** Entradas: pedidos verbais, mensagens e trabalho já iniciado. Ação: reconciliar demandas sem duplicar e atribuir executor. Saída: fila inicial, bloqueios e alcance da captura. Medida possível: quantidade registrada e itens sem responsável.
 
-### 5.1. Transição: Nível 0 (Caótico) -> Nível 1 (Reativo Organizado)
-*   [ ] Unificar todos os chamados em um único formulário ou e-mail de suporte.
-*   [ ] Ativar um quadro Kanban (digital ou físico) com 4 colunas estritas.
-*   [ ] Estipular o WIP Limit = 3 no Kanban.
-*   [ ] Redigir a FAQ inicial de 5 itens para os problemas recorrentes.
-*   [ ] Registrar a primeira métrica de tempo médio de suporte (TMpR baseline).
+**Segurança.** Entradas: serviços, contas, fornecedores e cópias conhecidos. Ação: identificar dependências e risco imediato. Saída: inventário inicial e verificação autorizada a planejar. Observação: desconhecer o backup exige investigar; não permite declarar perda ou probabilidade de ataque.
 
-### 5.2. Transição: Nível 1 (Reativo Organizado) -> Nível 2 (Governança Básica)
-*   [ ] Bloquear a agenda do CEO quinzenalmente para reuniões de 30 min (CD-TI Lite).
-*   [ ] Preencher a Matriz 4 Quadrantes alinhada aos objetivos de receita e redução de custos do CEO.
-*   [ ] Mapear o Inventário 80/20 de ativos críticos na planilha.
-*   [ ] Ativar backup diário em nuvem para os ativos críticos e realizar teste físico de restauração.
-*   [ ] Imprimir e colar na parede da TI o Plano de Resposta a Incidentes (PRI) de 1 página.
+**Assistência opcional.** Organizar relatos em minuta com origem, sem preencher informações ausentes. Saída humana equivalente: registro das mesmas evidências.
 
-### 5.3. Transição: Nível 2 (Governança Básica) -> Nível 3 (Inovação Incremental)
-*   [ ] Lançar o primeiro ciclo MVP de 2 semanas de inovação (ex: automação de relatórios).
-*   [ ] Padronizar o preenchimento de PRDs Simplificados para novas demandas.
-*   [ ] Realizar o cálculo da Dívida de Arquitetura Normalizada (DAN) e propor otimizações com base no ROI.
-*   [ ] Homologar uma biblioteca de prompts canônicos compartilhada na TI para agilizar documentações.
+### Ficha 1: organizar a rotina
 
-### 5.4. Transição: Nível 3 (Inovação Incremental) -> Nível 4 (Governança Adaptativa)
-*   [ ] Instanciar os 4 Agentes Especialistas de IA (Orquestrador, Analista, Guardião, Auditor).
-*   [ ] Institucionalizar o uso de prompts de contexto e restrições para evitar alucinações.
-*   [ ] Aplicar o checklist de auditoria humana (HITL) para 100% dos outputs gerados por IA.
-*   [ ] Desenhar e aprovar no CD-TI Lite o plano de transição de infraestrutura elástica de longo prazo.
+**Governança.** Entradas: fila, responsáveis e primeiros dados. Ação: definir alçadas e uma revisão compatível com a necessidade. Saída: decisões atribuídas e próximas verificações. Medida possível: decisões com acompanhamento, sem exigir uma quantidade de atas.
+
+**Execução.** Entradas: solicitações identificadas e capacidade disponível. Ação: aplicar estados, limite de trabalho e registro oficial; preparar orientação recorrente. Saída: cartões com critério de conclusão e FAQ verificada. Medidas: trabalho iniciado e tempo de fluxo, com lacunas declaradas.
+
+**Segurança.** Entradas: inventário parcial, acesso e registros de cópia. Ação: conferir privilégios e proteção; distinguir execução de backup e restauração. Saída: cobertura, exceções e teste planejado ou executado. Um job aprovado não prova recuperação.
+
+**Assistência opcional.** Rascunhar orientação ou triagem, com revisão e encaminhamento humano. Não exigir bot nem 40% de resolução para alcançar o nível.
+
+### Ficha 2: repetir e verificar
+
+**Governança.** Entradas: demandas, indicadores, risco e alternativas. Ação: revisar com direção e dono do processo, usando finalidades de negócio. Saída: decisão, recurso, motivo, prazo e responsável. Medidas: indicadores selecionados com tolerâncias locais, sem mínimos universais de IDSC ou ISU.
+
+**Execução.** Entradas: solicitações e critérios de impacto, urgência e dependência. Ação: ordenar a fila e verificar entregas. Saída: aceite ou encerramento justificado, bloqueios e exceções de capacidade. Medidas: fluxo e restauração, mantidos separados.
+
+**Segurança.** Entradas: dependências críticas, requisitos de recuperação e contatos. Ação: testar o escopo autorizado e exercitar o PRI. Saída: duração observada, resultado, limites e correções. RTO é objetivo; duração medida é resultado do teste. Nem trimestre nem 30 minutos são requisitos universais.
+
+**Assistência opcional.** Reutilizar prompts revisados com contexto autorizado. Saída: proposta rastreável; a decisão continua atribuída a uma pessoa.
+
+### Ficha 3: acompanhar efeitos
+
+**Governança.** Entradas: cenários de custo, benefício e resultados observados. Ação: comparar hipóteses ao ocorrido e decidir recursos. Saída: revisão de investimento e roteiro de melhorias. DAN e COT só entram se ajudarem a decisão; estimativa não comprova retorno.
+
+**Execução.** Entradas: problema, PRD e condição de retorno. Ação: testar melhoria delimitada com usuário. Saída: piloto verificado e decisão de continuar, ajustar ou encerrar. Medidas: tempo de lançamento, aceite e benefício observado, cada um com origem e período.
+
+**Segurança.** Entradas: exceções de acesso, vulnerabilidades verificadas e mudanças do serviço. Ação: planejar correções por exposição e capacidade, conferindo configuração e dependências. Saída: correções verificadas e risco residual atribuído. Relatório de scanner isolado não comprova mitigação completa.
+
+**Assistência opcional.** Elaborar PRD, histórias, código e teste por etapas revisadas. Saída: minuta ou artefato verificado; roteiro de teste não substitui sua execução.
+
+### Ficha 4: adaptar com evidências
+
+**Governança.** Entradas: mudanças de escala, serviço, fornecedor ou estratégia. Ação: rever alçadas, orçamento, dependências e método. Saída: plano atualizado com alternativas e riscos. Não exigir fusão empresarial, arquitetura em nuvem nem DAN abaixo de 0,15.
+
+**Execução.** Entradas: histórico de capacidade, filas e entregas. Ação: adaptar limites, critérios e cadência, preservando comparabilidade quando possível. Saída: política revisada e acompanhamento. Não exigir TEIA acima de 60% ou qualquer automação.
+
+**Segurança.** Entradas: testes, incidentes, acesso e obrigações aplicáveis. Ação: revisar cobertura, resposta e recuperação após mudanças. Saída: lacunas tratadas ou riscos aceitos por autoridade apropriada. Não definir excelência por “zero vazamentos” ou “zero paradas”; ausência de registro também pode ser lacuna de detecção.
+
+**Assistência opcional.** Comparar utilidade, revisão, correção e permissões das ferramentas. Saída: manter, restringir ou retirar a assistência conforme evidências. Procedimentos manuais podem sustentar o nível máximo.
+
+### Transformar uma lacuna em ação
+
+1. Vincular a ação a uma evidência ausente ou insuficiente, sem presumir que todo o domínio falhou.
+2. Definir responsável, recurso, dependência, prazo e como verificar.
+3. Selecionar até três ações compatíveis com a capacidade. Emergências podem mudar a ordem.
+4. Executar e registrar resultado, incluindo falha ou limitação.
+5. Rever a prática na janela combinada e reaplicar a pergunta correspondente.
+
+As antigas listas de transição passam a ser opções: capturar demandas, controlar trabalho iniciado, verificar FAQ, testar recuperação, conferir PRI, rever prioridades ou testar melhoria. Prompts e agentes só entram quando escolhidos. Uma assinatura registra aprovação; não certifica avanço sustentado.
+
+Responsável: TI, com verificação do dono do processo e alçada da direção. Entrada: resultado por pergunta e evidências. Saída: plano de melhoria e histórico preservado. Concluir quando cada ação selecionada tem resultado verificável ou pendência atribuída.
+
+Anterior: [Maturidade](<../../framework/adocao/maturidade.md>). Modelo: [Registro de maturidade](<../../framework/templates/maturidade.md>). Para compreender: [Origens e adaptações](<../../framework/fundamentos/origens-adaptacoes.md>).
+
+
+## Registro de maturidade
+
+Preencher com TI e dono do processo usando o [questionário](<../../framework/adocao/maturidade.md>). Comparar apenas aplicações com contexto e janela conhecidos.
+
+**Organização/processo:** [preencher]  
+**Data, janela de evidência e avaliadores:** [preencher]
+
+| Pergunta | Resposta 0/1 | Evidência, data e limite | Ação quando insuficiente |
+| --- | --- | --- | --- |
+| 1. Registro e responsável | | | |
+| 2. Capacidade e fluxo | | | |
+| 3. Orientações verificadas | | | |
+| 4. Prioridades decididas | | | |
+| 5. Escopo e aceite | | | |
+| 6. Dependências críticas | | | |
+| 7. Recuperação testada | | | |
+| 8. Acesso controlado | | | |
+| 9. Indicadores rastreáveis | | | |
+| 10. Revisão responsável | | | |
+
+**IM-TI e nível descritivo:** [soma e faixa].  
+**Mudanças em relação à aplicação anterior:** [prática, evidência e contexto].  
+**Até três ações prioritárias:** [responsável e prazo].  
+**Lacunas críticas e risco aceito:** [aprovação e motivo].  
+**Próxima revisão:** [data e responsável].
+
+Concluir com evidências consultáveis e pendências atribuídas. Este registro não constitui certificação nem exige IA.
+
+
+## Planejar reaplicações
+
+Aplicar no início, depois de mudanças relevantes e na janela de revisão acordada. O intervalo antigo de seis meses é uma possibilidade, não requisito normativo. Preservar edição, evidência por pergunta, observações e plano; comparar somente depois de conferir diferenças de instrumento e contexto.
+
+Direção aprova recursos e risco; dono do processo verifica efeitos; TI organiza a aplicação. O objetivo é localizar lacunas e sustentar a prática, sem promoção presumida do profissional, comprovação de segurança pelo total ou certificação por assinatura.
+
+## Fontes e continuidade
+
+Fundamentos e limites: [referências completas](../../framework/referencias/fontes.md). Regra vigente: [documentação modular](../../framework/README.md). Próxima tarefa: [catálogo de guias](../../framework/guias/README.md). IA é opcional, inclusive na maturidade máxima. As fontes conceituais não validam automaticamente metas ou instrumentos locais.

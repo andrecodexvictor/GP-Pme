@@ -1,6 +1,6 @@
-# Artigo GP-PME — pacote Overleaf
+# Artigo GEAR: pacote LaTeX
 
-Este diretório contém a primeira versão do artigo em LaTeX. O manuscrito descreve o artefato e o protocolo prospectivo; os 25 testes ainda não foram executados.
+O manuscrito começou em agosto de 2026 e foi revisto editorialmente em outubro. GP-PME é o nome da instanciação histórica citada; GEAR é a edição consolidada. Os 25 casos comparativos ainda não foram executados.
 
 ## Estrutura
 
@@ -13,19 +13,21 @@ Este diretório contém a primeira versão do artigo em LaTeX. O manuscrito desc
 
 ## Gerar os diagramas
 
-Com Node.js e `npx` disponíveis, execute no PowerShell:
+O fluxo vigente usa rótulos das fontes Mermaid e layouts vetoriais explícitos, sem baixar um renderizador. Na raiz do projeto:
 
 ```powershell
-.\build-figures.ps1
+npm run build:figures
 ```
 
-O script fixa a versão da Mermaid CLI. Os PDFs gerados devem ser enviados ao Overleaf junto com as fontes; o Overleaf não executa Mermaid diretamente.
+O gerador `tools/build_figures.py` conserva nomes dos PDFs consumidos pelo LaTeX e registra hashes. `build-figures.ps1` é uma alternativa histórica com Mermaid CLI fixada. Os PDFs acompanham as fontes; Overleaf não executa Mermaid diretamente.
 
 ## Compilar
 
 No Overleaf, selecione `main.tex` como documento principal e use pdfLaTeX. A bibliografia usa BibTeX e `plainnat`, sem classe institucional específica. Antes de uma submissão, adapte classe, margens, limite de palavras e estilo bibliográfico ao veículo escolhido.
 
-Compilação local equivalente:
+O projeto oferece `tools/build_article.ps1`, com Tectonic e saída configuráveis. Saída padrão: `.context/publicacoes/GEAR_artigo_2026-10.pdf`. O manuscrito tem vários arquivos; não achatá-lo em standalone para contornar limitações do editor.
+
+Compilação local equivalente com uma instalação TeX:
 
 ```text
 pdflatex main.tex

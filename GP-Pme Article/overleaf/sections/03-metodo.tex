@@ -5,7 +5,7 @@
 
 O estudo adota Design Science Research (DSR), paradigma adequado à criação e avaliação de artefatos destinados a resolver problemas organizacionais relevantes \citep{hevner2004design}. A estrutura do projeto de pesquisa original era exploratória e qualitativa; nesta versão, ela é reorganizada segundo as seis atividades da Design Science Research Methodology (DSRM): identificação do problema, definição dos objetivos da solução, desenho e desenvolvimento, demonstração, avaliação e comunicação \citep{peffers2007dsrm}. Essa mudança explicita o vínculo entre problema, decisão de desenho e evidência esperada.
 
-O artefato estudado é o GP-PME em quatro representações complementares: (i) constructos, como maturidade, dívida de arquitetura normalizada e trabalho em progresso; (ii) um modelo composto por três pilares e uma camada opcional de IA; (iii) métodos operacionais, como Fase Zero, CD-TI Lite e ciclo microadaptativo; e (iv) instanciações em guias, templates, código, busca e agentes. A unidade de análise da avaliação futura será o par \emph{empresa simulada--framework}, mantendo a empresa constante entre as três alternativas comparadas.
+O artefato estudado é o GEAR em quatro representações complementares: (i) constructos, como maturidade, dívida de arquitetura normalizada e trabalho em progresso; (ii) um modelo composto por três domínios e uma camada opcional de IA; (iii) métodos operacionais, como Fase Zero, CD-TI Lite e ciclo microadaptativo; e (iv) instanciações em guias, templates, código, busca e agentes. A unidade de análise da avaliação futura será o par \emph{empresa simulada--framework}, mantendo a empresa constante entre as três alternativas comparadas.
 
 \begin{figure}[H]
   \centering
@@ -13,9 +13,9 @@ O artefato estudado é o GP-PME em quatro representações complementares: (i) c
     \includegraphics[width=\textwidth]{figures/generated/research-pipeline.pdf}%
   }{%
     \fbox{\parbox{0.92\textwidth}{\centering
-      Problema e requisitos $\rightarrow$ desenho do GP-PME $\rightarrow$ instanciação no repositório $\rightarrow$ verificação de engenharia $\rightarrow$ avaliação comparativa futura $\rightarrow$ revisão do artefato.}}
+      Problema e requisitos $\rightarrow$ desenho do GEAR $\rightarrow$ instanciação no repositório $\rightarrow$ verificação de engenharia $\rightarrow$ avaliação comparativa futura $\rightarrow$ revisão do artefato.}}
   }
-  \caption{Processo de pesquisa do GP-PME. O arquivo Mermaid editável acompanha o projeto; a avaliação comparativa é prospectiva nesta versão.}
+  \caption{Processo de pesquisa do GEAR. O arquivo Mermaid editável acompanha o projeto; a avaliação comparativa é prospectiva nesta versão.}
   \label{fig:processo-pesquisa}
 \end{figure}
 
@@ -33,7 +33,7 @@ A demonstração desta etapa é tecnológica e documental. Ela verifica se as re
 
 \subsection{Rastreabilidade entre alegações e evidências}
 
-A \cref{tab:claim-evidence} define antecipadamente o tipo de evidência necessário para sustentar cada alegação. Essa matriz impede que uma inspeção de repositório seja apresentada como validação organizacional e que resultados de produtividade de outras tarefas sejam usados como efeito estimado do GP-PME.
+A \cref{tab:claim-evidence} define antecipadamente o tipo de evidência necessário para sustentar cada alegação. Essa matriz impede que uma inspeção de repositório seja apresentada como validação organizacional e que resultados de produtividade de outras tarefas sejam usados como efeito estimado do GEAR.
 
 \begin{table}[htbp]
   \centering
@@ -45,10 +45,10 @@ A \cref{tab:claim-evidence} define antecipadamente o tipo de evidência necessá
     Alegação & Evidência admissível nesta versão & Evidência ainda necessária \\
     \midrule
     Há um problema de ajuste em PMEs & Estudos empíricos e revisão da literatura & Replicação no contexto brasileiro de 5--20 colaboradores \\
-    O GP-PME foi implementado & Inventário versionado, testes de unidade/dry-run e inspeção de artefatos & Auditoria independente da cobertura e da usabilidade \\
-    O GP-PME exige menos overhead & Hipótese derivada do desenho e contagem planejada de artefatos/rituais & Comparação pareada com baselines configurados de forma justa \\
+    O GEAR foi implementado & Inventário versionado, testes de unidade/dry-run e inspeção de artefatos & Auditoria independente da cobertura e da usabilidade \\
+    O GEAR exige menos overhead & Hipótese derivada do desenho e contagem planejada de artefatos/rituais & Comparação pareada com baselines configurados de forma justa \\
     A IA acelera a operação & Evidência externa em tarefas delimitadas; capacidade implementada & Medidas de tempo, custo, correção e retrabalho no domínio de governança \\
-    O GP-PME melhora resultados organizacionais & Não alegado nesta versão & Estudo longitudinal de campo, além da simulação \\
+    O GEAR melhora resultados organizacionais & Não alegado nesta versão & Estudo longitudinal de campo, além da simulação \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -57,4 +57,4 @@ A \cref{tab:claim-evidence} define antecipadamente o tipo de evidência necessá
 
 Ferramentas de IA foram utilizadas como assistência para localizar trechos, estruturar o manuscrito, revisar consistência e gerar código editorial. Cada alegação factual foi confrontada com o documento de origem ou com o estado versionado do repositório. Resultados numéricos externos foram mantidos com população, tarefa e limite de generalização; lacunas foram marcadas em vez de preenchidas por estimativa. Os registros intermediários de extração permanecem separados do manuscrito e podem ser regenerados.
 
-Esse procedimento segue a lógica de ``cartão de interação humano--IA'' sugerida por \citet{wallace2026conjecture}: ferramenta e finalidade são declaradas, a responsabilidade permanece humana e a saída não se torna evidência apenas por ter sido produzida de forma plausível. Na avaliação futura, cada execução deverá registrar modelo, versão, parâmetros, contexto recuperado, prompts, respostas, correções e decisão final do avaliador.
+O controle de interação humano--IA é uma proposta local de rastreabilidade: ferramenta e finalidade são declaradas, a responsabilidade permanece humana e a saída não se torna evidência apenas por ter sido produzida de forma plausível. Na avaliação futura, cada execução deverá registrar modelo, versão, parâmetros, contexto recuperado, prompts, respostas, correções e decisão final do avaliador. Essa regra integra o requisito R6; sua utilidade deverá ser examinada no protocolo.

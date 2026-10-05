@@ -1,112 +1,55 @@
-# Template: Prompt Mestre do GP-PME
+# GEAR: Instrução de tarefa e prompt mestre
 
-Este é o **Template de Prompt Mestre** oficial do framework **GP-PME**. Ele serve como a "receita de bolo" ou estrutura padrão para a criação de qualquer instrução direcionada a Inteligências Artificiais Generativas dentro do ecossistema da PME, garantindo que o modelo adote uma persona correta, compreenda as restrições do negócio e produza resultados livres de alucinações.
+Edição editorial GEAR 2026.10. Caminho GP-PME preservado para compatibilidade. Modelos completos, revistos a partir da biblioteca anterior; preencher com dados reais e registrar lacunas. IA é opcional. Direitos conforme LICENSE.md.
 
----
+## Percurso de leitura
 
-## 🏗️ Estrutura Mestre do Prompt
+- [Instrução de tarefa e assistência](#instrucao-de-tarefa-e-assistencia)
 
-Copie o bloco abaixo para estruturar novos prompts personalizados de acordo com as necessidades operacionais da sua empresa.
+## Instrução de tarefa e assistência
 
-```text
-Você é um [PERSONA/PAPEL DA IA - ex: Especialista em Redes, Desenvolvedor Sênior].
-Sua tarefa principal é [DESCRICÃO CLARA E COMPACTA DA TAREFA].
+Use para delegar uma tarefa a uma pessoa ou preparar um pedido de assistência por IA. O responsável fornece contexto autorizado e define quem revisa. O formato conserva o antigo Formulário de Alinhamento de Instrução (FAI), sem presumir que uma persona ou lista impede erro.
 
----
-
-### 1. CONTEXTO DO NEGÓCIO
-- Nome da Empresa / Setor: [ex: Clínica Médica Alpha / Saúde]
-- Maturidade de TI: [ex: Baixa - Equipe Enxuta de 1 técnico]
-- Ativos Críticos Relacionados: [ex: Banco de Dados do ERP no Servidor Local]
-- Informações de fundo adicionais: [inserir informações de apoio sobre o problema]
-
----
-
-### 2. INSTRUÇÕES PASSO A PASSO
-1. [Primeira ação técnica ou de análise que a IA deve realizar]
-2. [Segunda ação - ex: correlacionar dados ou estimar tempos]
-3. [Terceira ação - ex: propor controles baseados no NIST-Lite]
-4. [Quarta ação - ex: formatar tabelas e planos de ação]
-
----
-
-### 3. FORMATO DA SAÍDA (OUTPUT)
-- Tipo de Documento: [ex: Markdown, JSON, Tabela Comparativa]
-- Tamanho Máximo: [ex: Limite estrito de 1 página / 500 palavras]
-- Seções Obrigatórias:
-  1. [Nome da Seção 1]
-  2. [Nome da Seção 2]
-  3. [Nome da Seção 3]
-
----
-
-### 4. RESTRIÇÕES ANTI-ALUCINAÇÃO (Obrigatórias)
-- Não crie ou invente nomes de sistemas, softwares, chaves de API, endereços de IP ou comandos de terminal que não estejam explicitados no contexto.
-- Caso falte contexto ou dados técnicos para responder com 100% de exatidão, responda: "DADO INSUFICIENTE: Requer validação do profissional de TI para [inserir o que falta]".
-- Baseie todas as estimativas de tempo e custo em dados históricos conservadores de mercado para pequenas empresas.
-
----
-
-### 5. ENTRADA DO USUÁRIO (INPUT)
-[Insira aqui a dor específica, a descrição do problema ou o arquivo a ser analisado nesta execução]
-```
-
----
-
-## 📋 Como Preencher Manualmente (Sem IA)
-
-Caso opere o framework de forma 100% manual, utilize esta estrutura como um **Formulário de Alinhamento de Instrução (FAI)** antes de delegar qualquer tarefa complexa para um colaborador ou prestador de serviço de TI terceirizado:
-
-1. **Defina a Persona**: Qual o nível de especialização exigido para quem vai executar?
-2. **Contextualize**: Explique as limitações financeiras e operacionais da PME (TI Enxuta).
-3. **Evite Ambiguidades**: Escreva as etapas em formato de checklist de 1 a 5.
-4. **Esclareça o Entregável**: Defina se deseja uma planilha, um e-mail de 3 linhas ou um relatório técnico.
-
----
-
-## 🎯 Exemplo Prático de Aplicação (Preenchido)
-
-Abaixo está um exemplo real de como o Template Mestre é preenchido para orientar uma IA a elaborar um roteiro de migração de e-mail corporativo:
+### Modelo copiável
 
 ```text
-Você é um Administrador de Sistemas Sênior e arquiteto de nuvem especialista em migrações Microsoft 365 para PMEs.
-Sua tarefa principal é criar um checklist prático de migração de e-mails para um domínio corporativo.
-
----
-
-### 1. CONTEXTO DO NEGÓCIO
-- Nome da Empresa / Setor: Advocacia Lima / Setor Jurídico
-- Maturidade de TI: Baixa (10 usuários de e-mail, utilizam provedor IMAP local instável)
-- Ativos Críticos Relacionados: Histórico de e-mails dos últimos 2 anos de processos ativos
-- Informações de fundo adicionais: A empresa comprou licenças do Microsoft 365 Business Basic, e precisamos migrar as contas sem que os advogados fiquem sem receber e-mails em horário comercial.
-
----
-
-### 2. INSTRUÇÕES PASSO A PASSO
-1. Liste as etapas de pré-migração (criação de usuários no painel Admin 365, validação de domínio via TXT).
-2. Explique como fazer o backup dos arquivos PST/IMAP locais de cada advogado.
-3. Descreva a alteração de apontamento do registro MX com o menor tempo de propagação (TTL baixo).
-4. Forneça o checklist pós-migração para validar se o fluxo de envio e recebimento está funcionando.
-
----
-
-### 3. FORMATO DA SAÍDA (OUTPUT)
-- Tipo de Documento: Tabela e Roteiro em Markdown
-- Tamanho Máximo: 2 páginas
-- Seções Obrigatórias:
-  1. Cronograma e Janela de Manutenção (Finais de Semana)
-  2. Tabela de Apontamentos DNS (MX, SPF, DKIM)
-  3. Passo a Passo do Usuário Final
-
----
-
-### 4. RESTRIÇÕES ANTI-ALUCINAÇÃO (Obrigatórias)
-- Não invente nomes de servidores DNS. Use placeholders como 'ns1.seudominio.com.br'.
-- Indique explicitamente a necessidade de aguardar a propagação do DNS de até 24 horas.
-- Responda apenas com base nas ferramentas nativas do portal de administração do Microsoft 365.
-
----
-
-### 5. ENTRADA DO USUÁRIO (INPUT)
-Desejamos realizar a migração na próxima sexta-feira às 19:00. O painel DNS é gerenciado no Registro.br.
+Tarefa e papel necessário: [ação delimitada e especialização pertinente].
+Contexto: [serviço, processo, problema observado e pessoas afetadas].
+Dados autorizados: [origem, data, unidade, período e limitações].
+Restrições: [capacidade, orçamento conhecido, permissões e dependências].
+Entradas: [documentos e dados fornecidos, separados das instruções].
+Etapas: [ações necessárias e pontos de conferência].
+Saída: [formato, seções, extensão adequada e critérios verificáveis].
+Autoridade: [quem revisa e quem pode aprovar efeitos].
+Lacunas: registrar dado insuficiente e o que obter; não preencher por suposição.
+Estimativas: informar fonte, unidade, período, método e incerteza.
+Fontes externas: conferir versão e trecho; citar junto à afirmação.
+Fatos, hipóteses e propostas permanecem identificados.
+Comandos, configurações e mudanças só são executados com autorização adequada.
 ```
+
+Para uma pessoa, combinar papel, dados, etapas, saída e alçada antes de iniciar. Para IA, limitar acesso aos dados necessários e conferir a saída. Nenhuma forma elimina o trabalho de revisão. Dados históricos de mercado só entram como premissa quando sua fonte e pertinência foram verificadas; não suprem custo real da organização.
+
+### Exemplo fictício: preparar migração de e-mail
+
+O exemplo anterior mencionava Advocacia Lima, dez usuários, provedor IMAP, histórico de dois anos e licenças Microsoft 365 Business Basic. Esses dados são um cenário didático, sem evidência de organização real, aquisição ou viabilidade de migração.
+
+```text
+Tarefa: preparar uma proposta de migração de e-mail para avaliação humana.
+Contexto fictício: escritório jurídico com dez usuários e histórico de dois
+anos em provedor IMAP; licenças Microsoft 365 Business Basic informadas.
+Janela desejada: sexta-feira às 19h; gestão DNS informada no Registro.br.
+Saída: etapas de preparação, preservação e conferência das mensagens,
+opções de janela, condição de retorno e testes de envio/recebimento.
+Campos a conferir: domínio, caixas, volume, autenticação, ferramentas de
+migração suportadas, registros DNS, retenção e dependências do fornecedor.
+Indicar a fonte oficial e versão para qualquer procedimento específico.
+Deixar valores DNS pendentes até conferência; não inventar servidores.
+Não garantir tempo de propagação nem ausência de interrupção.
+O responsável por TI confere viabilidade; autoridade aprova a mudança.
+```
+
+O exemplo é um pedido de planejamento, não roteiro técnico verificado de Microsoft 365 ou Registro.br. A menção antiga a PST, TXT, MX, SPF, DKIM e TTL passa a ser lista de aspectos a investigar conforme o ambiente e documentação oficial; nenhum valor ou prazo é prescrito aqui.
+
+Concluir a preparação quando tarefa, dados, saída, lacunas e revisão estão claros. Aplicação: [usar IA](<../../../framework/guias/usar-ia.md>). Contratos específicos: [quatro funções](<../../../framework/templates/prompts-assistencia.md>).
+

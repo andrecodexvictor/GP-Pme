@@ -1,69 +1,85 @@
-# Template 8: Avaliação e Matriz de Maturidade GP-PME
+# GEAR: Questionário e registro de maturidade
 
-*   **Objetivo**: Realizar a autoavaliação periódica do nível de maturidade da TI na PME, calculando o Índice de Maturidade (IM-TI) e traçando o plano de ação para transição de fases.
-*   **Frequência Recomendada**: No início da implantação (Dia 1 da Fase Zero) e, posteriormente, a cada 6 meses na reunião do CD-TI Lite.
+Edição editorial GEAR 2026.10. Caminho GP-PME preservado para compatibilidade. Modelos completos, revistos a partir da biblioteca anterior; preencher com dados reais e registrar lacunas. IA é opcional. Direitos conforme LICENSE.md.
 
----
+## Percurso de leitura
 
-## 1. Questionário de Diagnóstico Rápido
+- [Maturidade com evidências](#maturidade-com-evidencias)
+- [Registro de maturidade](#registro-de-maturidade)
 
-Marque **[X]** apenas se a afirmação for verdadeira e houver evidência prática que a sustente.
+## Maturidade com evidências
 
-| ID | Critério / Pergunta | Resposta | Evidência Prática (Ex: Nome do Arquivo, Data do Teste) |
-|:---:|:---|:---:|:---|
-| **01** | **Canal Único**: A TI possui um único canal formalizado para receber solicitações de suporte e projetos, tendo erradicado chamados informais (WhatsApp pessoal, corredor)? | `[ ] Sim  [ ] Não` | |
-| **02** | **Kanban Ativo**: Existe um quadro Kanban de 4 colunas (*A Fazer, Em Andamento, Em Teste, Concluído*) ativo, com limite de trabalho em andamento (WIP Limit de no máximo 3 tarefas por técnico)? | `[ ] Sim  [ ] Não` | |
-| **03** | **FAQs Operacionais**: A PME disponibiliza um documento de FAQ ou um chatbot de triagem que resolve autonomamente mais de 40% das dúvidas básicas dos colaboradores? | `[ ] Sim  [ ] Não` | |
-| **04** | **CD-TI Lite**: O CEO e o Gestor de TI realizam reuniões de 30 minutos periodicamente (quinzenal ou mensal) para revisar métricas e aprovar verbas estratégicas? | `[ ] Sim  [ ] Não` | |
-| **05** | **Matriz 4 Quadrantes**: A TI utiliza a Matriz 4 Quadrantes para planejar e priorizar todas as iniciativas com base no impacto no faturamento e despesas do negócio? | `[ ] Sim  [ ] Não` | |
-| **06** | **Inventário 80/20**: A empresa possui uma planilha atualizada contendo os 20% de ativos tecnológicos mais críticos que representam 80% do risco operacional? | `[ ] Sim  [ ] Não` | |
-| **07** | **Backups Testados**: A PME possui backups automáticos em nuvem e realizou com sucesso um teste físico de restauração em menos de 30 minutos no último trimestre? | `[ ] Sim  [ ] Não` | |
-| **08** | **PRI de 1 Página**: Existe um Plano de Resposta a Incidentes (PRI) de 1 página, assinado pelo CEO e impresso na sala de TI com contatos emergenciais e etapas de isolamento físico? | `[ ] Sim  [ ] Não` | |
-| **09** | **Métricas DAN/COT**: O gestor calcula e apresenta ao CD-TI Lite o índice DAN (Dívida de Arquitetura) e o ROI do COT (Custo de Otimização)? | `[ ] Sim  [ ] Não` | |
-| **10** | **Auditoria HITL (IA)**: Caso utilize ferramentas de IA para gerar código ou documentos, a PME possui um checklist de auditoria de alucinações (HITL) que impede saídas de IA de irem para produção sem revisão? | `[ ] Sim  [ ] Não` | |
+O IM-TI é um instrumento local para discutir a rotina de TI. Ele soma dez respostas binárias, de 0 a 10. Não é escala validada cientificamente, certificação ou comparação confiável entre empresas com contextos diferentes. Seu uso principal é encontrar lacunas e acompanhar a mesma organização ao longo do tempo.
 
----
+### Aplicar o questionário
 
-## 2. Folha de Pontuação e Nível de Maturidade
+TI e dono do processo respondem juntos. Marcar 1 somente quando a prática ocorre e existe evidência consultável; marcar 0 quando ausente ou insuficiente. Registrar “não verificado” na observação quando faltar informação, contabilizando 0 provisoriamente. Não excluir perguntas para elevar a pontuação.
 
-### Cálculo do Índice de Maturidade da TI (IM-TI)
-$$\text{IM-TI} = \text{Total de respostas "Sim" marcadas (de 0 a 10)}$$
+| Nº | Prática a verificar | Evidência possível |
+| --- | --- | --- |
+| 1 | Demandas têm registro oficial e responsável | Amostra da fila com solicitante e executor |
+| 2 | Trabalho iniciado respeita a capacidade definida, incluindo testes e bloqueios | Quadro com testes, bloqueios e exceções |
+| 3 | Orientações recorrentes são mantidas e verificadas | Instrução revisada por usuário, com responsável |
+| 4 | Negócio e TI decidem prioridades em revisão registrada | Decisão com motivo, alçada e prazo |
+| 5 | Melhorias têm problema, escopo e aceite acordados | PRD curto e verificação pelo dono do processo |
+| 6 | Ativos e dependências críticos estão identificados | Inventário com proprietário e criticidade |
+| 7 | Recuperação foi testada na janela combinada | Registro de restauração e limitações |
+| 8 | Acessos críticos são controlados e revistos | Revisão de privilégios, MFA e exceções |
+| 9 | Indicadores usados têm origem, período e revisão | Registro de dados e decisão vinculada |
+| 10 | Decisões e mudanças passam por revisão responsável | Aprovação, verificação e correção registradas |
 
-*   **Pontuação Obtida**: `[ ______ ] pontos`
-*   **Nível de Maturidade Correspondente**:
-    *   **0 a 2 pontos**: `[  ] Nível 0: Caótico` (Operação desordenada, alto risco operacional).
-    *   **3 a 5 pontos**: `[  ] Nível 1: Reativo Organizado` (Operação estruturada com Kanban e Canal Único).
-    *   **6 a 8 pontos**: `[  ] Nível 2: Governança Básica` (Alinhamento de negócios e segurança crítica ativa).
-    *   **9 pontos**: `[  ] Nível 3: Inovação Incremental` (TI proativa, ciclos de MVP e controle de DAN/COT).
-    *   **10 pontos**: `[  ] Nível 4: Governança Adaptativa` (IA como copiloto transversal operando sob HITL).
+Nenhuma pergunta exige chatbot, agente, modelo generativo ou percentual de automação. O nível máximo pode ser alcançado com procedimentos manuais e controles tecnológicos apropriados.
 
----
+### Interpretar sem ocultar lacunas
 
-## 3. Plano de Ação de Transição de Nível
+| IM-TI | Nível descritivo | Próxima ação típica |
+| --- | --- | --- |
+| 0–2 | 0: rotina pouco visível | Identificar responsáveis e registrar demandas |
+| 3–5 | 1: organização inicial | Verificar continuidade e critérios de aceite |
+| 6–8 | 2: práticas repetidas | Investigar lacunas e dependências entre práticas |
+| 9 | 3: rotina acompanhada | Rever qualidade das evidências e resultados |
+| 10 | 4: práticas verificadas | Manter a revisão e adequar o método ao contexto |
 
-Descreva as ações práticas que serão implementadas para sanar os critérios marcados como "Não" no questionário:
+As faixas são convenções locais preservadas para continuidade do instrumento. As perguntas desta edição foram revistas: resultados antigos não são diretamente comparáveis sem reaplicação. As faixas não indicam probabilidade de ataque, retorno financeiro ou superioridade organizacional. Uma organização com pontuação alta e restauração não testada continua exposta.
 
-1.  **Ação 1 (Saneamento do ID ___)**: [Descreva a iniciativa técnica ou ritual de governança a ser implantado]
-    *   *Responsável*: [Nome do Responsável]
-    *   *Prazo de Entrega*: [Data]
-    *   *Evidência de Conclusão*: [ex: Link do Trello ou log de teste de backup]
+### Decidir uma transição
 
-2.  **Ação 2 (Saneamento do ID ___)**: [Descreva a iniciativa técnica ou ritual de governança a ser implantado]
-    *   *Responsável*: [Nome do Responsável]
-    *   *Prazo de Entrega*: [Data]
-    *   *Evidência de Conclusão*: [ex: Cópia física do PRI assinada e colada na TI]
+Comparar a aplicação atual à anterior na mesma janela de evidência. Registrar o que passou a ocorrer, quem verificou e o que permanece incerto. O score pode mudar imediatamente; a **transição sustentada** exige observar a prática na rotina, por um período acordado. Não declarar avanço automático no dia 30.
 
----
-*Homologado por: [Nome do Gestor de TI] (Assinatura: _________________________)*  
-*Aprovado por: [Nome do CEO / Dono] (Assinatura: _________________________)*  
-*Data de Homologação: ___/___/2026*  
+Selecionar até três ações de melhoria por impacto e capacidade. Manter o resultado por pergunta junto ao total. Se uma resposta for contestada, revisar a evidência e corrigir o histórico, sem apagar a avaliação anterior.
 
----
+Responsável pela aplicação: TI. Responsável pela validação de efeitos no negócio: dono do processo. Direção aceita recursos e riscos conforme a alçada. Modelo: [Registro de maturidade](<../../../framework/templates/maturidade.md>).
 
-## 4. Diretrizes de Preenchimento
+Para planejar uma melhoria específica, consultar as [fichas por domínio](<../../../framework/adocao/fichas-maturidade.md>). Elas preservam a matriz detalhada das versões anteriores como opções de desenvolvimento, sem acrescentar condições ao IM-TI.
 
-*   **Como preencher manualmente**: Imprima esta folha de template. Reúna-se por 15 minutos na sala de TI com os logs operacionais e preencha o questionário à mão. Anote a pontuação final, selecione o nível de maturidade correspondente e detalhe as ações prioritárias para mitigar as falhas identificadas. Assine e co-assine junto ao CEO durante a reunião CD-TI Lite.
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Engenheiro de Prompts e Métricas'. Receba os dados operacionais da minha TI [inserir logs, status de backup e atas] e preencha este Template de Mapeamento de Maturidade GP-PME. Calcule o IM-TI, classifique o nível correspondente e proponha um plano de ação de 3 etapas para sanar as deficiências identificadas.
-    ```
+Anterior: [Primeiros 30 dias](<../../../framework/adocao/primeiros-30-dias.md>). Para compreender: [Fundamentos e adaptações](<../../../framework/fundamentos/origens-adaptacoes.md>).
+
+
+## Registro de maturidade
+
+Preencher com TI e dono do processo usando o [questionário](<../../../framework/adocao/maturidade.md>). Comparar apenas aplicações com contexto e janela conhecidos.
+
+**Organização/processo:** [preencher]  
+**Data, janela de evidência e avaliadores:** [preencher]
+
+| Pergunta | Resposta 0/1 | Evidência, data e limite | Ação quando insuficiente |
+| --- | --- | --- | --- |
+| 1. Registro e responsável | | | |
+| 2. Capacidade e fluxo | | | |
+| 3. Orientações verificadas | | | |
+| 4. Prioridades decididas | | | |
+| 5. Escopo e aceite | | | |
+| 6. Dependências críticas | | | |
+| 7. Recuperação testada | | | |
+| 8. Acesso controlado | | | |
+| 9. Indicadores rastreáveis | | | |
+| 10. Revisão responsável | | | |
+
+**IM-TI e nível descritivo:** [soma e faixa].  
+**Mudanças em relação à aplicação anterior:** [prática, evidência e contexto].  
+**Até três ações prioritárias:** [responsável e prazo].  
+**Lacunas críticas e risco aceito:** [aprovação e motivo].  
+**Próxima revisão:** [data e responsável].
+
+Concluir com evidências consultáveis e pendências atribuídas. Este registro não constitui certificação nem exige IA.
+

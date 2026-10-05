@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lista de tarefas e verificação · GEAR</title><meta name="description" content="Framework de governança e gestão de TI para pequenas e médias empresas."><link rel="stylesheet" href="../../assets/gear.css"><script defer src="../../assets/gear.js"></script></head>
+<body><a class="skip" href="#conteudo">Ir para o conteúdo</a><header class="site-header"><div class="header-inner"><a href="../../index.html">GEAR</a><nav class="desktop-nav" aria-label="Navegação principal"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Navegação móvel"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav></details></div></header>
+<main id="conteudo"><div class="doc-layout"><nav class="doc-nav" aria-label="Percurso documental"><p class="nav-label">Percursos</p><a href="../adocao/primeiros-30-dias.html">Começar</a><a href="../guias/README.html">Executar</a><a href="../../biblioteca.html">Consultar</a><a href="../fundamentos/origens-adaptacoes.html">Compreender</a></nav><article class="prose"><p class="meta"><a href="../../index.html">GEAR</a> / Documentação · Edição editorial 2026.10</p><h1 id="lista-de-tarefas-e-verificacao">Lista de tarefas e verificação</h1>
+<p>Use para uma mudança ou rotina que precise de passos atribuídos. TI organiza dependências e capacidade; executor registra resultado; dono do processo aceita o efeito pertinente. A lista complementa o quadro, sem criar uma segunda fila divergente.</p>
+<h2 id="preparar-o-recorte">Preparar o recorte</h2>
+<ul><li>Iniciativa/rotina, período e responsável geral: [preencher]</li><li>PRD ou decisão que autoriza, escopo e exclusões: [preencher]</li><li>Permissões, dependências, ambiente e condição de retorno: [preencher]</li></ul>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Tabela: Preparar o recorte"><table style="--columns:6"><thead><tr><th scope="col">ID e ação</th><th scope="col">Executor</th><th scope="col">Dependência</th><th scope="col">Estado</th><th scope="col">Critério e modo de verificar</th><th scope="col">Resultado/evidência</th></tr></thead><tbody><tr><td>[preencher]</td><td></td><td></td><td>[A Fazer/Em Andamento/Em Teste/Concluído]</td><td></td><td></td></tr></tbody></table></div>
+<p>Bloqueio ou suspensão: [item, motivo, início, responsável pela próxima ação e revisão]. Manter o relógio e o histórico de trabalho iniciado. Contar andamento, teste e bloqueio comprometido no WIP por executor; marcar início de tarefa não cria capacidade adicional.</p>
+<h2 id="opcoes-de-organizacao">Opções de organização</h2>
+<p>Agrupar por preparação e ambiente; desenvolvimento ou configuração; verificação técnica e de negócio; disponibilização e acompanhamento. Essas são opções do modelo antigo, sem impor quatro fases ou quatorze dias a toda atividade. Segurança e requisitos podem precisar de conferência antes da execução, não apenas ao final.</p>
+<ul><li>Preparação: verificar acesso e dependências em ambiente autorizado.</li><li>Implementação: executar o recorte acordado e guardar alterações.</li><li>Verificação: testar critérios, acesso, falhas relevantes e retorno conforme o efeito.</li><li>Disponibilização: confirmar autorização, comunicação, operação e acompanhamento.</li></ul>
+<p>Exemplos fictícios de critérios: membros autorizados acessam um repositório e demais não; um formulário informa um campo obrigatório ausente; mensagem de teste chega ao destino autorizado. Definir ambiente, amostra e prazo necessários; a antiga referência a dez segundos não é padrão de pagamentos ou e-mail. Mensagem de console não comprova recebimento externo.</p>
+<h2 id="encerrar-e-revisar">Encerrar e revisar</h2>
+<p>Registrar teste realizado, pessoa que verificou, aceite ou motivo de encerramento. Uma assinatura registra aprovação, sem substituir teste. Nem toda tarefa exige publicação ou implantação. Guardar pendências e condição de revisão posterior do benefício.</p>
+<p>As marcações antigas <code>[ ]</code>, <code>[/]</code> e <code>[x]</code> podem ser mantidas como legenda em ferramentas que as suportem. Elas não representam sozinhas teste, bloqueio ou aceite; conservar esses campos explicitamente. Não apresentar <code>[/]</code> como checkbox Markdown padrão.</p>
+<p>Saída: lista atualizada vinculada ao quadro. Concluir quando resultados e pendências são localizáveis, com responsável. Referência de uso: <a href="../guias/entregar-melhoria.html">entregar melhoria</a>. Próximo modelo: <a href="prd-aceite.html">PRD e aceite</a>.</p><details class="template-source"><summary>Versão Markdown para copiar</summary><pre><code># Lista de tarefas e verificação
+
+Use para uma mudança ou rotina que precise de passos atribuídos. TI organiza dependências e capacidade; executor registra resultado; dono do processo aceita o efeito pertinente. A lista complementa o quadro, sem criar uma segunda fila divergente.
+
+## Preparar o recorte
+
+- Iniciativa/rotina, período e responsável geral: [preencher]
+- PRD ou decisão que autoriza, escopo e exclusões: [preencher]
+- Permissões, dependências, ambiente e condição de retorno: [preencher]
+
+| ID e ação | Executor | Dependência | Estado | Critério e modo de verificar | Resultado/evidência |
+| --- | --- | --- | --- | --- | --- |
+| [preencher] | | | [A Fazer/Em Andamento/Em Teste/Concluído] | | |
+
+Bloqueio ou suspensão: [item, motivo, início, responsável pela próxima ação e revisão]. Manter o relógio e o histórico de trabalho iniciado. Contar andamento, teste e bloqueio comprometido no WIP por executor; marcar início de tarefa não cria capacidade adicional.
+
+## Opções de organização
+
+Agrupar por preparação e ambiente; desenvolvimento ou configuração; verificação técnica e de negócio; disponibilização e acompanhamento. Essas são opções do modelo antigo, sem impor quatro fases ou quatorze dias a toda atividade. Segurança e requisitos podem precisar de conferência antes da execução, não apenas ao final.
+
+- Preparação: verificar acesso e dependências em ambiente autorizado.
+- Implementação: executar o recorte acordado e guardar alterações.
+- Verificação: testar critérios, acesso, falhas relevantes e retorno conforme o efeito.
+- Disponibilização: confirmar autorização, comunicação, operação e acompanhamento.
+
+Exemplos fictícios de critérios: membros autorizados acessam um repositório e demais não; um formulário informa um campo obrigatório ausente; mensagem de teste chega ao destino autorizado. Definir ambiente, amostra e prazo necessários; a antiga referência a dez segundos não é padrão de pagamentos ou e-mail. Mensagem de console não comprova recebimento externo.
+
+## Encerrar e revisar
+
+Registrar teste realizado, pessoa que verificou, aceite ou motivo de encerramento. Uma assinatura registra aprovação, sem substituir teste. Nem toda tarefa exige publicação ou implantação. Guardar pendências e condição de revisão posterior do benefício.
+
+As marcações antigas `[ ]`, `[/]` e `[x]` podem ser mantidas como legenda em ferramentas que as suportem. Elas não representam sozinhas teste, bloqueio ou aceite; conservar esses campos explicitamente. Não apresentar `[/]` como checkbox Markdown padrão.
+
+Saída: lista atualizada vinculada ao quadro. Concluir quando resultados e pendências são localizáveis, com responsável. Referência de uso: [entregar melhoria](../guias/entregar-melhoria.md). Próximo modelo: [PRD e aceite](prd-aceite.md).
+</code></pre></details></article><aside class="toc"><nav aria-label="Nesta página"><p class="nav-label">Nesta página</p><a href="#preparar-o-recorte">Preparar o recorte</a><a href="#opcoes-de-organizacao">Opções de organização</a><a href="#encerrar-e-revisar">Encerrar e revisar</a></nav></aside></div></main><footer><div class="footer-inner"><p>GEAR · Gestão, Execução, Agilidade e Risco<br>Andre Victor · Edição editorial 2026.10</p><p><a href="../referencias/fontes.html">Fontes e limites</a> · <a href="../fundamentos/origens-adaptacoes.html">Evolução do método</a><br><a href="../../../LICENSE.md">Direitos e licença</a></p></div></footer></body></html>

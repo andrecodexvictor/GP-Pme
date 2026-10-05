@@ -1,267 +1,300 @@
-# GP-PME Framework: Biblioteca de Templates Essenciais (Desacoplada)
+# GEAR: Biblioteca de registros essenciais
 
-Este documento consolida a biblioteca oficial de templates do framework **GP-PME**. Cada modelo foi otimizado para possuir no máximo 1 a 2 páginas, garantindo agilidade na aplicação diária por equipes de TI enxutas em pequenas e médias empresas.
+Edição editorial GEAR 2026.10. Caminho GP-PME preservado para compatibilidade. Modelos completos, revistos a partir da biblioteca anterior; preencher com dados reais e registrar lacunas. IA é opcional. Direitos conforme LICENSE.md.
 
-**Diretrizes de Preenchimento Desacoplado**:
-*   **Preenchimento Manual (Padrão)**: Siga as orientações em *Como preencher manualmente* utilizando planilhas locais, quadros brancos ou processadores de texto comuns.
-*   **Aceleração Opcional com IA**: Caso decida utilizar o **Pilar IV (Aceleração por IA)**, copie e cole o *Prompt de Aceleração* fornecido em cada template no seu subagente especialista correspondente.
+Esta biblioteca reúne oito grupos de registros do índice anterior. Uma ou duas páginas são preferência de síntese, sem apagar evidências necessárias. Templates são instrumentos locais, sem certificação normativa. Modelos complementares e contratos de IA permanecem na biblioteca modular.
 
----
+## Escolher um registro
 
-## Índice de Templates
-1.  **Template 1**: Matriz de Responsabilidades Simplificada (RACI-Lite)
-2.  **Template 2**: Matriz 4 Quadrantes de Alinhamento de TI
-3.  **Template 3**: Dashboard de Monitoramento dos 3 KPIs Visíveis
-4.  **Template 4**: Product Requirements Document (PRD) Simplificado
-5.  **Template 5**: Matriz de Priorização (Urgência vs. Impacto)
-6.  **Template 6**: Inventário 80/20 de Ativos Críticos
-7.  **Template 7**: Plano de Resposta a Incidentes (PRI) de 1 Página
-8.  **Template 8**: Avaliação e Matriz de Maturidade GP-PME
+- [Template 1: responsabilidades e RACI-Lite](#template-1-responsabilidades-e-raci-lite)
+- [Template 2: quatro finalidades e decisão](#template-2-quatro-finalidades-e-decisao)
+- [Template 3: painel de indicadores](#template-3-painel-de-indicadores)
+- [Template 4: PRD e aceite](#template-4-prd-e-aceite)
+- [Template 5: impacto e urgência](#template-5-impacto-e-urgencia)
+- [Template 6: ativos e dependências](#template-6-ativos-e-dependencias)
+- [Template 7: resposta a incidentes](#template-7-resposta-a-incidentes)
+- [Template 8: maturidade e plano de melhoria](#template-8-maturidade-e-plano-de-melhoria)
 
----
+## Template 1: responsabilidades e RACI-Lite
 
-## Template 1: Matriz de Responsabilidades (RACI-Lite)
+### Registro de responsabilidades
 
-*   **Objetivo**: Definir responsabilidades para evitar gargalos operacionais e conflitos na PME.
-*   **Legenda**:
-    *   **R (Responsável)**: Quem executa a tarefa técnica.
-    *   **A (Aprovador)**: Quem toma a decisão final e responde pelo resultado (apenas 1 por linha).
-    *   **C (Consultado)**: Quem fornece informações de apoio antes da execução.
-    *   **I (Informado)**: Quem recebe atualizações após a conclusão da atividade.
+Preencher no início da adoção e revisar após mudanças de pessoas ou fornecedores. Direção confirma alçadas; cada pessoa confirma disponibilidade e acesso. Saída: lista consultável de responsáveis e substitutos.
 
-| Processo / Atividade | CEO / Dono | Gestor de TI | Gestor de Área | Técnico IA (Bot - Opcional) |
-|:---|:---:|:---:|:---:|:---:|
-| Definição do Orçamento Anual de TI | **A** | **R** | **C** | **I** |
-| Priorização das Demandas no Kanban | **A** | **R** | **C** | **I** |
-| Triagem Inicial de Incidentes (Nível 1) | **I** | **A** | **I** | **R** |
-| Auditoria e Teste de Backup Crítico | **I** | **A** | **-** | **R** |
-| Validação de PRD para Micro-Inovação | **C** | **A** | **R** | **I** |
+**Processo/serviço:** [preencher]  
+**Data e responsável pelo registro:** [preencher]
 
-*   **Como preencher manualmente**: Reúna-se com o técnico de TI por 15 minutos e preencha a tabela marcando as letras RACI correspondentes a cada atividade crítica da PME.
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Orquestrador Estratégico'. Com base na lista de cargos da minha PME [inserir cargos] e as principais atividades de TI [inserir atividades], preencha o template RACI-Lite recomendando a alocação ideal de responsabilidades (R, A, C, I).
-    ```
+| Função | Pessoa ou fornecedor | Decide o quê | Limite da alçada | Substituto/contato |
+| --- | --- | --- | --- | --- |
+| Patrocinador/direção | | Recursos e risco aceito | | |
+| Responsável por TI | | Organização e execução | | |
+| Dono do processo | | Necessidade e aceite | | |
+| Executor | | Trabalho autorizado | | |
+| Segurança/continuidade | | Teste e resposta | | |
 
----
+**Acúmulos e conflitos:** [quem acumula aprovação e execução; como haverá segunda conferência quando necessária].
 
-## Template 2: Matriz 4 Quadrantes de Alinhamento de TI
+**Comunicação:** [registro oficial, contato de urgência, frequência de atualização e destinatários].
 
-*   **Objetivo**: Conectar as metas de faturamento e operação do CEO com as entregas de TI da quinzena.
+**Verificação:** pessoas designadas confirmaram os papéis em [data/evidência]. Exceções: [ausência de substituto, serviço terceirizado, limites de disponibilidade]. Não preencher nomes fictícios no registro operacional.
 
-```
-+------------------------------------+------------------------------------+
-|  QUADRANTE 1: INJEÇÃO DE RECEITA  |  QUADRANTE 2: REDUÇÃO DE CUSTOS   |
-|                                    |                                    |
-|  Metas do Negócio:                 |  Metas do Negócio:                 |
-|  - [ex: Aumentar vendas em 10%]    |  - [ex: Reduzir TCO de TI em 8%]   |
-|                                    |                                    |
-|  Iniciativas de TI:                |  Iniciativas de TI:                |
-|  - [ex: Pix automático nas maquinas]| - [ex: Desativar licenças ociosas] |
-+------------------------------------+------------------------------------+
-|  QUADRANTE 3: EXPERIÊNCIA CLIENTE  |   QUADRANTE 4: RESILIÊNCIA/RISCO   |
-|                                    |                                    |
-|  Metas do Negócio:                 |  Metas do Negócio:                 |
-|  - [ex: Reduzir tempo de espera]   |  - [ex: Proteger contra vazamentos]|
-|                                    |                                    |
-|  Iniciativas de TI:                |  Iniciativas de TI:                |
-|  - [ex: Chatbot automático Nível 1]| - [ex: Automatizar backup em nuvem]|
-+------------------------------------+------------------------------------+
-```
+#### RACI-Lite por atividade
 
-*   **Como preencher manualmente**: Desenhe este quadro na parede ou use uma planilha compartilhada. A cada quinzena (reunião CD-TI Lite), escreva as 4 metas prioritárias do CEO e as respectivas ações técnicas de TI que atendem a essas metas.
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Orquestrador Estratégico'. Receba minhas 4 metas de negócio [inserir metas] e sugira 1 iniciativa prática e de baixo custo de TI para cada quadrante da Matriz do GP-PME.
-    ```
+Quando houver dúvida entre funções, usar R para executor, A para autoridade de aprovação, C para pessoa consultada e I para pessoa informada. Identificar uma autoridade final por decisão; se houver mais de uma aprovação necessária, explicitar decisões e alçadas distintas.
 
----
+| Atividade | R: executor | A: autoridade | C: consultado | I: informado |
+| --- | --- | --- | --- | --- |
+| Orçamento anual de TI | | | | |
+| Priorização da fila | | | | |
+| Triagem e atendimento | | | | |
+| Teste de recuperação | | | | |
+| Requisitos e aceite da melhoria | | | | |
 
-## Template 3: Dashboard de Monitoramento dos 3 KPIs Visíveis
+Uma ferramenta pode preparar a minuta ou auxiliar o teste. Registrar a pessoa responsável pela execução e conferência; não atribuir à IA a alçada humana. Validar disponibilidade e conflitos antes de considerar a tabela vigente. A quantidade de linhas é ajustável ao serviço.
 
-*   **Objetivo**: Monitoramento rápido do desempenho operacional de TI na reunião CD-TI Lite.
 
-```
-=============================================================================
-           DASHBOARD DE KPIs VISÍVEIS DE TI - [MÊS/ANO: ___/___]
-=============================================================================
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
 
-1. IDSC (Índice de Disponibilidade de Serviços Críticos)
-   - Fórmula: [ (Tempo Total Operacional - Tempo de Queda) / Tempo Total ] * 100
-   - Resultado do Mês: [ _____% ]  |  Meta: > 99.5%
-   - Status: [  ] Saudável  [  ] Alerta  [  ] Crítico
+## Template 2: quatro finalidades e decisão
 
-2. TMpR (Tempo Médio para Resolução de Chamados)
-   - Fórmula: Somatória do tempo de resolução / Nº total de chamados fechados
-   - Resultado do Mês: [ _____ horas ]
-   - Status: [  ] Em queda (Ótimo)  [  ] Estável  [  ] Em alta (Alerta)
+### Decisão e prioridade
 
-3. ISU (Índice de Satisfação do Usuário Final)
-   - Fórmula: Somatória das avaliações de chamados / Nº de avaliações recebidas
-   - Resultado do Mês: [ _____ / 5.0 ]  |  Meta: > 4.5
-   - Status: [  ] Saudável  [  ] Abaixo da Meta
-=============================================================================
-```
+Use para uma demanda, investimento ou revisão de fila. TI prepara fatos; dono do processo explica impacto; autoridade de aprovação decide. Este registro pode ser um cartão do quadro.
 
-*   **Como preencher manualmente**: Ao final de cada mês, some as horas de funcionamento real dos servidores para obter o IDSC. Compute a média de horas de chamados resolvidos e a média das avaliações pós-chamados e anote os resultados nos colchetes.
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Engenheiro de Prompts e Métricas'. Com base nos dados brutos de incidentes e pesquisas da última quinzena [inserir dados], calcule automaticamente o IDSC, o TMpR e o ISU, gerando o relatório do dashboard formatado.
-    ```
+- Identificador, data e solicitante: [preencher]
+- Problema e processo afetado: [situação observada]
+- Evidências e fontes: [link, período e limitações]
+- Opções consideradas: [inclusive adiar ou não executar]
+- Impacto, urgência, esforço e dependências: [estimativa e incerteza]
+- Riscos e proprietário: [preencher]
+- Capacidade e trabalho já iniciado do executor: [preencher]
+- Decisão e motivo: [preencher]
+- Aprovador e limite de alçada: [preencher]
+- Executor, prazo e critério de conclusão: [preencher]
+- Data de revisão e comunicação ao solicitante: [preencher]
 
----
+A matriz de quatro finalidades relaciona a demanda a receita, custos, experiência e resiliência. Registrar finalidade principal e efeitos secundários. Impacto e esforço ajudam a decidir a ordem; não alteram o significado dessa matriz nem dispensam risco, urgência ou dependência. Uma obrigação urgente pode anteceder uma melhoria de alto impacto.
 
-## Template 4: Product Requirements Document (PRD) Simplificado
+Concluir quando a decisão estiver atribuída e comunicada. Se faltar dado essencial, registrar a investigação e seu responsável. Se a prioridade mudar, acrescentar nova decisão, preservando a anterior.
 
-*   **Objetivo**: Especificar demandas departamentais e projetos sem burocracia excessiva.
 
-```markdown
-# PRD [GP-PME]: [Nome da Funcionalidade / Automação]
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
 
-## 1. Visão Geral e Justificativa de Negócio
-*   **Data de Entrada**: ___/___/2026
-*   **Solicitante**: [Nome do Gestor de Área]
-*   **Problema de Negócio**: [Descreva a dor diária que está gerando custo ou perda de tempo]
-*   **Objetivo do Recurso**: [O que pretendemos construir para solucionar e qual o ganho projetado]
+## Template 3: painel de indicadores
 
-## 2. Histórias de Usuário (User Stories)
-*   **História 1**: Como [perfil do colaborador], eu quero [recurso técnico] para que eu possa [benefício prático].
-*   **História 2**: Como [cliente final], eu quero [recurso técnico] para que eu possa [benefício prático].
+### Painel de indicadores e decisões
 
-## 3. Critérios de Aceitação (Passa / Não Passa)
-*   [ ] **Critério 1**: Dado que [contexto inicial], quando [ação for executada], então [resultado esperado].
-*   [ ] **Critério 2**: Dado que o usuário clica em "Confirmar", quando o sistema processar, então a tela exibe o comprovante em menos de 2 segundos.
+Use na revisão da rotina quando houver uma decisão apoiada por medidas. TI prepara dados; dono do serviço confere o escopo; direção e TI acordam tolerâncias e ações. Um painel pode ser preenchido em planilha ou papel; não exige coleta automática.
 
-## 4. Métricas de Negócio Afetadas (Vínculo com KPIs)
-*   Este projeto impacta diretamente no indicador: [ex: TMpR do setor comercial ou IDSC do site].
+#### Identificação e cálculo
 
----
-*Validação do Gestor de TI (HITL): [  ] Aprovado  [  ] Necessita Ajuste*
-*Assinatura do Aprovador: ____________________________*
-```
+- Serviço/processo e responsável: [preencher]
+- Período, horário observado e exclusões: [preencher]
+- Origem dos dados, versão do cálculo e data da coleta: [preencher]
 
-*   **Como preencher manualmente**: Resuma em 1 página a funcionalidade solicitada descrevendo o problema, escrevendo manualmente as histórias de usuário com base no formato e definindo como testar (Critérios).
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Analista de Execução Ágil'. Com base na dor do meu cliente [inserir problema], elabore um PRD Simplificado contendo 3 Histórias de Usuário e critérios de aceitação no modelo 'Dado que, Quando, Então'. Lembre-se de respeitar o limite de 2 páginas e o protocolo contra alucinações.
-    ```
+| Indicador | Dados de entrada e quantidade | Resultado/unidade | Tolerância local e comparação | Limite da interpretação |
+| --- | --- | --- | --- | --- |
+| IDSC | Horas observadas e indisponíveis | [%] | | |
+| TMpR | Duração de restauração e incidentes encerrados | [horas; quantidade] | | |
+| ISU | Notas 1–5 e respostas válidas | [média; quantidade] | | |
+| Outro indicador escolhido | [definição, período e fonte] | | | |
 
----
+Sem denominador válido, registrar dado insuficiente. Não usar queda da média como sinal automático de melhoria; comparar escopo, quantidade e casos longos. As metas históricas >99,5%, <4 horas e >4,5 são exemplos locais configuráveis, sem validade universal.
 
-## Template 5: Matriz de Priorização (Eisenhower Adaptada)
+#### Decisão e acompanhamento
 
-*   **Objetivo**: Classificação rápida de cartões e incidentes no Kanban.
+| Questão a decidir | Evidência e alternativas | Decisão/motivo | Autoridade | Executor e prazo | Próxima verificação |
+| --- | --- | --- | --- | --- | --- |
+| [preencher] | | | | | |
 
-| Severidade de Impacto | Urgência Alta (Parada Geral) | Urgência Média (Lentidão/Gargalo) | Urgência Baixa (Dúvida/Melhoria) |
-|:---|:---:|:---:|:---:|
-| **Impacto Alto** (Afeta Vendas) | **CRÍTICO** (Fazer Imediatamente) | **ALTO** (Resolver hoje) | **MÉDIO** (Agendar na Sprint) |
-| **Impacto Médio** (Afeta Setor) | **ALTO** (Resolver hoje) | **MÉDIO** (Agendar na Sprint) | **BAIXO** (Tratar no Backlog) |
-| **Impacto Baixo** (Individual) | **MÉDIO** (Agendar) | **BAIXO** (Fila comum) | **DESCARTE** (Eliminar se sem valor) |
+Concluir quando a pessoa responsável conferiu dados e unidades e a decisão ou necessidade de coleta está atribuída. Cálculo assistido por IA exige a mesma conferência; não preencher um resultado por suposição.
 
----
+Definições: [operacionais](<../framework/indicadores/operacionais.md>) e [negócio/comparação](<../framework/indicadores/negocio-comparacao.md>). Próximo modelo: [decisões e prioridades](<../framework/templates/decisoes-prioridades.md>).
 
-## Template 6: Inventário 80/20 de Ativos Críticos
 
-*   **Objetivo**: Identificar e registrar os ativos essenciais que representam 80% do risco cibernético da PME.
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
 
-| ID | Nome do Ativo / Banco de Dados | Localização (Físico/Nuvem) | Criticidade (1 a 5) | Backup Ativo? (Sim/Não) | MFA Ativado? (Sim/Não) |
-|:---:|:---|:---|:---:|:---:|:---:|
-| 01 | Banco de Dados do ERP | Servidor Cloud AWS | **5** (Crítico) | Sim (Diário) | Sim |
-| 02 | Planilha de Faturamento Mensal | Google Drive Finanças | **4** (Alto) | Sim (Semanal) | Sim |
-| 03 | Notebook do Diretor Financeiro | Físico (Local) | **4** (Alto) | Sim | Sim |
-| 04 | Sistema de Chamados de Suporte | Servidor Local | **3** (Médio) | Não | Não |
+## Template 4: PRD e aceite
 
-*   **Como preencher manualmente**: Liste em uma planilha os sistemas de rede, computadores de diretores e servidores de arquivos locais. Classifique a criticidade de 1 a 5. Foque a segurança nos de nível 4 e 5 (Inventário 80/20).
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Guardião de Segurança'. Com base no ecossistema técnico da minha PME [inserir sistemas], sugira a classificação de criticidade dos ativos para o Inventário 80/20 e audite se as rotinas de segurança padrão são suficientes.
-    ```
+### PRD curto e registro de aceite
 
----
+Use para uma melhoria delimitada. Dono do processo valida a necessidade; TI confere viabilidade; executor verifica o comportamento; usuário ou dono do processo aceita a saída.
 
-## Template 7: Plano de Resposta a Incidentes (PRI) de 1 Página
+#### Definição
 
-*   **Objetivo**: Roteiro de ação rápida visual em momentos de crise de segurança.
+- Identificador, versão, responsável e data: [preencher]
+- Problema observado e evidência: [preencher]
+- Usuário/processo beneficiado: [preencher]
+- Resultado esperado e hipótese de benefício: [preencher]
+- Escopo incluído: [preencher]
+- Exclusões: [preencher]
+- Restrições, permissões e dependências: [preencher]
+- Risco, proprietário e mitigação: [preencher]
+- Recursos e prazo estimados: [preencher]
 
-```
-=============================================================================
-          PLANO DE RESPOSTA A INCIDENTES (PRI) - [NOME DA PME]
-=============================================================================
+#### Verificação
 
-[ PASSO 1: CONTENÇÃO IMEDIATA ]
--> Identificou atividade hacker ou vírus na máquina?
-   1. DESCONECTE IMEDIATAMENTE O CABO DE REDE OU DESATIVE O WI-FI DO COMPUTADOR.
-   2. Não desligue o computador da tomada (para preservar dados de análise forense).
-   3. Avise imediatamente o Gestor de TI pelo ramal interno.
+| Critério observável | Como testar | Quem verifica | Resultado/evidência |
+| --- | --- | --- | --- |
+| [Dado… quando… então…] | | | |
 
-[ PASSO 2: ISOLAMENTO DO SERVIDOR ]
--> O Gestor de TI deve isolar o servidor afetado no painel da nuvem ou desconectar o switch físico local de rede para mitigar o alastramento na PME.
+**Plano de retorno:** [como desfazer ou mitigar falha; responsável].
 
-[ PASSO 3: COMUNICAÇÃO DE CONTATOS DE EMERGÊNCIA ]
--> Técnico de Infraestrutura Externo: [ Telefone: (__) _________ ]
--> Provedor de Cloud/ERP: [ Suporte Técnico Urgente: 0800-___-____ ]
--> CEO / Dono da Empresa: [ Contato Direto: (__) _________ ]
+**Aceite:** [pessoa, data, critérios atendidos e pendências].
 
-[ PASSO 4: RECUPERAÇÃO DE BACKUPS ]
--> Somente após a erradicação do malware, inicie a restauração das cópias de dados diárias mais recentes (conforme verificado no Inventário 80/20).
+**Acompanhamento do benefício:** [indicador, linha de base, janela, fonte e decisão futura]. Aceite funcional não comprova benefício financeiro. Se o recorte não couber na capacidade, renegociar escopo ou prazo antes de iniciar.
 
-[ PASSO 5: RELATÓRIO PÓS-INCIDENTE ]
--> Apresentar relatório de causa raiz de 1 página na próxima reunião CD-TI Lite.
-=============================================================================
-```
+#### Histórias e requisitos operacionais
 
-*   **Como preencher manualmente**: Preencha manualmente os colchetes dos telefones e contatos de emergência. Imprima o roteiro de 1 página e cole em local visível na parede da sala de TI da PME.
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Guardião de Segurança'. Personalize o Plano de Resposta a Incidentes (PRI) de 1 Página gerando o checklist específico contendo etapas de isolamento para a infraestrutura de rede da minha PME [inserir infraestrutura].
-    ```
+História: `Como [perfil real], quero [comportamento] para [finalidade]`. Usar quantas forem necessárias ao recorte, sem inventar persona, fluxo ou regra de negócio para atingir duas ou três histórias. Requisito desconhecido permanece como pergunta com responsável.
 
----
+| Requisito | Condição e limite acordados | Ambiente e modo de verificar | Responsável |
+| --- | --- | --- | --- |
+| Desempenho | [ação, quantidade de dados e tempo] | [dispositivo, rede, carga e amostra] | |
+| Acesso/segurança | [perfis, permissões e exceções] | [teste autorizado de permitido/negado] | |
+| Usabilidade | [tarefa, usuários e dispositivos] | [verificação com usuário e limitações] | |
 
-## Template 8: Avaliação e Matriz de Maturidade GP-PME
+Uma meta de dois segundos precisa dessas condições. Erro de formulário deve ser identificável e permitir correção; não usar apenas cor para descrevê-lo. Excluir uma funcionalidade exige acordo e consequência declarados, sem retirar um requisito necessário para que o recorte seja utilizável.
 
-*   **Objetivo**: Mensurar de forma prática e rápida o estágio atual da TI da PME, definindo o Índice de Maturidade da TI (IM-TI) e gerando o plano de ação de transição de fase.
+#### Exemplos fictícios para iniciar uma conversa
 
-*(Consulte o arquivo completo de diretrizes em [Guia_Modelo_de_Maturidade.md](file:///c:/Users/adm/Desktop/GP-PME%20framework/GP-PME%20antigravity/Guides/Guia_Modelo_de_Maturidade.md)).*
+- Financeiro: baixar extratos de três bancos e digitar valores em uma planilha consome tempo e pode gerar erro. O relato antigo de três horas por dia é hipótese do exemplo; conferir frequência, acesso, formatos e custo antes de calcular benefício.
+- Comercial: leads de um formulário demoram a receber resposta. A proposta de encaminhá-los ao vendedor exige regras de atribuição, permissão, horário e teste de entrega; o relato de dois dias e venda perdida não é medição do projeto.
+- Suporte: pedidos por mensagens ficam dispersos. Definir captura e acompanhamento, preservando acesso à ajuda; não supor que metade das tarefas foi perdida.
 
-```
-=============================================================================
-          DIAGNÓSTICO E MATRIZ DE MATURIDADE GP-PME - AVALIAÇÃO
-=============================================================================
+Outros exemplos dos modelos anteriores incluíam iniciar atendimento de um lead, informar campo obrigatório ausente e acompanhar pedido. São comportamentos a discutir, sem obrigação de integrar WhatsApp, coletar CPF ou criar aplicativo. Nenhuma história comprova benefício antes da avaliação.
 
-[ QUESTIONÁRIO RÁPIDO - SIM / NÃO ]
-1.  [ ] Canal Único de Suporte formalizado e ativo?
-2.  [ ] Quadro Kanban ativo com limite WIP = 3?
-3.  [ ] FAQs Nível 1 ativas com desvio de chamados > 40%?
-4.  [ ]CD-TI Lite (reunião 30 min) quinzenal/mensal ativo?
-5.  [ ] Matriz 4 Quadrantes priorizando projetos de TI?
-6.  [ ] Inventário 80/20 de ativos críticos preenchido?
-7.  [ ] Backups automáticos em nuvem testados (restauração < 30min)?
-8.  [ ] PRI de 1 página assinado e colado na parede da TI?
-9.  [ ] Indicador DAN e propostas de COT calculados?
-10. [ ] Protocolo de Auditoria HITL ativo para saídas de IA?
+#### Conferir o preenchimento
 
-IM-TI (Índice de Maturidade) = [ ____ / 10 ] pontos
+TI e negócio descrevem o problema, acordam critérios antes de implementar, delimitam escopo e identificam quem aprova. Uma conversa de quinze ou vinte minutos pode preparar a minuta; ampliar quando houver lacunas. Uma ou duas páginas são preferência de síntese, com evidências e detalhes vinculados. Um piloto de duas semanas depende de capacidade e escopo, sem garantia universal.
 
-NÍVEL DE MATURIDADE:
-[  ] Nível 0: Caótico (0 a 2 pts)          [  ] Nível 3: Inovação (9 pts)
-[  ] Nível 1: Reativo (3 a 5 pts)          [  ] Nível 4: Adaptativo (10 pts)
-[  ] Nível 2: Gov. Básica (6 a 8 pts)
+Assistência opcional: [contrato de requisitos e entrega](<../framework/templates/prompts-assistencia.md#requisitos-e-entrega>). A IA pode preparar propostas; dono do processo aprova regras e aceite, e TI confere viabilidade. Não preencher solicitante, data ou orçamento desconhecidos por inferência.
 
-[ PLANO DE AÇÃO PARA TRANSIÇÃO DE NÍVEL ]
-- Ação Prioritária 1 (Saneamento do ID __): __________________________
-  Responsável: _____________ | Prazo: __/__/____
-- Ação Prioritária 2 (Saneamento do ID __): __________________________
-  Responsável: _____________ | Prazo: __/__/____
 
-=============================================================================
-Homologado por: _________________ (TI) | Aprovado por: _________________ (CEO)
-=============================================================================
-```
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
 
-*   **Como preencher manualmente**: Reúna-se com o CEO por 15 minutos e preencha as 10 perguntas binárias com base em evidências operacionais objetivas. Compute a nota final, mapeie o nível de maturidade correspondente e assine a folha junto ao CEO, registrando as ações prioritárias de transição.
-*   **Prompt de Aceleração (IA)**:
-    ```text
-    Atuar como 'Engenheiro de Prompts e Métricas'. Com base no histórico operacional da minha TI [inserir dados operacionais, status de backup e atas do CD-TI], preencha o Template de Diagnóstico de Maturidade do GP-PME. Calcule a pontuação final (IM-TI) e proponha um plano de ação detalhado para sanar os pontos identificados como falhos.
-    ```
+## Template 5: impacto e urgência
 
+### Matriz de impacto e urgência
+
+Use para discutir demandas concorrentes. Dono do processo explica impacto; TI verifica dependências e esforço; autoridade de aprovação decide. Esta matriz é distinta das quatro finalidades: receita, custos, experiência e resiliência.
+
+| | Urgência menor | Urgência maior |
+| --- | --- | --- |
+| Impacto maior | Agendar com capacidade, dependências e prazo | Avaliar prioridade e exceções necessárias |
+| Impacto menor | Questionar necessidade, adiar ou delegar | Conferir impacto e prazo; executar conforme capacidade |
+
+Urgência alta não demonstra que a demanda é rápida ou fácil. Um bug de faturamento pode ter impacto alto; classificar pelo efeito observado. Fronteiras alto/baixo são locais e devem ter exemplos acordados.
+
+| Demanda | Impacto e evidência | Prazo e motivo de urgência | Esforço/dependência | Decisão e responsável |
+| --- | --- | --- | --- | --- |
+| [preencher] | | | | |
+
+Saída: ordem acordada, itens adiados e motivo. Concluir quando solicitantes conhecerem a decisão e cada item selecionado tiver executor e aceite. Risco, obrigação, emergência ou dependência podem alterar a ordem; registrar no [modelo de decisão](<../framework/templates/decisoes-prioridades.md>).
+
+Origem: template histórico `References/GP-PME Versions/matriz_4_quadrantes.md`, revisto para retirar associação automática entre urgência e facilidade. Instrumento local, sem validade universal atribuída a fonte externa.
+
+
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
+
+## Template 6: ativos e dependências
+
+### Inventário de ativos e dependências
+
+Use para compreender o que sustenta um serviço e preparar sua proteção e recuperação. Dono do serviço define impacto; TI verifica dependências; proprietário confirma responsabilidade. Começar pelos serviços críticos e registrar cobertura parcial. Criticidade não se deduz do cargo de quem usa o equipamento.
+
+#### Serviço e cobertura
+
+- Serviço/processo, proprietário e data de revisão: [preencher]
+- Consequência da indisponibilidade e evidência: [preencher]
+- RTO e RPO acordados, com justificativa: [preencher]
+- Escopo inventariado, lacunas e responsável pela ampliação: [preencher]
+
+| ID e ativo/dependência | Tipo e localização | Proprietário e fornecedor | Criticidade/motivo | Dados e acesso necessários |
+| --- | --- | --- | --- | --- |
+| [preencher] | | | | |
+
+| ID | MFA/acesso: evidência e exceção | Cópia: frequência e retenção | Recuperação: teste e limite | Ação, responsável e prazo |
+| --- | --- | --- | --- | --- |
+| [vincular ao ativo] | | | | |
+
+Registrar referência à evidência com acesso adequado; não guardar senhas ou chaves neste modelo. “MFA ativo” exige configuração verificada e escopo declarado. “Backup ativo” exige identificar solução, fonte e retenção; teste de arquivo não comprova recuperação de todo o serviço.
+
+Se for usada criticidade de 1 a 5, definir cada faixa e exemplos com o dono do processo. A escala é local e não mede porcentagem de risco. Dependências de um ativo crítico podem precisar de tratamento mesmo quando seu uso parece secundário.
+
+#### Conferir e atualizar
+
+TI compara registro e ambiente; proprietário confirma uso e impacto. Registrar alteração após mudança de conta, integração, fornecedor ou serviço. Concluir o recorte quando ativos conhecidos estão atribuídos e lacunas têm plano; não declarar inventário completo enquanto faltar cobertura.
+
+O nome anterior “Inventário 80/20” expressava priorização, sem prova de que 20% dos ativos representam 80% da receita ou risco. Exemplos antigos de ERP, planilha financeira, notebook e serviço de chamados são possibilidades de ativo, não configuração real do projeto.
+
+Fundamento: [segurança e continuidade](<../framework/nucleo/seguranca-continuidade.md>), [NIST F01–F02](<../framework/referencias/fontes.md#f01>). Próximo modelo: [risco e continuidade](<../framework/templates/risco-continuidade.md>).
+
+
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
+
+## Template 7: resposta a incidentes
+
+### Plano breve de resposta a incidente
+
+Preparar antes de uma ocorrência. Durante o incidente, usar o registro para coordenar ações e preservar evidências. Segurança ou TI mantém o plano; direção confirma alçadas; dono do serviço define tolerância de interrupção.
+
+- Serviço e dados afetados: [preencher]
+- Responsável e substituto: [preencher]
+- Contatos conferidos em: [data; TI, fornecedor, direção, jurídico quando aplicável]
+- Como reconhecer e classificar: [impacto e critério local]
+- Quem pode isolar, suspender acesso e autorizar recuperação: [preencher]
+- Onde registrar horários, decisões e evidências: [preencher]
+- Comunicação: [destinatários, canal, frequência, aprovador]
+- Recuperação: [cópia, dependências, ambiente, teste de integridade e aceite]
+- Obrigações a avaliar: [competência responsável; não improvisar requisito legal]
+
+#### Durante e depois
+
+1. Registrar descoberta, impacto conhecido e incertezas.
+2. Acionar responsáveis; conter conforme autorização e preservar evidências.
+3. Atualizar negócio com fatos verificados e próxima atualização.
+4. Recuperar em condição segura e conferir serviço com seu dono.
+5. Registrar encerramento, limitações e correções atribuídas.
+
+**Exercício:** [cenário, data, participantes, resultado e próxima revisão]. Não considerar o plano testado só por ter sido assinado. Não colocar credenciais no documento.
+
+Fundamento: orientação CISA [F12](<../framework/referencias/fontes.md#f12>), adaptada a um registro breve do GEAR.
+
+
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
+
+## Template 8: maturidade e plano de melhoria
+
+### Registro de maturidade
+
+Preencher com TI e dono do processo usando o [questionário](<../framework/adocao/maturidade.md>). Comparar apenas aplicações com contexto e janela conhecidos.
+
+**Organização/processo:** [preencher]  
+**Data, janela de evidência e avaliadores:** [preencher]
+
+| Pergunta | Resposta 0/1 | Evidência, data e limite | Ação quando insuficiente |
+| --- | --- | --- | --- |
+| 1. Registro e responsável | | | |
+| 2. Capacidade e fluxo | | | |
+| 3. Orientações verificadas | | | |
+| 4. Prioridades decididas | | | |
+| 5. Escopo e aceite | | | |
+| 6. Dependências críticas | | | |
+| 7. Recuperação testada | | | |
+| 8. Acesso controlado | | | |
+| 9. Indicadores rastreáveis | | | |
+| 10. Revisão responsável | | | |
+
+**IM-TI e nível descritivo:** [soma e faixa].  
+**Mudanças em relação à aplicação anterior:** [prática, evidência e contexto].  
+**Até três ações prioritárias:** [responsável e prazo].  
+**Lacunas críticas e risco aceito:** [aprovação e motivo].  
+**Próxima revisão:** [data e responsável].
+
+Concluir com evidências consultáveis e pendências atribuídas. Este registro não constitui certificação nem exige IA.
+
+
+Assistência opcional: fornecer somente dados autorizados, pedir uma minuta e registrar lacunas. Quem tem responsabilidade confere a saída e aprova o uso; o modelo não determina configuração ou alçada real.
+
+Consulta: [biblioteca modular](../framework/templates/README.md), [instrução de tarefa](../framework/templates/instrucao-assistencia.md) e [contratos específicos](../framework/templates/prompts-assistencia.md). Fontes: [referências e limites](../framework/referencias/fontes.md).

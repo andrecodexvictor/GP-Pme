@@ -1,83 +1,62 @@
-# Template: Product Requirements Document (PRD) Completo
+# GEAR: PRD e critérios de aceite
 
-Este é o modelo oficial de **PRD Completo** do framework **GP-PME**. Ele foi projetado para conciliar a agilidade de preenchimento (limite estrito de 1 a 2 páginas) com a clareza técnica necessária para que equipes enxutas ou desenvolvedores terceirizados compreendam e entreguem o projeto no prazo máximo de **2 semanas (MVP)**, evitando desvios de escopo comuns.
+Edição editorial GEAR 2026.10. Caminho GP-PME preservado para compatibilidade. Modelos completos, revistos a partir da biblioteca anterior; preencher com dados reais e registrar lacunas. IA é opcional. Direitos conforme LICENSE.md.
 
----
+## Percurso de leitura
 
-## 🏗️ Modelo de PRD para Preenchimento
+- [PRD curto e registro de aceite](#prd-curto-e-registro-de-aceite)
 
-*Copie o conteúdo abaixo para iniciar a especificação de uma nova funcionalidade ou sistema.*
+## PRD curto e registro de aceite
 
-```markdown
-# PRD [GP-PME]: [NOME DO PROJETO OU FUNCIONALIDADE]
+Use para uma melhoria delimitada. Dono do processo valida a necessidade; TI confere viabilidade; executor verifica o comportamento; usuário ou dono do processo aceita a saída.
 
-## 1. VISÃO GERAL E VALOR DE NEGÓCIO
-- **Data de Solicitação**: DD/MM/AAAA  |  **Versão**: 1.0
-- **Dono do Produto (Product Owner)**: [Nome do Gestor/Solicitante]
-- **Técnico Executor**: [Nome do Técnico ou Equipe de TI]
-- **Dor de Negócio (O Problema)**:
-  [Descreva em até 3 frases o problema operacional diário, custo gerado ou tempo perdido atualmente.]
-- **Objetivo do MVP (A Solução)**:
-  [O que pretendemos construir em até 2 semanas de forma simplificada para erradicar essa dor.]
+### Definição
 
----
+- Identificador, versão, responsável e data: [preencher]
+- Problema observado e evidência: [preencher]
+- Usuário/processo beneficiado: [preencher]
+- Resultado esperado e hipótese de benefício: [preencher]
+- Escopo incluído: [preencher]
+- Exclusões: [preencher]
+- Restrições, permissões e dependências: [preencher]
+- Risco, proprietário e mitigação: [preencher]
+- Recursos e prazo estimados: [preencher]
 
-## 2. HISTÓRIAS DE USUÁRIO (USER STORIES)
-As histórias abaixo definem os perfis e os benefícios esperados na prática:
+### Verificação
 
-*   **História 1**: Como [perfil do colaborador - ex: Vendedor], eu quero [funcionalidade técnica simplificada - ex: ver os novos leads no painel do ERP] para que eu possa [benefício de negócio - ex: iniciar o atendimento em menos de 10 minutos].
-*   **História 2**: Como [perfil - ex: Cliente Final], eu quero [funcionalidade - ex: receber um link de rastreio automático via SMS] para que eu possa [benefício - ex: acompanhar meu pedido sem precisar ligar no suporte].
+| Critério observável | Como testar | Quem verifica | Resultado/evidência |
+| --- | --- | --- | --- |
+| [Dado… quando… então…] | | | |
 
----
+**Plano de retorno:** [como desfazer ou mitigar falha; responsável].
 
-## 3. CRITÉRIOS DE ACEITAÇÃO (MODELO PASSA / NÃO PASSA)
-Os cenários de teste abaixo determinam se a funcionalidade funciona corretamente antes de ir para produção:
+**Aceite:** [pessoa, data, critérios atendidos e pendências].
 
-*   **Cenário 1: [Nome da Ação Principal]**
-    - **Dado que** [contexto inicial - ex: o vendedor está logado no painel e possui 1 novo lead pendente],
-    - **Quando** [ação executada - ex: o vendedor clica no botão "Iniciar Atendimento"],
-    - **Então** [resultado esperado - ex: o status do lead muda para 'Em Atendimento' e abre a tela de conversa no WhatsApp].
+**Acompanhamento do benefício:** [indicador, linha de base, janela, fonte e decisão futura]. Aceite funcional não comprova benefício financeiro. Se o recorte não couber na capacidade, renegociar escopo ou prazo antes de iniciar.
 
-*   **Cenário 2: [Nome do Teste de Segurança ou Desempenho]**
-    - **Dado que** [contexto - ex: o usuário tenta enviar o formulário de cadastro],
-    - **Quando** [ação - ex: deixa o campo obrigatório 'CPF' em branco e clica em enviar],
-    - **Então** [resultado - ex: o sistema impede o envio, exibe um alerta em vermelho e não recarrega a página].
+### Histórias e requisitos operacionais
 
----
+História: `Como [perfil real], quero [comportamento] para [finalidade]`. Usar quantas forem necessárias ao recorte, sem inventar persona, fluxo ou regra de negócio para atingir duas ou três histórias. Requisito desconhecido permanece como pergunta com responsável.
 
-## 4. ESCOPO NEGATIVO (O QUE NÃO FAREMOS NO MVP)
-Para garantir a entrega do projeto em até **2 semanas**, os seguintes itens estão **EXCLUÍDOS** desta fase e serão reavaliados no futuro:
-- *Exclusão 1*: [ex: Integração automatizada com sistemas de faturamento externos].
-- *Exclusão 2*: [ex: Relatórios estatísticos e painéis gráficos (usar tabelas simples no banco de dados)].
-- *Exclusão 3*: [ex: Aplicativo móvel dedicado (utilizar interface web responsiva no navegador)].
+| Requisito | Condição e limite acordados | Ambiente e modo de verificar | Responsável |
+| --- | --- | --- | --- |
+| Desempenho | [ação, quantidade de dados e tempo] | [dispositivo, rede, carga e amostra] | |
+| Acesso/segurança | [perfis, permissões e exceções] | [teste autorizado de permitido/negado] | |
+| Usabilidade | [tarefa, usuários e dispositivos] | [verificação com usuário e limitações] | |
 
----
+Uma meta de dois segundos precisa dessas condições. Erro de formulário deve ser identificável e permitir correção; não usar apenas cor para descrevê-lo. Excluir uma funcionalidade exige acordo e consequência declarados, sem retirar um requisito necessário para que o recorte seja utilizável.
 
-## 5. REQUISITOS NÃO FUNCIONAIS (LIMITES OPERACIONAIS)
-- **Desempenho**: O carregamento da tela e as consultas principais não devem ultrapassar [ex: 2.0 segundos] sob conexão móvel comum.
-- **Segurança**: Autenticação individual via [ex: Usuário e Senha corporativa] e ativação de controle de acessos (LUA).
-- **Usabilidade**: Interface adaptada para [ex: celulares e computadores] sem necessidade de manual complexo de treinamento.
+### Exemplos fictícios para iniciar uma conversa
 
----
+- Financeiro: baixar extratos de três bancos e digitar valores em uma planilha consome tempo e pode gerar erro. O relato antigo de três horas por dia é hipótese do exemplo; conferir frequência, acesso, formatos e custo antes de calcular benefício.
+- Comercial: leads de um formulário demoram a receber resposta. A proposta de encaminhá-los ao vendedor exige regras de atribuição, permissão, horário e teste de entrega; o relato de dois dias e venda perdida não é medição do projeto.
+- Suporte: pedidos por mensagens ficam dispersos. Definir captura e acompanhamento, preservando acesso à ajuda; não supor que metade das tarefas foi perdida.
 
-## 6. MÉTICA DE NEGÓCIO AFETADA (KPI DO PROJETO)
-O sucesso da entrega técnica deste projeto será medido diretamente pelo impacto no indicador:
-*   [ ] **Métrica de Negócio**: [ex: Redução de 20% no tempo médio de primeiro contato com o lead / Aumento de 5% no faturamento do setor].
+Outros exemplos dos modelos anteriores incluíam iniciar atendimento de um lead, informar campo obrigatório ausente e acompanhar pedido. São comportamentos a discutir, sem obrigação de integrar WhatsApp, coletar CPF ou criar aplicativo. Nenhuma história comprova benefício antes da avaliação.
 
----
+### Conferir o preenchimento
 
-## 7. APROVAÇÕES E FLUXO HITL (HUMAN-IN-THE-LOOP)
-- **Validação Técnica (TI/QA)**: [  ] Aprovado  [  ] Necessita Ajustes  |  Data: ___/___/___
-- **Assinatura do Aprovador (PO/Negócios)**: _____________________________________________
-```
+TI e negócio descrevem o problema, acordam critérios antes de implementar, delimitam escopo e identificam quem aprova. Uma conversa de quinze ou vinte minutos pode preparar a minuta; ampliar quando houver lacunas. Uma ou duas páginas são preferência de síntese, com evidências e detalhes vinculados. Um piloto de duas semanas depende de capacidade e escopo, sem garantia universal.
 
----
+Assistência opcional: [contrato de requisitos e entrega](<../../../framework/templates/prompts-assistencia.md#requisitos-e-entrega>). A IA pode preparar propostas; dono do processo aprova regras e aceite, e TI confere viabilidade. Não preencher solicitante, data ou orçamento desconhecidos por inferência.
 
-## 📋 Como Preencher Manualmente (Passo a Passo)
-
-Caso opte por preencher o PRD de forma manual em reuniões rápidas de 20 minutos com a equipe de negócios e TI, siga este fluxo simplificado:
-
-1.  **Foco na Dor Real (Seção 1)**: Não comece discutindo código ou banco de dados. Escreva exatamente o que está incomodando a empresa (ex: *"Perdemos 2 dias para conciliar boletos pagos"*).
-2.  **Crie os Testes Antes do Código (Seção 3)**: Descreva em português claro como o usuário vai testar a entrega física. Se o teste passar, o projeto é considerado concluído.
-3.  **Use a Borracha no Escopo (Seção 4)**: Esta é a seção mais importante de todas. Seja extremamente rígido em remover tudo o que for perfumaria ou complexidade. Se um recurso atrasar a entrega para além de 2 semanas, **jogue-o para o Escopo Negativo**.
-4.  **Assine no Papel (Seção 7)**: O hábito da assinatura e da validação técnica e de negócio gera responsabilidade compartilhada e evita o retrabalho.

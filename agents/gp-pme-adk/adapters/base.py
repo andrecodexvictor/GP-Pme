@@ -7,26 +7,21 @@ Em modo dry-run (GPPME_DRY_RUN=1 ou credenciais ausentes) nenhuma chamada de red
 from __future__ import annotations
 
 import os
+import sys
+from pathlib import Path
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Any
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from server.core import protocolo_kanban
 
 # Colunas canônicas do quadro GP-PME (Pilar 2 — Ciclo Micro-Adaptativo)
 COLUNAS_GP_PME = ["A Fazer", "Em Andamento (máx 3)", "Em Teste", "Concluído"]
 ETIQUETA_RAIA_RAPIDA = "🔥 Raia Rápida"
 LIMITE_WIP = 3
 
-# Tarefas da Fase Zero (fonte: GP-PME antigravity/Guides/Guia_de_Implementacao_Fase_Zero.md)
-FASE_ZERO_TASKS = [
-    "Nomear o Dono da TI e formar o CD-TI Lite (reunião quinzenal de 30 min)",
-    "Definir o Canal Único de entrada de demandas de TI",
-    "Montar o quadro Kanban GP-PME com 4 colunas e limite WIP = 3",
-    "Preencher a Matriz 4 Quadrantes com os sistemas/ativos atuais",
-    "Aplicar a autoavaliação de maturidade (IM-TI) e registrar o resultado",
-    "Implantar os 3 KPIs visíveis: IDSC, TMpR e ISU",
-    "Executar o checklist dos 10 controles NIST-Lite/CIS IG1",
-    "Rodar o primeiro ciclo semanal (sprint de 1 semana) com retrospectiva",
-]
+# Uma origem para as propostas iniciais; não são conclusões verificadas.
+FASE_ZERO_TASKS = [t['titulo'] for t in protocolo_kanban()['tarefas_semente_fase_zero']]
 
 
 @dataclass
@@ -101,29 +96,46 @@ class PlataformaGestao(ABC):
         """Move um card para outra coluna."""
 
     # ------------------------------------------------- protocolo GP-PME
-    def configurar_quadro_gp_pme(self, nome: str = "GP-PME — Gestão de TI") -> Quadro:
+    def configurar_quadro_gp_pme(self, nome: str = "GEAR — Gestão de TI") -> Quadro:
         """Cria o quadro canônico do framework: 4 colunas + tasks da Fase Zero."""
         quadro = self.criar_quadro(nome)
         quadro = self.criar_colunas(quadro, COLUNAS_GP_PME)
         for task in FASE_ZERO_TASKS:
             self.criar_cartao(quadro, task, COLUNAS_GP_PME[0],
-                              descricao="Tarefa da Fase Zero do GP-PME.")
+                              descricao="Proposta inicial GEAR; conferir responsável, aceite e evidência.")
         return quadro
 
     def verificar_wip(self, quadro: Quadro) -> dict[str, Any]:
-        """Verifica o limite WIP=3 na coluna Em Andamento; retorna diagnóstico."""
-        em_andamento = [c for c in self.listar_cartoes(quadro)
-                        if c.coluna.startswith("Em Andamento")]
-        estourado = len(em_andamento) > LIMITE_WIP
+        """Conta trabalho iniciado por executor; ausência de executor limita a conclusão.
+
+        Adapters podem fornecer extra['executor'] e extra['bloqueado']. O nome
+        da coluna antiga permanece compatível; teste também compromete capacidade.
+        """
+        iniciados = [c for c in self.listar_cartoes(quadro)
+                     if c.coluna.startswith("Em Andamento") or c.coluna in ("Em Teste", "Bloqueado")
+                     or c.extra.get("bloqueado") or c.extra.get("iniciado")]
+        por_executor: dict[str, int] = {}
+        sem_executor = 0
+        for cartao in iniciados:
+            executor = cartao.extra.get("executor")
+            if executor:
+                por_executor[str(executor)] = por_executor.get(str(executor), 0) + 1
+            else:
+                sem_executor += 1
+        estourado = any(n > LIMITE_WIP for n in por_executor.values()) or sem_executor > LIMITE_WIP
         return {
-            "coluna": COLUNAS_GP_PME[1],
-            "cartoes": len(em_andamento),
+            "coluna": COLUNAS_GP_PME[1],  # Campo histórico; consultar estados_contados.
+            "estados_contados": ["Em Andamento", "Em Teste", "Bloqueado"],
+            "cartoes": len(iniciados),
             "limite": LIMITE_WIP,
             "estourado": estourado,
-            "recomendacao": (
-                "Pare de puxar trabalho novo: termine um item antes de iniciar outro."
-                if estourado else "WIP saudável."
-            ),
+            "por_executor": por_executor,
+            "sem_executor": sem_executor,
+            "verificacao_completa": sem_executor == 0,
+            "recomendacao": "Conferir trabalho por executor, testes, bloqueios e exceções. "
+                + ("Há itens sem executor; o alerta agregado não comprova excesso individual."
+                   if sem_executor else "Excesso identificado: rever capacidade antes de iniciar outro item."
+                   if estourado else "Contagem por executor dentro do limite local."),
         }
 
     def relatorio_quadro(self, quadro: Quadro) -> dict[str, Any]:

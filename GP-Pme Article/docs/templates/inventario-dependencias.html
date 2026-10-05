@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inventário de ativos e dependências · GEAR</title><meta name="description" content="Framework de governança e gestão de TI para pequenas e médias empresas."><link rel="stylesheet" href="../../assets/gear.css"><script defer src="../../assets/gear.js"></script></head>
+<body><a class="skip" href="#conteudo">Ir para o conteúdo</a><header class="site-header"><div class="header-inner"><a href="../../index.html">GEAR</a><nav class="desktop-nav" aria-label="Navegação principal"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Navegação móvel"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav></details></div></header>
+<main id="conteudo"><div class="doc-layout"><nav class="doc-nav" aria-label="Percurso documental"><p class="nav-label">Percursos</p><a href="../adocao/primeiros-30-dias.html">Começar</a><a href="../guias/README.html">Executar</a><a href="../../biblioteca.html">Consultar</a><a href="../fundamentos/origens-adaptacoes.html">Compreender</a></nav><article class="prose"><p class="meta"><a href="../../index.html">GEAR</a> / Documentação · Edição editorial 2026.10</p><h1 id="inventario-de-ativos-e-dependencias">Inventário de ativos e dependências</h1>
+<p>Use para compreender o que sustenta um serviço e preparar sua proteção e recuperação. Dono do serviço define impacto; TI verifica dependências; proprietário confirma responsabilidade. Começar pelos serviços críticos e registrar cobertura parcial. Criticidade não se deduz do cargo de quem usa o equipamento.</p>
+<h2 id="servico-e-cobertura">Serviço e cobertura</h2>
+<ul><li>Serviço/processo, proprietário e data de revisão: [preencher]</li><li>Consequência da indisponibilidade e evidência: [preencher]</li><li>RTO e RPO acordados, com justificativa: [preencher]</li><li>Escopo inventariado, lacunas e responsável pela ampliação: [preencher]</li></ul>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Tabela: Serviço e cobertura"><table style="--columns:5"><thead><tr><th scope="col">ID e ativo/dependência</th><th scope="col">Tipo e localização</th><th scope="col">Proprietário e fornecedor</th><th scope="col">Criticidade/motivo</th><th scope="col">Dados e acesso necessários</th></tr></thead><tbody><tr><td>[preencher]</td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Tabela: Serviço e cobertura"><table style="--columns:5"><thead><tr><th scope="col">ID</th><th scope="col">MFA/acesso: evidência e exceção</th><th scope="col">Cópia: frequência e retenção</th><th scope="col">Recuperação: teste e limite</th><th scope="col">Ação, responsável e prazo</th></tr></thead><tbody><tr><td>[vincular ao ativo]</td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<p>Registrar referência à evidência com acesso adequado; não guardar senhas ou chaves neste modelo. “MFA ativo” exige configuração verificada e escopo declarado. “Backup ativo” exige identificar solução, fonte e retenção; teste de arquivo não comprova recuperação de todo o serviço.</p>
+<p>Se for usada criticidade de 1 a 5, definir cada faixa e exemplos com o dono do processo. A escala é local e não mede porcentagem de risco. Dependências de um ativo crítico podem precisar de tratamento mesmo quando seu uso parece secundário.</p>
+<h2 id="conferir-e-atualizar">Conferir e atualizar</h2>
+<p>TI compara registro e ambiente; proprietário confirma uso e impacto. Registrar alteração após mudança de conta, integração, fornecedor ou serviço. Concluir o recorte quando ativos conhecidos estão atribuídos e lacunas têm plano; não declarar inventário completo enquanto faltar cobertura.</p>
+<p>O nome anterior “Inventário 80/20” expressava priorização, sem prova de que 20% dos ativos representam 80% da receita ou risco. Exemplos antigos de ERP, planilha financeira, notebook e serviço de chamados são possibilidades de ativo, não configuração real do projeto.</p>
+<p>Fundamento: <a href="../nucleo/seguranca-continuidade.html">segurança e continuidade</a>, <a href="../referencias/fontes.html#f01">NIST F01–F02</a>. Próximo modelo: <a href="risco-continuidade.html">risco e continuidade</a>.</p><details class="template-source"><summary>Versão Markdown para copiar</summary><pre><code># Inventário de ativos e dependências
+
+Use para compreender o que sustenta um serviço e preparar sua proteção e recuperação. Dono do serviço define impacto; TI verifica dependências; proprietário confirma responsabilidade. Começar pelos serviços críticos e registrar cobertura parcial. Criticidade não se deduz do cargo de quem usa o equipamento.
+
+## Serviço e cobertura
+
+- Serviço/processo, proprietário e data de revisão: [preencher]
+- Consequência da indisponibilidade e evidência: [preencher]
+- RTO e RPO acordados, com justificativa: [preencher]
+- Escopo inventariado, lacunas e responsável pela ampliação: [preencher]
+
+| ID e ativo/dependência | Tipo e localização | Proprietário e fornecedor | Criticidade/motivo | Dados e acesso necessários |
+| --- | --- | --- | --- | --- |
+| [preencher] | | | | |
+
+| ID | MFA/acesso: evidência e exceção | Cópia: frequência e retenção | Recuperação: teste e limite | Ação, responsável e prazo |
+| --- | --- | --- | --- | --- |
+| [vincular ao ativo] | | | | |
+
+Registrar referência à evidência com acesso adequado; não guardar senhas ou chaves neste modelo. “MFA ativo” exige configuração verificada e escopo declarado. “Backup ativo” exige identificar solução, fonte e retenção; teste de arquivo não comprova recuperação de todo o serviço.
+
+Se for usada criticidade de 1 a 5, definir cada faixa e exemplos com o dono do processo. A escala é local e não mede porcentagem de risco. Dependências de um ativo crítico podem precisar de tratamento mesmo quando seu uso parece secundário.
+
+## Conferir e atualizar
+
+TI compara registro e ambiente; proprietário confirma uso e impacto. Registrar alteração após mudança de conta, integração, fornecedor ou serviço. Concluir o recorte quando ativos conhecidos estão atribuídos e lacunas têm plano; não declarar inventário completo enquanto faltar cobertura.
+
+O nome anterior “Inventário 80/20” expressava priorização, sem prova de que 20% dos ativos representam 80% da receita ou risco. Exemplos antigos de ERP, planilha financeira, notebook e serviço de chamados são possibilidades de ativo, não configuração real do projeto.
+
+Fundamento: [segurança e continuidade](../nucleo/seguranca-continuidade.md), [NIST F01–F02](../referencias/fontes.md#f01). Próximo modelo: [risco e continuidade](risco-continuidade.md).
+</code></pre></details></article><aside class="toc"><nav aria-label="Nesta página"><p class="nav-label">Nesta página</p><a href="#servico-e-cobertura">Serviço e cobertura</a><a href="#conferir-e-atualizar">Conferir e atualizar</a></nav></aside></div></main><footer><div class="footer-inner"><p>GEAR · Gestão, Execução, Agilidade e Risco<br>Andre Victor · Edição editorial 2026.10</p><p><a href="../referencias/fontes.html">Fontes e limites</a> · <a href="../fundamentos/origens-adaptacoes.html">Evolução do método</a><br><a href="../../../LICENSE.md">Direitos e licença</a></p></div></footer></body></html>

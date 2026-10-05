@@ -1,45 +1,45 @@
-# Bloco 4: O Motor de IA: Seu Assistente Inteligente para o Sucesso
+# Usar assistência opcional por IA
 
----
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
-## 4.1. A IA como Seu Assistente Pessoal (Multiplicador de Produtividade)
+## Percurso de leitura
 
-No framework **GP-PME**, a Inteligência Artificial Generativa (IAG) atua como um **co-piloto inteligente transversal e opcional**. Ela foi desenhada para suprir a escassez de recursos humanos em pequenas e médias empresas, dando ao profissional técnico a eficiência produtiva de um departamento inteiro de tecnologia.
+- [Usar IA quando for útil](#usar-ia-quando-for-util)
+- [Preparar uma solicitação](#preparar-uma-solicitacao)
 
-Se a sua empresa optou por não utilizar Inteligência Artificial, o framework funciona de forma **100% manual e analógica**. Caso deseje acelerar seus processos, a IA atua nos bastidores automatizando o atendimento de suporte via chatbot (FAQ) e rascunhando relatórios estratégicos e especificações técnicas de novos projetos.
+## Usar IA quando for útil
 
----
+Fornecer tarefa, dados autorizados, restrições e saída pretendida. Conferir fontes, cálculos e lacunas. A resposta deve separar informação fornecida, hipótese e recomendação. A pessoa com alçada decide se a saída pode ser usada. Um prompt não elimina erros; a equipe pode executar a mesma tarefa sem IA.
 
-## 4.2. A "Receita" para Perguntar Certo (Prompt Eficaz)
+Quatro funções conceituais organizam a assistência: direção, entrega, segurança e auditoria. O software histórico tem um orquestrador e oito especialistas. As contagens descrevem camadas distintas e não criam novos domínios.
 
-Para obter as melhores respostas da Inteligência Artificial sem que ela invente dados falsos ("alucinações") ou traga respostas técnicas vagas, o GP-PME estabelece uma **"Receita" simples e poderosa** em três etapas para você formular suas instruções:
+## Preparar uma solicitação
 
-```mermaid
-graph TD
-    A[Sua Pergunta para a IA] --> B(Ingrediente 1: CONTEXTO CLARO)
-    B --> C(Ingrediente 2: INSTRUÇÕES DETALHADAS)
-    C --> D(Ingrediente 3: VERIFICAÇÃO INTELIGENTE)
-    
-    style A fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff
-    style B fill:#0f172a,stroke:#3b82f6,color:#fff
-    style C fill:#0f172a,stroke:#10b981,color:#fff
-    style D fill:#0f172a,stroke:#eab308,color:#fff
+Use para rascunhar uma pauta, requisito, orientação ou cálculo que uma pessoa possa revisar. Responsável pela tarefa fornece dados autorizados; quem tem alçada decide o uso. Entrada: contexto, tarefa, restrições e fontes. Saída: minuta verificada ou lacunas explícitas.
+
+Exemplo fictício de contexto: loja de roupas com dez computadores e vendas em nuvem. O exemplo descreve entrada, sem comprovar configuração ou segurança.
+
+```text
+Contexto: [serviço, pessoas afetadas, dependências e dados autorizados].
+Tarefa: preparar uma lista breve de lacunas de continuidade.
+Formato: problema, evidência, pergunta pendente, responsável e próximo passo.
+Informar origem, data e limite de cada dado. Conferir fontes externas.
+Separar fatos, hipótese e proposta; registrar informação insuficiente.
+Autoridade humana: [quem revisa e pode aprovar efeitos organizacionais].
 ```
 
-*   **1. Contexto Claro**: Explique as características básicas do seu negócio (ex: "Minha empresa é uma loja de roupas com 10 computadores locais e usamos um sistema de vendas em nuvem").
-*   **2. Instruções Detalhadas**: Diga exatamente qual formato e limites você espera na resposta (ex: "Gere um checklist de segurança de no máximo 1 página, em português direto, livre de termos difíceis para leigos").
-*   **3. Verificação Inteligente**: Instrua a IA a se abster de adivinhar ou inventar dados se houver informações pendentes, forçando-a a deixar lacunas explícitas sob a frase "Perguntas de Negócio Pendentes".
+| Função de assistência | Minuta possível | Conferência humana |
+| --- | --- | --- |
+| Direção | Pauta e alternativas | Alçada, prioridade e recursos |
+| Entrega | PRD e critérios | Viabilidade e aceite |
+| Segurança | Lacunas e plano | Evidência, contenção e recuperação |
+| Indicadores | Memória de cálculo | Premissas, unidades e fonte |
 
----
+Concluir somente após verificar a saída e registrar aprovação, correção ou rejeição. Manter lacunas com responsável para obter o dado. A ferramenta pode errar mesmo quando segue o formato pedido; não equivale a uma equipe inteira de TI nem possui tempo garantido de resposta. A estrutura e a revisão são propostas locais; referências conceituais e limites estão nas fontes do GEAR.
 
-## 4.3. Os Seus 4 Assistentes Especialistas (Opcionais)
+## Próxima tarefa e referências
 
-Se você decidir usar a IA de forma avançada corporativamente, o framework define quatro assistentes especialistas prontos para atuar:
+- [Usar assistência por IA](<../../../framework/guias/usar-ia.md>)
+- [Prompts para quatro funções de assistência](<../../../framework/templates/prompts-assistencia.md>)
 
-1.  **O Orquestrador (Pilar I)**: Ajuda a montar atas simplificadas, briefings e pautas estruturadas para o CD-TI Lite em menos de 2 minutos.
-2.  **O Analista (Pilar II)**: Auxilia a detalhar histórias de usuário, PRDs e checklists operacionais do Kanban.
-3.  **O Guardião (Pilar III)**: Audita permissões de usuários e logs, e gera políticas rápidas de segurança cibernética em português simples.
-4.  **O Auditor (Métricas)**: Auxilia nos cálculos das dívidas técnicas de arquitetura (DAN/COT), calculando o ROI real de projetos de TI para apresentar ao financeiro.
-
-### Regra de Ouro da IA (HITL):
-Nunca coloque em produção ou utilize qualquer documento, código ou política gerado por IA sem que ele passe pela **leitura, validação e assinatura física do Gestor técnico humano** (*Human-in-the-loop*). A IA é um excelente copiloto, mas a responsabilidade de negócios e a decisão final são sempre humanas!
+Fontes F01–F12 e limites de consulta: [referências completas](<../../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

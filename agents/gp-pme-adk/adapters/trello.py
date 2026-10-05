@@ -30,7 +30,6 @@ from __future__ import annotations
 
 import os
 
-import httpx
 
 from .base import Cartao, ETIQUETA_RAIA_RAPIDA, PlataformaGestao, Quadro
 
@@ -66,6 +65,7 @@ class Adapter(PlataformaGestao):
         return {"key": os.environ["TRELLO_KEY"], "token": os.environ["TRELLO_TOKEN"]}
 
     def _cliente(self) -> httpx.Client:
+        import httpx  # Dependência apenas do transporte real.
         return httpx.Client(base_url=_BASE_URL, timeout=30)
 
     def _tratar_erro(self, resp: httpx.Response, contexto: str) -> None:

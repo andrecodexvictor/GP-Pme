@@ -1,50 +1,44 @@
-# Guia Leigo - Pilar 3: Como Blindar os Dados da Sua Empresa sem Custos Altos (NIST-Lite)
+# Guia de continuidade e evidências
 
-**Autor**: Antigravity AI (sob a direção de Andre Victor)
-**Versão**: 5.2 (Consolidada - Filosofia TI Enxuta Integrada)
-**Data**: 02 de Junho de 2026
+Edição editorial GEAR 2026.10. Documento completo no caminho anterior para compatibilidade; regras vigentes em `framework/`. Direitos conforme LICENSE.md.
 
----
+Origem: versão declarada 5.2, de 02/06/2026. Crédito declarado: Antigravity AI, sob a direção de Andre Victor.
 
-## 1. O que é o Pilar 3 (Segurança Crítica)?
+## Percurso de leitura
 
-O **Pilar 3** é o escudo de segurança digital da sua empresa. Ele foi desenhado especificamente para blindar o seu negócio contra os perigos mais comuns e devastadores da internet (sequestros de computadores por hackers, vírus que apagam arquivos e roubos de senhas em redes sociais ou e-mails corporativos).
+- [Continuidade: conhecer dependências e testar](#continuidade-conhecer-dependencias-e-testar)
+- [O que direção e TI precisam conferir](#o-que-direcao-e-ti-precisam-conferir)
 
-Diferente de grandes corporações que gastam fortunas com softwares caros de segurança, a TI Enxuta aplica o modelo **NIST-Lite** focando em **4 controles manuais de baixíssimo custo e altíssima eficácia**:
+## Continuidade: conhecer dependências e testar
 
-```
-[ IDENTIFICAR ] -> Inventário 80/20 (Planilha simples com os sistemas vitais)
-      |
-      +---> [ PROTEGER ] -> Privilégio Mínimo (MFA ativo nas contas e sem logins Admin)
-      |
-      +---> [ PROTEGER ] -> Backups Automáticos em Nuvem (Testados a cada 3 meses)
-      |
-      +---> [ RESPONDER ] -> Plano de Emergência de 1 Página (Checklist impresso)
-```
+Identifique o serviço que precisa continuar, seus dados, contas, equipamentos e fornecedores. Comece pelas dependências críticas e registre o que falta mapear. O nome antigo “Inventário 80/20” expressava priorização; não prova que 20% dos ativos geram 80% do faturamento.
 
-Estes controles atuam como a **bússola de crescimento seguro** da sua PME, garantindo que o seu faturamento e sua expansão comercial estejam protegidos contra incidentes devastadores.
+Contas individuais, acesso necessário e MFA reduzem exposições específicas, sem impedir todo ataque. Registre cobertura e exceções. MFA é autenticação multifator; um código de celular é apenas uma implementação possível, não a definição completa.
 
----
+Combine frequência e retenção de backup com a perda de dados tolerável. Proteja a cópia e teste restauração em ambiente autorizado. Um arquivo recuperado não comprova recuperação do serviço inteiro. Os antigos parâmetros de backup diário, teste trimestral e 30 minutos precisam de justificativa local.
 
-## 2. Os 4 Controles de Segurança que Você Deve Exigir da TI
+Prepare o PRI com contatos conferidos, autoridade para contenção, comunicação e passos de recuperação. No incidente, preserve evidências e confirme serviço e dados com seu dono. Formatação e desligamento não são instruções universais. Obrigações legais vão à competência responsável.
 
-Como CEO ou diretor da empresa, você não precisa saber códigos de segurança difíceis. Você só precisa auditar se estes 4 itens manuais estão funcionando ativamente:
+## O que direção e TI precisam conferir
 
-### Controle 1: O Inventário 80/20 (Saber o que Proteger)
-Mapear a segurança de 100% de tudo em uma PME de uma vez é inviável e gera perda de tempo. Nós focamos na Regra de Pareto: o gestor de TI deve manter uma planilha simples local listando os **20% dos ativos tecnológicos que geram 80% do faturamento da empresa** (ex: o banco de dados do seu sistema de vendas, o computador do faturamento de notas fiscais, a conta de administração de e-mails em nuvem). Nossa prioridade de blindagem será voltada para esses ativos críticos!
+Use antes de depender de uma cópia de segurança e quando um serviço crítico muda. Direção confirma recursos e risco; dono do serviço define tolerâncias; TI organiza teste e controles. Entradas: serviço, dependências, cópia, acesso e autorização. Saída: evidência de recuperação com limites e ações atribuídas.
 
-### Controle 2: Senhas Seguras (MFA) e Contas Livres de Admin
-*   **MFA (Confirmação de Acesso)**: Você deve exigir a ativação obrigatória de Autenticação de Dois Fatores (aquela confirmação por código enviado ao celular) em 100% dos e-mails profissionais dos colaboradores e contas de sistemas financeiros. Isso bloqueia até 98% dos roubos de contas tradicionais.
-*   **Privilégio Mínimo**: Seus colaboradores comuns **não devem ter contas com acesso de "Administrador local"** em seus computadores corporativos. As permissões devem ser restritas para uso comum diário. Se um colaborador clicar acidentalmente em um link malicioso e um vírus for baixado, o computador pedirá a senha do administrador da TI para instalar, impedindo que o vírus contamine a máquina ou se alastre pela rede da empresa de forma invisível.
+- [ ] Serviços e dependências prioritários estão registrados com proprietário?
+- [ ] Contas críticas têm acesso necessário, MFA e exceções visíveis?
+- [ ] A cópia tem proteção, retenção e frequência acordadas?
+- [ ] O teste registra dados recuperados, serviço verificado, duração e limitações?
+- [ ] O plano de incidente tem contatos e autoridades conferidos?
+- [ ] Pendências têm responsável e próxima revisão?
 
-### Controle 3: Backup Automático em Nuvem (e Testado de Verdade!)
-*   Os arquivos e dados cruciais da sua empresa (listados no Inventário 80/20) devem ser copiados sozinhos diariamente para um local seguro na internet (Google Drive corporativo, OneDrive, etc.).
-*   **O Teste do Balde de Água Fria**: A cada **3 meses**, o seu profissional de TI deve realizar um teste manual prático simulando que um arquivo vital sumiu da rede, recuperando-o do backup em menos de 30 minutos. O sucesso desse teste prático de recuperação deve ser obrigatoriamente apresentado e assinado na ata da sua reunião quinzenal CD-TI Lite.
+Backup concluído, arquivo restaurado e serviço recuperado são evidências diferentes. Se o teste falhar, registrar a falha e planejar correção; a assinatura de uma folha não altera o resultado. Guardar o plano onde possa ser acessado durante indisponibilidade, preservando informações restritas.
 
-### Controle 4: O Plano de Emergência (PRI) de 1 Página
-Se a empresa for atacada por hackers ou pegarem um vírus ransomware (sequestrador de dados), o desespero e o caos podem piorar a situação (ex: funcionários apagando coisas importantes ou desligando sistemas incorretamente).
+No incidente, registrar sinais observados, acionar o responsável, avaliar contenção autorizada e comunicar fatos verificados. Confirmar recuperação com o negócio. Contatos não fornecidos ficam pendentes; não inventar números ou obrigações legais. Se a capacidade local for insuficiente, acionar especialista ou fornecedor previsto.
 
-A empresa deve manter uma **folha física impressa e fixada na parede da TI** contendo as seguintes diretrizes emergenciais de 1 página:
-1.  **Contenção Imediata**: Desconectar fisicamente todos os cabos de rede e desligar o Wi-Fi de computadores infectados ou suspeitos, **sem desligar a máquina da tomada** (isso impede o vírus de contaminar outras máquinas na rede local e preserva evidências digitais importantes na memória).
-2.  **Lista de Chamada**: Nome e contato direto dos técnicos emergenciais da TI, do CEO e de provedores de internet a serem notificados imediatamente na primeira hora da crise.
-3.  **Restauro Planejado**: Roteiro simples de reinstalação dos sistemas operacionais e início da restauração passo a passo dos arquivos do backup em nuvem testado.
+Fundamento: NIST F01–F02 e CISA F12. Quatro práticas locais não equivalem ao NIST completo nem às 56 salvaguardas CIS IG1 (F11). Não há eficácia de 98% demonstrada para essa seleção.
+
+## Próxima tarefa e referências
+
+- [Segurança e continuidade](<../../framework/nucleo/seguranca-continuidade.md>)
+- [Risco e continuidade](<../../framework/templates/risco-continuidade.md>)
+
+Fontes F01–F12 e limites de consulta: [referências completas](<../../framework/referencias/fontes.md>). Os originais e o registro de revisão são preservados em `.context/`.

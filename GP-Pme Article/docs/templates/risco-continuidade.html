@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Risco e continuidade · GEAR</title><meta name="description" content="Framework de governança e gestão de TI para pequenas e médias empresas."><link rel="stylesheet" href="../../assets/gear.css"><script defer src="../../assets/gear.js"></script></head>
+<body><a class="skip" href="#conteudo">Ir para o conteúdo</a><header class="site-header"><div class="header-inner"><a href="../../index.html">GEAR</a><nav class="desktop-nav" aria-label="Navegação principal"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Navegação móvel"><a href="../README.html" aria-current="page">Documentação</a><a href="../../biblioteca.html">Biblioteca</a><a href="../../blog/index.html">Blog</a><a href="../../busca.html">Buscar</a></nav></details></div></header>
+<main id="conteudo"><div class="doc-layout"><nav class="doc-nav" aria-label="Percurso documental"><p class="nav-label">Percursos</p><a href="../adocao/primeiros-30-dias.html">Começar</a><a href="../guias/README.html">Executar</a><a href="../../biblioteca.html">Consultar</a><a href="../fundamentos/origens-adaptacoes.html">Compreender</a></nav><article class="prose"><p class="meta"><a href="../../index.html">GEAR</a> / Documentação · Edição editorial 2026.10</p><h1 id="risco-e-continuidade">Risco e continuidade</h1>
+<p>Use quando uma dependência pode impedir o serviço ou expor informações. Proprietário do serviço descreve impacto; TI verifica controles e recuperação; direção aceita risco dentro da alçada.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Tabela: Risco e continuidade"><table style="--columns:2"><thead><tr><th scope="col">Campo</th><th scope="col">Registro</th></tr></thead><tbody><tr><td>Serviço, proprietário e data</td><td></td></tr><tr><td>Ativos, dados e fornecedores críticos</td><td></td></tr><tr><td>Evento e consequência</td><td></td></tr><tr><td>Evidência de exposição e incerteza</td><td></td></tr><tr><td>Controles existentes e verificação</td><td></td></tr><tr><td>Tratamento escolhido, responsável e prazo</td><td></td></tr><tr><td>Risco residual e aprovador</td><td></td></tr><tr><td>Tempo de recuperação tolerável (RTO)</td><td></td></tr><tr><td>Perda de dados tolerável (RPO)</td><td></td></tr><tr><td>Backup, proteção, retenção e responsável</td><td></td></tr><tr><td>Teste: cenário, ambiente, horários e resultado</td><td></td></tr><tr><td>Validação do serviço pelo negócio</td><td></td></tr><tr><td>Pendências e próxima revisão</td><td></td></tr></tbody></table></div>
+<p>O teste pode recuperar um arquivo, uma base ou o serviço inteiro. Declarar o recorte para que a conclusão corresponda à evidência. Se o tempo medido exceder a tolerância, registrar o desvio e decidir tratamento, sem alterar o objetivo retroativamente para declarar sucesso.</p>
+<p>Fundamento: NIST <a href="../referencias/fontes.html#f01">F01</a>, <a href="../referencias/fontes.html#f02">F02</a> e CISA <a href="../referencias/fontes.html#f12">F12</a>. O formato é uma adaptação local.</p>
+<h2 id="analise-qualitativa-e-assistencia-opcional">Análise qualitativa e assistência opcional</h2>
+<p>Se usar probabilidade e impacto baixo/médio/alto, definir critérios, origem e incerteza antes de combinar categorias. Sem evidência, registrar hipótese a investigar, sem converter rótulo em probabilidade numérica. A análise local não certifica conformidade NIST ou CIS.</p>
+<pre><code>Tarefa: preparar minuta de análise de risco do GEAR.
+Entrada: [serviço, ativo, uso, dependências e evidências autorizadas].
+Saída: evento, exposição verificada ou hipótese, consequência, controles
+existentes, lacunas, alternativas, esforço, responsável e verificação.
+Quando houver classificação qualitativa, usar os critérios informados.
+Não inferir vulnerabilidade, CVE, configuração ou probabilidade por marca.
+Não garantir custo zero, proteção integral ou recuperação em prazo fixo.
+Conferir fontes externas junto à afirmação, incluindo versão e trecho.
+Identificar autoridade para contenção, comunicação e aceitação de risco.
+Deixar contato não fornecido pendente; não prescrever isolamento universal.
+A pessoa responsável confere a análise e autoriza os efeitos apropriados.</code></pre>
+<h2 id="cenarios-ficticios-dos-modelos-anteriores">Cenários fictícios dos modelos anteriores</h2>
+<ul><li>ERP em nuvem com dados cadastrais e financeiros. O exemplo mencionava cinco mil clientes e acesso por senha; é hipótese didática. Conferir identidade, MFA, dados tratados, permissões e recuperação antes de avaliar exposição.</li><li>Serviço de arquivos de escritório contábil com versão antiga de Windows Server e acesso compartilhado. Confirmar versão, suporte, permissões e cópia; “antigo” não identifica sozinho uma vulnerabilidade ou CVE.</li><li>Notebooks usados em viagens com propostas e planilhas confidenciais. Conferir acesso, criptografia, atualização, guarda e recuperação; não inferir configuração real pelo cargo do usuário.</li></ul>
+<p>Na análise manual, partir do efeito sobre o serviço, conferir acesso e evidências de cópia e recuperação, depois comparar tratamentos. Frequência mensal ou trimestral depende do requisito local. Uma falha de controle precisa de investigação e resposta proporcional, não de ordem automática de alteração sem alçada.</p>
+<h2 id="verificacoes-complementares-locais">Verificações complementares locais</h2>
+<p>As skills anteriores mantinham dez verificações de segurança. Esta lista conserva a cobertura do modelo, como seleção autoral a adaptar. Ela não representa o catálogo completo do NIST CSF ou do CIS IG1, nem demonstra conformidade por quantidade de itens marcados.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Tabela: Verificações complementares locais"><table style="--columns:2"><thead><tr><th scope="col">Verificação</th><th scope="col">Evidência a obter no recorte</th></tr></thead><tbody><tr><td>Hardware e dispositivos</td><td>Inventário, proprietário, uso, localização e cobertura desconhecida</td></tr><tr><td>Software e serviços</td><td>Versões, uso autorizado, responsável e dependências</td></tr><tr><td>Vulnerabilidades</td><td>Origem da informação, aplicabilidade, correção ou exceção e verificação</td></tr><tr><td>Configuração</td><td>Baseline local, funções necessárias, alterações e revisão</td></tr><tr><td>Contas e autenticação</td><td>Contas individuais, cobertura de MFA, exceções e recuperação de acesso</td></tr><tr><td>Privilégio</td><td>Permissões necessárias, contas administrativas e revisão</td></tr><tr><td>Proteção contra malware</td><td>Cobertura, atualização, alertas e resposta no ambiente</td></tr><tr><td>Cópias e recuperação</td><td>Retenção, separação, proteção e teste com resultado e limites</td></tr><tr><td>Rede</td><td>Fluxos necessários, regras e conferência de filtragem no recorte</td></tr><tr><td>Orientação de pessoas</td><td>Situações abordadas, participação, modo de verificar e atualização</td></tr></tbody></table></div>
+<p>Para cada item, registrar implementado no recorte verificado, em andamento, ausente ou não verificado, com fonte, data, responsável e próxima ação. O resumo informa cobertura conhecida; não converter evidência de um equipamento em cobertura de toda a empresa.</p>
+<p>As três perguntas manuais de identidade, privilégio e recuperação ajudam a iniciar a análise. Elas complementam a lista, sem substituí-la. A ordem dos controles e a frequência de revisão dependem da exposição e do serviço; a antiga escolha de quatro itens por menor esforço não demonstrava redução de risco medida.</p>
+<h2 id="grade-qualitativa-opcional">Grade qualitativa opcional</h2>
+<p>Esta grade preserva a combinação usada nas skills anteriores. Seus rótulos são convenções locais; definir primeiro o significado dos eixos, sua evidência e incerteza. A ausência de dado sobre probabilidade permanece não verificada, sem escolher “baixa” por padrão.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Tabela: Grade qualitativa opcional"><table style="--columns:4"><thead><tr><th scope="col">Probabilidade local / impacto local</th><th scope="col">Baixo</th><th scope="col">Médio</th><th scope="col">Alto</th></tr></thead><tbody><tr><td>Alta</td><td>Médio</td><td>Alto</td><td>Crítico</td></tr><tr><td>Média</td><td>Baixo</td><td>Médio</td><td>Alto</td></tr><tr><td>Baixa</td><td>Baixo</td><td>Baixo</td><td>Médio</td></tr></tbody></table></div>
+<p>A classificação orienta conversa e tratamento; não estima frequência de ataque, não autoriza alteração automática e não substitui a análise de consequência e alçada. Registrar o risco residual e o motivo da decisão.</p>
+<p>Modelo complementar: <a href="inventario-dependencias.html">inventário de dependências</a>. Para resposta operacional: <a href="incidente.html">incidente</a>.</p><details class="template-source"><summary>Versão Markdown para copiar</summary><pre><code># Risco e continuidade
+
+Use quando uma dependência pode impedir o serviço ou expor informações. Proprietário do serviço descreve impacto; TI verifica controles e recuperação; direção aceita risco dentro da alçada.
+
+| Campo | Registro |
+| --- | --- |
+| Serviço, proprietário e data | |
+| Ativos, dados e fornecedores críticos | |
+| Evento e consequência | |
+| Evidência de exposição e incerteza | |
+| Controles existentes e verificação | |
+| Tratamento escolhido, responsável e prazo | |
+| Risco residual e aprovador | |
+| Tempo de recuperação tolerável (RTO) | |
+| Perda de dados tolerável (RPO) | |
+| Backup, proteção, retenção e responsável | |
+| Teste: cenário, ambiente, horários e resultado | |
+| Validação do serviço pelo negócio | |
+| Pendências e próxima revisão | |
+
+O teste pode recuperar um arquivo, uma base ou o serviço inteiro. Declarar o recorte para que a conclusão corresponda à evidência. Se o tempo medido exceder a tolerância, registrar o desvio e decidir tratamento, sem alterar o objetivo retroativamente para declarar sucesso.
+
+Fundamento: NIST [F01](../referencias/fontes.md#f01), [F02](../referencias/fontes.md#f02) e CISA [F12](../referencias/fontes.md#f12). O formato é uma adaptação local.
+
+## Análise qualitativa e assistência opcional
+
+Se usar probabilidade e impacto baixo/médio/alto, definir critérios, origem e incerteza antes de combinar categorias. Sem evidência, registrar hipótese a investigar, sem converter rótulo em probabilidade numérica. A análise local não certifica conformidade NIST ou CIS.
+
+```text
+Tarefa: preparar minuta de análise de risco do GEAR.
+Entrada: [serviço, ativo, uso, dependências e evidências autorizadas].
+Saída: evento, exposição verificada ou hipótese, consequência, controles
+existentes, lacunas, alternativas, esforço, responsável e verificação.
+Quando houver classificação qualitativa, usar os critérios informados.
+Não inferir vulnerabilidade, CVE, configuração ou probabilidade por marca.
+Não garantir custo zero, proteção integral ou recuperação em prazo fixo.
+Conferir fontes externas junto à afirmação, incluindo versão e trecho.
+Identificar autoridade para contenção, comunicação e aceitação de risco.
+Deixar contato não fornecido pendente; não prescrever isolamento universal.
+A pessoa responsável confere a análise e autoriza os efeitos apropriados.
+```
+
+## Cenários fictícios dos modelos anteriores
+
+- ERP em nuvem com dados cadastrais e financeiros. O exemplo mencionava cinco mil clientes e acesso por senha; é hipótese didática. Conferir identidade, MFA, dados tratados, permissões e recuperação antes de avaliar exposição.
+- Serviço de arquivos de escritório contábil com versão antiga de Windows Server e acesso compartilhado. Confirmar versão, suporte, permissões e cópia; “antigo” não identifica sozinho uma vulnerabilidade ou CVE.
+- Notebooks usados em viagens com propostas e planilhas confidenciais. Conferir acesso, criptografia, atualização, guarda e recuperação; não inferir configuração real pelo cargo do usuário.
+
+Na análise manual, partir do efeito sobre o serviço, conferir acesso e evidências de cópia e recuperação, depois comparar tratamentos. Frequência mensal ou trimestral depende do requisito local. Uma falha de controle precisa de investigação e resposta proporcional, não de ordem automática de alteração sem alçada.
+
+## Verificações complementares locais
+
+As skills anteriores mantinham dez verificações de segurança. Esta lista conserva a cobertura do modelo, como seleção autoral a adaptar. Ela não representa o catálogo completo do NIST CSF ou do CIS IG1, nem demonstra conformidade por quantidade de itens marcados.
+
+| Verificação | Evidência a obter no recorte |
+| --- | --- |
+| Hardware e dispositivos | Inventário, proprietário, uso, localização e cobertura desconhecida |
+| Software e serviços | Versões, uso autorizado, responsável e dependências |
+| Vulnerabilidades | Origem da informação, aplicabilidade, correção ou exceção e verificação |
+| Configuração | Baseline local, funções necessárias, alterações e revisão |
+| Contas e autenticação | Contas individuais, cobertura de MFA, exceções e recuperação de acesso |
+| Privilégio | Permissões necessárias, contas administrativas e revisão |
+| Proteção contra malware | Cobertura, atualização, alertas e resposta no ambiente |
+| Cópias e recuperação | Retenção, separação, proteção e teste com resultado e limites |
+| Rede | Fluxos necessários, regras e conferência de filtragem no recorte |
+| Orientação de pessoas | Situações abordadas, participação, modo de verificar e atualização |
+
+Para cada item, registrar implementado no recorte verificado, em andamento, ausente ou não verificado, com fonte, data, responsável e próxima ação. O resumo informa cobertura conhecida; não converter evidência de um equipamento em cobertura de toda a empresa.
+
+As três perguntas manuais de identidade, privilégio e recuperação ajudam a iniciar a análise. Elas complementam a lista, sem substituí-la. A ordem dos controles e a frequência de revisão dependem da exposição e do serviço; a antiga escolha de quatro itens por menor esforço não demonstrava redução de risco medida.
+
+## Grade qualitativa opcional
+
+Esta grade preserva a combinação usada nas skills anteriores. Seus rótulos são convenções locais; definir primeiro o significado dos eixos, sua evidência e incerteza. A ausência de dado sobre probabilidade permanece não verificada, sem escolher “baixa” por padrão.
+
+| Probabilidade local / impacto local | Baixo | Médio | Alto |
+| --- | --- | --- | --- |
+| Alta | Médio | Alto | Crítico |
+| Média | Baixo | Médio | Alto |
+| Baixa | Baixo | Baixo | Médio |
+
+A classificação orienta conversa e tratamento; não estima frequência de ataque, não autoriza alteração automática e não substitui a análise de consequência e alçada. Registrar o risco residual e o motivo da decisão.
+
+Modelo complementar: [inventário de dependências](inventario-dependencias.md). Para resposta operacional: [incidente](incidente.md).
+</code></pre></details></article><aside class="toc"><nav aria-label="Nesta página"><p class="nav-label">Nesta página</p><a href="#analise-qualitativa-e-assistencia-opcional">Análise qualitativa e assistência opcional</a><a href="#cenarios-ficticios-dos-modelos-anteriores">Cenários fictícios dos modelos anteriores</a><a href="#verificacoes-complementares-locais">Verificações complementares locais</a><a href="#grade-qualitativa-opcional">Grade qualitativa opcional</a></nav></aside></div></main><footer><div class="footer-inner"><p>GEAR · Gestão, Execução, Agilidade e Risco<br>Andre Victor · Edição editorial 2026.10</p><p><a href="../referencias/fontes.html">Fontes e limites</a> · <a href="../fundamentos/origens-adaptacoes.html">Evolução do método</a><br><a href="../../../LICENSE.md">Direitos e licença</a></p></div></footer></body></html>
