@@ -7,7 +7,7 @@
   },
   {
     "source": "GP-Pme Article/overleaf/figures/mermaid/research-pipeline.mmd",
-    "source_sha256": "a75059b33efa9fca62a855b3e836bbc4365d3c8d45e5a293c9ce82800fa34609",
+    "source_sha256": "f1980a96a80ccf5f1823596a85620e3d15026fe8bcd41290a90601a2161314d1",
     "renderer": "tools/build_figures.py",
     "output": "GP-Pme Article/overleaf/figures/generated/research-pipeline.pdf"
   },

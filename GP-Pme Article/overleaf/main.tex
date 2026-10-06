@@ -30,7 +30,7 @@
   citecolor=gppmeblue,
   urlcolor=gppmeblue,
   pdflang={pt-BR},
-  pdftitle={GEAR: um framework enxuto e adaptativo de governança e gestão de TI},
+  pdftitle={GEAR: construção de um framework de governança de TI com pesquisa assistida por IA e auditoria de conteúdo},
   pdfauthor={André Victor Andrade Oliveira Santos}
 }
 
@@ -41,7 +41,7 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}{>{\raggedright\arraybackslash}X}
 
-\title{\textbf{GEAR: um framework enxuto e adaptativo de governança e gestão de TI para empresas de pequeno porte}}
+\title{\textbf{GEAR: construção de um framework de governança de TI para pequenas empresas com pesquisa assistida por IA e auditoria de conteúdo}}
 \author{Andr\'{e} Victor Andrade Oliveira Santos\\
 Instituto Federal de Educa\c{c}\~{a}o, Ci\^{e}ncia e Tecnologia da Bahia (IFBA)\\
 Campus Vit\'{o}ria da Conquista}
@@ -54,18 +54,19 @@ Campus Vit\'{o}ria da Conquista}
 \begin{center}
 \fcolorbox{gppmeblue}{gppmelight}{%
   \parbox{0.91\textwidth}{\small\textbf{Nota de versão.}
-  Este manuscrito descreve o artefato e pré-especifica sua avaliação. Os 25 testes comparativos ainda não foram executados; tabelas com traços e diagramas marcados como pendentes não representam resultados.}}
+  Este manuscrito apresenta a construção do GEAR e o uso de IA com auditoria de conteúdo durante a produção. A prova de conceito no FrameSim é futura: os 25 casos comparativos ainda não foram executados e não há resultados de validação do framework.}}
 \end{center}
 
 \begin{abstract}
-Pequenas empresas dependem de tecnologia da informação, mas frequentemente não dispõem de pessoas, tempo e orçamento para operacionalizar, em conjunto, referências abrangentes de governança, gestão de serviços e segurança. Este artigo apresenta o GEAR (anteriormente GP-PME), um artefato contingencial que preserva funções essenciais dessas referências e propõe reduzir seu custo de coordenação por meio de três domínios, uma Fase Zero de 30 dias, artefatos compactos, métricas verificáveis e assistência opcional por inteligência artificial com revisão humana. O estudo é organizado como Design Science Research e documenta requisitos, decisões de desenho, instanciação computacional e rastreabilidade entre alegações e evidências. Na etapa atual, testes de engenharia confirmam a existência e a execução básica dos componentes do repositório, mas não demonstram efetividade organizacional. Para avaliar essa lacuna, pré-especifica-se um estudo com 25 empresas sintéticas de 5 a 20 colaboradores; cada caso será executado de forma pareada com GEAR, ITIL~4 adaptado e COBIT~2019 adaptado, usando personas semeadas, pacote comum de tarefas, rubrica cega e métricas de completude, esforço, rastreabilidade e afirmações sem suporte. A contribuição desta primeira versão é, portanto, um artefato inspecionável e um protocolo falseável, e não uma alegação antecipada de superioridade.
+Este artigo apresenta a construção do GEAR (Gestão, Execução, Agilidade e Risco), um framework de governança e gestão de TI destinado a pequenas empresas com recursos restritos, e documenta o uso ativo de inteligência artificial (IA) na pesquisa e na produção do material. O estudo segue Design Science Research e combina leitura dirigida da literatura, seleção de referências gerenciais, síntese assistida e auditoria de conteúdo. O procedimento distingue afirmações externas, adaptações autorais e hipóteses; verifica fontes, versões, unidades e limites de generalização; e registra correções sob responsabilidade autoral. O artefato resultante organiza três domínios essenciais, um percurso inicial de 30 dias, modelos compactos e indicadores, com assistência por IA opcional na aplicação. A evidência disponível permite inspecionar o desenho e a rastreabilidade documental, mas não medir o ganho causado pela IA nem a efetividade organizacional do GEAR. Sua avaliação será uma prova de conceito futura no FrameSim, com 25 empresas sintéticas de 5 a 20 colaboradores, comparações pareadas com ITIL~4 e COBIT~2019 adaptados e critérios de análise previamente definidos. Nenhuma rodada de cenários foi executada para esta versão. As contribuições atuais são a especificação do framework, o relato da produção assistida com auditoria de conteúdo e o protocolo prospectivo de avaliação.
 
 \noindent\textbf{Palavras-chave:} governança de TI; pequenas empresas; teoria da contingência; Design Science Research; inteligência artificial; simulação baseada em personas.
 \end{abstract}
 
+\clearpage
 \begin{otherlanguage}{english}
 \begin{abstract}
-Small firms depend on information technology but often lack the people, time, and budget required to operationalize comprehensive governance, service-management, and security references as an integrated system. This paper presents GEAR (formerly GP-PME), a contingency-based artifact that preserves essential functions from those references while reducing coordination cost through three essential domains, a 30-day Phase Zero, compact artifacts, verifiable metrics, and optional artificial-intelligence assistance under human review. The study follows Design Science Research and documents requirements, design decisions, the computational instantiation, and traceability between claims and evidence. At this stage, engineering checks confirm that repository components exist and execute at a basic level, but they do not demonstrate organizational effectiveness. To address this gap, we pre-specify a study with 25 synthetic firms employing 5 to 20 people; each case will be run as a paired comparison of GEAR, tailored ITIL~4, and tailored COBIT~2019, using seeded personas, a common task package, blinded scoring, and metrics for completeness, effort, traceability, and unsupported claims. The contribution of this first version is therefore an inspectable artifact and a falsifiable protocol, not an advance claim of superiority.
+This paper presents the construction of GEAR, an IT governance and management framework for small firms with limited resources, and documents the active use of artificial intelligence (AI) in research and content production. Following Design Science Research, the study combines directed literature reading, selection of management references, assisted synthesis, and content auditing. The procedure distinguishes external claims, authorial adaptations, and hypotheses; checks sources, versions, units, and generalization limits; and records corrections under authorial responsibility. The resulting artifact comprises three essential domains, a 30-day adoption route, compact templates, and indicators, with optional AI assistance during application. Available evidence supports inspection of the design and documentary traceability, but does not measure the causal benefit of AI or GEAR's organizational effectiveness. Evaluation will take the form of a future proof of concept in FrameSim, using 25 synthetic firms employing 5 to 20 people, paired comparisons with tailored ITIL~4 and COBIT~2019, and predefined analysis criteria. No scenario runs were conducted for this version. Current contributions are the framework specification, an account of assisted production with content auditing, and a prospective evaluation protocol.
 
 \noindent\textbf{Keywords:} IT governance; small firms; contingency theory; Design Science Research; artificial intelligence; persona-based simulation.
 \end{abstract}
@@ -80,10 +81,10 @@ Small firms depend on information technology but often lack the people, time, an
 \input{sections/07-conclusao}
 
 \section*{Declaração de uso de inteligência artificial}
-Ferramentas de IA generativa auxiliaram a busca no acervo local, a organização do manuscrito, a revisão de consistência e a preparação de código LaTeX e Mermaid. O autor permanece responsável pela seleção das fontes, verificação das alegações, interpretação e versão final. Nenhuma saída de IA foi tratada como dado empírico, e nenhum teste comparativo foi executado para esta versão.
+Ferramentas de IA generativa foram usadas ativamente na leitura assistida do acervo, na elaboração de sínteses e minutas, na comparação entre versões, na identificação de inconsistências e na preparação editorial de texto, LaTeX e diagramas. A revisão incluiu conferência de fontes e correções de conteúdo, descritas na \cref{sec:auditoria-ia}. Saídas de IA não foram tratadas como fontes bibliográficas ou dados empíricos. O autor responde pela seleção, interpretação e versão final. Não se dispõe de um registro uniforme de modelos, prompts e intervenções de toda a produção histórica; o relato não equivale a uma avaliação experimental da IA. Nenhuma rodada comparativa do FrameSim foi executada.
 
 \section*{Disponibilidade de artefatos}
-O código-fonte do artigo, os diagramas Mermaid e o catálogo prospectivo de cenários acompanham o repositório do GEAR. Os manifestos completos, logs de execução e dados de resultados serão publicados apenas após o congelamento e a execução do protocolo no Frame-sim.
+O \href{https://github.com/andrecodexvictor/GP-Pme/tree/codex/gear-editorial}{repositório GEAR, branch editorial}, reúne o núcleo documental, as fontes deste artigo, diagramas e catálogo prospectivo de cenários. A \href{https://github.com/andrecodexvictor/GP-Pme/tree/8386586af110ba2112694a8ee6dd7b9d94d20572}{revisão editorial de referência} fixa o estado anterior a esta atualização; o registro de publicação identifica as revisões seguintes. O \href{https://github.com/andrecodexvictor/Frame-sim}{FrameSim} será o ambiente da prova de conceito. Logs e resultados dependerão do congelamento e da execução futura do protocolo, com distribuição nos termos das licenças aplicáveis.
 
 \section*{Aspectos éticos}
 Esta versão não envolve participantes humanos nem coleta de dados organizacionais. A avaliação planejada empregará empresas e personas sintéticas sem identificação de pessoas reais. Estudos de campo posteriores dependerão de consentimento, proteção de dados e apreciação ética institucional quando aplicável.

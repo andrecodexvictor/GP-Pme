@@ -7,6 +7,12 @@ O GEAR sugere que a simplificação de governança não precisa significar remo�
 
 O artefato também ajuda a separar governança, gestão e automação. Governança define direção, responsabilidade e monitoramento; gestão organiza o fluxo que transforma direção em serviço; segurança trata riscos que podem comprometer o valor; e IA pode assistir tarefas informacionais sem receber autoridade própria. Essa separação reduz a tendência de apresentar um conjunto de agentes como se fosse, por si só, um modelo de governança.
 
+\subsection{Pesquisa assistida e responsabilidade de conteúdo}
+
+O relato de produção explicita uma distinção necessária ao uso de IA na pesquisa: gerar uma formulação e sustentar uma afirmação exigem operações diferentes. A IA auxiliou a organização e a redação; as fontes consultadas sustentam as afirmações externas, e as decisões autorais identificam adaptações. A auditoria torna visíveis problemas como misturar versões, transferir percentuais de outras tarefas e confundir exemplos com resultados. O registro de uma correção permite examinar a decisão, sem provar que todas as incorreções foram encontradas.
+
+Esse procedimento pode orientar outras pesquisas de desenho que usem IA, mas sua transferência permanece uma proposta metodológica. O trabalho não compara produção manual e assistida, não estima precisão da IA e não demonstra que a auditoria tenha uma taxa de detecção superior. O histórico incompleto de interações, o envolvimento do autor no desenho e na revisão e o acesso parcial a algumas fontes limitam a reprodutibilidade e a independência do relato. Uma avaliação posterior desse processo precisaria de corpus fixo, registros completos e revisores independentes.
+
 \subsection{Implicações práticas}
 
 Para uma empresa pequena, a porta de entrada importa tanto quanto o catálogo de boas práticas. Começar por canal, quadro, inventário, backup, resposta a incidente e reunião curta cria dados que antes não existiam e permite que decisões posteriores sejam menos intuitivas. A Fase Zero é, portanto, uma hipótese de sequência: visibilidade operacional antecede sofisticação de processo.
@@ -21,20 +27,20 @@ A segunda melhoria é publicar uma matriz normativa por prática. Cada controle 
 
 A terceira melhoria é tornar metas e fórmulas sensíveis ao contexto. Limiares de disponibilidade, tempo de resolução, satisfação, DAN e payback são úteis como valores iniciais, mas não podem ser universais. O diagnóstico deve registrar janela de observação, criticidade do serviço, custo-hora, sazonalidade e qualidade da fonte. A comparação futura também deverá apresentar análise de sensibilidade, em vez de um ROI pontual.
 
-A quarta melhoria é consolidar a terminologia e o versionamento. Materiais históricos alternam entre três e quatro pilares e entre quantidades distintas de agentes. Um manifesto de versão deve fixar arquitetura conceitual, inventário de componentes e compatibilidade entre guias, skills e código. O manuscrito adota três domínios essenciais e uma camada opcional de IA como referência para essa normalização.
+A consolidação terminológica fixa três domínios essenciais e assistência por IA opcional. Essa escolha evita que o nome GEAR ou as quatro letras sejam interpretados como quatro pilares. A versão documental, suas fontes e as regras de leitura devem permanecer identificáveis a cada revisão.
 
 \subsection{Ameaças à validade}
 
 A validade de constructo é limitada pela mensuração de conceitos como ``acionabilidade'', ``overhead'' e ``aceitação''. Rubricas publicadas, dupla avaliação e apresentação das métricas componentes reduzem o risco de que um índice composto esconda trade-offs. Reações de personas e plausibilidade do crítico continuarão sendo propriedades da simulação, não medidas de comportamento humano real.
 
-A validade interna pode ser afetada pelo modelo de linguagem, ordem dos prompts, recuperação documental, aleatoriedade e conhecimento prévio do avaliador. O protocolo controla esses fatores com manifestos pareados, sementes, orçamento equivalente, rótulos embaralhados, logs completos e tratamento explícito de falhas. Ainda assim, uma saída pode favorecer padrões com maior presença nos dados de treinamento do modelo.
+A validade interna pode ser afetada pelo modelo de linguagem, ordem dos prompts, recuperação documental, aleatoriedade e conhecimento prévio do avaliador. O protocolo prevê controlar esses fatores com manifestos pareados, sementes, orçamento equivalente, rótulos embaralhados, logs completos e tratamento explícito de falhas. Ainda assim, uma saída pode favorecer padrões com maior presença nos dados de treinamento do modelo.
 
-A validade externa é a principal limitação. Os 25 casos cobrem somente organizações sintéticas de 5 a 20 colaboradores, com cenários inspirados em pequenas empresas brasileiras. Setores regulados aparecem como testes de estresse, não como autorização de uso profissional. Mesmo um resultado consistente no Frame-sim sustentará apenas validade analítica dentro do simulador; generalização requer implantação longitudinal em empresas reais.
+A validade externa é a principal limitação. Os 25 casos cobrem somente organizações sintéticas de 5 a 20 colaboradores, com cenários inspirados em pequenas empresas brasileiras. Setores regulados aparecem como testes de estresse, não como autorização de uso profissional. Mesmo um resultado consistente no FrameSim sustentará apenas uma prova de conceito dentro do simulador; generalização requer implantação longitudinal em empresas reais.
 
 A validade de conclusão também será restrita pela amostra de 25 casos e pela multiplicidade de métricas. O estudo priorizará estimativas pareadas, intervalos e falhas observadas, usando testes de hipótese apenas como apoio exploratório. Resultados nulos ou desfavoráveis serão mantidos e deverão orientar revisão do artefato.
 
 \subsection{Agenda de avaliação}
 
-O próximo ciclo possui três etapas. Primeiro, corrigir a instrumentação do Frame-sim e registrar o protocolo antes de observar os resultados. Segundo, executar o piloto e os 25 casos pareados, publicar os manifestos, saídas anonimizadas, rubricas e scripts de análise. Terceiro, selecionar casos contrastantes para estudo de campo, acompanhando tempo de adoção, aderência às rotinas, incidentes, qualidade decisória e abandono de práticas ao longo de meses.
+O próximo ciclo possui três etapas. Primeiro, verificar a prontidão e fixar a instrumentação do FrameSim e registrar o protocolo antes de observar os resultados. Segundo, executar o piloto e os 25 casos pareados, publicar os manifestos, saídas anonimizadas, rubricas e scripts de análise. Terceiro, selecionar casos contrastantes para estudo de campo, acompanhando tempo de adoção, aderência às rotinas, incidentes, qualidade decisória e abandono de práticas ao longo de meses.
 
 Uma avaliação posterior deverá ainda isolar os componentes do GEAR. Remover a Fase Zero, o limite de WIP, o CD-TI Lite, a linha de base de segurança ou a camada de IA permitirá investigar qual mecanismo produz cada mudança e em que contexto. Sem essa ablação, um eventual ganho do pacote completo não explica sua causalidade.

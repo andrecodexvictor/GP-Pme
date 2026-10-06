@@ -1,60 +1,60 @@
-\section{Método de pesquisa}
+\section{Método de pesquisa e produção assistida}
 \label{sec:metodo}
 
-\subsection{Estratégia metodológica}
+\subsection{Estratégia e delimitação}
 
-O estudo adota Design Science Research (DSR), paradigma adequado à criação e avaliação de artefatos destinados a resolver problemas organizacionais relevantes \citep{hevner2004design}. A estrutura do projeto de pesquisa original era exploratória e qualitativa; nesta versão, ela é reorganizada segundo as seis atividades da Design Science Research Methodology (DSRM): identificação do problema, definição dos objetivos da solução, desenho e desenvolvimento, demonstração, avaliação e comunicação \citep{peffers2007dsrm}. Essa mudança explicita o vínculo entre problema, decisão de desenho e evidência esperada.
+O estudo adota Design Science Research (DSR) para relacionar o problema organizacional à construção e à avaliação de um artefato \citep{hevner2004design}. As atividades da DSRM organizam identificação do problema, objetivos, desenho, demonstração, avaliação e comunicação \citep{peffers2007dsrm}. Nesta etapa, o trabalho concentra-se na pesquisa de desenho e na produção documental; a avaliação por cenários permanece prospectiva. A organização segundo DSRM não implica que todas as atividades já tenham sido concluídas.
 
-O artefato estudado é o GEAR em quatro representações complementares: (i) constructos, como maturidade, dívida de arquitetura normalizada e trabalho em progresso; (ii) um modelo composto por três domínios e uma camada opcional de IA; (iii) métodos operacionais, como Fase Zero, CD-TI Lite e ciclo microadaptativo; e (iv) instanciações em guias, templates, código, busca e agentes. A unidade de análise da avaliação futura será o par \emph{empresa simulada--framework}, mantendo a empresa constante entre as três alternativas comparadas.
+A pesquisa possui dois objetos articulados: a especificação do GEAR e o procedimento de produção dessa especificação com IA e auditoria de conteúdo. O framework é descrito por conceitos, três domínios essenciais, rotinas e modelos de registro. O segundo objeto explicita como materiais de origem foram selecionados, sintetizados, adaptados e corrigidos. A unidade de inspeção documental é a afirmação ou prática e sua relação com a fonte. Na prova de conceito futura, a unidade de comparação será o caso de empresa sintética, mantido constante entre os três frameworks.
 
 \begin{figure}[H]
   \centering
-  \IfFileExists{figures/generated/research-pipeline.pdf}{%
-    \includegraphics[width=\textwidth]{figures/generated/research-pipeline.pdf}%
-  }{%
-    \fbox{\parbox{0.92\textwidth}{\centering
-      Problema e requisitos $\rightarrow$ desenho do GEAR $\rightarrow$ instanciação no repositório $\rightarrow$ verificação de engenharia $\rightarrow$ avaliação comparativa futura $\rightarrow$ revisão do artefato.}}
-  }
-  \caption{Processo de pesquisa do GEAR. O arquivo Mermaid editável acompanha o projeto; a avaliação comparativa é prospectiva nesta versão.}
+  \includegraphics[width=\textwidth]{figures/generated/research-pipeline.pdf}
+  \caption{Produção assistida e auditoria de conteúdo nesta etapa; prova de conceito no FrameSim e revisão por resultados em etapas futuras. A IA auxilia a produção, mas não substitui a fonte nem o julgamento autoral.}
   \label{fig:processo-pesquisa}
 \end{figure}
 
-\subsection{Identificação do problema e requisitos de desenho}
+\subsection{Leitura dirigida e requisitos de desenho}
 
-A identificação do problema partiu do projeto de pesquisa do TCC~I e foi atualizada por uma leitura estruturada do repositório e das referências. Foram examinados o documento do projeto, os guias dos pilares, o guia de Fase Zero, o modelo de maturidade, os templates, as skills, os agentes e os componentes de software. As fontes acadêmicas foram agrupadas em quatro tópicos: governança contingencial em PMEs, transformação digital incremental, referências normativas e assistência por IA.
+A pesquisa partiu do projeto de TCC~I e do acervo histórico GP-PME, com leitura dirigida de estudos sobre governança em PMEs, transformação digital incremental, referências gerenciais e assistência por IA. Trata-se de uma síntese orientada ao desenho, sem protocolo de revisão sistemática exaustiva ou contagem completa de buscas, exclusões e duplicatas. Os estudos e documentos utilizados estão identificados na bibliografia e nas fichas de fontes do núcleo documental. Quando somente uma página institucional, resumo ou apresentação pública pôde ser consultado, o limite de acesso foi registrado; não se pressupõe leitura integral de livros ou normas fechadas.
 
-Da síntese emergiram seis requisitos de desenho: \textbf{R1}, operação por equipe mínima e acumulação de papéis; \textbf{R2}, início incremental e reversível; \textbf{R3}, cobertura conjunta de direção, execução e risco; \textbf{R4}, produção de evidências simples para cada prática; \textbf{R5}, funcionamento integral sem IA; e \textbf{R6}, quando houver IA, rastreabilidade, declaração de incerteza e aprovação humana. Esses requisitos funcionam como critérios de aceitação do artefato e orientam as métricas do protocolo futuro.
+O desenho adotou seis requisitos: \textbf{R1}, operação por equipe mínima e acumulação explícita de papéis; \textbf{R2}, início incremental; \textbf{R3}, cobertura conjunta de direção, execução e risco; \textbf{R4}, evidência simples por prática; \textbf{R5}, funcionamento integral sem IA; e \textbf{R6}, rastreabilidade e revisão humana quando houver IA. São critérios autorais de desenho, informados pela literatura e pelo contexto-alvo. A sua adequação dependerá da avaliação futura.
 
-\subsection{Desenho, desenvolvimento e demonstração}
+\subsection{Uso ativo de IA e auditoria de conteúdo}
+\label{sec:auditoria-ia}
 
-O desenvolvimento ocorreu por ciclos de decomposição e integração. Em cada ciclo, um princípio ou mecanismo de origem foi convertido em uma rotina mínima com evento de início, responsável, entrada, saída e evidência. Os componentes foram então conectados por um fluxo comum: diagnosticar a situação, escolher a ação prioritária, executar em um limite curto, verificar a evidência e ajustar a próxima decisão. A \cref{sec:artefato} apresenta o resultado consolidado desse processo.
+A IA participou da produção como instrumento de leitura, síntese e revisão. Foi usada para localizar e organizar trechos do acervo, propor minutas, comparar versões, apontar conflitos terminológicos e apoiar a preparação editorial. A auditoria de conteúdo constitui uma etapa distinta: uma sugestão plausível precisa de fonte ou de identificação explícita como adaptação autoral antes de integrar o material publicado. A assistência também pode propor verificações, mas concordância entre saídas de IA não constitui confirmação independente.
 
-A demonstração desta etapa é tecnológica e documental. Ela verifica se as representações do artefato existem, se regras determinísticas podem ser executadas, se os guias são recuperáveis por busca e se os agentes conseguem ser acionados em ambiente de teste. Essa demonstração responde à pergunta ``o artefato foi construído de forma coerente e executável?'', mas não à pergunta ``o artefato melhora uma organização?''. A segunda pergunta exige a avaliação descrita na \cref{sec:protocolo}.
+O procedimento de revisão é organizado em seis operações. (1) Identificar a fonte, versão, endereço e limite de acesso. (2) Extrair o conceito e o contexto em que a fonte o sustenta, preservando população, tarefa e período de resultados numéricos. (3) Produzir uma síntese assistida, separando citação, paráfrase e proposta local. (4) Confrontar afirmações com os trechos consultados e conferir unidades, fórmulas e consistência entre documentos. (5) Corrigir, restringir ou excluir conteúdo sem suporte e submeter escolhas à revisão autoral. (6) Registrar a versão, o destino editorial e os limites remanescentes. Essa sequência explicita o procedimento aplicado à revisão atual; não reconstrói um histórico completo de todas as interações anteriores.
 
-\subsection{Rastreabilidade entre alegações e evidências}
+A auditoria teve efeitos concretos no conteúdo. Resultados de produtividade obtidos em outras tarefas foram mantidos com seus limites, sem convertê-los em ganho esperado do GEAR. O material financeiro passou a distinguir ROI líquido, razão bruta e capacidade potencial liberada. O questionário de maturidade foi revisto para permitir atingir o nível máximo sem adoção de IA. A nomenclatura passou a fixar três domínios essenciais e assistência opcional. As fichas de origem e o \href{https://github.com/andrecodexvictor/GP-Pme/tree/codex/gear-editorial/framework/publicacao}{registro editorial} permitem examinar essas decisões e localizar suas fontes.
 
-A \cref{tab:claim-evidence} define antecipadamente o tipo de evidência necessário para sustentar cada alegação. Essa matriz impede que uma inspeção de repositório seja apresentada como validação organizacional e que resultados de produtividade de outras tarefas sejam usados como efeito estimado do GEAR.
+Os registros disponíveis são evidências de processo e de revisão, sem mensuração causal do benefício da IA. Não houve grupo de controle para a produção do material, medição uniforme do tempo de escrita ou avaliação independente de toda afirmação. Parte do histórico não registra de forma uniforme modelo, parâmetros, prompts e intervenções humanas. Esses limites impedem estimar taxa de acerto, redução de esforço ou superioridade da produção assistida. A auditoria reduz incertezas específicas; não garante ausência de erros.
+
+\subsection{Conversão da pesquisa em práticas}
+
+A síntese foi convertida em rotinas com evento de início, responsável, entrada, saída e evidência de encerramento. Cada prática preserva sua finalidade e declara o que foi adaptado ao contexto de equipes pequenas. Os mecanismos são conectados pelo percurso diagnosticar, decidir, executar, verificar e revisar, descrito na \cref{sec:artefato}. Guias, exemplos e modelos permitem inspecionar como a proposta poderia ser aplicada, sem serem resultados de aplicação em empresas.
+
+A demonstração atual é documental: arquitetura, requisitos, guias e instrumentos estão disponíveis para leitura e crítica. Exemplos didáticos expõem premissas e possíveis decisões. A coerência documental e a conferência de cálculos verificam aspectos do artefato, mas não demonstram aprendizagem, adesão ou melhoria organizacional. MCPs, skills e demais integrações do repositório são mencionados como recursos associados e permanecem fora da análise e da validação deste artigo.
+
+\subsection{Mapa de afirmações e evidências}
+
+A \cref{tab:claim-evidence} delimita o que pode ser afirmado nesta etapa. A distinção entre registro de produção, hipótese de desenho e efeito observado orienta a escrita do manuscrito e o protocolo futuro.
 
 \begin{table}[htbp]
   \centering
-  \caption{Mapa de alegações e evidências desta pesquisa.}
+  \caption{Afirmações centrais, suporte disponível e limites.}
   \label{tab:claim-evidence}
   \small
   \begin{tabularx}{\textwidth}{@{}L{3.0cm}R R@{}}
     \toprule
-    Alegação & Evidência admissível nesta versão & Evidência ainda necessária \\
+    Afirmação & Suporte disponível & Limite ou evidência futura \\
     \midrule
-    Há um problema de ajuste em PMEs & Estudos empíricos e revisão da literatura & Replicação no contexto brasileiro de 5--20 colaboradores \\
-    O GEAR foi implementado & Inventário versionado, testes de unidade/dry-run e inspeção de artefatos & Auditoria independente da cobertura e da usabilidade \\
-    O GEAR exige menos overhead & Hipótese derivada do desenho e contagem planejada de artefatos/rituais & Comparação pareada com baselines configurados de forma justa \\
-    A IA acelera a operação & Evidência externa em tarefas delimitadas; capacidade implementada & Medidas de tempo, custo, correção e retrabalho no domínio de governança \\
-    O GEAR melhora resultados organizacionais & Não alegado nesta versão & Estudo longitudinal de campo, além da simulação \\
+    A governança precisa de ajuste ao contexto de PMEs & Estudos e revisão de literatura & Transferência ao recorte brasileiro exige estudo próprio \\
+    O GEAR possui uma especificação documental & Núcleo, guias, modelos e fontes versionados & Usabilidade e cobertura precisam de avaliação independente \\
+    A produção usou IA e auditoria de conteúdo & Declaração de uso, fontes e registros de revisão & Histórico incompleto; sem medida causal de benefício da IA \\
+    O GEAR pode reduzir esforço de coordenação & Hipótese derivada de rotinas e artefatos compactos & Prova de conceito com alternativas comparáveis \\
+    O GEAR melhora resultados organizacionais & Não afirmado nesta versão & Evidência de campo além da simulação \\
     \bottomrule
   \end{tabularx}
 \end{table}
-
-\subsection{Procedimento de síntese e controle do uso de IA}
-
-Ferramentas de IA foram utilizadas como assistência para localizar trechos, estruturar o manuscrito, revisar consistência e gerar código editorial. Cada alegação factual foi confrontada com o documento de origem ou com o estado versionado do repositório. Resultados numéricos externos foram mantidos com população, tarefa e limite de generalização; lacunas foram marcadas em vez de preenchidas por estimativa. Os registros intermediários de extração permanecem separados do manuscrito e podem ser regenerados.
-
-O controle de interação humano--IA é uma proposta local de rastreabilidade: ferramenta e finalidade são declaradas, a responsabilidade permanece humana e a saída não se torna evidência apenas por ter sido produzida de forma plausível. Na avaliação futura, cada execução deverá registrar modelo, versão, parâmetros, contexto recuperado, prompts, respostas, correções e decisão final do avaliador. Essa regra integra o requisito R6; sua utilidade deverá ser examinada no protocolo.

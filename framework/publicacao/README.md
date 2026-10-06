@@ -12,16 +12,20 @@ A revisão de linguagem remove vocativos, slogans sem ação, separadores decora
 
 ## Publicações e interface
 
-O [livro](../../GP-Pme%20Article/output/pdf/GEAR_livro_2026-10.pdf) tem 44 capítulos e 91 páginas; o [artigo](../../GP-Pme%20Article/output/pdf/GEAR_artigo_2026-10.pdf) tem 20 páginas e conserva seu protocolo prospectivo. As páginas finais foram renderizadas e inspecionadas visualmente, com texto, tabelas, fontes e fluxogramas dentro da página. Os manifestos de verificação vinculam o aceite aos hashes dos PDFs em [verificacao.json](verificacao.json).
+O [livro](../../GP-Pme%20Article/output/pdf/GEAR_livro_2026-10.pdf) tem 44 capítulos e 93 páginas; o [artigo](../../GP-Pme%20Article/output/pdf/GEAR_artigo_2026-10.pdf) tem 21 páginas e descreve a pesquisa assistida por IA com auditoria de conteúdo, mantendo a prova de conceito no FrameSim como etapa futura. As páginas finais foram renderizadas e inspecionadas visualmente, com texto, tabelas, fontes e fluxogramas dentro da página. Os manifestos de verificação vinculam o aceite aos hashes dos PDFs em [verificacao.json](verificacao.json).
 
-O [portal](../../GP-Pme%20Article/index.html) reúne documentação, biblioteca, blog, artigo, busca lexical offline e ferramentas de exercício. A identidade usa superfície clara, tinta escura, acento cobre, Public Sans e Source Serif locais com licenças preservadas. Open Design e Impeccable orientaram a reconstrução; decisões e regras constam em [DESIGN.md](../../DESIGN.md) e [PRODUCT.md](../../PRODUCT.md). A [migração de fragmentos](fragmentos.json) distingue âncoras públicas e identificadores internos antigos.
+O [portal](../../GP-Pme%20Article/index.html) reúne documentação, biblioteca, blog, artigo, busca lexical offline e ferramentas de exercício. A identidade do livro usa petróleo, cobre e papel quente, com Public Sans e Source Serif locais. O portal mantém a composição clara aprovada. Licenças tipográficas foram preservadas. Open Design e Impeccable orientaram a reconstrução; decisões e regras constam em [DESIGN.md](../../DESIGN.md) e [PRODUCT.md](../../PRODUCT.md). A [migração de fragmentos](fragmentos.json) distingue âncoras públicas e identificadores internos antigos.
 
 ## Evidências e limites
 
 Fontes primárias, data de consulta, trecho utilizado e limites estão em [Fontes e limites](../referencias/fontes.md). Conceitos externos, adaptações e instrumentos autorais permanecem separados. DAN financeira, IM-TI, faixas, cadências e metas locais não são instrumentos validados pela literatura consultada. Horas liberadas representam capacidade potencial; ROI exige premissas e custo no mesmo período.
 
-Os testes verificam comportamento de software, fórmulas, unidades, busca, HTTP, contratos copiáveis, links e compatibilidade. A inspeção no navegador cobre cinco larguras, teclado, busca, cópia, calculadoras, WIP, texto ampliado e rolagem de tabelas e fluxogramas. Os resultados finais e o escopo de cada verificação estão no [manifesto de aceite](verificacao.json).
+Os testes verificam comportamento de software, fórmulas, unidades, busca, HTTP, contratos copiáveis, links e compatibilidade. A inspeção no navegador cobre cinco larguras, teclado, busca, cópia, calculadoras, WIP, texto ampliado e rolagem de tabelas e fluxogramas. A inspeção ampla de 5 de outubro está preservada no [manifesto anterior](verificacao-2026-10-05.json). A revisão atual verificou livro HTML e página do artigo em quatro larguras; seu escopo e os hashes finais estão no [manifesto de aceite](verificacao.json).
 
 Não houve estudo de campo, implantação organizacional ou certificação WCAG/PDF-UA. Acesso a normas e livros fechados permanece limitado. Integrações em dry-run e MCP local não comprovam operação em serviços reais. Direitos seguem LICENSE.md; esta edição não muda as permissões.
 
 A [avaliação](../../Docs/AVALIACAO-GEAR.md) e o [objetivo executável](../../Docs/GOAL-GEAR.md) conservam o caminho e o escopo aceitos. Commit e envio da branch ao GitHub foram autorizados posteriormente; implantação do site e registro de marca continuam fora do escopo.
+
+## Revisão de 6 de outubro
+
+A [revisão de identidade e pesquisa assistida](revisao-2026-10-06.md) registra a direção visual aplicada, o escopo científico, as fontes localizadas e a revisão das afirmações. MCPs e skills são apenas mencionados no artigo. A prova de conceito do framework aguarda rodadas futuras no FrameSim.

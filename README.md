@@ -23,7 +23,7 @@ O canal oficial reúne os registros; não impede ajuda a quem recebeu urgência 
 
 ## Fontes e evidência
 
-A [edição canônica](framework/README.md) distingue referências externas, adaptações locais e hipóteses. O [registro de fontes](framework/referencias/fontes.md) informa versões, consulta e limites. Cenários são ilustrativos; não representam resultado de campo. A avaliação com 25 empresas sintéticas e 75 execuções pareadas permanece prospectiva no [manuscrito científico](GP-Pme%20Article/overleaf/README.md).
+A [edição canônica](framework/README.md) distingue referências externas, adaptações locais e hipóteses. O [registro de fontes](framework/referencias/fontes.md) informa versões, consulta e limites. Cenários são ilustrativos; não representam resultado de campo. O [manuscrito científico](GP-Pme%20Article/overleaf/README.md) descreve a pesquisa assistida por IA e a auditoria de conteúdo durante a produção. A prova de conceito com 25 empresas sintéticas e 75 execuções pareadas no [FrameSim](https://github.com/andrecodexvictor/Frame-sim) permanece futura.
 
 A edição GEAR 2026.10 consolida núcleo, interface, regras determinísticas e versões autorais. O [registro de publicação](framework/publicacao/README.md) documenta preservação, verificações e limites. GP-PME e NEXUS-PME são nomes históricos. Identificadores de software e caminhos antigos podem permanecer por compatibilidade, sem definir pilares adicionais ou versões concorrentes.
 
@@ -49,7 +49,7 @@ Agentes e adaptadores mantêm revisão humana para efeitos organizacionais. Modo
 
 ## Gerar e verificar
 
-Instalar dependências Node com `npm install`. O launcher usa Python configurado em `GEAR_PYTHON`; quando disponível, encontra o runtime documental do Codex no usuário. Em outro ambiente, usar Python 3.10 ou superior e as bibliotecas documentais do fluxo, incluindo `reportlab`. Fontes tipográficas licenciadas acompanham o portal.
+Instalar dependências Node com `npm install`. O launcher usa Python configurado em `GEAR_PYTHON`; quando disponível, encontra o runtime documental do Codex no usuário. Em outro ambiente, usar Python 3.10 ou superior e as bibliotecas documentais do fluxo, incluindo `reportlab` e `pypdf` para o teste de publicação. Fontes tipográficas licenciadas acompanham o portal.
 
 ```text
 npm run build

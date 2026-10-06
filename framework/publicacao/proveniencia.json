@@ -1,5 +1,5 @@
 {
-  "data": "2026-10-05",
+  "data": "2026-10-06",
   "files": [
     {
       "origem": ".claude/skills/gp-pme-consultor/SKILL.md",
@@ -7637,14 +7637,20 @@
       "destino": "GP-Pme Article/overleaf/main.tex",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "261e81ec400c3138c63cb822ddcd735c922a15cf09b1f9bb23cae75f0d07512c",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "961ad0e98d4005e42494d703e6c8a7b367fc6a0ec1e7b8c598e4f010c32c159e",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/main.tex",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "261e81ec400c3138c63cb822ddcd735c922a15cf09b1f9bb23cae75f0d07512c"
         }
       ]
     },
@@ -7666,9 +7672,9 @@
       "destino": "GP-Pme Article/overleaf/README.md",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "92315f63688473723061bae529e493e9ee2f3d6928a8b67c0d223f7958136acc",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "b519fe2469e7b118a52343c6c84cafc050da1cd1e52c531d0f3085900112bc97",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Artigo GP-PME — pacote Overleaf",
@@ -7695,6 +7701,12 @@
           "destino": "GP-Pme Article/overleaf/README.md",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
         }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "92315f63688473723061bae529e493e9ee2f3d6928a8b67c0d223f7958136acc"
+        }
       ]
     },
     {
@@ -7709,14 +7721,20 @@
       "destino": "GP-Pme Article/overleaf/references.bib",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "dadbaf6674137ad1bbe87f0dc751350d3d176ac5f8d8abea47383eb739cec290",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "964ee8869981096220a29f72663577f9e47d8a24fe392a59935f5c66ff28a9e8",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/references.bib",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "dadbaf6674137ad1bbe87f0dc751350d3d176ac5f8d8abea47383eb739cec290"
         }
       ]
     },
@@ -7732,14 +7750,20 @@
       "destino": "GP-Pme Article/overleaf/sections/01-introducao.tex",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "44ff2da0243e7d2774975a558316926e01d29d880cf008467fc6b23e7a77a941",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "5bab32fc0196ec6dd44c594c6044bda861d8e6b83224a722a9d6a1fa75a02ad0",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/sections/01-introducao.tex",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "44ff2da0243e7d2774975a558316926e01d29d880cf008467fc6b23e7a77a941"
         }
       ]
     },
@@ -7778,14 +7802,20 @@
       "destino": "GP-Pme Article/overleaf/sections/03-metodo.tex",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "0f80239b0f125e8aa35a3f227f4bbe3222d733fd319a1d40f87a5207691cf2dc",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "de997ce21304e066f06435db93ba315c206136ae65a6d98f3d15425274dbb481",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/sections/03-metodo.tex",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "0f80239b0f125e8aa35a3f227f4bbe3222d733fd319a1d40f87a5207691cf2dc"
         }
       ]
     },
@@ -7801,14 +7831,20 @@
       "destino": "GP-Pme Article/overleaf/sections/04-artefato.tex",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "8ec14c88ba2e74108ba6d06e46fddb6c17af186d5b3c1af73ce7c0aa8b6cc474",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "5e4643921b9614ea372887078d0bc655f0e7e3365648a631c159a15184847b83",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/sections/04-artefato.tex",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "8ec14c88ba2e74108ba6d06e46fddb6c17af186d5b3c1af73ce7c0aa8b6cc474"
         }
       ]
     },
@@ -7824,14 +7860,20 @@
       "destino": "GP-Pme Article/overleaf/sections/05-estado-e-protocolo.tex",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "ebc3c9c784c4ba360567c9420685555a963fe20b69a7fc341eb9ce5e8551b68a",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "9a64106cc7eedad951ffbca618a7ab7a3d03e8bc755c9849ec8cf86dbaf89e71",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/sections/05-estado-e-protocolo.tex",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "ebc3c9c784c4ba360567c9420685555a963fe20b69a7fc341eb9ce5e8551b68a"
         }
       ]
     },
@@ -7847,14 +7889,20 @@
       "destino": "GP-Pme Article/overleaf/sections/06-discussao.tex",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "6b469a0cfb5efc116e9d417be40bfa2503908ef89587da940f8620b1c77ff28f",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "d4e870f0cc890f66e0a5158e03efe58db7ba8c08acd2348b24661af45bd86814",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/sections/06-discussao.tex",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "6b469a0cfb5efc116e9d417be40bfa2503908ef89587da940f8620b1c77ff28f"
         }
       ]
     },
@@ -7870,14 +7918,20 @@
       "destino": "GP-Pme Article/overleaf/sections/07-conclusao.tex",
       "situacao": "revisão editorial concluída",
       "duplicatas_exatas": [],
-      "sha256_revisado": "78bc71c5baae58bb55efcfab8f3df123acf664517fe0c3eabd4c72a800cdc349",
-      "conteudo_exclusivo": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias.",
-      "revisao_data": "2026-10-05",
+      "sha256_revisado": "16090962007c9a15ff19168b45eb02c9b533dc0a6cbb4f43135fa4a4e7fd3b7d",
+      "conteudo_exclusivo": "Pesquisa assistida por IA e auditoria de conteúdo, links bibliográficos e de artefatos; integrações apenas citadas; prova de conceito futura; compilação e inspeção visual próprias.",
+      "revisao_data": "2026-10-06",
       "destino_por_secao": [
         {
           "secao_origem": "Arquivo do manuscrito",
           "destino": "GP-Pme Article/overleaf/sections/07-conclusao.tex",
           "tratamento": "Manuscrito próprio: avaliação prospectiva, autoria real, fontes conferidas e limites; regras e figuras alinhadas ao núcleo. Compilação multifile e inspeção visual próprias."
+        }
+      ],
+      "revisoes": [
+        {
+          "data": "2026-10-05",
+          "sha256": "78bc71c5baae58bb55efcfab8f3df123acf664517fe0c3eabd4c72a800cdc349"
         }
       ]
     },

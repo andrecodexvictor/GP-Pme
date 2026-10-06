@@ -13,7 +13,7 @@ from tools.build_book import fonts
 from tools.editorial import ROOT
 
 BASE=ROOT/'GP-Pme Article/overleaf/figures'
-INK=colors.HexColor('#202321');COPPER=colors.HexColor('#8a421e');SOFT=colors.HexColor('#f3f5f2');LINE=colors.HexColor('#7a837c')
+INK=colors.HexColor('#202321');COPPER=colors.HexColor('#8a421e');SOFT=colors.HexColor('#f7f3ec');LINE=colors.HexColor('#173f43')
 
 def labels(path):
     text=path.read_text(encoding='utf-8')

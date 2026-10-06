@@ -1,0 +1,15 @@
+/* Livro derivado: mesmos papéis visuais da edição PDF. */
+.book { max-width: 76ch; margin: 0 auto; padding: 32px 24px; font: 1.125rem/1.65 var(--serif); overflow-wrap: anywhere; }
+.book-cover { padding: 48px 40px; background: #173f43; color: #fff; margin-bottom: 64px; }
+.book-cover h1 { color: #fff; font-size: clamp(64px, 13vw, 108px); margin: 24px 0; }
+.book-cover p { color: inherit; }
+.book-subtitle { font-family: var(--serif); font-size: 26px; }
+.book .chapter { margin-bottom: 64px; }
+.book-part { color: #8a421e; font-family: 'Public Sans', Arial, sans-serif; font-weight: 700; font-size: 14px; }
+.book .chapter h1 { color: #173f43; border-bottom: 2px solid #173f43; padding-bottom: 20px; }
+.book .chapter h2 { font-size: 1.5rem; }
+.book .chapter h3 { font-size: 1.15rem; }
+.book th { background: #173f43; color: #fff; }
+.book pre { background: #f7f3ec; padding: 20px; overflow-x: auto; }
+@media (max-width: 480px) { .book { padding: 16px; } .book-cover { padding: 32px 24px; } }
+@media print { @page { size: A4; margin: 20mm; } .chapter { break-before: page; } .book { padding: 0; } }

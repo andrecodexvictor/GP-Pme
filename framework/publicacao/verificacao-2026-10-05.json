@@ -1,0 +1,88 @@
+{
+  "edicao": "2026.10",
+  "data": "2026-10-05",
+  "pdfs": [
+    {
+      "arquivo": "GP-Pme Article/output/pdf/GEAR_livro_2026-10.pdf",
+      "sha256": "8104725c450cfe74e08c98978758deabb888a64d6c76b01b68e6f4299b3977c8",
+      "paginas": 91,
+      "texto_fora_da_pagina": false,
+      "inspecao_visual": "Todas as páginas finais renderizadas e inspecionadas; sem defeito material de paginação identificado."
+    },
+    {
+      "arquivo": "GP-Pme Article/output/pdf/GEAR_artigo_2026-10.pdf",
+      "sha256": "dde5c5fee980ccb8cfdd47e3f2a945e12f5c0f7338febfeb57e474278a11f229",
+      "paginas": 20,
+      "texto_fora_da_pagina": false,
+      "inspecao_visual": "Todas as páginas finais renderizadas e inspecionadas; sem defeito material de paginação identificado."
+    }
+  ],
+  "testes": {
+    "comando": "npm run test",
+    "executor": "Python 3.9 / unittest",
+    "total": 33,
+    "falhas": 0,
+    "skips": 0
+  },
+  "navegador": {
+    "comando": "npm run check:web",
+    "navegador": "Microsoft Edge / Puppeteer, perfil isolado",
+    "verificacoes": 104,
+    "larguras_px": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "falhas": 0,
+    "jornadas": [
+      "offline-search",
+      "search-section",
+      "keyboard-skip",
+      "menu-escape",
+      "financial-boundary",
+      "wip-testing-and-blocked",
+      "copy-control",
+      "text-spacing-and-size",
+      "enriched-text-spacing",
+      "enriched-text-spacing",
+      "enriched-text-spacing",
+      "table-keyboard-scroll",
+      "diagram-keyboard-scroll",
+      "empty-search"
+    ],
+    "inspecao_visual": "Capturas finais conferidas, incluindo entrada, biblioteca, blog e novos documentos; imagens amplas têm rolagem local por teclado."
+  },
+  "limites": [
+    "Avaliação organizacional prospectiva",
+    "Sem certificação WCAG ou PDF-UA",
+    "Sem implantação do site"
+  ],
+  "links": {
+    "verificados": 4307,
+    "erros": 0,
+    "escopo": "README, framework, References, Docs, Simulacao, Comercial, três mestres, seis capítulos, dez guias introdutórios, sete guias técnicos, oito templates, biblioteca, índice, nove contratos de agentes e seu README, oito skills existentes revistos; READMEs de serviços/busca/ADK e todas as páginas HTML do portal"
+  },
+  "preservacao": {
+    "arquivos_do_inventario": 232,
+    "hashes_do_backup_conferidos": 232,
+    "dataset_usuario": "Intacto, mantido local e fora do commit"
+  },
+  "portal": {
+    "paginas_documentais": 49,
+    "notas": 3,
+    "entradas": 5
+  },
+  "busca": {
+    "trechos": 240,
+    "documentos": 50,
+    "termos_bm25": 3431,
+    "modo": "lexical offline; sem reconstrução de embeddings"
+  },
+  "builds": [
+    "npm run build (consolidação e livro final)",
+    "tools/build_article.ps1 (manuscrito multifile)",
+    "tools.build_portal, search.ingest, search.build_index --bm25-only, search.export_web (reconstrução final após registro da publicação)"
+  ]
+}

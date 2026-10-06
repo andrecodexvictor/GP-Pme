@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-05T15:21:06.638729+00:00",
+  "gerado_em": "2026-10-06T14:40:50.138002+00:00",
   "modo": "lexical",
   "edicao": "GEAR 2026.10",
   "docs": [
@@ -1821,6 +1821,71 @@
       "href": "docs/publicacao/README.html#evidencias-e-limites"
     },
     {
+      "id": "gear/publicacao/revisao-2026-10-06#01",
+      "doc": "framework/publicacao/revisao-2026-10-06.md",
+      "titulo_doc": "Revisão de identidade e pesquisa assistida",
+      "secao": "Revisão de identidade e pesquisa assistida",
+      "breadcrumb": "Revisão de identidade e pesquisa assistida",
+      "texto": "Esta revisão aplica uma identidade editorial ao livro e ajusta o artigo ao relato da pesquisa e da produção com IA sob auditoria de conteúdo. A arquitetura do GEAR permanece composta por três domínios essenciais e assistência por IA opcional na aplicação. A prova de conceito no FrameSim é uma etapa futura; nenhuma rodada foi executada nesta revisão.",
+      "keywords": [],
+      "pilar": "",
+      "tipo": "referencia",
+      "anchor": "revisao-de-identidade-e-pesquisa-assistida",
+      "href": "docs/publicacao/revisao-2026-10-06.html#revisao-de-identidade-e-pesquisa-assistida"
+    },
+    {
+      "id": "gear/publicacao/revisao-2026-10-06#02",
+      "doc": "framework/publicacao/revisao-2026-10-06.md",
+      "titulo_doc": "Revisão de identidade e pesquisa assistida",
+      "secao": "Identidade aplicada",
+      "breadcrumb": "Revisão de identidade e pesquisa assistida > Identidade aplicada",
+      "texto": "Petróleo `#173f43` ancora a capa, as aberturas e os cabeçalhos de tabelas. Cobre escuro `#8a421e` identifica links sobre superfícies claras; cobre claro `#e8ad83` orienta o percurso na capa. Papel quente `#f7f3ec` distingue campos de registro. Public Sans organiza títulos e navegação; Source Serif 4 sustenta a leitura longa. As fontes locais e suas licenças foram preservadas.\n\nNúmero, parte editorial e título formam a abertura de cada capítulo. Tabelas repetem o cabeçalho nas continuações. Modelos têm margem interna e fundo discreto. Os ajustes de paginação evitam páginas com apenas referências de navegação e mantêm títulos junto aos diagramas. As regras completas estão em [DESIGN.md](../../DESIGN.md).",
+      "keywords": [],
+      "pilar": "",
+      "tipo": "referencia",
+      "anchor": "identidade-aplicada",
+      "href": "docs/publicacao/revisao-2026-10-06.html#identidade-aplicada"
+    },
+    {
+      "id": "gear/publicacao/revisao-2026-10-06#03",
+      "doc": "framework/publicacao/revisao-2026-10-06.md",
+      "titulo_doc": "Revisão de identidade e pesquisa assistida",
+      "secao": "Escopo do artigo",
+      "breadcrumb": "Revisão de identidade e pesquisa assistida > Escopo do artigo",
+      "texto": "O manuscrito relata leitura dirigida, síntese assistida, adaptação, conferência de fontes e revisão autoral. Não se apresenta como revisão sistemática exaustiva ou experimento de produtividade da IA. O histórico incompleto de modelos, prompts e intervenções é declarado. MCPs, skills, agentes e integrações são recursos associados apenas mencionados, sem análise técnica ou validação no artigo.\n\nA prova de conceito prevê cenários pareados no [FrameSim](https://github.com/andrecodexvictor/Frame-sim). Cenários, rubricas, versão do simulador e condições de assistência deverão ser fixados antes da coleta. Resultados sintéticos não substituirão evidência de campo.",
+      "keywords": [],
+      "pilar": "",
+      "tipo": "referencia",
+      "anchor": "escopo-do-artigo",
+      "href": "docs/publicacao/revisao-2026-10-06.html#escopo-do-artigo"
+    },
+    {
+      "id": "gear/publicacao/revisao-2026-10-06#04",
+      "doc": "framework/publicacao/revisao-2026-10-06.md",
+      "titulo_doc": "Revisão de identidade e pesquisa assistida",
+      "secao": "Origem e referências",
+      "breadcrumb": "Revisão de identidade e pesquisa assistida > Origem e referências",
+      "texto": "A redação anterior foi recuperada do histórico Git, revisão `7249143`, e comparada às fontes editoriais aprovadas em [8386586](https://github.com/andrecodexvictor/GP-Pme/tree/8386586af110ba2112694a8ee6dd7b9d94d20572). Os arquivos anteriores à revisão de 6 de outubro foram preservados localmente com hashes. A [branch editorial](https://github.com/andrecodexvictor/GP-Pme/tree/codex/gear-editorial) reúne as fontes atualizadas.\n\nAs referências bibliográficas existentes receberam URLs DOI explícitas quando aplicáveis. A localização do livro de Rogers foi conferida na [Columbia University Press](https://cup.columbia.edu/book/the-digital-transformation-playbook/9780231175449/) em 6 de outubro de 2026; essa consulta identifica a publicação e não implica leitura integral. Os repositórios públicos G",
+      "keywords": [],
+      "pilar": "",
+      "tipo": "referencia",
+      "anchor": "origem-e-referencias",
+      "href": "docs/publicacao/revisao-2026-10-06.html#origem-e-referencias"
+    },
+    {
+      "id": "gear/publicacao/revisao-2026-10-06#05",
+      "doc": "framework/publicacao/revisao-2026-10-06.md",
+      "titulo_doc": "Revisão de identidade e pesquisa assistida",
+      "secao": "Revisão das afirmações",
+      "breadcrumb": "Revisão de identidade e pesquisa assistida > Revisão das afirmações",
+      "texto": "| Dimensão | Pergunta de revisão | Decisão e limite |\n| --- | --- | --- |\n| Contribuição | O artigo distingue framework e processo de produção? | Resumo, método e conclusão apresentam ambos; integrações ficam fora da contribuição avaliada |\n| Clareza | As partes usam termos consistentes? | Três domínios, assistência opcional, auditoria de conteúdo e prova de conceito futura são explícitos |\n| Evidência experimental | Existe resultado que sustente eficácia? | Não; afirmações de ganho causal da IA e eficácia do GEAR foram excluídas |\n| Avaliação | O protocolo está separado do relato atual? | Casos, métricas e condições do FrameSim são prospectivos; tabelas não contêm valores coletados |\n| Método | O procedimento de auditoria pode ser examinado? | Fontes, correções e versões são identificadas",
+      "keywords": [],
+      "pilar": "",
+      "tipo": "referencia",
+      "anchor": "revisao-das-afirmacoes",
+      "href": "docs/publicacao/revisao-2026-10-06.html#revisao-das-afirmacoes"
+    },
+    {
       "id": "gear/readme#01",
       "doc": "framework/README.md",
       "titulo_doc": "GEAR",
@@ -3092,7 +3157,7 @@
       "titulo_doc": "GEAR",
       "secao": "Fontes e evidência",
       "breadcrumb": "GEAR > Fontes e evidência",
-      "texto": "A [edição canônica](framework/README.md) distingue referências externas, adaptações locais e hipóteses. O [registro de fontes](framework/referencias/fontes.md) informa versões, consulta e limites. Cenários são ilustrativos; não representam resultado de campo. A avaliação com 25 empresas sintéticas e 75 execuções pareadas permanece prospectiva no [manuscrito científico](GP-Pme%20Article/overleaf/README.md).\n\nA edição GEAR 2026.10 consolida núcleo, interface, regras determinísticas e versões autorais. O [registro de publicação](framework/publicacao/README.md) documenta preservação, verificações e limites. GP-PME e NEXUS-PME são nomes históricos. Identificadores de software e caminhos antigos podem permanecer por compatibilidade, sem definir pilares adicionais ou versões concorrentes.",
+      "texto": "A [edição canônica](framework/README.md) distingue referências externas, adaptações locais e hipóteses. O [registro de fontes](framework/referencias/fontes.md) informa versões, consulta e limites. Cenários são ilustrativos; não representam resultado de campo. O [manuscrito científico](GP-Pme%20Article/overleaf/README.md) descreve a pesquisa assistida por IA e a auditoria de conteúdo durante a produção. A prova de conceito com 25 empresas sintéticas e 75 execuções pareadas no [FrameSim](https://github.com/andrecodexvictor/Frame-sim) permanece futura.\n\nA edição GEAR 2026.10 consolida núcleo, interface, regras determinísticas e versões autorais. O [registro de publicação](framework/publicacao/README.md) documenta preservação, verificações e limites. GP-PME e NEXUS-PME são nomes históricos. Id",
       "keywords": [
         "Simulações"
       ],
@@ -3122,7 +3187,7 @@
       "titulo_doc": "GEAR",
       "secao": "Gerar e verificar",
       "breadcrumb": "GEAR > Gerar e verificar",
-      "texto": "Instalar dependências Node com `npm install`. O launcher usa Python configurado em `GEAR_PYTHON`; quando disponível, encontra o runtime documental do Codex no usuário. Em outro ambiente, usar Python 3.10 ou superior e as bibliotecas documentais do fluxo, incluindo `reportlab`. Fontes tipográficas licenciadas acompanham o portal.\n\n```text\nnpm run build\nnpm run test\nnpm run check:web\nnpm run build:figures\n```\n\n`build` gera páginas, corpus, BM25, índice web, mestre e livro. `test` usa unittest para testes de comportamento. `check:web` usa Puppeteer/Edge em perfil isolado; configurar `GEAR_BROWSER` para outro executável compatível. O artigo tem [compilação própria](GP-Pme%20Article/overleaf/README.md), com fontes múltiplas.\n\nA busca web é lexical e funciona offline com JavaScript e índice loca",
+      "texto": "Instalar dependências Node com `npm install`. O launcher usa Python configurado em `GEAR_PYTHON`; quando disponível, encontra o runtime documental do Codex no usuário. Em outro ambiente, usar Python 3.10 ou superior e as bibliotecas documentais do fluxo, incluindo `reportlab` e `pypdf` para o teste de publicação. Fontes tipográficas licenciadas acompanham o portal.\n\n```text\nnpm run build\nnpm run test\nnpm run check:web\nnpm run build:figures\n```\n\n`build` gera páginas, corpus, BM25, índice web, mestre e livro. `test` usa unittest para testes de comportamento. `check:web` usa Puppeteer/Edge em perfil isolado; configurar `GEAR_BROWSER` para outro executável compatível. O artigo tem [compilação própria](GP-Pme%20Article/overleaf/README.md), com fontes múltiplas.\n\nA busca web é lexical e funciona",
       "keywords": [
         "Simulações"
       ],

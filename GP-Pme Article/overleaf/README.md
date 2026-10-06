@@ -1,6 +1,8 @@
 # Artigo GEAR: pacote LaTeX
 
-O manuscrito começou em agosto de 2026 e foi revisto editorialmente em outubro. GP-PME é o nome da instanciação histórica citada; GEAR é a edição consolidada. Os 25 casos comparativos ainda não foram executados.
+O manuscrito começou em agosto de 2026 e foi revisto em 6 de outubro. Apresenta a construção do GEAR e o uso ativo de IA na pesquisa e na produção com auditoria de conteúdo. O método distingue fontes externas, adaptações autorais e hipóteses, sem estimar benefício causal da IA. MCPs, skills e integrações são apenas citados. A prova de conceito futura no [FrameSim](https://github.com/andrecodexvictor/Frame-sim) prevê 25 casos comparativos; nenhuma rodada foi executada nesta versão.
+
+O [repositório e a branch editorial](https://github.com/andrecodexvictor/GP-Pme/tree/codex/gear-editorial) contêm as fontes; a [revisão de referência](https://github.com/andrecodexvictor/GP-Pme/tree/8386586af110ba2112694a8ee6dd7b9d94d20572) fixa o estado anterior à atualização. As referências bibliográficas têm links para documentos, DOI ou páginas institucionais. GP-PME é o nome histórico do acervo.
 
 ## Estrutura
 
@@ -42,5 +44,5 @@ pdflatex main.tex
 - e-mail e ORCID;
 - veículo ou template de submissão;
 - aprovação da redação final pelos orientadores;
-- URL pública e licença dos artefatos;
-- identificador do protocolo e commit do Frame-sim antes dos testes.
+- condições de distribuição conforme as licenças já publicadas;
+- identificador do protocolo e commit do FrameSim antes dos testes.

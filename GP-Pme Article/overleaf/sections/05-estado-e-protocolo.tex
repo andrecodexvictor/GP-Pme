@@ -1,35 +1,16 @@
-\section{Estado do artefato e evidências de engenharia}
+\section{Estado documental e alcance da evidência}
 \label{sec:estado}
 
-O estado analisado corresponde à revisão \texttt{7d9a2926ccb8} do repositório histórico GP-PME, registrada em julho de 2026 \citep{gppme2026repo}. Os números desta seção descrevem aquela revisão, não o índice reconstruído na edição GEAR de outubro. O inventário histórico contém um núcleo documental, templates preenchíveis, busca, grafo de conhecimento, agentes, adaptadores e serviços de integração. A \cref{tab:estado-engenharia} resume apenas evidências verificadas no repositório; números de retorno financeiro presentes em cenários demonstrativos foram excluídos desta síntese por serem projeções condicionais.
+A edição GEAR de outubro consolida o acervo em núcleo, adoção, guias, indicadores, exemplos, modelos, fundamentos e fontes. O \href{https://github.com/andrecodexvictor/GP-Pme/tree/8386586af110ba2112694a8ee6dd7b9d94d20572/framework}{núcleo documental versionado} permite inspecionar a especificação \citep{gppme2026repo}; o \href{https://github.com/andrecodexvictor/GP-Pme/tree/codex/gear-editorial/framework/publicacao}{registro de publicação} identifica o tratamento editorial e seus limites. Fontes externas, adaptações locais e exemplos ilustrativos têm funções distintas na argumentação.
 
-\begin{table}[htbp]
-  \centering
-  \caption{Evidências de engenharia disponíveis antes da avaliação organizacional.}
-  \label{tab:estado-engenharia}
-  \small
-  \begin{tabularx}{\textwidth}{@{}L{3.2cm}L{3.0cm}R@{}}
-    \toprule
-    Componente & Evidência registrada & Interpretação permitida \\
-    \midrule
-    Base de conhecimento & 675 trechos provenientes de 62 documentos & Conteúdo foi indexado e pode ser recuperado; não mede correção de respostas \\
-    Agentes & Orquestrador e oito especialistas; nove prompts prontos & Papéis foram implementados; não mede utilidade para usuários \\
-    Skills & Oito fluxos operacionais especializados & Procedimentos podem ser acionados de forma modular \\
-    Adaptadores & Cinco testes em modo dry-run aprovados & Contratos básicos funcionaram sem escrita real nas plataformas \\
-    API/MCP & Rotas e ferramentas com smoke tests documentados & Serviços básicos responderam no ambiente de desenvolvimento \\
-    Cenários demonstrativos & Quatro perfis e calculadora com aritmética conferida & Fórmulas são executáveis; ROI projetado não é efeito observado \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
+A produção assistida e a auditoria são relatadas a partir desses documentos, da declaração de uso de IA e das correções registradas. A evidência permite examinar coerência e proveniência, mas não estabelecer a contribuição causal de cada ferramenta. Não há resultados de aplicação do GEAR em empresas, de prova de conceito no FrameSim ou de comparação com alternativas. Verificações de software do repositório não são usadas como validação do framework neste artigo.
 
-Essa evidência documenta componentes da instanciação histórica e reduz o risco de avaliar apenas uma ideia abstrata. Ela não demonstra facilidade de aprendizagem, custo real de adesão, melhoria de desempenho ou superioridade frente a outras referências. A avaliação necessária começa, portanto, no ponto em que termina a verificação de engenharia.
-
-\section{Protocolo prospectivo de avaliação}
+\section{Protocolo prospectivo de prova de conceito}
 \label{sec:protocolo}
 
 \subsection{Perguntas e hipóteses de avaliação}
 
-A avaliação futura será guiada por três perguntas. \textbf{PA1}: em empresas simuladas de 5 a 20 colaboradores, qual configuração produz planos mais completos e acionáveis para um conjunto comum de problemas? \textbf{PA2}: qual é o esforço humano e documental exigido para chegar a uma primeira decisão verificável? \textbf{PA3}: em quais condições de porte, maturidade, setor e comportamento das personas cada configuração falha ou exige adaptação?
+A prova de conceito futura no FrameSim será guiada por três perguntas. \textbf{PA1}: em empresas simuladas de 5 a 20 colaboradores, qual configuração produz planos mais completos e acionáveis para um conjunto comum de problemas? \textbf{PA2}: qual é o esforço humano e documental exigido para chegar a uma primeira decisão verificável? \textbf{PA3}: em quais condições de porte, maturidade, setor e comportamento das personas cada configuração falha ou exige adaptação?
 
 A hipótese principal é que o GEAR oferece uma relação favorável entre cobertura e esforço nos cenários de baixa maturidade, sem pressupor que supere ITIL~4 ou COBIT~2019 em seus escopos de origem. Duas hipóteses secundárias serão examinadas: os mecanismos relacionais e a Fase Zero terão maior contribuição nos cenários com papéis acumulados; e a camada de IA reduzirá tempo de preparação somente quando contexto, revisão e critérios de saída forem mantidos. Nenhuma dessas hipóteses é tratada como confirmada nesta versão.
 
@@ -53,7 +34,7 @@ Cada empresa terá um núcleo mínimo de quatro funções: proprietário ou dire
 
 Uma persona será descrita por cargo, poder decisório, tempo de empresa, disponibilidade semanal para governança, letramento digital, tolerância a risco, abertura à mudança, incentivos, objetivo, conflito, estilo de comunicação e até dois vieses cognitivos. Traços psicológicos não serão usados como diagnóstico clínico. Cada atributo deverá alterar uma regra observável da simulação; atributos puramente ornamentais serão removidos.
 
-As personas do estudo serão sintéticas e não deverão representar indivíduos identificáveis. Antes do congelamento, o catálogo atualmente usado pelo Frame-sim deverá passar por revisão de proveniência, licença e conteúdo; qualquer perfil derivado de pessoa real será removido ou transformado em arquétipo anônimo. Essa regra evita que o ganho de realismo seja obtido à custa de privacidade ou consentimento.
+As personas do estudo serão sintéticas e não deverão representar indivíduos identificáveis. Antes do congelamento, o catálogo atualmente usado pelo FrameSim deverá passar por revisão de proveniência, licença e conteúdo; qualquer perfil derivado de pessoa real será removido ou transformado em arquétipo anônimo. Essa regra evita que o ganho de realismo seja obtido à custa de privacidade ou consentimento.
 
 A aleatoriedade será hierárquica e registrada. A semente do caso define empresa e evento; a semente de equipe define a seleção e os traços das personas; e a semente de execução controla variações estocásticas. O mesmo manifesto congelado será reutilizado nos três braços. Amostragem aleatória simples será substituída por seleção restrita, verificando cobertura de papéis, soma de colaboradores, compatibilidade setorial, ausência de duplicatas e distribuição de resistência. Esse procedimento preserva diversidade sem perder comparabilidade.
 
@@ -67,7 +48,7 @@ Os dois desfechos primários serão: \textbf{completude acionável}, pontuada de
 
 Os desfechos secundários serão cobertura do pacote, rastreabilidade até fonte ou dado do caso, densidade documental, tempo computacional, custo de tokens, taxa de afirmações sem suporte por 100 afirmações verificáveis, número de correções HITL, violações de restrições, plausibilidade do cenário e aceitação simulada das personas. ``Aceitação simulada'' será reportada como comportamento do modelo, nunca como satisfação de trabalhadores reais.
 
-Dois avaliadores humanos, cegos aos rótulos dos braços quando o conteúdo permitir, aplicarão a rubrica em ordem aleatória. Divergências serão resolvidas por consenso ou terceiro avaliador, e a concordância será reportada. O CriticAgent do Frame-sim poderá apontar inconsistências, mas não será o juiz final. Falha do crítico, timeout ou resposta inválida produzirá valor ausente e log de erro; nunca uma nota substituta máxima.
+Dois avaliadores humanos, cegos aos rótulos dos braços quando o conteúdo permitir, aplicarão a rubrica em ordem aleatória. Divergências serão resolvidas por consenso ou terceiro avaliador, e a concordância será reportada. O CriticAgent do FrameSim poderá apontar inconsistências, mas não será o juiz final. Falha do crítico, timeout ou resposta inválida produzirá valor ausente e log de erro; nunca uma nota substituta máxima.
 
 Os resultados serão resumidos por mediana e intervalo interquartil. Diferenças pareadas por caso serão apresentadas com intervalos de confiança bootstrap. Se as premissas forem atendidas, o teste de Friedman examinará diferença global entre os três braços, seguido por comparações de Wilcoxon com correção de Holm e tamanho de efeito. Com 25 casos sintéticos, a análise terá caráter exploratório; valores de $p$ não serão usados para sugerir validade externa.
 
@@ -101,8 +82,8 @@ Os resultados serão resumidos por mediana e intervalo interquartil. Diferenças
   \label{fig:resultados-template}
 \end{figure}
 
-\subsection{Pré-condições no Frame-sim}
+\subsection{Pré-condições no FrameSim}
 
-O Frame-sim já contém simulação em lote, perfis de empresa, enriquecimento de personas, um estado determinístico por funcionário, cálculo financeiro e um agente crítico \citep{framesim2026repo}. A auditoria de prontidão identificou quatro mudanças necessárias antes da coleta: substituir chamadas não semeadas de aleatoriedade; permitir que uma configuração de lote receba um manifesto congelado e três braços; eliminar o comportamento \emph{fail-open} que atribui plausibilidade máxima quando o crítico falha; e exportar versões, parâmetros, prompts, fontes recuperadas e erros em formato tabular.
+O \href{https://github.com/andrecodexvictor/FrameSim}{FrameSim} é o ambiente previsto para a prova de conceito \citep{framesim2026repo}. Antes da coleta, sua versão deverá ser fixada e sua instrumentação conferida quanto a quatro requisitos: aleatoriedade semeada; reutilização de manifestos congelados entre os três braços; registro de erro ou dado ausente quando o avaliador automatizado falhar; e exportação de versões, parâmetros, prompts, fontes recuperadas e erros. São condições de aceitação do protocolo futuro, sem alegação de auditoria atual do código do simulador.
 
-O congelamento dessas mudanças deverá gerar um identificador de protocolo e um \emph{hash} para cada manifesto. Um teste piloto fora dos 25 casos verificará parsing, equilíbrio de tokens, cegamento dos rótulos e cálculo das métricas. O piloto poderá corrigir defeitos de instrumentação, mas não alterar hipóteses ou rubricas após a inspeção dos resultados principais.
+O atendimento e congelamento dessas condições deverá gerar um identificador de protocolo e um \emph{hash} para cada manifesto. Um teste piloto fora dos 25 casos verificará parsing, equilíbrio de tokens, cegamento dos rótulos e cálculo das métricas. O piloto poderá corrigir defeitos de instrumentação, mas não alterar hipóteses ou rubricas após a inspeção dos resultados principais.
